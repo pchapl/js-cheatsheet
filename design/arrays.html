@@ -77,7 +77,7 @@ console.log(arrFirst);
             <div class="row">
               <div class="col s12">
   
-                <ul class="collapsible">
+                <ul class="collapsible popout">
                   <li>
                     <div class="collapsible-header">pop</div>
                     <div class="collapsible-body"><span>Удаляет последний элемент из массива и возвращает его значение.
@@ -96,36 +96,31 @@ console.log(fruits); // Яблоко, Апельсин
 
                     <div class="arrays-simple__test">
                       <h5>Работа метода наглядно</h5>
-                      <div class="sum__fields">
-                        <p class="text">Введите числа в произвольном порядке:</p>
-                        <div><input class="number" type="text" /></div>
-                        <div><input class="number" type="text" /></div>
-                        <div><input class="number" type="text" /></div>
-                        <div><input class="number" type="text" /></div>
-                        <div><input class="number" type="text" /></div>
-                        <div id="input0"></div>
+                      <div class="arrays-simple__block">
+                        <p class="arrays-simple__text">Введите элементы массива:</p>
+                        <div id="arrays-simple__input0"></div>
               
-                        <button class="button" id="hide">
-                          Добавить ещё число
+                        <button class="arrays-simple__button" id="arrays-simple__add">
+                          Добавить элемент
                         </button>
               
-                        <p class="text">Чтобы вычислить сумму, нажмите Готово</p>
-                        <button class="button button_done" id="done">
+                        <p class="arrays-simple__text">Чтобы применить метод к массиву, нажмите Готово</p>
+                        <button class="arrays-simple__button" id="arrays-simple__done">
                           Готово
                         </button>
               
-                        <div class="results">
-                          <div class="out">
-                            <p class="text">Введенные числа:</p>
-                            <div class="result" id="out"></div>
+                        <div class="arrays-simple__results">
+                          <div class="arrays-simple__out">
+                            <p class="arrays-simple__text">Получившийся массив:</p>
+                            <div id="arrays-simple__out"></div>
                           </div>
-                          <div class="out">
-                            <p class="text">Сумма:</p>
-                            <div class="result" id="sum"></div>
+                          <div class="arrays-simple__out">
+                            <p class="arrays-simple__text">Результат:</p>
+                            <div id="arrays-simple__result"></div>
                           </div>
                         </div>
               
-                        <button class="button button_reset" id="reset">
+                        <button class="arrays-simple__button" id="arrays-simple__reset">
                           Сбросить значения
                         </button>
                       </div>
