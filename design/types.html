@@ -15,6 +15,7 @@
     <!--    project styles-->
     <link rel="stylesheet" href="./assets/dist/css/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
 
 
 
@@ -34,7 +35,10 @@
             <div class="row">
                 <div id="dataCards" class="col m12 l12">
                     <div class="row" >
-                        <div class="col s12 m4 l4">
+                        
+                        <p>В JS 8 типов данных, из них 7 примитивных, так как их значениями могут быть только простые значения (строка, или число, др.). 8й тип - это объект (хранят коллекции данных или более сложные структуры).</p>
+                    
+                        <div class="col s12 m6 l6">
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
                                     <img class="activator" src="./assets/images/string.png">
@@ -44,13 +48,107 @@
                                     <p><a href="#">This is a link</a></p>
                                 </div>
                                 <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                    <span class="card-title grey-text text-darken-4">Строки<i class="material-icons right">close</i></span>
+                                    <p>Строки полезны для хранения данных, которые можно представить в текстовой форме.</p>
+                                    <p>Синтаксис:
+                                        <pre>
+                                            <code class="js">
+let lang = "JS";
+let lang = 'JS';
+let langGreeting = `Привет,
+учу
+${a}`;
+Одинарные кавычки = двойные кавычки
+В обратные кавычки можно включать переменные и 
+произвольные выражения; могут занимать более одной строки
+                                            </code>
+                                        </pre>
+                                    </p>
+                                    <p>Спецсимволы
+                                        <pre>
+                                            <code class="js">
+Начинаются с \ - символа экранирования
+
+\n (перевод строки), позволяет создавать многострочные строки 
+с помощью одинарных и двойных кавычек:
+let c = 'Привет,\nJS'
+
+\', \" (кавычки):
+let person = 'I\'m,\nCococo'
+
+\\	(обратный слеш)
+
+\t	(знак табуляции)
+                                            </code>
+                                        </pre>
+                                    </p>
+                                    <div>Операции со строками
+                                        <p>
+                                            <pre>
+                                                <code>
+Контакенация строк (операция сложения). 
+При сложении двух строк получается новая строка, склеенная из исходных
+
+let like = 'Я люблю'
+let lang = 'JS'
+let result = like + ',' + lang // Я люблю, JS
+
+                                                </code>
+                                            </pre>
+                                        </p>
+                                        <p>
+                                            <pre>
+                                                <code>
+Сравнение строк.
+Для сравнения используется лексикографический порядок. 
+Это означает, что первые символы алфавита считаются меньше последних.
+Алгоритм для произвольных строк s1 и s2:
+
+1) Сравниваются символы s1[0] и s2[0]. Если символы разные, 
+то большей будет та строка, символ которой больше. Сравнение завершено.
+2) Если первые символы совпали, аналогично проверяем 
+вторые символы. Продолжаем, пока не найдём несовпадение 
+или не закончится одна из строк.
+3) Если строки закончились одновременно, то они равны. 
+Если закончилась одна из строк, то большей строкой 
+считается строка с большим количеством символов.
+
+console.log('Код' > 'Кодер') // false
+console.log('Кот' > 'Кодер') (true)
+При этом: 'Кот' не равно 'кот', так как сравнение учитывает 
+регистр букв, если необходимо регистронезависимое сравнение, 
+то обе строки приводятся к верхнему или нижнему регистру
+                                                </code>
+                                            </pre>
+                                        </p>
+                                    </div>
+                                    
+                                    <p>
+                                        <pre>
+                                            <code>
+Важно понимать!
+JavaScript различает объекты String и значения строкового 
+примитива. Строковые литералы (обозначаемые кавычками) и строки, 
+возвращённые вызовом String в неконструкторном контексте 
+(то есть, без использования ключевого слова new) являются 
+строковыми примитивами. JavaScript автоматически преобразует 
+примитивы в объекты String, так что на строковых примитивах 
+возможно использовать методы объекта String. 
+
+let person1 = 'Anna';
+let person2 = new String(person1);
+
+console.log(typeof person1); // выведет 'string'
+console.log(typeof person2);  // выведет 'object'
+                                            </code>
+                                        </pre>
+                                    </p>
+                                    <p>Методы строк смотри <a href="string.html">тут</a></p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col s12 m4 l4">
+                        <div class="col s12 m6 l6">
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
                                     <img class="activator" src="./assets/images/number.png">
@@ -65,22 +163,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col s12 m4 l4">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="./assets/images/boolean.png">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
-                                    <p><a href="#">This is a link</a></p>
-                                </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                </div>
-                            </div>
-                        </div>                
                     </div>
 
                     <div class="row">
@@ -94,8 +176,45 @@
                                     <p><a href="#">This is a link</a></p>
                                 </div>
                                 <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                    <span class="card-title grey-text text-darken-4">null<i class="material-icons right">close</i></span>
+                                    <article>
+                                        <p>
+                                            Специальное значение null не относится ни к одному из типов, описанных выше. Оно формирует отдельный тип, который содержит только значение null, является примитивом.
+                                        </p> 
+                                        <p>
+                                            В JavaScript null не является «ссылкой на несуществующий объект» 
+                                            или «нулевым указателем». Это просто специальное значение, 
+                                            которое представляет собой «ничего», «пусто» или «значение неизвестно». 
+                                            Используется, когда нужно обозначить намеренное отсутствие значения. В контексте логических операций, рассматривается как ложное 
+                                            <pre>
+                                                <code>
+let age = null; // значение age неизвестно
+                                                </code>
+                                            </pre>
+                                        </p>                                        
+                                        <p>
+                                            В языке существует похожий примитив undefined, он обозначает, что значение ещё не установлено. Их можно легко спутать, потому что оба обозначают отсутствие значения. Разница состоит в том, что null обозначает намеренное отсутствие, а undefined — неявное (неопределнность).
+                                        </p>
+                                        <p>
+                                            <span style="color: red;">Важно знать!</span><br><br>
+                                            Результатом вызова typeof null является "object". 
+                                            Это официально признанная ошибка в typeof, ведущая начало 
+                                            с времён создания JavaScript и сохранённая для совместимости. 
+                                            Конечно, null не является объектом. 
+                                            Это специальное значение с отдельным типом.
+                                        </p>
+
+                                        <p>
+                                            <span style="color: red;">Важно знать!</span><br><br>
+                                            При проверке на null или undefined, помните о различии между операторами равенства (==) и идентичности (===): с первым, выполняется преобразование типов.
+                                            <pre>
+                                                <code>
+null === undefined // false
+null  == undefined // true
+                                                </code>
+                                            </pre>                                
+                                        </p>
+                                    </article>
                                 </div>
                             </div>
                         </div>  
@@ -169,6 +288,24 @@
                 </div>
             </div>
 
+
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="./assets/images/boolean.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
+                        <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+            </div>  
+
+
             <div class="row">
                 <h2 id="inputType" class="section scrollspy">Проверка типа</h2>
                 <div class="col">
@@ -200,7 +337,8 @@
 
 
 
-
+    <script src="./assets/libraries/highlights/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <script src="./assets/dist/js/main.js"></script>
 </body>
 
