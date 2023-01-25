@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 let done = document.querySelector('#arrays-simple__done');
-done.addEventListener('click', (e) => {
+done?.addEventListener('click', (e) => {
     e.preventDefault();
 
     let elements = [];
@@ -20,11 +20,36 @@ done.addEventListener('click', (e) => {
         return sum + elem;
     }, 0);
 
+    /*let a = 0;
+    let code;
     for (let i = 0; i < elements.length; i++) {
-        let code = `<div class="arrays-code"><pre><code class="js">let array = ["${elements[i]}"]; alert(array.pop()); console.log(array);</code></pre></div>`;
-        console.log(code)
-        return code;
+
+        let arr = [];
+
+        //elements.push(Number(data[i].value));
+        code = `<div class="arrays-code">
+        <pre>
+        <code class="js">
+        let array = [${elements[i] + a}]; 
+        alert(array.pop()); 
+        console.log(array);
+        </code>
+        </pre>
+        </div>`;
+        elements[i]++;
+        a++;
     }
+    console.log(code);*/
+
+    let code = `<div class="arrays-code">
+    <pre>
+    <code class="js">
+    let array = [${elements}]; 
+    alert(array.pop()); 
+    console.log(array);
+    </code>
+    </pre>
+    </div>`;
 
 
     document.querySelector("#arrays-simple__out").innerHTML = code;
@@ -40,13 +65,13 @@ function addInput() {
 }
 
 let add = document.querySelector('#arrays-simple__add');
-add.addEventListener('click', (e) => {
+add?.addEventListener('click', (e) => {
     e.preventDefault();
     addInput();
 })
 
 let reset = document.querySelector('#arrays-simple__reset');
-reset.addEventListener('click', (e) => {
+reset?.addEventListener('click', (e) => {
     e.preventDefault();
 
     let data = document.querySelectorAll(".arrays-simple__data");
