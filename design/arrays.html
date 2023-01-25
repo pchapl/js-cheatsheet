@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--    normalize css -->
+  <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+  <!-- materialize css -->
+  <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+  <!--    project styles-->
+  <link rel="stylesheet" href="./assets/dist/css/main.css">
+  <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+
+
+
+
+
+
+  <title>Массивы</title>
+
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header></header>
+    <main class="arrays-main__container">
+
+      <div class="arrays-array">
+        <h3>Что такое массивы?</h3>
+        <p>Массивы - это структура, в которой можно хранить коллекции элементов — чисел, строк, других массивов и так далее. Элементы нумеруются и хранятся в том порядке, в котором их поместили в массив. Элементов может быть сколько угодно, они могут быть какими угодно.</p>
+        <div class="arrays-code">
+          <pre>
+            <code class="js">
+let arr = [];
+            </code>
+          </pre>
+        </div>
+        <p>Массивы хранят элементы в пронумерованных «ячейках». Нумерация начинается с нуля. Первый элемент массива будет иметь номер 0, второй — 1 и так далее. Номера называют индексами.</p>
+        <p>Количество доступных ячеек называют размером или длиной массива. В JavaScript длина массива обычно совпадает с количеством элементов в нем. Массивы хранят свой размер в свойстве length.</p>
+        <div class="arrays-code">
+          <pre>
+            <code class="js">
+let arr = [1, 2, 3, 4, 5];
+console.log(arr.length);
+// 5
+            </code>
+          </pre>
+        </div>
+        <p>Чтобы получить содержимое ячейки с этим номером, обратитесь к конкретному индексу.</p>
+        <div class="arrays-code">
+          <pre>
+            <code class="js">
+let arr = [1, 2, 3, 4, 5];
+
+const arrFirst = arr[0];
+console.log(arrFirst);
+// 1
+            </code>
+          </pre>
+        </div>
+      </div>
+
+      <div class="arrays-array_methods">
+        <h3>Методы массивов</h3>
+        <p>Методы массивов можно разделить на две большие группы: итеративные и неитеративные. Итеративные методы принимают в качестве аргумента функцию обратного вызова (callback function).</p>
+
+        <div class="arrays-simple">
+          <h4>Методы без итерации</h4>
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+  
+                <ul class="collapsible">
+                  <li>
+                    <div class="collapsible-header">pop</div>
+                    <div class="collapsible-body"><span>Удаляет последний элемент из массива и возвращает его значение.
+                    </span>
+                    <div class="arrays-code">
+                      <pre>
+                        <code class="js">
+let fruits = ["Яблоко", "Апельсин", "Груша"];
+
+alert(fruits.pop()); // удаляем "Груша" и выводим
+                          
+console.log(fruits); // Яблоко, Апельсин
+                        </code>
+                      </pre>
+                    </div>
+
+                    <div class="arrays-simple__test">
+                      <h5>Работа метода наглядно</h5>
+                      <div class="sum__fields">
+                        <p class="text">Введите числа в произвольном порядке:</p>
+                        <div><input class="number" type="text" /></div>
+                        <div><input class="number" type="text" /></div>
+                        <div><input class="number" type="text" /></div>
+                        <div><input class="number" type="text" /></div>
+                        <div><input class="number" type="text" /></div>
+                        <div id="input0"></div>
+              
+                        <button class="button" id="hide">
+                          Добавить ещё число
+                        </button>
+              
+                        <p class="text">Чтобы вычислить сумму, нажмите Готово</p>
+                        <button class="button button_done" id="done">
+                          Готово
+                        </button>
+              
+                        <div class="results">
+                          <div class="out">
+                            <p class="text">Введенные числа:</p>
+                            <div class="result" id="out"></div>
+                          </div>
+                          <div class="out">
+                            <p class="text">Сумма:</p>
+                            <div class="result" id="sum"></div>
+                          </div>
+                        </div>
+              
+                        <button class="button button_reset" id="reset">
+                          Сбросить значения
+                        </button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                  </li>
+                  <li>
+                    <div class="collapsible-header">push</div>
+                    <div class="collapsible-body"><span>Добавляет элемент в конец массива.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">shift</div>
+                    <div class="collapsible-body"><span>Удаляет из массива первый элемент и возвращает его.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин", "Груша"];
+  
+alert(fruits.shift()); // Удаляем "Яблоко" и выводим
+                            
+console.log(fruits); // Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">unshift</div>
+                    <div class="collapsible-body"><span>Добавляет элемент в начало массива.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Апельсин", "Груша"];
+  
+fruits.unshift("Яблоко"); // добавляем "Яблоко"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">splice</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">slice</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">concat</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Third</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">First</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Third</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">First</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Third</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">First</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Third</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">First</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+  
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="arrays-iteration">
+          <h4>Итеративные методы</h4>
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+  
+                <ul class="collapsible">
+                  <li>
+                    <div class="collapsible-header">pop()</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Third</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">First</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Third</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">First</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Third</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">First</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Third</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">First</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+        
+
+        
+
+      </div>
+      
+      
+
+    </main>
+    <footer></footer>
+  </div>
+  
+
+  <script src="./assets/dist/js/main.js"></script>
+  <script src="./assets/libraries/highlights/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>
