@@ -19,16 +19,40 @@
     <link rel="stylesheet" href="./assets/dist/css/main.css">
 
 
-    <title>JS</title>
+    <title>Даты и время в JS</title>
 
 
 </head>
 
 <body>
-<h1>Hello World!</h1>
+<main class="container">
+    <h1 class="center-align">Даты и время в JS</h1>
+
+    <pre>
+        <code class="js">
+            const currentDate = new Date</code>(<input type="text" id="date-input">)<code class="js">
+            console.log(currentDate.getDay())
+// 0
+
+console.log(currentDate.getHours())
+// 14
+
+console.log(currentDate.getTime())
+// 1660475730000
+
+console.log(currentDate.getFullYear())
+// 2022
+
+console.log(currentDate.toISOString())
+// 2022-08-14T11:15:30.000Z
+        </code>
+    </pre>
+
+</main>
 
 <script src="./assets/dist/js/main.js"></script>
 <script src="./assets/libraries/highlights/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </body>
 
 </html>
