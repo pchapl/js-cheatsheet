@@ -458,13 +458,14 @@ let age = null; // значение age неизвестно
                                         <span class="card-title grey-text text-darken-4">Undefined<i class="material-icons right">close</i></span>
                                         <p>Примитивный тип данных, состоящий из одного значения undefined. Оно используется, чтобы обозначить неизвестное или неопределённое значение.<br>
                                         JavaScript автоматически устанавливает значение undefined объявленным переменным, которые не были проинициализированы значением (не присвоено значение).
+                                        </p>
+                                        <h6>Синтаксис</h6>
                                             <pre>
                                                 <code class="js">
 let age
 console.log(age) // undefined
                                                 </code>
-                                            </pre>
-                                        </p>
+                                            </pre>                                        
                                         <p>Функция возвращает undefined, если она не возвращает какого-либо значения.
                                             <pre>
                                                 <code class="js">
@@ -490,8 +491,72 @@ console.log(findValue()) // undefined
                                         <p><a href="#">This is a link</a></p>
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                        <span class="card-title grey-text text-darken-4">Boolean<i class="material-icons right">close</i></span>
+                                        <div>
+                                            <p>Логический или булев тип boolean может принимать лишь истинное (true) и ложное (false) значения. Назван он так в честь Джорджа Буля, одного из основателей математической логики.                                                
+                                            </p>
+                                            <h6>Синтаксис</h6>
+                                            <p>Явное указание значения
+                                                <pre>
+                                                    <code class="js">
+let truthyValue = true // «Истина»
+let falsyValue = false // «Ложь»
+                                                    </code>
+                                                </pre>
+                                            </p>
+                                            <p>Функция Boolean
+                                                <pre>
+                                                    <code class="js">
+let truthyValue = Boolean(1) // «Истина»
+let falsyValue = Boolean('') // «Ложь»
+                                                    </code>
+                                                </pre>
+                                            </p>
+                                            <p>Использование выражений, значениями которых будут «истина» или «ложь»
+                                                <pre>
+                                                    <code class="js">
+let truthyValue = Boolean(4 < 5)
+let anotherTruthy = 4 < 5
+
+console.log(truthyValue) // true
+console.log(anotherTruthy) // true
+                                                    </code>
+                                                </pre>
+                                            </p>
+                                            <p>Использование в условных выражениях
+                                                <pre>
+                                                    <code class="js">
+let isCorrect = true
+if (isCorrect) {
+    // выполнится,
+} else {
+    // не выполнится.
+}
+                                                    </code>
+                                                </pre>
+                                            </p>
+                                            
+                                        </div>
+                                        <div>
+                                            <h6>Логическре преобразование типов</h6>
+                                            <p>0, -0, null, false, NaN, undefined, пустая строка (""), становяся false. Все остальные значения - true
+                                                <pre>
+                                                    <code class="js">
+let falsy1 = Boolean(),
+    falsy2 = Boolean(0),
+    falsy4 = Boolean(''),
+    falsy5 = Boolean(false)
+
+let truthy1 = Boolean(true),
+    truthy3 = Boolean('false'),
+    truthy5 = Boolean([]),
+    truthy6 = Boolean({})
+                                                    </code>
+                                                </pre>
+                                            </p>
+                                            
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -508,8 +573,78 @@ console.log(findValue()) // undefined
                                         <p><a href="#">This is a link</a></p>
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                        <span class="card-title grey-text text-darken-4">BigInt<i class="material-icons right">close</i></span>
+                                        <div>
+                                            <p>Cпециальный числовой примитив, который предоставляет возможность работать с целыми числами произвольной длины.</p>
+                                            <div>
+                                                <h6>Синтаксис</h6>
+                                                <p>Чтобы создать значение типа BigInt, необходимо добавить n в конец числового литерала или вызвать функцию BigInt, которая создаст число типа BigInt из переданного аргумента. Аргументом может быть число, строка и др.
+                                                    <pre>
+                                                        <code class="js">
+let bigint = 1234567890123456789012345678901234567890n;
+
+let sameBigint = BigInt("1234567890123456789012345678901234567890");
+
+let bigNumber = BigInt(10) // то же самое, что и 10n
+                                                        </code>
+                                                    </pre>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <h6>Работа с BigInt</h1>
+                                                <div>
+                                                    <h6>Математические операторы</h6>
+                                                    <p>
+                                                        Для BigInt определены операции сложения +, вычитания -, умножения *, взятия остатка от деления %, возведение в степень **. Операция деления / также работает, но дробная часть будет отброшена. Унарный оператор '+' нельзя применить. Все операции с числами типа bigint возвращают bigint. 
+                                                    </p>                                                    
+                                                    <pre>
+                                                        <code class="js">
+console.log(1n + 2n) // 3n
+console.log(5n / 2n) // 2n
+                                                        </code>
+                                                    </pre>
+                                                    <p>В математических операциях мы не можем смешивать bigint и обычные числа. Мы должны явно их конвертировать: используя либо BigInt(), либо Number()
+                                                        <pre>
+                                                            <code class="js">
+let bigint = 1n;
+let number = 2;
+
+// конвертируем number в bigint
+console.log(bigint + BigInt(number)); // 3n
+
+// конвертируем `bigint` в number
+console.log(Number(bigint) + number); // 3
+                                                            </code>
+                                                        </pre>    
+                                                    </p>
+                                                </div>
+                                                
+                                                <div>
+                                                    <h6>Операции сравнения</h6>
+                                                    <p>Операции сравнения, такие как <, >, работают с bigint и обычными числами как обычно.
+                                                        <pre>
+                                                            <code class="js">
+console.log(2n > 1n) // true
+console.log(2n > 1) // true
+                                                            </code>
+                                                        </pre>
+                                                    </p>
+                                                    <p>
+                                                        В if или любом другом логическом операторе bigint число ведёт себя как обычное число. 
+                                                        <pre>
+                                                            <code class="js">
+if (0n) {
+    // никогда не выполнится, это false
+}
+                                                            </code>
+                                                        </pre>
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -11,18 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
 }); 
 
 
-
 button?.addEventListener('click', () => {
     let input = document.querySelector('#inputCheck').value
     let checkResult = document.querySelector('#checkResult')
     if (Number(input)) {
         checkResult.innerHTML = 'Number'
     } else if (typeof Object & !typeof null) {
-        if (typeof Array) {
-            checkResult.innerHTML = 'Array'
-        } else {
-            checkResult.innerHTML = 'Object'
-        }
+        checkResult.innerHTML = 'Объект'
         
     } else if (typeof null) {
         checkResult.innerHTML = 'null'
