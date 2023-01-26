@@ -2,32 +2,95 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!--    normalize css -->
-  <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" type="image/png">
 
-  <!-- materialize css -->
-  <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
 
-  <!--    project styles-->
-  <link rel="stylesheet" href="./assets/dist/css/main.css">
+    <!-- materialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
 
+    <!--    project styles -->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
 
-
-  <title>JS</title>
-
-
-
+    <title>JS Cheatsheet</title>
 </head>
 
 <body>
-  <h1>Hello World!</h1>
+<div class="wrapper">
+    <header>
+        <div class="header__container">
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!">one</a></li>
+                <li><a href="#!">two</a></li>
+                <li><a href="#!">three</a></li>
+            </ul>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Logo</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="sass.html">Sass</a></li>
+                        <li><a href="badges.html">Components</a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <script src="./assets/dist/js/main.js"></script>
+    <main>
+        <div class="main__container">
+            <h1>JS Cheatsheet</h1>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+                        content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<script src="./assets/dist/js/main.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.6.3.min.js"-->
+<!--        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>-->
+<!--</script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+<!--<script>-->
+<!--    $(document).ready(function(){-->
+<!--        $(".dropdown-trigger").dropdown();-->
+<!--    });-->
+<!--</script>-->
 </body>
 
 </html>
