@@ -14,17 +14,23 @@
     flex: 1 1 auto;
 }
 
-input[type=text]:not(.browser-default) {
+/*input[type=text]:not(.browser-default) {
+    border: 1px solid black;
+    height: 2rem;
+    width: 7rem;
+}*/
+
+#arrays-simple__data {
     border: 1px solid black;
     height: 2rem;
     width: 7rem;
 }
 
-.arr {
+.arrays__practice {
     display: flex;
 }
 
-[class*="arrays-simple__input"] {
+[id*="arrays__input"] {
     display: flex;
 }
 
@@ -35,4 +41,8 @@ input[type=text]:not(.browser-default) {
 
 .arrays-code__let {
     margin: 0;
+}
+
+.arrays-div__input {
+    display: flex;
 }

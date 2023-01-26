@@ -1,3 +1,5 @@
+//materialize
+
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.collapsible');
     var instances = M.Collapsible.init(elems, {
@@ -5,18 +7,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+//button Done
+
 let done = document.querySelector('#arrays-simple__done');
 done?.addEventListener('click', (e) => {
     e.preventDefault();
 
     let elements = [];
-    let data = document.querySelectorAll(".arrays-simple__data");
+    let data = document.querySelectorAll("#arrays-simple__data");
 
     for (let i = 0; i < data.length; i++) {
-        if (isNaN(data[i].value)) {
-            elements.push(data[i].value);
+        let d = data[i].value;
+        if (isNaN(d)) {
+            elements.push(d);
         } else {
-            elements.push(Number(data[i].value));
+            elements.push(Number(d));
         }
     }
 
@@ -44,18 +50,20 @@ done?.addEventListener('click', (e) => {
         }
     }
 
-
     document.querySelector('#arrays-simple__old').innerHTML = 'let array = [' + old + '];';
     document.querySelector("#arrays-simple__delete").innerHTML = del;
     document.querySelector('#arrays-simple__result').innerHTML = 'let array = [' + result + '];';
-
 })
 
-let item = 0;
+
+//button Add
+
 function addInput() {
-    let string = '<div><input class="arrays-simple__data" type="text" /></div> <div class="arrays-simple__input' + (item + 1) + '"></div>';
-    document.querySelector('.arrays-simple__input' + item).innerHTML = string;
-    item++;
+    let parent = document.querySelector('#arrays__input');
+    let input = document.createElement('div');
+    input.innerHTML = `<input id="arrays-simple__data" type="text">`;
+    parent.appendChild(input);
+
 }
 
 let add = document.querySelector('#arrays-simple__add');
@@ -64,20 +72,26 @@ add?.addEventListener('click', (e) => {
     addInput();
 })
 
+
+//button Reset
+
 let reset = document.querySelector('#arrays-simple__reset');
 reset?.addEventListener('click', (e) => {
     e.preventDefault();
 
-    let data = document.querySelectorAll(".arrays-simple__data");
+    let data = document.querySelectorAll("#arrays-simple__data");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
-    document.querySelector(".arrays-simple__input0").innerHTML = "[]";
+
+    document.querySelector("#arrays__input").innerHTML = "";
     document.querySelector("#arrays-simple__result").innerHTML = "";
     document.querySelector("#arrays-simple__delete").innerHTML = "";
     document.querySelector('#arrays-simple__old').innerHTML = "";
-
 })
+
+
+//button Check
 
 let check = document.querySelector('.arrays__check');
 check?.addEventListener('click', (e) => {
