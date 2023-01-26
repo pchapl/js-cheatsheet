@@ -16,325 +16,553 @@
     <link rel="stylesheet" href="./assets/dist/css/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
-
-
-
-
     <title>Типы данных</title>
-
-
-
 </head>
 
 <body>
-    <h1>Типы данных</h1>
-    
-    <div class="row">
-        <div class="section scrollspy col m10 l10">
-            
-            <div class="row">
-                <div id="dataCards" class="col m12 l12">
-                    <div class="row" >
-                        
-                        <p>В JS 8 типов данных, из них 7 примитивных, так как их значениями могут быть только простые значения (строка, или число, др.). 8й тип - это объект (хранят коллекции данных или более сложные структуры).</p>
-                    
-                        <div class="col s12 m6 l6">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="./assets/images/string.png">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
-                                    <p><a href="#">This is a link</a></p>
-                                </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Строки<i class="material-icons right">close</i></span>
-                                    <p>Строки полезны для хранения данных, которые можно представить в текстовой форме.</p>
-                                    <p>Синтаксис:
-                                        <pre>
-                                            <code class="js">
-let lang = "JS";
-let lang = 'JS';
-let langGreeting = `Привет,
-учу
-${a}`;
-Одинарные кавычки = двойные кавычки
-В обратные кавычки можно включать переменные и 
-произвольные выражения; могут занимать более одной строки
-                                            </code>
-                                        </pre>
-                                    </p>
-                                    <p>Спецсимволы
-                                        <pre>
-                                            <code class="js">
-Начинаются с \ - символа экранирования
+    <header></header>
 
-\n (перевод строки), позволяет создавать многострочные строки 
-с помощью одинарных и двойных кавычек:
-let c = 'Привет,\nJS'
-
-\', \" (кавычки):
-let person = 'I\'m,\nCococo'
-
-\\	(обратный слеш)
-
-\t	(знак табуляции)
-                                            </code>
-                                        </pre>
-                                    </p>
-                                    <div>Операции со строками
-                                        <p>
-                                            <pre>
-                                                <code>
-Контакенация строк (операция сложения). 
-При сложении двух строк получается новая строка, склеенная из исходных
-
-let like = 'Я люблю'
-let lang = 'JS'
-let result = like + ',' + lang // Я люблю, JS
-
-                                                </code>
-                                            </pre>
-                                        </p>
-                                        <p>
-                                            <pre>
-                                                <code>
-Сравнение строк.
-Для сравнения используется лексикографический порядок. 
-Это означает, что первые символы алфавита считаются меньше последних.
-Алгоритм для произвольных строк s1 и s2:
-
-1) Сравниваются символы s1[0] и s2[0]. Если символы разные, 
-то большей будет та строка, символ которой больше. Сравнение завершено.
-2) Если первые символы совпали, аналогично проверяем 
-вторые символы. Продолжаем, пока не найдём несовпадение 
-или не закончится одна из строк.
-3) Если строки закончились одновременно, то они равны. 
-Если закончилась одна из строк, то большей строкой 
-считается строка с большим количеством символов.
-
-console.log('Код' > 'Кодер') // false
-console.log('Кот' > 'Кодер') (true)
-При этом: 'Кот' не равно 'кот', так как сравнение учитывает 
-регистр букв, если необходимо регистронезависимое сравнение, 
-то обе строки приводятся к верхнему или нижнему регистру
-                                                </code>
-                                            </pre>
-                                        </p>
-                                    </div>
-                                    
-                                    <p>
-                                        <pre>
-                                            <code>
-Важно понимать!
-JavaScript различает объекты String и значения строкового 
-примитива. Строковые литералы (обозначаемые кавычками) и строки, 
-возвращённые вызовом String в неконструкторном контексте 
-(то есть, без использования ключевого слова new) являются 
-строковыми примитивами. JavaScript автоматически преобразует 
-примитивы в объекты String, так что на строковых примитивах 
-возможно использовать методы объекта String. 
-
-let person1 = 'Anna';
-let person2 = new String(person1);
-
-console.log(typeof person1); // выведет 'string'
-console.log(typeof person2);  // выведет 'object'
-                                            </code>
-                                        </pre>
-                                    </p>
-                                    <p>Методы строк смотри <a href="string.html">тут</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col s12 m6 l6">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="./assets/images/number.png">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
-                                    <p><a href="#">This is a link</a></p>
-                                </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col s12 m4 l4">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="./assets/images/null.png">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
-                                    <p><a href="#">This is a link</a></p>
-                                </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">null<i class="material-icons right">close</i></span>
-                                    <article>
-                                        <p>
-                                            Специальное значение null не относится ни к одному из типов, описанных выше. Оно формирует отдельный тип, который содержит только значение null, является примитивом.
-                                        </p> 
-                                        <p>
-                                            В JavaScript null не является «ссылкой на несуществующий объект» 
-                                            или «нулевым указателем». Это просто специальное значение, 
-                                            которое представляет собой «ничего», «пусто» или «значение неизвестно». 
-                                            Используется, когда нужно обозначить намеренное отсутствие значения. В контексте логических операций, рассматривается как ложное 
-                                            <pre>
-                                                <code>
-let age = null; // значение age неизвестно
-                                                </code>
-                                            </pre>
-                                        </p>                                        
-                                        <p>
-                                            В языке существует похожий примитив undefined, он обозначает, что значение ещё не установлено. Их можно легко спутать, потому что оба обозначают отсутствие значения. Разница состоит в том, что null обозначает намеренное отсутствие, а undefined — неявное (неопределнность).
-                                        </p>
-                                        <p>
-                                            <span style="color: red;">Важно знать!</span><br><br>
-                                            Результатом вызова typeof null является "object". 
-                                            Это официально признанная ошибка в typeof, ведущая начало 
-                                            с времён создания JavaScript и сохранённая для совместимости. 
-                                            Конечно, null не является объектом. 
-                                            Это специальное значение с отдельным типом.
-                                        </p>
-
-                                        <p>
-                                            <span style="color: red;">Важно знать!</span><br><br>
-                                            При проверке на null или undefined, помните о различии между операторами равенства (==) и идентичности (===): с первым, выполняется преобразование типов.
-                                            <pre>
-                                                <code>
-null === undefined // false
-null  == undefined // true
-                                                </code>
-                                            </pre>                                
-                                        </p>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>  
-                        
-                        <div class="col s12 m4 l4">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="./assets/images/string.png">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
-                                    <p><a href="#">This is a link</a></p>
-                                </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col s12 m4 l4">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="./assets/images/number.png">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
-                                    <p><a href="#">This is a link</a></p>
-                                </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        
-                    <div class="row">
-                        <div class="col s12 m4 l4">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="./assets/images/boolean.png">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
-                                    <p><a href="#">This is a link</a></p>
-                                </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col s12 m4 l4">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator" src="./assets/images/null.png">
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
-                                    <p><a href="#">This is a link</a></p>
-                                </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                                </div>
-                            </div>
-                        </div>    
-                    </div>                    
-                </div>
-            </div>
-
-
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="./assets/images/boolean.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
-                        <p><a href="#">This is a link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>  
-
-
-            <div class="row">
-                <h2 id="inputType" class="section scrollspy">Проверка типа</h2>
-                <div class="col">
-                    <input id="inputCheck"></input>
-                    <button id="buttonCheck"></button>
-                    <div id="checkResult"></div>
-                </div>
+    <main class="types-main__container">
+        <h3>Типы данных</h1>
+        
+        <div class="row types-content">
+            <div class="section scrollspy col m10 l10">
                 
+                <div class="row types-intro">
+                    <p>В JS 8 типов данных, из них 7 примитивных, так как их значениями могут быть только простые значения (строка, или число, др.). 8й тип - это объект (хранят коллекции данных или более сложные структуры).                        
+                    </p>
+                        
+                    <div id="dataCards" class="col m12 l12">
+                        <div class="row types-cards_big">
+                            <div class="col s12 m6 l6">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/string.png">
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
+                                        <p><a href="#">This is a link</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Строки<i class="material-icons right">close</i></span>
+                                        <p>Строки полезны для хранения данных, которые можно представить в текстовой форме.</p>
+                                        <p>Синтаксис:
+                                            <pre>
+                                                <code class="js">
+    let lang = "JS";
+    let lang = 'JS';
+    let langGreeting = `Привет,
+    учу
+    ${a}`;
+    Одинарные кавычки = двойные кавычки
+    В обратные кавычки можно включать переменные и 
+    произвольные выражения; могут занимать более одной строки
+                                                </code>
+                                            </pre>
+                                        </p>
+                                        <p>Спецсимволы
+                                            <pre>
+                                                <code class="js">
+    Начинаются с \ - символа экранирования
+
+    \n (перевод строки), позволяет создавать многострочные строки 
+    с помощью одинарных и двойных кавычек:
+    let c = 'Привет,\nJS'
+
+    \', \" (кавычки):
+    let person = 'I\'m,\nCococo'
+
+    \\	(обратный слеш)
+
+    \t	(знак табуляции)
+                                                </code>
+                                            </pre>
+                                        </p>
+                                        <div>Операции со строками
+                                            <p>
+                                                <pre>
+                                                    <code>
+    Контакенация строк (операция сложения). 
+    При сложении двух строк получается новая строка, склеенная из исходных
+
+    let like = 'Я люблю'
+    let lang = 'JS'
+    let result = like + ',' + lang // Я люблю, JS
+
+                                                    </code>
+                                                </pre>
+                                            </p>
+                                            <p>
+                                                <pre>
+                                                    <code>
+    Сравнение строк.
+    Для сравнения используется лексикографический порядок. 
+    Это означает, что первые символы алфавита считаются меньше последних.
+    Алгоритм для произвольных строк s1 и s2:
+
+    1) Сравниваются символы s1[0] и s2[0]. Если символы разные, 
+    то большей будет та строка, символ которой больше. Сравнение завершено.
+    2) Если первые символы совпали, аналогично проверяем 
+    вторые символы. Продолжаем, пока не найдём несовпадение 
+    или не закончится одна из строк.
+    3) Если строки закончились одновременно, то они равны. 
+    Если закончилась одна из строк, то большей строкой 
+    считается строка с большим количеством символов.
+
+    console.log('Код' > 'Кодер') // false
+    console.log('Кот' > 'Кодер') (true)
+    При этом: 'Кот' не равно 'кот', так как сравнение учитывает 
+    регистр букв, если необходимо регистронезависимое сравнение, 
+    то обе строки приводятся к верхнему или нижнему регистру
+                                                    </code>
+                                                </pre>
+                                            </p>
+                                        </div>
+                                        
+                                        <p>
+                                            <pre>
+                                                <code>
+    Важно понимать!
+    JavaScript различает объекты String и значения строкового 
+    примитива. Строковые литералы (обозначаемые кавычками) и строки, 
+    возвращённые вызовом String в неконструкторном контексте 
+    (то есть, без использования ключевого слова new) являются 
+    строковыми примитивами. JavaScript автоматически преобразует 
+    примитивы в объекты String, так что на строковых примитивах 
+    возможно использовать методы объекта String. 
+
+    let person1 = 'Anna';
+    let person2 = new String(person1);
+
+    console.log(typeof person1); // выведет 'string'
+    console.log(typeof person2);  // выведет 'object'
+                                                </code>
+                                            </pre>
+                                        </p>
+                                        <p>Методы строк смотри <a href="string.html">тут</a></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m6 l6">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/number.png">
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
+                                        <p><a href="#">This is a link</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Числа<i class="material-icons right">close</i></span>
+                                        <p>Примитивный тип данных представляет как целочисленные значения, так и числа с плавающей точкой в диапазоне от -(253 − 1) до 253 − 1, а также специальные значения Infinity, -Infinity и NaN..<br>Для этого типа данных определены стандартные арифметические операции сложения +, вычитания -, умножения *, деления /, взятия остатка от целочисленного деления %, сравнения >, <, >=, <=, ==, ===, !=, !==.
+                                        </p>
+                                        <section>
+                                            <h5>Синтаксис</h5>
+                                            <pre>
+                                                <code class="js">
+let age = 100
+let decimal = 0.101
+let sameDecimal = .101
+let billion = 1e9 // 1 миллиард, "e" производит 
+операцию умножения числа на 1 с указанным количеством нулей   
+
+или вот так с "e"
+let ms = 1e-6 // 0.000001, отрицательное число 
+после "e" подразумевает деление на 1 с указанным количеством нулей
+                                                </code>
+                                            </pre>
+                                            <p>Запись в разных системах счисления:<br><br>
+                                                <h6>Шестнадцетиричная:</h6>
+                                                <pre>
+                                                    <code class="js">
+let number = 0xff // 255, 
+при выводе в консоль приводится к десятичной системе счисления                                                  
+                                                    </code>
+                                                </pre>
+                                                <h6>Двоичная:</h6>
+                                                <pre>
+                                                    <code class="js">
+let number = 0b11111111 // 255                                                  
+                                                    </code>
+                                                </pre>
+                                                <h6>Восьмиричная:</h6>
+                                                <pre>
+                                                    <code class="js">
+let number = 0o377 // 255                                                  
+                                                    </code>
+                                                </pre>
+                                                Для других систем счисления лучше использовать функцию <a href="#">parseInt</a> 
+                                            </p>
+                                        </section>
+                                        
+                                        <section>
+                                            <h5>«Специальные числовые значения»:</h5><br>
+                                            <div>
+                                            1) Infinity (математическая бесконечность),<br>
+                                            2) -Infinity (минус бесконечность),<br>
+                                            <pre>
+                                                <code class="js">
+console.log( -1 / 0 ); // -Infinity
+                                                </code>
+                                            </pre>
+                                            3) NaN (Not a number, вычислительная ошибка).
+                                            <pre>
+                                                <code class="js">
+console.log( "Привет" / 2 ); // NaN, такое деление является ошибкой
+// только одно исключение: NaN ** 0 равно 1
+                                                </code>
+                                            </pre>
+                                            </div>
+                                            
+                                        </section>
+
+                                        <section>
+                                            <h5>Методы</h5>
+                                            <p>
+                                                При использовании методов для чисел (как и для остальных примитивов) важно понимать механизм работы этих методов. Так, если к примитиву обратиться как к объекту (т.е. через точку), то в памяти ВРЕМЕННО для этого примитива создастся объектная версия (обертка) с помощью конструктора new Number (для других типов другие обертки), это и позволяет применять методы к примитивам. Примеры:
+                                            </p>
+                                            <p>
+                                                1) num.toString(base) возвращает строковое представление числа num в системе счисления base. base может варьироваться от 2 до 36 (по умолчанию 10). Запись: 
+                                                <pre>
+                                                    <code class="js">
+let number = 255  
+number.toString(16) // ff,
+
+либо
+255..toString(16)
+                                                    </code>
+                                                </pre>                                        
+                                            </p>
+                                            <p>
+                                                1) num.toFixed([digits]) форматирует число, используя запись с фиксированной запятой. digits - количество цифр после десятичной запятой. Результатом метода будет являться строка. Данный метод позволяет решить в проблемы неточных вычислений в JS Запись: 
+                                                <pre>
+                                                    <code class="js">
+let sum = 0.1 + 0.2; 
+console.log(sum); // 0.30000000000000004
+
+дроби, такие как 0.1, 0.2, которые выглядят довольно просто 
+в десятичной системе счисления, на самом деле являются
+бесконечной дробью в двоичной форме.
+
+console.log(sum.toFixed(2)); // 0.30, помог метод toFixed()
+                                                    </code>
+                                                </pre>                                        
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <h5>Работа с числами</h5>
+                                            <div>
+                                                <h6>Математические операции</h6>
+                                                <p>С числами можно выполнять стандартные математические операции (сложения +, вычитания -, умножения *, деления /, взятия остатка от целочисленного деления %), для определения приоритета операций пользуются скобками.</p>
+                                                <pre>
+                                                    <code class="js">
+let a = 2
+let b = 3
+console.log(((a + b) * a % 5) ** 2) // 0                                                        
+                                                    </code>
+                                                </pre>
+                                                <p>
+                                                    Операторы сравнения, возвращают булевое значение:
+                                                </p>
+                                                <pre>
+                                                    <code class="js">
+console.log(5 >= 10) // false
+console.log(5 == 10) // false
+console.log(5 != 10) // true
+console.log(5 !== 10) // true                                                       
+                                                    </code>
+                                                </pre>
+                                            </div>
+                                            <div>
+                                                <h6>Math</h6>
+                                                <p>
+                                                    В JavaScript встроен объект Math (подробнее об объектах <a href="#">тут</a> ) который содержит различные математические функции и константы для работы с числами
+                                                </p>
+                                                <div>
+                                                    <h6>Округление</h6>
+                                                    <div>
+                                                        <p>Math.floor - Округление в меньшую сторону</p> 
+                                                        <p>Math.ceil - Округление в большую сторону</p> 
+                                                        <p>Math.round - Округление до ближайшего целого</p>
+                                                        <p>Math.trunc - Производит удаление дробной части без округления</p>
+                                                            <pre>
+                                                                <code class="js">
+let number = 255.222
+Math.trunc(number) // 255
+    
+                                                                </code>
+                                                            </pre>                                                    
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <h6>Другие математические функции</h6>
+                                                    <div>
+                                                        <p>Math.random() - Возвращает псевдослучайное число в диапазоне от 0 (включительно) до 1 (но не включая 1)
+                                                            <pre>
+                                                                <code class="js">
+Math.random() // 0.019904487089602574 или иное
+    
+                                                                </code>
+                                                            </pre>
+                                                        </p>
+                                                        <p>Math.max(a, b, c...) - возвращает наибольшее число из перечисленных аргументов.</p>
+                                                        <p>Math.min(a, b, c...) - возвращает наименьшее число из перечисленных аргументов.
+                                                            <pre>
+                                                                <code class="js">
+Math.min(1, 2) // 1   
+                                                                </code>
+                                                            </pre>
+                                                        </p>
+                                                        <p>Math.pow(n, power) - вВозвращает число n, возведённое в степень power.
+                                                            <pre>
+                                                                <code class="js">
+Math.pow(2, 10) // 2 в степени 10 = 1024 
+                                                                </code>
+                                                            </pre>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <h6>Другие полезные функции</h6>
+                                                    <div>
+                                                        <p>1) Преобразование к числу (+ или Number())
+                                                            <pre>
+                                                                <code class="js">
+let a = '2'
+let b = '5'
+console.log(+a + Number(b)) // 7    
+                                                                </code>
+                                                            </pre> 
+                                                        </p>
+                                                        <p>2) Преобразование к числу, если строка в точности не является числом: функции parseInt (возвращает целое число) и parseFloat (возвращает число с плавающей точкой).
+                                                            <pre>
+                                                                <code class="js">
+console.log(parseFloat('12.5em')) // 12.5
+console.log(parseInt('0xff', 16) ); // 255, 
+parseInt() имеет необязательный 2й параметр, 
+который определяет систему счисления.
+    
+                                                                </code>
+                                                            </pre> 
+                                                        </p>
+                                                        <p>3) isNaN(value) - преобразует значение в число и проверяет является ли оно NaN.<br>
+                                                            Важно знать, что значение NaN уникально тем, что оно не является равным ничему другому, даже самому себе
+                                                            <pre>
+                                                                <code class="js">
+console.log(isNaN("str")) // true
+console.log( NaN === NaN ) // false   
+                                                                </code>
+                                                            </pre> 
+                                                        </p>
+
+                                                        <p>4) isFinite(value) - преобразует аргумент в число и возвращает true, если оно является обычным числом, т.е. не NaN/Infinity/-Infinity
+                                                            <pre>
+                                                                <code class="js">
+console.log(isFinite("15")) // true
+console.log(isFinite("str")) // false, потому что специальное значение: NaN   
+                                                                </code>
+                                                            </pre> 
+                                                        </p>
+
+                                                        <p>5) Number.isNaN(value) - возвращает true только в том случае, если аргумент принадлежит к типу number и является NaN. Во всех остальных случаях возвращает false
+                                                            <pre>
+                                                                <code class="js">
+console.log(Number.isNaN(NaN)) // true
+console.log(Number.isNaN("str" / 2)) // true   
+                                                                </code>
+                                                            </pre> 
+                                                        </p>
+
+                                                        <p>6) Number.isFinite(value) - возвращает true только в том случае, если аргумент принадлежит к типу number и не является NaN/Infinity/-Infinity. Во всех остальных случаях возвращает false.
+                                                            <pre>
+                                                                <code class="js">
+console.log(Number.isFinite(123)) // true
+console.log(Number.isFinite(2 / 0)) // false  
+                                                                </code>
+                                                            </pre> 
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row types-cards_small">
+                            <div class="col s12 m4 l4">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/null.png">
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
+                                        <p><a href="#">This is a link</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">null<i class="material-icons right">close</i></span>
+                                        <article>
+                                            <p>
+                                                Специальное значение null не относится ни к одному из типов, описанных выше. Оно формирует отдельный тип, который содержит только значение null, является примитивом.
+                                            </p> 
+                                            <p>
+                                                В JavaScript null не является «ссылкой на несуществующий объект» 
+                                                или «нулевым указателем». Это просто специальное значение, 
+                                                которое представляет собой «ничего», «пусто» или «значение неизвестно». 
+                                                Используется, когда нужно обозначить намеренное отсутствие значения. В контексте логических операций, рассматривается как ложное 
+                                                <pre>
+                                                    <code>
+    let age = null; // значение age неизвестно
+                                                    </code>
+                                                </pre>
+                                            </p>                                        
+                                            <p>
+                                                В языке существует похожий примитив undefined, он обозначает, что значение ещё не установлено. Их можно легко спутать, потому что оба обозначают отсутствие значения. Разница состоит в том, что null обозначает намеренное отсутствие, а undefined — неявное (неопределнность).
+                                            </p>
+                                            <p>
+                                                <span style="color: red;">Важно знать!</span><br><br>
+                                                Результатом вызова typeof null является "object". 
+                                                Это официально признанная ошибка в typeof, ведущая начало 
+                                                с времён создания JavaScript и сохранённая для совместимости. 
+                                                Конечно, null не является объектом. 
+                                                Это специальное значение с отдельным типом.
+                                            </p>
+
+                                            <p>
+                                                <span style="color: red;">Важно знать!</span><br><br>
+                                                При проверке на null или undefined, помните о различии между операторами равенства (==) и идентичности (===): с первым, выполняется преобразование типов.
+                                                <pre>
+                                                    <code>
+    null === undefined // false
+    null  == undefined // true
+                                                    </code>
+                                                </pre>                                
+                                            </p>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>  
+                            
+                            <div class="col s12 m4 l4">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/string.png">
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
+                                        <p><a href="#">This is a link</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m4 l4">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/number.png">
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
+                                        <p><a href="#">This is a link</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="row">
+                            <div class="col s12 m4 l4">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/boolean.png">
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
+                                        <p><a href="#">This is a link</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m4 l4">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/null.png">
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
+                                        <p><a href="#">This is a link</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>                    
+                    </div>
+                </div>
+
+
+                <!-- <div class="col s12 m4 l4">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="./assets/images/boolean.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">add_circle</i></span>
+                            <p><a href="#">This is a link</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                        </div>
+                    </div>
+                </div>   -->
+
+
+                <div class="row">
+                    <h2 id="inputType" class="section scrollspy">Проверка типа</h2>
+                    <div class="col">
+                        <input id="inputCheck"></input>
+                        <button id="buttonCheck"></button>
+                        <div id="checkResult"></div>
+                    </div>
+                    
+                </div>
+
+                
+                <p id="inputType" class="section scrollspy">Проверка типа</p>
+
             </div>
 
-            
-            <p id="inputType" class="section scrollspy">Проверка типа</p>
+            <div class="col hide-on-small-only m2 l2">
+                <ul class="section table-of-contents">
+                    <li><a href="#dataCards">Типы данных</a></li>
+                    <li><a href="#inputType">Проверка типа</a></li>
+                    <li><a href="#initialization">Задачи</a></li>
+                </ul>
+            </div>
 
+        
+        
         </div>
 
-        <div class="col hide-on-small-only m2 l2">
-            <ul class="section table-of-contents">
-                <li><a href="#dataCards">Типы данных</a></li>
-                <li><a href="#inputType">Проверка типа</a></li>
-                <li><a href="#initialization">Задачи</a></li>
-            </ul>
-        </div>
 
-    
-    
-    </div>
+    </main>
 
-
-
+    <footer></footer>
 
 
     <script src="./assets/libraries/highlights/highlight.min.js"></script>

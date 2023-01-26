@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.scrollspy');
     var instances = M.ScrollSpy.init(elems);
-});
+}); 
 
-
-
-button.addEventListener('click', () => {
+button?.addEventListener('click', () => {
     let input = document.querySelector('#inputCheck').value
     let checkResult = document.querySelector('#checkResult')
     if (Number(input)) {
