@@ -12,21 +12,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// button.addEventListener('click', () => {
-//     let input = document.querySelector('#inputCheck').value
-//     let checkResult = document.querySelector('#checkResult')
-//     if (Number(input)) {
-//         checkResult.innerHTML = 'Number'
-//     } else if (typeof Object & !typeof null) {
-//         if (typeof Array) {
-//             checkResult.innerHTML = 'Array'
-//         } else {
-//             checkResult.innerHTML = 'Object'
-//         }
+button.addEventListener('click', () => {
+    let input = document.querySelector('#inputCheck').value
+    let checkResult = document.querySelector('#checkResult')
+    if (Number(input)) {
+        checkResult.innerHTML = 'Number'
+    } else if (typeof Object & !typeof null) {
+        if (typeof Array) {
+            checkResult.innerHTML = 'Array'
+        } else {
+            checkResult.innerHTML = 'Object'
+        }
         
-//     } else if (typeof null) {
-//         checkResult.innerHTML = 'null'
-//     } 
+    } else if (typeof null) {
+        checkResult.innerHTML = 'null'
+    } 
 
 
-// })
+})
