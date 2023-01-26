@@ -29,9 +29,9 @@
     <h1 class="center-align">Даты и время в JS</h1>
 
     <pre>
-        <code class="js">
-            const currentDate = new Date</code>(<input type="text" id="date-input">)<code class="js">
-            console.log(currentDate.getDay())
+        <code class="new-date">
+const currentDate = new Date('August 14, 2022 14:15:30')
+console.log(currentDate.getDay())
 // 0
 
 console.log(currentDate.getHours())
@@ -45,14 +45,17 @@ console.log(currentDate.getFullYear())
 
 console.log(currentDate.toISOString())
 // 2022-08-14T11:15:30.000Z
+
+
         </code>
     </pre>
+
 
 </main>
 
 <script src="./assets/dist/js/main.js"></script>
 <script src="./assets/libraries/highlights/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
+<!--<script>hljs.highlightAll();</script>-->
 </body>
 
 </html>
