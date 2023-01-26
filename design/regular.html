@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+    <!--    project styles-->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+
+
+    <title>Регулярные выражения</title>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <main class="main__container">
+            <h2>Регулярные выражения</h2>
+            <p>Регулярные выражения — это своего рода шаблон для поиска в строке совпадающих с ним подстрок.
+                Каждый шаблон регулярного выражения в JS является объектом.</p>
+
+
+            <h5>Создание регулярного выражения:</h5>
+
+            <p>1) С помощью литералов /…/ – обозначений регулярных выражений. Пример:</p>
+            <pre>
+                        <code class="js">
+    let reg = /hello/;
+                        </code>
+                    </pre>
+
+
+            <p>2) Через специальный объект RegExp:</p>
+            <pre>
+                    <code class="js">
+    let regexp = new RegExp("шаблон", "флаги");
+                </code>
+            </pre>
+
+
+
+            <h5>Использование флагов в регулярных выражениях</h5>
+
+            <p>Флаги используются как дополнительные сведения о шаблоне. Можно использовать как по одному, так и
+                вместе в
+                произвольном порядке.</p>
+
+            <p>В JS доступно 5 флагов:</p>
+
+            <p>
+                <strong>g</strong> – поиск всех совпадений в строке.</li><br>
+                <strong>i</strong> – регистронезависимый поиск подстроки.<br>
+                <strong>m</strong> – определяет текст как множество строк и ищет совпадения маркеров ^, $ для каждого
+                начала
+                и конца
+                строки в
+                тексте.<br>
+                <strong>u</strong> – запись в регулярное выражение Unicode.<br>
+                <strong>y</strong> – поиск с символа на позиции lastindex в строке.<br>
+            </p>
+            <p>Указать флаги можно или в конце литерала, или добавить в конструктор RegExp.</p>
+
+            <pre>
+                <code class="js">
+    let reg1 = /hello/i;
+    let reg2 = new RegExp('hello','i');                
+                </code>
+            </pre>
+
+            <h5>Полезные ссылки:</h5>
+            <p><a href="https://regex101.com/">regex101.com</a></p>
+            <p><a href="http://myregexp.com/">myregexp.com</a></p>
+            <p><a href="https://regexr.com/">regexr.com</a></p>
+        </main>
+    </div>
+
+    <script src="./assets/dist/js/main.js"></script>
+    <script src="./assets/libraries/highlights/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>
