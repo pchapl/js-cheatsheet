@@ -85,38 +85,48 @@ console.log(arrFirst);
                     <div class="arrays-code">
                       <pre>
                         <code class="js">
-let fruits = ["Яблоко", "Апельсин", "Груша"];
+let fruits = ["Вишня", "Абрикос", "Черника"];
 
-alert(fruits.pop()); // удаляем "Груша" и выводим
+alert(fruits.pop()); // удаляем "Черника" и выводим это значение
                           
-console.log(fruits); // Яблоко, Апельсин
+alert(fruits); // Вишня, Абрикос
                         </code>
                       </pre>
+                      <button class="arrays__check">Проверить</button>
                     </div>
 
                     <div class="arrays-simple__test">
-                      <h5>Работа метода наглядно</h5>
+                      <h5>Практика</h5>
                       <div class="arrays-simple__block">
-                        <p class="arrays-simple__text">Введите элементы массива:</p>
-                        <div id="arrays-simple__input0"></div>
-              
-                        <button class="arrays-simple__button" id="arrays-simple__add">
-                          Добавить элемент
-                        </button>
-              
-                        <p class="arrays-simple__text">Чтобы применить метод к массиву, нажмите Готово</p>
-                        <button class="arrays-simple__button" id="arrays-simple__done">
-                          Готово
-                        </button>
-              
+
                         <div class="arrays-simple__results">
                           <div class="arrays-simple__out">
-                            <p class="arrays-simple__text">Получившийся массив:</p>
-                            <div id="arrays-simple__out"></div>
+                            <p class="arrays-simple__text">Дан пустой массив, куда нужно добавить элементы:</p>
+                            <div id="arrays-simple__out">
+                              <div class="arrays-code">
+                                <pre class="arrays-code">
+                                  <div class="arr"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-simple__input0">[]</div>;</div>
+  alert(array.pop()); 
+  alert(array);
+                                </pre>
+                                </div>
+                            </div>
+                            <button class="arrays-simple__button" id="arrays-simple__add">
+                              Добавить элементы
+                            </button>
+
+                        <button class="arrays-simple__button" id="arrays-simple__done">
+                          Применить метод pop()
+                        </button>
                           </div>
                           <div class="arrays-simple__out">
-                            <p class="arrays-simple__text">Результат:</p>
-                            <div id="arrays-simple__result"></div>
+                            <p class="arrays-simple__text">Исходный массив:</p>
+                            <pre id="arrays-simple__old" class="arrays-code"></pre>
+                            <p class="arrays-simple__text">Значение, которое возвращается:</p>
+                            <div id="arrays-simple__delete"></div>
+                            <p class="arrays-simple__text">Новый массив:</p>
+                            <pre id="arrays-simple__result" class="arrays-code"></pre>
                           </div>
                         </div>
               
