@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.ScrollSpy.init(elems);
 }); 
 
+
+
 button?.addEventListener('click', () => {
     let input = document.querySelector('#inputCheck').value
     let checkResult = document.querySelector('#checkResult')

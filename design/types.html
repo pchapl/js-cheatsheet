@@ -414,7 +414,7 @@ console.log(Number.isFinite(2 / 0)) // false
                                                 Используется, когда нужно обозначить намеренное отсутствие значения. В контексте логических операций, рассматривается как ложное 
                                                 <pre>
                                                     <code>
-    let age = null; // значение age неизвестно
+let age = null; // значение age неизвестно
                                                     </code>
                                                 </pre>
                                             </p>                                        
@@ -455,8 +455,27 @@ console.log(Number.isFinite(2 / 0)) // false
                                         <p><a href="#">This is a link</a></p>
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                        <span class="card-title grey-text text-darken-4">Undefined<i class="material-icons right">close</i></span>
+                                        <p>Примитивный тип данных, состоящий из одного значения undefined. Оно используется, чтобы обозначить неизвестное или неопределённое значение.<br>
+                                        JavaScript автоматически устанавливает значение undefined объявленным переменным, которые не были проинициализированы значением (не присвоено значение).
+                                            <pre>
+                                                <code class="js">
+let age
+console.log(age) // undefined
+                                                </code>
+                                            </pre>
+                                        </p>
+                                        <p>Функция возвращает undefined, если она не возвращает какого-либо значения.
+                                            <pre>
+                                                <code class="js">
+function findValue() {
+    let a = 1
+    sum = a + 1
+}
+console.log(findValue()) // undefined
+                                                </code>
+                                            </pre>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
