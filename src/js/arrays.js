@@ -230,6 +230,15 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('join')) {
             checkJoin();
         }
+        if (e.target.classList.contains('sort')) {
+            checkSort();
+        }
+        if (e.target.classList.contains('sort-callback-up')) {
+            checkSortCallbackUp();
+        }
+        if (e.target.classList.contains('sort-callback-max')) {
+            checkSortCallbackMax();
+        }
         
         
     })
@@ -302,4 +311,30 @@ function checkJoin() {
     let fruits = ["Банан", "Яблоко", "Мандарин"];
     let string = fruits.join(', ');
     alert(string);
+}
+
+function checkSort() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    fruits.sort();
+    alert(fruits); 
+
+    let numbers = [15, 50, 3];
+    numbers.sort();
+    alert(numbers); 
+}
+
+function checkSortCallbackUp() {
+    let numbers = [15, 50, 3, 30, 1, 150];
+    numbers.sort(function(a, b) {
+        return a - b;
+    });
+    alert(numbers); 
+}
+
+function checkSortCallbackMax() {
+    let numbers = [15, 50, 3, 30, 1, 150];
+    numbers.sort(function(a, b) {
+        return b - a;
+    });
+    alert(numbers[0]); 
 }
