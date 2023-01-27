@@ -37,18 +37,15 @@
         <p>Массивы - это структура, в которой можно хранить коллекции элементов — чисел, строк, других массивов и так
           далее. Элементы нумеруются и хранятся в том порядке, в котором их поместили в массив. Элементов может быть
           сколько угодно, они могут быть какими угодно.</p>
-        <div class="arrays-code">
           <pre>
             <code class="js">
 let arr = [];
             </code>
           </pre>
-        </div>
         <p>Массивы хранят элементы в пронумерованных «ячейках». Нумерация начинается с нуля. Первый элемент массива
           будет иметь номер 0, второй — 1 и так далее. Номера называют индексами.</p>
         <p>Количество доступных ячеек называют размером или длиной массива. В JavaScript длина массива обычно совпадает
           с количеством элементов в нем. Массивы хранят свой размер в свойстве length.</p>
-        <div class="arrays-code">
           <pre>
             <code class="js">
 let arr = [1, 2, 3, 4, 5];
@@ -56,19 +53,16 @@ console.log(arr.length);
 // 5
             </code>
           </pre>
-        </div>
         <p>Чтобы получить содержимое ячейки с этим номером, обратитесь к конкретному индексу.</p>
-        <div class="arrays-code">
-          <pre>
-            <code class="js">
+        <pre>
+          <code class="js">
 let arr = [1, 2, 3, 4, 5];
 
 const arrFirst = arr[0];
 console.log(arrFirst);
 // 1
-            </code>
-          </pre>
-        </div>
+          </code>
+        </pre>
       </div>
 
       <div class="arrays-array_methods">
@@ -99,7 +93,7 @@ alert(fruits.pop()); // удаляем "Черника" и выводим это
 alert(fruits); // Вишня, Абрикос
                         </code>
                       </pre>
-                        <button class="waves-effect waves-light btn arrays__check">Проверить</button>
+                        <button class="waves-effect waves-light btn arrays__check pop">Проверить</button>
                       </div>
 
                       <div class="arrays__test">
@@ -113,31 +107,31 @@ alert(fruits); // Вишня, Абрикос
 
                                 <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre><div class="arrays-div__input">[<div class="arrays__input"></div>];</div></div>
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-pop"></div>];</div></div>
   alert(array.pop());
   alert(array);
                               </pre>
 
                             </div>
-                            <button class="waves-effect waves-light btn arrays__button_add">
+                            <button class="waves-effect waves-light btn arrays__button_add pop-add">
                               Добавить элементы
                             </button>
 
-                            <button class="waves-effect waves-light btn arrays__button_done">
+                            <button class="waves-effect waves-light btn arrays__button_done pop-done">
                               Применить метод pop()
                             </button>
                           </div>
                           <div class="arrays__out">
                             <p class="arrays__text-bold">Исходный массив:</p>
-                            <pre class="arrays__old" class="arrays-code"></pre>
+                            <pre class="arrays__old-pop" class="arrays-code"></pre>
                             <p class="arrays__text-bold">Значение, которое возвращается:</p>
-                            <div class="arrays__delete"></div>
+                            <div class="arrays__delete-pop"></div>
                             <p class="arrays__text-bold">Новый массив:</p>
-                            <pre class="arrays__result" class="arrays-code"></pre>
+                            <pre class="arrays__result-pop" class="arrays-code"></pre>
                           </div>
                         </div>
 
-                        <button class="waves-effect waves-light btn arrays__button_reset">
+                        <button class="waves-effect waves-light btn arrays__button_reset pop-reset">
                           Сбросить значения
                         </button>
                       </div>
@@ -158,94 +152,233 @@ fruits.push("Черника"); // добавляем "Черника"
                             
 alert(fruits); // Вишня, Абрикос, Черника
                           </code>
+<button class="waves-effect waves-light btn arrays__check push">Проверить</button>
                         </pre>
-                    <button class="waves-effect waves-light btn arrays__check">Проверить</button>
+                    
                   </div>
-
                 </div>
               </li>
 
 
               <li>
-                <div class="collapsible-header">shift</div>
+                <div class="collapsible-header arrays-collapsible-header">shift</div>
                 <div class="collapsible-body"><span>Удаляет из массива первый элемент и возвращает его.</span>
                   <div class="arrays-code">
                     <pre>
                           <code class="js">
-let fruits = ["Яблоко", "Апельсин", "Груша"];
+let fruits = ["Вишня", "Абрикос", "Черника"];
   
-alert(fruits.shift()); // Удаляем "Яблоко" и выводим
+alert(fruits.shift()); // Удаляем "Вишня" и выводим это значение
                             
-console.log(fruits); // Апельсин, Груша
+alert(fruits); // Абрикос, Черника
                           </code>
+<button class="waves-effect waves-light btn arrays__check shift">Проверить</button>
                         </pre>
                   </div>
+
+                  <div class="arrays__test">
+                    <h3 class="arrays__title-small">Практика</h3>
+                    <div class="arrays__block">
+                      <div class="arrays__results">
+                        <div class="arrays__task">
+                          <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                            shift():</p>
+                          <div class="arrays__field">
+
+                            <pre class="arrays-code">
+                              <div class="arrays__practice"><pre class="arrays-code__let">
+let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-shift"></div>];</div></div>
+alert(array.pop());
+alert(array);
+                          </pre>
+
+                        </div>
+                        <button class="waves-effect waves-light btn arrays__button_add shift-add">
+                          Добавить элементы
+                        </button>
+
+                        <button class="waves-effect waves-light btn arrays__button_done shift-done">
+                          Применить метод pop()
+                        </button>
+                      </div>
+                      <div class="arrays__out">
+                        <p class="arrays__text-bold">Исходный массив:</p>
+                        <pre class="arrays__old-shift" class="arrays-code"></pre>
+                        <p class="arrays__text-bold">Значение, которое возвращается:</p>
+                        <div class="arrays__delete-shift"></div>
+                        <p class="arrays__text-bold">Новый массив:</p>
+                        <pre class="arrays__result-shift" class="arrays-code"></pre>
+                      </div>
+                    </div>
+
+                    <button class="waves-effect waves-light btn arrays__button_reset shift-reset">
+                      Сбросить значения
+                    </button>
+                  </div>
+                </div>
+
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">unshift</div>
+                <div class="collapsible-header arrays-collapsible-header">unshift</div>
                 <div class="collapsible-body"><span>Добавляет элемент в начало массива.</span>
                   <div class="arrays-code">
                     <pre>
                           <code class="js">
-let fruits = ["Апельсин", "Груша"];
+let fruits = ["Абрикос", "Черника"];
   
-fruits.unshift("Яблоко"); // добавляем "Яблоко"
+fruits.unshift("Вишня"); // добавляем "Вишня"
                             
-console.log(fruits); // Яблоко, Апельсин, Груша
+alert(fruits); // Вишня, Абрикос, Черника
                           </code>
+<button class="waves-effect waves-light btn arrays__check unshift">Проверить</button>
                         </pre>
+                        
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">splice</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                  <div class="arrays-code">
-                    <pre>
+                <div class="collapsible-header arrays-collapsible-header">splice</div>
+                <div class="collapsible-body"><span>Изменяет текущий массив, добавляя или удаляя элементы.</span>
+                  <pre>
+                    <code class="js">
+arr.splice(index[, deleteCount, elem1, ..., elemN])
+// Он начинает с позиции index, удаляет deleteCount элементов и вставляет 
+// elem1, ..., elemN на их место. Возвращает массив из удалённых элементов.
+                    </code>
+                  </pre>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">Удаление:</p>
+                      <div class="arrays-code">
+                        <pre>
                           <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+
+alert(fruits.splice(0, 1)); 
+// начиная с индекса 0, удалить 1 элемент 
+// и вывести удаленный элемент (Банан)
+                        
+alert(fruits); // Яблоко, Мандарин
                           </code>
+<button class="waves-effect waves-light btn arrays__check splice-delete">Проверить</button>
                         </pre>
+                      
+                    </div>
                   </div>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">Замена:</p>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+
+alert(fruits.splice(0, 2, "Манго")); 
+// начиная с индекса 0, удалить 2 элемента,
+// заменить их на "Манго" 
+// и вывести удаленные элементы (Банан, Яблоко)
+                        
+alert(fruits); // Манго, Мандарин
+                          </code>
+<button class="waves-effect waves-light btn arrays__check splice-change">Проверить</button>
+                        </pre>
+                      
+                    </div>
+                  </div>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">Добавление:</p>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+
+alert(fruits.splice(1, 0, "Манго", "Груша")); 
+// начиная с индекса 1, удалить 0 элементов
+// и добавить "Манго", "Груша" 
+// вернется пустой массив, потому что ничего не было удалено
+                        
+alert(fruits); // Банан, Манго, Груша, Яблоко, Мандарин
+                          </code>
+<button class="waves-effect waves-light btn arrays__check splice-push">Проверить</button>
+                        </pre>
+                      
+                    </div>
+                  </div>
+                  
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">slice</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                  <div class="arrays-code">
-                    <pre>
+                <div class="collapsible-header arrays-collapsible-header">slice</div>
+                <div class="collapsible-body"><span> Возвращает новый массив, в который копирует элементы, начиная с индекса start и до end (не включая end).</span>
+                  <pre>
+                    <code class="js">
+array.slice(start, end);
+                    </code>
+                  </pre>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">Оба индекса start и end могут быть отрицательными. В таком случае отсчёт будет осуществляться с конца массива.</p>
+                      <div class="arrays-code">
+                        <pre>
                           <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+
+alert(fruits.slice(0, 2)); 
+// копирует с индекса 0 до индекса 2, не включая его
+// вернется Банан, Яблоко
+                        
+alert(fruits.slice(-1)); 
+// копирует с индекса -1 до конца
+// вернется Мандарин
                           </code>
+<button class="waves-effect waves-light btn arrays__check slice">Проверить</button>
                         </pre>
+                        
+                    </div>
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">concat</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                  <div class="arrays-code">
-                    <pre>
+                <div class="collapsible-header arrays-collapsible-header">concat</div>
+                <div class="collapsible-body"><span>Вы­пол­ня­ет­ кон­ка­те­на­цию­ мас­си­вов: создает и возвращает новый массив, являющийся результатом присоединения каждого из его аргументов к массиву.</span>
+                  <pre>
+                    <code class="js">
+array.concat(value1, value2, ..., valueN);
+                    </code>
+                  </pre>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">Если какие-либо из аргументов concat() сами являются массивами, то присоединяются элементы этих массивов, а не сами массивы.</p>
+                      <div class="arrays-code">
+                        <pre>
                           <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+let orange = "Апельсин";
+let berries = ["Вишня", "Черника", 2];
+
+alert(fruits.concat(orange, berries)); 
+// создаёт новый массив, не изменяя исходный
+// выведет Банан, Яблоко, Мандарин, Апельсин, Вишня, Черника, 2
                           </code>
+<button class="waves-effect waves-light btn arrays__check concat">Проверить</button>
                         </pre>
+                        
+                    </div>
                   </div>
                 </div>
               </li>
+
+
               <li>
                 <div class="collapsible-header">Second</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
