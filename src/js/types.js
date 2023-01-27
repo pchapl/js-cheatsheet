@@ -17,15 +17,21 @@ button?.addEventListener('click', () => {
     let input = document.querySelector('#inputCheck')
     let checkResult = document.querySelector('#checkResult')
     
-    if (Number(input.value)) {
+    if (Number(input.value) ) {
+        input.value = ''
         checkResult.innerHTML = 'Number'
-    } else if (typeof input.value === Object) {
-        checkResult.innerHTML = 'Объект'
-        
-    } else if (input.value = 'null' && input.value != 'undefined') {
+    } else if(`{${input.value}}` || `[${input.value}]` || input.value === `new Number(${input.value})` ) {
+        checkResult.innerHTML = 'Obj'
+    } else if (input.value === 'null' && input.value != 'undefined') {
+        input.value = ''
         checkResult.innerHTML = 'null'
-    } else if (input.value = 'undefined') {
+    } else if (input.value === 'undefined') {
+        input.value = ''
         checkResult.innerHTML = 'undefined'
+    } else if(input.value === 'true' || input.value === 'false') {
+        checkResult.innerHTML = 'булевый тип'
+    } else {
+        checkResult.innerHTML = 'строка'
     }
 
 
