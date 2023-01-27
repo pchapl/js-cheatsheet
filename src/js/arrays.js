@@ -224,6 +224,12 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('concat')) {
             checkConcat();
         }
+        if (e.target.classList.contains('join-split')) {
+            checkJoinSplit();
+        }
+        if (e.target.classList.contains('join')) {
+            checkJoin();
+        }
         
         
     })
@@ -282,4 +288,18 @@ function checkConcat() {
     let orange = "Апельсин";
     let berries = ["Вишня", "Черника", 2];
     alert(fruits.concat(orange, berries)); 
+}
+
+function checkJoinSplit() {
+    let string = "Банан, Яблоко, Мандарин";
+    let fruits = string.split(', ');
+    for (let fruit of fruits) {
+        alert( `Фрукты: ${fruit}.` ); 
+    }  
+}
+
+function checkJoin() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    let string = fruits.join(', ');
+    alert(string);
 }

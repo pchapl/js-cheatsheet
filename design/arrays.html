@@ -380,7 +380,55 @@ alert(fruits.concat(orange, berries));
 
 
               <li>
-                <div class="collapsible-header">Second</div>
+                <div class="collapsible-header arrays-collapsible-header">join</div>
+                <div class="collapsible-body"><span>Преобразует каждый из элементов массива в строку и затем выполняет конкатенацию этих строк, вставляя указанный разделитель между элементами.</span>
+                  <pre>
+                    <code class="js">
+array.join(separator);
+// разделитель по умолчанию - запятая, но он может быть любым 
+                    </code>
+                  </pre>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">join делает в точности противоположное строковому методу split. Этот метод разбивает строку на массив по заданному разделителю:</p>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let string = "Банан, Яблоко, Мандарин";
+let fruits = string.split(', ');
+
+for (let fruit of fruits) {
+  alert( `Фрукты: ${fruit}.` ); 
+} 
+// выведет по порядку элементы массива: Фрукты: Банан (и т.д.)
+                          </code>
+<button class="waves-effect waves-light btn arrays__check join-split">Проверить</button>
+                        </pre>
+                    </div>
+                  </div>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">А сейчас с помощью join можно преобразовать элементы обратно в строку:</p>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+let string = fruits.join(', ');
+
+alert(string); 
+// выведет строку с элементами через запятую и пробел
+                          </code>
+<button class="waves-effect waves-light btn arrays__check join">Проверить</button>
+                        </pre>
+                    </div>
+                  </div>
+
+                </div>
+              </li>
+
+
+              <li>
+                <div class="collapsible-header arrays-collapsible-header">sort</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
@@ -395,8 +443,10 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">Third</div>
+                <div class="collapsible-header arrays-collapsible-header">includes</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
@@ -411,8 +461,10 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">First</div>
+                <div class="collapsible-header arrays-collapsible-header">flat</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
@@ -427,8 +479,10 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">Second</div>
+                <div class="collapsible-header arrays-collapsible-header">indexOf</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
@@ -443,8 +497,10 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">Third</div>
+                <div class="collapsible-header arrays-collapsible-header">lastIndexOf</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
@@ -459,8 +515,10 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">First</div>
+                <div class="collapsible-header arrays-collapsible-header">reverse</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
@@ -475,8 +533,10 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">Second</div>
+                <div class="collapsible-header arrays-collapsible-header">copyWithin</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
@@ -491,8 +551,10 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">Third</div>
+                <div class="collapsible-header arrays-collapsible-header">entries</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
@@ -507,8 +569,10 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">First</div>
+                <div class="collapsible-header arrays-collapsible-header">fill</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
@@ -523,8 +587,10 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">Second</div>
+                <div class="collapsible-header arrays-collapsible-header">keys</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
@@ -539,8 +605,10 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                   </div>
                 </div>
               </li>
+
+
               <li>
-                <div class="collapsible-header">Third</div>
+                <div class="collapsible-header arrays-collapsible-header">toLocaleString</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
@@ -555,24 +623,9 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                   </div>
                 </div>
               </li>
+
               <li>
-                <div class="collapsible-header">First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                  <div class="arrays-code">
-                    <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header">Second</div>
+                <div class="collapsible-header">values</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                   <div class="arrays-code">
                     <pre>
