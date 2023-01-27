@@ -2,32 +2,290 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!--    normalize css -->
-  <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" type="image/png">
 
-  <!-- materialize css -->
-  <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
 
-  <!--    project styles-->
-  <link rel="stylesheet" href="./assets/dist/css/main.css">
+    <!-- materialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
 
+    <!--    project styles -->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
 
-
-  <title>JS</title>
-
-
-
+    <title>JS Cheatsheet</title>
 </head>
 
 <body>
-  <h1>Hello World!</h1>
+<div class="wrapper">
+    <header class="header">
+        <div class="header__container">
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#">Glossary</a></li>
+                <li><a href="arrays.html">Arrays</a></li>
+                <li><a href="regular.html">Regular</a></li>
+                <li><a href="#">IfElse</a></li>
+                <li><a href="#">String</a></li>
+                <li><a href="#">API</a></li>
+                <li><a href="#">Math</a></li>
+                <li><a href="#">DOM</a></li>
+                <li><a href="#">Variables</a></li>
+                <li><a href="#">Functions</a></li>
+                <li><a href="#">Async</a></li>
+                <li><a href="#">Prototypes</a></li>
+                <li><a href="#">this</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">DateTime</a></li>
+                <li><a href="#">Web</a></li>
+                <li><a href="#">Types</a></li>
+            </ul>
+            <nav>
+                <div class="nav-wrapper teal lighten-1">
+                    <a href="#" class="brand-logo"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                    <ul class="right hide-on-med-and-down">
+<!--                        <li><a href="#">1</a></li>-->
+<!--                        <li><a href="#">2</a></li>-->
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Темы<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                </div>
+            </nav>
 
-  <script src="./assets/dist/js/main.js"></script>
+        </div>
+    </header>
+
+    <main>
+        <div class="main__container">
+            <h1>JS Cheatsheet</h1>
+            <div class="cards">
+                <div class="row">
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Glossary</span>
+                                <p>Словарь терминов</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="#">Глоссарий</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Arrays</span>
+                                <p>Методы массивов</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="arrays.html">Массивы</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">RegEx</span>
+                                <p>Регулярные выражения</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">Регулярки</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">String</span>
+                                <p>Методы строк</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">Строки</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">API</span>
+                                <p>api с инструкциями</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">API</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Math</span>
+                                <p>Математические функции</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">Math</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">DOM</span>
+                                <p>всплытие/погружение</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">DOM</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Variables</span>
+                                <p>var, let, const</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">Переменные</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">If Else</span>
+                                <p>условные операторы</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">ifelse</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Functions</span>
+                                <p>Функции и их разница</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">Функции</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Async</span>
+                                <p>Промисы, async/await</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">async</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Prototypes</span>
+                                <p>Классы, объекты, прототипы</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">Прототипы</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">this</span>
+                                <p>this</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">this</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Timedate</span>
+                                <p>Даты, библиотеки</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">Даты</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">web</span>
+                                <p>Как работает интернет</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">web</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m3">
+                        <div class="card teal lighten-2">
+                            <div class="card-content white-text">
+                                <span class="card-title">Types</span>
+                                <p>Типы данных</p>
+                            </div>
+                            <div class="card-action teal lighten-3">
+                                <a class="white-text" href="regular.html">Типы данных</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="page-footer teal lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Какой-то заголовок в футере</h5>
+                    <p class="grey-text text-lighten-4">Какой-то текст в футере. Оно нам вообще надо?</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Полезные ссылки</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc">Notion
+                            Frontend 34</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/">Современный учебник
+                            JavaScript</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference">Справочник по
+                            JavaScript. MDN</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT">Сложный
+                            JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/">JavaScript Дока</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2023 копирайт бла-бла
+                <a class="grey-text text-lighten-4 right" href="#!">Линк на страницу разработчиков (как в квизе)?</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="./assets/dist/js/main.js"></script>
+
 </body>
 
 </html>
