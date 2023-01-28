@@ -65,7 +65,7 @@ alert(arr.length);
           </div>
 
           <div class="array-code__item">
-            <p class="arrays__text">Чтобы получить содержимое ячейки с этим номером, обратитесь к конкретному индексу с помощью квадратных скобок:</p>
+            <p class="arrays__text">Чтобы получить содержимое ячейки с этим номером, нужно обратиться к конкретному индексу с помощью квадратных скобок:</p>
               <div class="arrays-code">
                 <pre>
                   <code class="js">
@@ -111,11 +111,13 @@ alert(arr[7]);
 
       <div class="arrays-array_methods">
         <h3>Методы массивов</h3>
-        <p>Методы массивов можно разделить на две большие группы: итеративные и неитеративные. Итеративные методы
-          принимают в качестве аргумента функцию обратного вызова (callback function).</p>
+        <p class="arrays__text">Методы массивов часто дают разработчику удобные инструменты, позволяющие красиво решать самые разные задачи по преобразованию данных. Бывают методы копирования, удаления и добавления элементов, методы, которые изменяют исходный массив или возвращают новый, а также многие другие.</p>
+        <p class="arrays__text">В нашем справочнике методы массивов разделены на две большие группы: итеративные и неитеративные. Итеративные методы
+          принимают в качестве аргумента функцию обратного вызова (callback function). Методы, которые не могут принимать колбэк, объединены во вторую группу.</p>
 
         <div class="arrays-simple">
-          <h4>Методы без итерации</h4>
+          <h4>Методы, не принимающие callback function</h4>
+          <p class="arrays__text">В эту группу включены методы добавления и удаления (pop, push, shift, unshift, splice, slice, concat), методы поиска (indexOf, lastIndexOf, includes), методы преобразования (sort, join, reverse), а также многие другие.</p>
           <div class="container">
             <div class="row">
               <div class="col s12">
@@ -959,7 +961,34 @@ console.log(fruits); // Яблоко, Апельсин, Груша
       </div>
 
       <div class="arrays-iteration">
-        <h4>Итеративные методы</h4>
+        <h4>Итеративные методы, принимающие callback function</h4>
+        <div class="array-code__item">
+          
+          <p class="arrays__text">Все итеративные методы принимают в качестве аргумента функцию обратного вызова - callback function. Эта функция выполняется последовательно и не более одного раза для каждого элемента в массиве. </p>
+
+          <pre>
+            <code class="js">
+method(callback, thisArg);
+            </code>
+          </pre>
+
+          <p class="arrays__text">Callback принимает следующие основные параметры:</p>
+          <ul id="arrays__ul">
+            <li id="arrays__li">
+              element - элемент массива в текущей итерации;
+            </li>
+            <li id="arrays__li_two">
+              index — индекс текущего элемента;
+            </li>
+            <li id="arrays__li_three">
+              arr — сам массив, который мы перебираем.
+            </li>
+          </ul>
+          <p class="arrays__text">У некоторых методов есть и дополнительные параметры колбэка. </p>
+          <p class="arrays__text">То, что должен вернуть колбэк, зависит от метода массива, который был вызван.</p>
+          <p class="arrays__text">Кроме того, итеративные методы могут принимать необязательный параметр thisArg. Это объект, на который может ссылаться ключевое слово this в функции callback. Если аргумент thisArg не указан, в качестве значения this используется undefined. Аргумент thisArg не имеет значения для любого колбэка, определенного с помощью стрелочной функции, поскольку стрелочные функции не имеют собственной привязки this.</p>
+        </div>
+
         <div class="container">
           <div class="row">
             <div class="col s12">
@@ -1059,24 +1088,6 @@ console.log(fruits); // Яблоко, Апельсин, Груша
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">findIndex</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
-                    </div>
-                  </div>
-                </li>
-
-
-                <li>
-                  <div class="collapsible-header arrays-collapsible-header">flat</div>
                   <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                     <div class="arrays-code">
                       <pre>
