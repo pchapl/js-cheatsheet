@@ -239,6 +239,24 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('sort-callback-max')) {
             checkSortCallbackMax();
         }
+        if (e.target.classList.contains('includes')) {
+            checkIncludes();
+        }
+        if (e.target.classList.contains('flat')) {
+            checkFlat();
+        }
+        if (e.target.classList.contains('index-of')) {
+            checkIndexOf();
+        }
+        if (e.target.classList.contains('last-index-of')) {
+            checkLastIndexOf();
+        }
+        if (e.target.classList.contains('reverse')) {
+            checkReverse();
+        }
+        if (e.target.classList.contains('reverse-empty')) {
+            checkReverseEmpty();
+        }
         
         
     })
@@ -337,4 +355,70 @@ function checkSortCallbackMax() {
         return b - a;
     });
     alert(numbers[0]); 
+}
+
+function checkIncludes() {
+    const fruits = ["Банан", "Яблоко", "Мандарин"];
+    const banana = fruits.includes("Банан");
+    alert(banana); 
+
+    const bananaSmall = fruits.includes("банан");
+    alert(bananaSmall); 
+
+    const orange = fruits.includes("Апельсин");
+    alert(orange); 
+}
+
+function checkFlat() {
+    const fruits = [
+        'Банан',
+        'Яблоко',
+        [
+            'Мандарин',
+            'Апельсин',
+            [
+                'Груша',
+                'Манго'
+            ]
+        ]
+    ]
+
+    alert(fruits.flat());
+    console.log(fruits.flat());
+    alert(fruits.flat(2));
+    console.log(fruits.flat(2));
+    console.log(fruits.flat(Infinity));
+}
+
+function checkIndexOf() {
+    const fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Мандарин"];
+    alert(fruits.indexOf("Мандарин"));
+    alert(fruits.indexOf("Манго"));
+}
+
+function checkLastIndexOf() {
+    const fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Мандарин"];
+    alert(fruits.lastIndexOf("Мандарин"));
+    alert(fruits.lastIndexOf("Манго"));
+}
+
+function checkReverse() {
+    const fruits = ["Банан", "Яблоко", "Мандарин"];
+    const result = fruits.reverse();
+    
+    alert(result);
+    alert(fruits);
+    alert(result === fruits);
+}
+
+function checkReverseEmpty() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    fruits[5] = "Манго";
+
+    alert(fruits);
+    alert(fruits[3])
+    
+    fruits.reverse();
+
+    alert(fruits);
 }
