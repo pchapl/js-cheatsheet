@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+    <!--    project styles-->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+
+    <!-- material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <title>Методы строк</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <main class="main__container">
+            <h2>Методы строк</h2>
+            <p>Любые текстовые данные в JavaScript считаются строками. Это примитивный тип, но язык позволяет работать с
+                ним так, будто он является объектом. В том числе — использовать встроенные в JS методы строк, которые
+                собраны в этой шпаргалке.
+
+                Важно: при использовании методов создаётся новая строка, которая записывается в ту же переменную вместо
+                старой строки.</p>
+            <h5>1. Изменить регистр</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>toLowerCase</div>
+                    <div class="collapsible-body"><span>Преобразует символы в строке в нижний регистр.</span>
+                        <pre>
+                            <code>
+"Hello World".toLowerCase(); // "hello world"
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>toUpperCase</div>
+                    <div class="collapsible-body"><span>Преобразует символы в строке в верхний регистр.</span>
+                        <pre>
+                            <code>
+"Hello World".toUpperCase(); // "HELLO WORLD"
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+            </ul>
+            <h5>2. Объединить строки</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>concat</div>
+                    <div class="collapsible-body"><span>Объединяет две или более строки и возвращает одну строку.</span>
+                        <pre>
+                            <code>
+"Hello".concat(" User"); // "Hello User"
+"Hello".concat(" U", "s", "e", "r"); // "Hello User"
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+            </ul>
+            <h5>3. Разделить строку на подстроки</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>split</div>
+                    <div class="collapsible-body"><span>Разбивает строку в массив по указанному разделителю, которым
+                            может быть подстрока или регулярное выражение. Вторым параметром можно указать
+                            ограничитель.</span>
+                        <pre>
+                            <code>
+// Получаем каждый символ
+"Hello World".split(""); // ["H", "e", "l", "l", "o", " ", "W", "o", "r", "l", "d"]
+
+// Получаем каждое слово из строки
+"Hello World".split(" "); //["Hello", "World"]
+                                
+// Устанавливаем ограничитель
+"Hello World".split(" ", 1); //["Hello"]
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+            </ul>
+
+            <h5>4. Повторить строку</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>repeat</div>
+                    <div class="collapsible-body"><span>Принимает в качестве параметра число и повторяет
+                            строку указанное количество раз.</span>
+                        <pre>
+                            <code>
+"World ".repeat(3); // "World World World "
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+            </ul>
+            <h5>5. Найти подстроку</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>charAt</div>
+                    <div class="collapsible-body"><span>Возвращает символ по указанному индексу.</span>
+                        <pre>
+                            <code>
+"Hello World".charAt(0); // "H"
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>includes</div>
+                    <div class="collapsible-body"><span>Проверяет, содержит ли строка указанную
+                            подстроку. Возвращает значение true или false. Вторым параметром можно
+                            указать позицию в строке, с которой следует начать поиск.</span>
+                        <pre>
+                            <code>
+"Hello World".includes("World"); // true
+"Hello World".includes("Hello", 1); // false
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>indexOf
+                    </div>
+                    <div class="collapsible-body"><span>Объединяет две или более строки и
+                            возвращает одну строку.</span>
+                        <pre>
+                            <code>
+"Hello World".indexOf("o"); // 4
+"Hello World".indexOf("o", 5); // 7
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>lastIndexOf
+                    </div>
+                    <div class="collapsible-body"><span>Возвращает индекс последнего найденного вхождения
+                            указанного значения. Поиск ведётся от конца к началу строки. Если совпадений
+                            нет, возвращает -1. Вторым параметром можно передать позицию, с которой следует
+                            начать поиск.</span>
+                        <pre>
+                            <code>
+"Hello World".lastIndexOf("o"); // 7
+"Hello World".lastIndexOf("o", 5); // 4
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>endsWith
+                    </div>
+                    <div class="collapsible-body"><span>Проверяет, заканчивается ли строка символами,
+                            заданными первым параметром. Возвращает true или false. Есть второй
+                            необязательный параметр — ограничитель по диапазону поиска. По умолчанию он
+                            равен длине строки.</span>
+
+
+                        <pre>
+                            <code>
+"Hello World".endsWith("World"); // true
+"Hello World".endsWith("World", 12); // false
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>startsWith
+                    </div>
+                    <div class="collapsible-body"><span>Проверяет, начинается ли строка с указанных
+                            символов. Возвращает true или false. Вторым параметром можно указать индекс, с
+                            которого следует начать проверку.</span>
+
+
+                        <pre>
+                            <code>
+"Hello Tproger".startsWith("Hello"); // true
+"Hello Tproger".startsWith("Hello", 1); // false
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>search
+                    </div>
+                    <div class="collapsible-body"><span>Проверяет, есть ли в строке указанное значение или
+                            регулярное выражение и возвращает индекс начала совпадения.</span>
+
+                        <pre>
+                            <code>
+"hi, hello, hey".search("hello"); // 4
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+            </ul>
+
+            <h5>6. Извлечь подстроку</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>slice</div>
+                    <div class="collapsible-body"><span>Извлекает часть строки и возвращает новую
+                            строку. Обязательный параметр — начало извлечения. Вторым параметром можно
+                            установить границу (по умолчанию — до конца строки).</span>
+                        <pre>
+                                    <code>
+"Методы строк на JS Cheatsheet".slice(16); // "JS Cheatsheet"
+"Методы строк на JS Cheatsheet".slice(16, 24); // "JS Cheat"
+                                        
+// Отрицательные значения тоже работают
+"Методы строк на JS Cheatsheet".slice(-13); // "JS Cheatsheet"
+"Методы строк на JS Cheatsheet".slice(-13, -5); // "JS Cheat"
+                                    </code>
+                                </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>substring
+                    </div>
+                    <div class="collapsible-body"><span>Извлекает символы из строки между двумя
+                            указанными индексами. Второй индекс указывать не обязательно. В таком случае
+                            будут извлечены все символы от начала до конца строки. В отличие от slice,
+                            можно задавать start больше, чем end. Отрицательные значения не
+                            поддерживаются, они интерпретируются как 0.</span>
+
+
+                        <pre>
+                                <code>
+"Методы строк на JS Cheatsheet".substring(5, 2); // "тод"
+                                </code>
+                            </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>substr
+                    </div>
+                    <div class="collapsible-body"><span>Извлекает часть строки указанной длины. Первым
+                            параметром принимает стартовую позицию, вторым — длину. Значение первого
+                            параметра может быть отрицательным, тогда позиция определяется с конца
+                            строки.</span>
+
+
+                        <pre>
+                                    <code>
+"Методы строк на JS Cheatsheet".substr(7, 5); // "строк"
+"Методы строк на JS Cheatsheet".substr(-13, 2); // "JS"
+                                    </code>
+                                </pre>
+                    </div>
+                </li>
+            </ul>
+            <h5>7. Заменить подстроку</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>replace
+                    </div>
+                    <div class="collapsible-body"><span>Ищет в строке указанное значение или
+                            регулярное выражение и возвращает новую строку, в которой выполнена
+                            замена на второй параметр. Можно заменить найденные значения другой
+                            строкой или передать функцию для работы над совпадениями.</span>
+                        <pre>
+                                            <code>
+"hi, hello, hi".replace("hi", "hey"); // "hey, hello, hi"
+"hi, hello, hi".replace(/hi/g, "hey"); // "hey, hello, hey"
+                                            </code>
+                                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>replaceAll
+                    </div>
+                    <div class="collapsible-body"><span>Даёт такой же результат, как метод
+                            replace() с глобальным флагом g. Заменяет все найденные совпадения
+                            другой строкой или переданной функцией.</span>
+
+
+                        <pre>
+                                        <code>
+"hi, hello, hi".replaceAll("hi", "hey"); // "hey, hello, hey"                                        </code>
+                                    </pre>
+                    </div>
+                </li>
+            </ul>
+
+        </main>
+    </div>
+
+
+    <script src="./assets/dist/js/main.js"></script>
+    <script src="./assets/libraries/highlights/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>
