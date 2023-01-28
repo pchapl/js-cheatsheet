@@ -197,6 +197,15 @@ buttonsCheck.forEach(function(check) {
     check?.addEventListener('click', (e) => {
         e.preventDefault();
 
+        if (e.target.classList.contains('array-length')) {
+            checkArrayLength();
+        }
+        if (e.target.classList.contains('array-index')) {
+            checkArrayIndex();
+        }
+        if (e.target.classList.contains('array-push')) {
+            checkArrayPush();
+        }
         if (e.target.classList.contains('pop')) {
             checkPop();
         }
@@ -257,10 +266,41 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('reverse-empty')) {
             checkReverseEmpty();
         }
+        if (e.target.classList.contains('copywithin')) {
+            checkCopyWithin();
+        }
+        if (e.target.classList.contains('copywithin-end')) {
+            checkCopyWithinEnd();
+        }
         
         
     })
 })
+
+function checkArrayLength() {
+    let arr = [1, 2, 3, 4, 5];
+
+    alert(arr.length);
+}
+
+function checkArrayIndex() {
+    let arr = [1, 2, 3, 4, 5];
+    
+    const arrFirst = arr[0];
+    alert(arrFirst);
+}
+
+function checkArrayPush() {
+    let arr = [1, 2, 3, 4, 5];
+    arr[5] = 6;
+    
+    alert(arr);
+    
+    arr[8] = 9;
+    alert(arr);
+    
+    alert(arr[7]);
+}
 
 function checkPop() {
     let fruits = ["Вишня", "Абрикос", "Черника"];
@@ -417,8 +457,18 @@ function checkReverseEmpty() {
 
     alert(fruits);
     alert(fruits[3])
-    
+
     fruits.reverse();
 
     alert(fruits);
+}
+
+function checkCopyWithin() {
+    let fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Манго"];
+    alert(fruits.copyWithin(3, 0));
+}
+
+function checkCopyWithinEnd() {
+    let fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Манго"];
+    alert(fruits.copyWithin(-3, 0, -1));
 }
