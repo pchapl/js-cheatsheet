@@ -34,6 +34,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('shift-add')) {
             addInputShift();
         }
+        if (e.target.classList.contains('foreach-add')) {
+            addInputForEach();
+        }
         
         
     })
@@ -53,6 +56,13 @@ function addInputShift() {
     parent.appendChild(input);
 }
 
+function addInputForEach() {
+    let parent = document.querySelector('.arrays__input-foreach');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-foreach" type="text">`;
+    parent.appendChild(input);
+}
+
 
 //done
 
@@ -66,6 +76,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('shift-done')) {
             doneShift();
+        }
+        if (e.target.classList.contains('foreach-done')) {
+            doneForEach();
         }
     })
 })
@@ -103,9 +116,9 @@ function donePop() {
         }
     }
 
-    document.querySelector('.arrays__old-pop').innerHTML = 'let array = [' + old + '];';
+    document.querySelector('.arrays__old-pop').innerHTML = '[' + old + '];';
     document.querySelector(".arrays__delete-pop").innerHTML = del;
-    document.querySelector('.arrays__result-pop').innerHTML = 'let array = [' + result + '];';
+    document.querySelector('.arrays__result-pop').innerHTML = '[' + result + '];';
 }
 
 function doneShift() {
@@ -142,9 +155,38 @@ function doneShift() {
         }
     }
 
-    document.querySelector('.arrays__old-shift').innerHTML = 'let array = [' + old + '];';
+    document.querySelector('.arrays__old-shift').innerHTML = '[' + old + '];';
     document.querySelector(".arrays__delete-shift").innerHTML = del;
-    document.querySelector('.arrays__result-shift').innerHTML = 'let array = [' + result + '];';
+    document.querySelector('.arrays__result-shift').innerHTML = '[' + result + '];';
+}
+
+function doneForEach() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-foreach");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        elements.push(Number(d));
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let arraySquare = [];
+    elements.forEach(function (num) {
+        let square = num * num;
+        arraySquare.push(square);
+    })
+
+    let result = [];
+    for (let i = 0; i < arraySquare.length; i++) {
+        result.push(' ' + arraySquare[i]);
+    }
+
+    document.querySelector('.arrays__old-foreach').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-foreach').innerHTML = '[' + result + '];';
 }
 
 
@@ -160,6 +202,9 @@ buttonsReset.forEach(function(reset) {
         }
         if (e.target.classList.contains('shift-reset')) {
             resetShift();
+        }
+        if (e.target.classList.contains('foreach-reset')) {
+            resetForEach();
         }
         
     })
@@ -187,6 +232,17 @@ function resetShift() {
     document.querySelector('.arrays__result-shift').innerHTML = "";
     document.querySelector(".arrays__delete-shift").innerHTML = "";
     document.querySelector('.arrays__old-shift').innerHTML = "";
+}
+
+function resetForEach() {
+    let data = document.querySelectorAll("#arrays__data-foreach");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-foreach").innerHTML = "";
+    document.querySelector('.arrays__result-foreach').innerHTML = "";
+    document.querySelector('.arrays__old-foreach').innerHTML = "";
 }
 
 
@@ -271,6 +327,9 @@ buttonsCheck.forEach(function(check) {
         }
         if (e.target.classList.contains('copywithin-end')) {
             checkCopyWithinEnd();
+        }
+        if (e.target.classList.contains('foreach')) {
+            checkForEach();
         }
         
         
@@ -471,4 +530,13 @@ function checkCopyWithin() {
 function checkCopyWithinEnd() {
     let fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Манго"];
     alert(fruits.copyWithin(-3, 0, -1));
+}
+
+function checkForEach() {
+    const fruits = ["Банан", "Яблоко", "Мандарин"];
+    fruits.forEach((element, index, arr) => {
+        alert('Элемент: ' + element);
+        alert('Его индекс: ' + index);
+        alert('Массив: ' + arr);
+    })
 }

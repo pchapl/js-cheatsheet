@@ -968,7 +968,7 @@ console.log(fruits); // Яблоко, Апельсин, Груша
 
           <pre>
             <code class="js">
-method(callback, thisArg);
+array.method(callback, thisArg);
             </code>
           </pre>
 
@@ -998,18 +998,76 @@ method(callback, thisArg);
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">forEach</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
+                  <div class="collapsible-body"><span>Позволяет применить колбэк-функцию ко всем элементам массива. Можно использовать вместо классического цикла for.</span>
+                    <pre>
+                      <code class="js">
+array.forEach(callback(element, index, arr), thisArg);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Метод позволяет удобно получать элемент в текущей итерации, без необходимости всякий раз обращаться к массиву по индексу. В forEach() не будут работать return, break и continue:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин"];
+fruits.forEach((element, index, arr) => {
+
+alert('Элемент: ' + element);
+alert('Его индекс: ' + index);
+alert('Массив: ' + arr);
+// выведет последовательно: 
+// Элемент: Банан => Его индекс: 0 => Массив: Банан, Яблоко, Мандарин
+// Элемент: Яблоко => Его индекс: 1 => Массив: Банан, Яблоко, Мандарин
+// Элемент: Мандарин => Его индекс: 2 => Массив: Банан, Яблоко, Мандарин
+})
+                            </code>
+    <button class="waves-effect waves-light btn arrays__check foreach">Проверить</button>
+                          </pre>
+                      </div>
                     </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод forEach() для вычисления квадрата:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-foreach"></div>];</div></div>
+let arraySquare = [];
+    array.forEach(function (num) {
+        let square = num * num;
+        arraySquare.push(square);
+    })
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add foreach-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done foreach-done">
+                            Применить метод forEach()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-foreach" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Новый массив:</p>
+                          <pre class="arrays__result-foreach" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset foreach-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
+
                   </div>
                 </li>
 
