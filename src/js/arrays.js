@@ -40,6 +40,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('unshift-add')) {
             addInputUnshift();
         }
+        if (e.target.classList.contains('splice-add')) {
+            addInputSplice();
+        }
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
         }
@@ -79,6 +82,13 @@ function addInputUnshift() {
     let parent = document.querySelector('.arrays__input-unshift');
     let input = document.createElement('div');
     input.innerHTML = `<input class="arrays__data" id="arrays__data-unshift" type="text">`;
+    parent.appendChild(input);
+}
+
+function addInputSplice() {
+    let parent = document.querySelector('.arrays__input-splice');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-splice" type="text">`;
     parent.appendChild(input);
 }
 
@@ -122,6 +132,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('unshift-done')) {
             doneUnshift();
+        }
+        if (e.target.classList.contains('splice-done')) {
+            doneSplice();
         }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
@@ -285,6 +298,55 @@ function doneUnshift() {
     document.querySelector('.arrays__result-unshift').innerHTML = '[' + result + '];';
 }
 
+function doneSplice() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-splice");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        if (isNaN(d)) {
+            elements.push(d);
+        } else {
+            elements.push(Number(d));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let splice = elements.splice(1, 2);
+
+    let del = [];
+    for (let i = 0; i < splice.length; i++) {
+        if (isNaN(elements[i])) {
+            del.push(' ' + '"' + splice[i] + '"');
+        } else {
+            del.push(' ' + splice[i]);
+        }
+    }
+
+    console.log(del)
+
+    let result = [];
+    for (let i = 0; i < elements.length; i++) {
+        if (isNaN(elements[i])) {
+            result.push(' ' + '"' + elements[i] + '"');
+        } else {
+            result.push(' ' + elements[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-splice').innerHTML = '[' + old + '];';
+    document.querySelector(".arrays__delete-splice").innerHTML = '[' + del + '];';
+    document.querySelector('.arrays__result-splice').innerHTML = '[' + result + '];';
+}
+
 function doneForEach() {
     let elements = [];
     let data = document.querySelectorAll("#arrays__data-foreach");
@@ -359,11 +421,6 @@ function doneReduce() {
         return accumulator + element;
     }, 0);
 
-    /*let result = [];
-    for (let i = 0; i < sum.length; i++) {
-        result.push(' ' + sum[i]);
-    }*/
-
     document.querySelector('.arrays__old-reduce').innerHTML = '[' + old + '];';
     document.querySelector('.arrays__result-reduce').innerHTML = sum;
 }
@@ -387,6 +444,9 @@ buttonsReset.forEach(function(reset) {
         }
         if (e.target.classList.contains('unshift-reset')) {
             resetUnshift();
+        }
+        if (e.target.classList.contains('splice-reset')) {
+            resetSplice();
         }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
@@ -445,6 +505,18 @@ function resetUnshift() {
     document.querySelector(".arrays__input-unshift").innerHTML = "";
     document.querySelector('.arrays__result-unshift').innerHTML = "";
     document.querySelector('.arrays__old-unshift').innerHTML = "";
+}
+
+function resetSplice() {
+    let data = document.querySelectorAll("#arrays__data-splice");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-splice").innerHTML = "";
+    document.querySelector('.arrays__result-splice').innerHTML = "";
+    document.querySelector(".arrays__delete-splice").innerHTML = "";
+    document.querySelector('.arrays__old-splice').innerHTML = "";
 }
 
 function resetForEach() {
