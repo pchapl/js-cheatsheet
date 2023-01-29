@@ -1022,7 +1022,7 @@ alert('Массив: ' + arr);
 // Элемент: Мандарин => Его индекс: 2 => Массив: Банан, Яблоко, Мандарин
 })
                             </code>
-    <button class="waves-effect waves-light btn arrays__check foreach">Проверить</button>
+  <button class="waves-effect waves-light btn arrays__check foreach">Проверить</button>
                           </pre>
                       </div>
                     </div>
@@ -1074,18 +1074,99 @@ let arraySquare = [];
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">map</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
+                  <div class="collapsible-body"><span>Позволяет трансформировать один массив в другой при помощи функций-колбэка. Переданная функция будет вызвана для каждого элемента массива по порядку. Из результатов вызова функции будет собран новый массив.</span>
+                    <pre>
+                      <code class="js">
+array.map(callback(element, index, arr), thisArg);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Возвращает новый массив, при этом исходный массив никак не изменится:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const squares = array.map(function (num) {
+    return num * num;
+})
+
+alert(squares);
+// выведет новый массив: 1, 4, 9, 16, 25
+
+alert(array);
+// исходный массив не изменился: 1, 2, 3, 4, 5
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check map">Проверить</button>
+                          </pre>
+                      </div>
                     </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Разберем тот же пример через классический цикл for:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const squares = [];
+for (let i = 0; i < array.length; i++) {
+  const num = array[i];
+  const numSquare = num * num;
+  squares.push(numSquare);
+}
+
+alert(squares);
+// выведет новый массив: 1, 4, 9, 16, 25
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check map-for">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод map(), чтобы прибавить к каждому числу единицу:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-map"></div>];</div></div>
+let arrayPlusOne = array.map(function (num) {
+  return num + 1;
+})
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add map-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done map-done">
+                            Применить метод map()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-map" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Новый массив:</p>
+                          <pre class="arrays__result-map" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset map-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
+
+
                   </div>
                 </li>
 

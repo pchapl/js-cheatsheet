@@ -37,6 +37,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
         }
+        if (e.target.classList.contains('map-add')) {
+            addInputMap();
+        }
         
         
     })
@@ -63,6 +66,13 @@ function addInputForEach() {
     parent.appendChild(input);
 }
 
+function addInputMap() {
+    let parent = document.querySelector('.arrays__input-map');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-map" type="text">`;
+    parent.appendChild(input);
+}
+
 
 //done
 
@@ -79,6 +89,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
+        }
+        if (e.target.classList.contains('map-done')) {
+            doneMap();
         }
     })
 })
@@ -189,6 +202,33 @@ function doneForEach() {
     document.querySelector('.arrays__result-foreach').innerHTML = '[' + result + '];';
 }
 
+function doneMap() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-map");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        elements.push(Number(d));
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let arrayPlusOne = elements.map(function (num) {
+        return num + 1;
+})
+
+    let result = [];
+    for (let i = 0; i < arrayPlusOne.length; i++) {
+        result.push(' ' + arrayPlusOne[i]);
+    }
+
+    document.querySelector('.arrays__old-map').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-map').innerHTML = '[' + result + '];';
+}
+
 
 //reset
 
@@ -205,6 +245,9 @@ buttonsReset.forEach(function(reset) {
         }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
+        }
+        if (e.target.classList.contains('map-reset')) {
+            resetMap();
         }
         
     })
@@ -243,6 +286,17 @@ function resetForEach() {
     document.querySelector(".arrays__input-foreach").innerHTML = "";
     document.querySelector('.arrays__result-foreach').innerHTML = "";
     document.querySelector('.arrays__old-foreach').innerHTML = "";
+}
+
+function resetMap() {
+    let data = document.querySelectorAll("#arrays__data-map");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-map").innerHTML = "";
+    document.querySelector('.arrays__result-map').innerHTML = "";
+    document.querySelector('.arrays__old-map').innerHTML = "";
 }
 
 
@@ -330,6 +384,12 @@ buttonsCheck.forEach(function(check) {
         }
         if (e.target.classList.contains('foreach')) {
             checkForEach();
+        }
+        if (e.target.classList.contains('map')) {
+            checkMap();
+        }
+        if (e.target.classList.contains('map-for')) {
+            checkMapFor();
         }
         
         
@@ -539,4 +599,24 @@ function checkForEach() {
         alert('Его индекс: ' + index);
         alert('Массив: ' + arr);
     })
+}
+
+function checkMap() {
+    const array = [1, 2, 3, 4, 5]; 
+    const squares = array.map(function (num) {
+    return num * num;
+})
+    alert(squares);
+    alert(array);
+}
+
+function checkMapFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    const squares = [];
+    for (let i = 0; i < array.length; i++) {
+        const num = array[i];
+        const numSquare = num * num;
+        squares.push(numSquare);
+    }
+    alert(squares);
 }
