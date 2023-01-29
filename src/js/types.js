@@ -1,4 +1,4 @@
-let button = document.querySelector('#buttonCheck')
+let button = document.querySelector('#inputType__buttonCheck')
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.tap-target');
@@ -10,29 +10,49 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.ScrollSpy.init(elems);
 }); 
 
-
-
-
-button?.addEventListener('click', () => {
-    let input = document.querySelector('#inputCheck')
-    let checkResult = document.querySelector('#checkResult')
+function checkType() {
+    let input = document.querySelector('#inputType__inputCheck')
+    let checkResult = document.querySelector('#inputType__checkResult')
+    checkResult.style.fontSize = '2rem'
     
-    if (Number(input.value) ) {
+    if (Number(input.value)) {
         input.value = ''
-        checkResult.innerHTML = 'Number'
-    } else if(`{${input.value}}` || `[${input.value}]` || input.value === `new Number(${input.value})` ) {
-        checkResult.innerHTML = 'Obj'
-    } else if (input.value === 'null' && input.value != 'undefined') {
+        checkResult.innerHTML = 'Это тип данных - число'
+    }  else if (input.value ==='' || input.value === 'null' && input.value != 'undefined') {
         input.value = ''
-        checkResult.innerHTML = 'null'
+        checkResult.innerHTML = 'Это тип данных - null'
     } else if (input.value === 'undefined') {
         input.value = ''
-        checkResult.innerHTML = 'undefined'
+        checkResult.innerHTML = 'Это тип данных - undefined'
     } else if(input.value === 'true' || input.value === 'false') {
-        checkResult.innerHTML = 'булевый тип'
-    } else {
-        checkResult.innerHTML = 'строка'
+        input.value = ''
+        checkResult.innerHTML = 'Это булевый тип данных'
+    } else if(input.value === 'Symbol()') {
+        checkResult.innerHTML = 'Символ'
+    } else if(typeof new Object(input.value) ) {
+        checkResult.innerHTML = 'Obj'
+    } else if(typeof input.value === 'string' && BigInt(!parseInt(input.value))) {
+        input.value = ''
+        checkResult.innerHTML = 'Это тип данных - строка'
+    }  else if(BigInt(parseInt(input.value))) {
+        input.value = ''
+        checkResult.innerHTML = 'Это тип данных - BigInt'
+    } 
+}
+
+
+button?.addEventListener('click', checkType)
+document.addEventListener('keydown', (event) => {
+    if (event.code=='Enter') {
+        checkType()
     }
-
-
 })
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {
+        startingTop: '3%',
+        endingTop: '10%'
+    });
+  });
+

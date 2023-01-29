@@ -5,10 +5,70 @@
     padding-right: 2rem;
 }
 
-.card-title {
+.card_title_big {
     font-size: 4rem!important;
+}
+
+.card-content_color {
+    background-color: #80cbc4;
 }
 
 #dataCards {
     text-align: justify;
+}
+
+.inputType__wrap {
+    display: flex;
+    align-items: center;
+}
+
+.inputType__description {
+    margin-top: 2rem;
+}
+
+#inputType__inputCheck {
+    margin: 0;
+    width: 20rem;
+    background-color: #b4e7e2;
+    border: none;
+}
+
+#inputType__buttonCheck {
+    margin-left: 4rem;
+    width: 10rem;
+    height: 2.5rem;
+    background-color: #4db6ac;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+}
+
+#inputType__checkResult {
+    display: flex;
+    align-items: center;
+    width: 20rem;
+    height: 5rem;
+}
+
+.joke__intro {
+    display: flex;  
+    align-items: center;  
+}
+
+.joke__gif {
+    width: 7%;
+    height: 7%;
+}
+
+.joke__btn {
+    margin-top: 2rem;
+}
+
+.joke__modal-content_size {
+    width: 80%;
+}
+
+.joke__image {
+    width: 100%;
 }
