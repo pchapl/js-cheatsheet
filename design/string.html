@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./assets/dist/css/main.css">
     <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
 
+
     <!-- material icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -28,10 +29,10 @@
         <main class="main__container">
             <h2>Методы строк</h2>
             <p>Любые текстовые данные в JavaScript считаются строками. Это примитивный тип, но язык позволяет работать с
-                ним так, будто он является объектом. В том числе — использовать встроенные в JS методы строк, которые
-                собраны в этой шпаргалке.
+                ним так, будто он является объектом. В том числе — использовать встроенные в JS методы строк.</p>
 
-                Важно: при использовании методов создаётся новая строка, которая записывается в ту же переменную вместо
+            <p><strong>Важно</strong>: при использовании методов создаётся новая строка, которая записывается в ту же
+                переменную вместо
                 старой строки.</p>
             <h5>Изменить регистр</h5>
             <ul class="collapsible popout expandable">
@@ -39,7 +40,7 @@
                     <div class="collapsible-header"><i class="material-icons">code</i>toLowerCase</div>
                     <div class="collapsible-body"><span>Преобразует символы в строке в нижний регистр.</span>
                         <pre>
-                            <code>
+                            <code class="js">
 "Hello World".toLowerCase(); // "hello world"
                             </code>
                         </pre>
@@ -393,6 +394,53 @@ String.fromCharCode(72, 101, 108, 108, 111); // "Hello"
                     </div>
                 </li>
             </ul>
+
+            <h4>Проверь себя!</h4>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">edit</i>Задача 1</div>
+                    <div class="collapsible-body"><span>
+                            <p>Напишите функцию <code>newStr(str)</code>, возвращающую строку <code>str</code> с
+                                заглавным первым
+                                символом.</p>
+                            <textarea name="code" id="code" cols="15" rows="8"></textarea>
+                            <a class="waves-effect waves-light btn btn_first">Решение</a>
+                            <br>
+                            <br>
+                            <div class="answer_first"></div>
+
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">edit</i>Задача 2</div>
+                    <div class="collapsible-body"><span>
+                            <p>Напишите функцию <code>checkSpam(str)</code>, возвращающую <code>true</code>, если
+                                <code>str</code>
+                                содержит 'viagra' или 'XXX', а
+                                иначе <code>false</code>.
+                            </p>
+
+                            <p>Функция должна быть нечувствительна к регистру:</p>
+                            <pre>
+                        <code>
+checkSpam('buy ViAgRA now') == true
+checkSpam('free xxxxx') == true
+checkSpam("innocent rabbit") == false
+                        </code>
+                    </pre>
+                            <textarea name="code" id="code" cols="15" rows="8"></textarea>
+                            <a class="waves-effect waves-light btn btn_second">Решение</a>
+                            <br>
+                            <br>
+                            <div class="answer_second"></div>
+                        </span>
+                    </div>
+                </li>
+
+                <br>
+                <br>
+
         </main>
     </div>
 
