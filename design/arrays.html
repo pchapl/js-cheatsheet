@@ -1251,18 +1251,104 @@ let arrayPlusOne = array.map(function (num) {
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">reduce</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
+                  <div class="collapsible-body"><span>Применяет функцию к аккумулятору и каждому значению массива (слева-направо), сводя его к одному значению. Функция-колбэк будет вызвана для каждого элемента массива, и всегда должна возвращать результат.</span>
+                    <pre>
+                      <code class="js">
+array.reduce(callback(accumulator, element, index, array), initialValue);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Сама функция-колбэк в методе reduce может принимать четыре параметра:</p>
+                      <ul id="arrays__ul">
+                        <li id="arrays__li">
+                          accumulator - текущее значение аккумулятора; 
+                        </li>
+                        <li id="arrays__li_two">
+                          element — элемент массива в текущей итерации;
+                        </li>
+                        <li id="arrays__li_three">
+                          index — индекс текущего элемента;
+                        </li>
+                        <li id="arrays__li_three">
+                          array — сам массив, который мы перебираем.
+                        </li>
+                      </ul>
+                      <p class="arrays__text">initialValue - необязательный параметр. Если значение initialValue предоставляется, то accumulator является значением initialValue при первом вызове функции, а значение element будет равным первому значению в массиве. Если аргумент initialValue не задан, то значение accumulator будет равным первому значению в массиве, а значение element будет равным второму значению в массиве.</p>
                     </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Чтобы разобрать работу метода со всеми аргументами, вычислим сумму всех элементов массива, а после определим среднее арифметическое:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+// создадим функцию-колбэк, которая суммирует числа 
+// и вычисляет среднее арифметическое:
+function findAverage(accumulator, element, index, array) {
+  const sum = accumulator + element;
+
+  // Если мы находимся на последнем элементе,
+  // вычисляем среднее арифметическое делением 
+  // на количество элементов:
+  if (index === array.length - 1) {
+    return sum / array.length;
+  }
+
+  return sum;
+}
+
+// помещаем функцию-колбэк в метод reduce и задаем 
+// начальное значение для аккумулятора (равное 0):
+const average = array.reduce(findAverage, 0);
+
+alert(average);
+// выведет среднее арифметическое элементов массива: 3
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check reduce">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <p class="arrays__text">Запишем пример кода более лаконично:</p>
+                    <pre>
+                      <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const average = array.reduce(function (accumulator, element, index, array) {
+    const sum = accumulator + element;
+    if (index === array.length - 1) {
+        return sum / array.length;
+    }
+  return sum;
+}, 0);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Тот же пример, написанный через классический цикл for:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+let sum = 0;
+for(let i = 0; i < array.length; i++){
+  sum = sum + array[i]; 
+}
+let average = sum / array.length;
+
+alert(average);
+// также выведет среднее арифметическое элементов массива: 3
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check reduce">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+
                   </div>
                 </li>
 

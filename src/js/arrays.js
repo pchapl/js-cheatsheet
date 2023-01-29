@@ -518,6 +518,9 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('map-for')) {
             checkMapFor();
         }
+        if (e.target.classList.contains('reduce')) {
+            checkReduce();
+        }
         
         
     })
@@ -746,4 +749,20 @@ function checkMapFor() {
         squares.push(numSquare);
     }
     alert(squares);
+}
+
+function checkReduce() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    function findAverage(accumulator, element, index, array) {
+        const sum = accumulator + element;
+        
+        if (index === array.length - 1) {
+            return sum / array.length;
+        }
+        return sum;
+    }
+    
+    const average = array.reduce(findAverage, 0);
+    alert(average);
 }
