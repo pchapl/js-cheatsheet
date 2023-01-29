@@ -43,6 +43,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('splice-add')) {
             addInputSplice();
         }
+        if (e.target.classList.contains('slice-add')) {
+            addInputSlice();
+        }
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
         }
@@ -92,6 +95,13 @@ function addInputSplice() {
     parent.appendChild(input);
 }
 
+function addInputSlice() {
+    let parent = document.querySelector('.arrays__input-slice');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-slice" type="text">`;
+    parent.appendChild(input);
+}
+
 function addInputForEach() {
     let parent = document.querySelector('.arrays__input-foreach');
     let input = document.createElement('div');
@@ -135,6 +145,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('splice-done')) {
             doneSplice();
+        }
+        if (e.target.classList.contains('slice-done')) {
+            doneSlice();
         }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
@@ -324,14 +337,12 @@ function doneSplice() {
 
     let del = [];
     for (let i = 0; i < splice.length; i++) {
-        if (isNaN(elements[i])) {
+        if (isNaN(splice[i])) {
             del.push(' ' + '"' + splice[i] + '"');
         } else {
             del.push(' ' + splice[i]);
         }
     }
-
-    console.log(del)
 
     let result = [];
     for (let i = 0; i < elements.length; i++) {
@@ -345,6 +356,43 @@ function doneSplice() {
     document.querySelector('.arrays__old-splice').innerHTML = '[' + old + '];';
     document.querySelector(".arrays__delete-splice").innerHTML = '[' + del + '];';
     document.querySelector('.arrays__result-splice').innerHTML = '[' + result + '];';
+}
+
+function doneSlice() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-slice");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        if (isNaN(d)) {
+            elements.push(d);
+        } else {
+            elements.push(Number(d));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let slice = elements.slice(0, 2);
+
+    let result = [];
+    for (let i = 0; i < slice.length; i++) {
+        if (isNaN(slice[i])) {
+            result.push(' ' + '"' + slice[i] + '"');
+        } else {
+            result.push(' ' + slice[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-slice').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-slice').innerHTML = '[' + result + '];';
 }
 
 function doneForEach() {
@@ -448,6 +496,9 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('splice-reset')) {
             resetSplice();
         }
+        if (e.target.classList.contains('slice-reset')) {
+            resetSlice();
+        }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
         }
@@ -517,6 +568,17 @@ function resetSplice() {
     document.querySelector('.arrays__result-splice').innerHTML = "";
     document.querySelector(".arrays__delete-splice").innerHTML = "";
     document.querySelector('.arrays__old-splice').innerHTML = "";
+}
+
+function resetSlice() {
+    let data = document.querySelectorAll("#arrays__data-slice");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-slice").innerHTML = "";
+    document.querySelector('.arrays__result-slice').innerHTML = "";
+    document.querySelector('.arrays__old-slice').innerHTML = "";
 }
 
 function resetForEach() {

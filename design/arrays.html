@@ -431,7 +431,6 @@ alert(fruits); // Банан, Манго, Груша, Яблоко, Мандар
                           </code>
   <button class="waves-effect waves-light btn arrays__check splice-push">Проверить</button>
                         </pre>
-                      
                     </div>
                   </div>
 
@@ -447,7 +446,7 @@ alert(fruits); // Банан, Манго, Груша, Яблоко, Мандар
                             <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
 let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-splice"></div>];</div></div>
-alert(fruits.splice(1, 2));
+alert(array.splice(1, 2));
 alert(array);
                           </pre>
 
@@ -509,6 +508,45 @@ alert(fruits.slice(-1));
                         
                     </div>
                   </div>
+
+                  <div class="arrays__test">
+                    <h3 class="arrays__title-small">Практика</h3>
+                    <div class="arrays__block">
+                      <div class="arrays__results">
+                        <div class="arrays__task">
+                          <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                            slice():</p>
+                          <div class="arrays__field">
+
+                            <pre class="arrays-code">
+                              <div class="arrays__practice"><pre class="arrays-code__let">
+let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-slice"></div>];</div></div>
+alert(array.slice(0, 2));
+alert(array);
+                          </pre>
+                        </div>
+                        <button class="waves-effect waves-light btn arrays__button_add slice-add">
+                          Добавить элементы
+                        </button>
+
+                        <button class="waves-effect waves-light btn arrays__button_done slice-done">
+                          Применить метод slice()
+                        </button>
+                      </div>
+                      <div class="arrays__out">
+                        <p class="arrays__text-bold">Исходный массив:</p>
+                        <pre class="arrays__old-slice" class="arrays-code"></pre>
+                        <p class="arrays__text-bold">Новый массив:</p>
+                        <pre class="arrays__result-slice" class="arrays-code"></pre>
+                      </div>
+                    </div>
+
+                    <button class="waves-effect waves-light btn arrays__button_reset slice-reset">
+                      Сбросить значения
+                    </button>
+                  </div>
+                </div>
+
                 </div>
               </li>
 
