@@ -33,7 +33,7 @@
 
                 Важно: при использовании методов создаётся новая строка, которая записывается в ту же переменную вместо
                 старой строки.</p>
-            <h5>1. Изменить регистр</h5>
+            <h5>Изменить регистр</h5>
             <ul class="collapsible popout expandable">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">code</i>toLowerCase</div>
@@ -56,7 +56,7 @@
                     </div>
                 </li>
             </ul>
-            <h5>2. Объединить строки</h5>
+            <h5>Объединить строки</h5>
             <ul class="collapsible popout expandable">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">code</i>concat</div>
@@ -70,7 +70,7 @@
                     </div>
                 </li>
             </ul>
-            <h5>3. Разделить строку на подстроки</h5>
+            <h5>Разделить строку на подстроки</h5>
             <ul class="collapsible popout expandable">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">code</i>split</div>
@@ -93,7 +93,7 @@
                 </li>
             </ul>
 
-            <h5>4. Повторить строку</h5>
+            <h5>Повторить строку</h5>
             <ul class="collapsible popout expandable">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">code</i>repeat</div>
@@ -107,7 +107,7 @@
                     </div>
                 </li>
             </ul>
-            <h5>5. Найти подстроку</h5>
+            <h5>Найти подстроку</h5>
             <ul class="collapsible popout expandable">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">code</i>charAt</div>
@@ -208,7 +208,7 @@
                 </li>
             </ul>
 
-            <h5>6. Извлечь подстроку</h5>
+            <h5>Извлечь подстроку</h5>
             <ul class="collapsible popout expandable">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">code</i>slice</div>
@@ -262,7 +262,7 @@
                     </div>
                 </li>
             </ul>
-            <h5>7. Заменить подстроку</h5>
+            <h5>Заменить подстроку</h5>
             <ul class="collapsible popout expandable">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">code</i>replace
@@ -294,7 +294,105 @@
                     </div>
                 </li>
             </ul>
+            <h5>Добавить символы в строку</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>padEnd</div>
+                    <div class="collapsible-body"><span>Добавляет в конце отступы, пока строка не достигнет длины,
+                            заданной первым параметром. Вторым параметром можно указать другой символ вместо
+                            пробела.</span>
+                        <pre>
+                                    <code>
+"Hello World".padEnd(20, "*"); // "Hello World*********"
+                                    </code>
+                                </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>padEnd</div>
+                    <div class="collapsible-body"><span>Добавляет в начале отступы, пока строка не достигнет длины,
+                            заданной первым параметром. Вторым параметром можно указать другой символ вместо
+                            пробела.</span>
+                        <pre>
+                                    <code>
+"Hello World".padStart(20, "*"); // "*********Hello World"                                    </code>
+                                </pre>
+                    </div>
+                </li>
+            </ul>
+            <h5>Удалить пробелы в строке</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>trim</div>
+                    <div class="collapsible-body"><span>Обрезает пробелы с обоих концов строки.
 
+                        </span>
+                        <pre>
+                                    <code>
+" Hello World ".trim(); // "Hello World"
+                                    </code>
+                                </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>trimEnd</div>
+                    <div class="collapsible-body"><span>Обрезает пробелы в конце строки</span>
+                        <pre>
+                                    <code>
+"   Hello World ".trimEnd(); // "   Hello World"                                    </code>
+                                </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>trimStart</div>
+                    <div class="collapsible-body"><span>Обрезает пробелы в начале строки</span>
+                        <pre>
+                                    <code>
+"   Hello World ".trimStart(); // "Hello World " 
+                                    </code>
+                                            </pre>
+                    </div>
+                </li>
+            </ul>
+            <h5>Работа с Юникодом</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>charCodeAt</div>
+                    <div class="collapsible-body"><span>Возвращает числовое значение Юникода по указанному индексу.
+                            Обратите внимание: у букв в верхнем и нижнем регистрах разные коды.
+                        </span>
+                        <pre>
+                                    <code>
+"T".charCodeAt() // 84
+"t".charCodeAt() // 116                                    
+                                    </code>
+                                </pre>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>fromCharCode</div>
+                    <div class="collapsible-body"><span>Преобразует числовые значения Юникода в читаемые символы.</span>
+                        <pre>
+                                    <code>
+String.fromCharCode(72, 101, 108, 108, 111); // "Hello"                                    
+                                        </code>
+                                </pre>
+
+                        <p><strong>Примечание</strong>: при работе с эмодзи, редкими математическими символами,
+                            иероглифами нужно помнить о суррогатных парах. Это символы, которые записываются двумя
+                            16-битными словами. Длина таких строк — 2.</p>
+                        <pre>
+                                <code>
+'?'.length; // 2, редкий китайский иероглиф                                
+                                </code>
+                            </pre>
+
+                        <p>Суррогатные пары не учитывались при создании JS и методы строк charCodeAt / fromCharCode
+                            обрабатывают их некорректно. Правильно работают с суррогатными парами редкие методы
+                            String.fromCodePoint и str.codePointAt, которые появились в языке недавно.</p>
+                    </div>
+                </li>
+            </ul>
         </main>
     </div>
 
