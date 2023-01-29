@@ -31,8 +31,14 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('pop-add')) {
             addInputPop();
         }
+        if (e.target.classList.contains('push-add')) {
+            addInputPush();
+        }
         if (e.target.classList.contains('shift-add')) {
             addInputShift();
+        }
+        if (e.target.classList.contains('unshift-add')) {
+            addInputUnshift();
         }
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
@@ -52,10 +58,24 @@ function addInputPop() {
     parent.appendChild(input);
 }
 
+function addInputPush() {
+    let parent = document.querySelector('.arrays__input-push');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-push" type="text">`;
+    parent.appendChild(input);
+}
+
 function addInputShift() {
     let parent = document.querySelector('.arrays__input-shift');
     let input = document.createElement('div');
     input.innerHTML = `<input class="arrays__data" id="arrays__data-shift" type="text">`;
+    parent.appendChild(input);
+}
+
+function addInputUnshift() {
+    let parent = document.querySelector('.arrays__input-unshift');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-unshift" type="text">`;
     parent.appendChild(input);
 }
 
@@ -84,8 +104,14 @@ buttonsDone.forEach(function(done) {
         if (e.target.classList.contains('pop-done')) {
             donePop();
         }
+        if (e.target.classList.contains('push-done')) {
+            donePush();
+        }
         if (e.target.classList.contains('shift-done')) {
             doneShift();
+        }
+        if (e.target.classList.contains('unshift-done')) {
+            doneUnshift();
         }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
@@ -134,6 +160,43 @@ function donePop() {
     document.querySelector('.arrays__result-pop').innerHTML = '[' + result + '];';
 }
 
+function donePush() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-push");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        if (isNaN(d)) {
+            elements.push(d);
+        } else {
+            elements.push(Number(d));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    elements.push("Новый элемент");
+
+    let result = [];
+    for (let i = 0; i < elements.length; i++) {
+        if (isNaN(elements[i])) {
+            result.push(' ' + '"' + elements[i] + '"');
+        } else {
+            result.push(' ' + elements[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-push').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-push').innerHTML = '[' + result + '];';
+}
+
 function doneShift() {
     let elements = [];
     let data = document.querySelectorAll("#arrays__data-shift");
@@ -157,7 +220,6 @@ function doneShift() {
     }
 
     let del = elements.shift();
-    console.log(del)
 
     let result = [];
     for (let i = 0; i < elements.length; i++) {
@@ -171,6 +233,43 @@ function doneShift() {
     document.querySelector('.arrays__old-shift').innerHTML = '[' + old + '];';
     document.querySelector(".arrays__delete-shift").innerHTML = del;
     document.querySelector('.arrays__result-shift').innerHTML = '[' + result + '];';
+}
+
+function doneUnshift() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-unshift");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        if (isNaN(d)) {
+            elements.push(d);
+        } else {
+            elements.push(Number(d));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    elements.unshift("Новый элемент");
+
+    let result = [];
+    for (let i = 0; i < elements.length; i++) {
+        if (isNaN(elements[i])) {
+            result.push(' ' + '"' + elements[i] + '"');
+        } else {
+            result.push(' ' + elements[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-unshift').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-unshift').innerHTML = '[' + result + '];';
 }
 
 function doneForEach() {
@@ -240,8 +339,14 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('pop-reset')) {
             resetPop();
         }
+        if (e.target.classList.contains('push-reset')) {
+            resetPush();
+        }
         if (e.target.classList.contains('shift-reset')) {
             resetShift();
+        }
+        if (e.target.classList.contains('unshift-reset')) {
+            resetUnshift();
         }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
@@ -265,6 +370,17 @@ function resetPop() {
     document.querySelector('.arrays__old-pop').innerHTML = "";
 }
 
+function resetPush() {
+    let data = document.querySelectorAll("#arrays__data-push");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-push").innerHTML = "";
+    document.querySelector('.arrays__result-push').innerHTML = "";
+    document.querySelector('.arrays__old-push').innerHTML = "";
+}
+
 function resetShift() {
     let data = document.querySelectorAll("#arrays__data-shift");
     for (let i = 0; i < data.length; i++) {
@@ -275,6 +391,17 @@ function resetShift() {
     document.querySelector('.arrays__result-shift').innerHTML = "";
     document.querySelector(".arrays__delete-shift").innerHTML = "";
     document.querySelector('.arrays__old-shift').innerHTML = "";
+}
+
+function resetUnshift() {
+    let data = document.querySelectorAll("#arrays__data-unshift");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-unshift").innerHTML = "";
+    document.querySelector('.arrays__result-unshift').innerHTML = "";
+    document.querySelector('.arrays__old-unshift').innerHTML = "";
 }
 
 function resetForEach() {
