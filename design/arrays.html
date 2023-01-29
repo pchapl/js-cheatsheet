@@ -1039,7 +1039,7 @@ console.log(fruits); // Яблоко, Апельсин, Груша
       </div>
 
       <div class="arrays-iteration">
-        <h4>Итеративные методы, принимающие callback function</h4>
+        <h4>Методы, принимающие callback function</h4>
         <div class="array-code__item">
           
           <p class="arrays__text">Все итеративные методы принимают в качестве аргумента функцию обратного вызова - callback function. Эта функция выполняется последовательно и не более одного раза для каждого элемента в массиве. </p>
@@ -1343,10 +1343,49 @@ let average = sum / array.length;
 alert(average);
 // также выведет среднее арифметическое элементов массива: 3
                             </code>
-  <button class="waves-effect waves-light btn arrays__check reduce">Проверить</button>
+  <button class="waves-effect waves-light btn arrays__check reduce-for">Проверить</button>
                           </pre>
                       </div>
                     </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод reduce(), чтобы вычислить сумму всех элементов массива:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+const numbers = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-reduce"></div>];</div></div>
+const sum = numbers.reduce(function (accumulator, element) {
+  return accumulator + element;
+}, 0)
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add reduce-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done reduce-done">
+                            Применить метод reduce()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-reduce" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Результат:</p>
+                          <pre class="arrays__result-reduce" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset reduce-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
 
 
                   </div>

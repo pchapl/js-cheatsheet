@@ -46,6 +46,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('map-add')) {
             addInputMap();
         }
+        if (e.target.classList.contains('reduce-add')) {
+            addInputReduce();
+        }
         
         
     })
@@ -93,6 +96,13 @@ function addInputMap() {
     parent.appendChild(input);
 }
 
+function addInputReduce() {
+    let parent = document.querySelector('.arrays__input-reduce');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-reduce" type="text">`;
+    parent.appendChild(input);
+}
+
 
 //done
 
@@ -118,6 +128,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('map-done')) {
             doneMap();
+        }
+        if (e.target.classList.contains('reduce-done')) {
+            doneReduce();
         }
     })
 })
@@ -328,6 +341,33 @@ function doneMap() {
     document.querySelector('.arrays__result-map').innerHTML = '[' + result + '];';
 }
 
+function doneReduce() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-reduce");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        elements.push(Number(d));
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let sum = elements.reduce(function (accumulator, element) {
+        return accumulator + element;
+    }, 0);
+
+    /*let result = [];
+    for (let i = 0; i < sum.length; i++) {
+        result.push(' ' + sum[i]);
+    }*/
+
+    document.querySelector('.arrays__old-reduce').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-reduce').innerHTML = sum;
+}
+
 
 //reset
 
@@ -353,6 +393,9 @@ buttonsReset.forEach(function(reset) {
         }
         if (e.target.classList.contains('map-reset')) {
             resetMap();
+        }
+        if (e.target.classList.contains('reduce-reset')) {
+            resetReduce();
         }
         
     })
@@ -424,6 +467,17 @@ function resetMap() {
     document.querySelector(".arrays__input-map").innerHTML = "";
     document.querySelector('.arrays__result-map').innerHTML = "";
     document.querySelector('.arrays__old-map').innerHTML = "";
+}
+
+function resetReduce() {
+    let data = document.querySelectorAll("#arrays__data-reduce");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-reduce").innerHTML = "";
+    document.querySelector('.arrays__result-reduce').innerHTML = "";
+    document.querySelector('.arrays__old-reduce').innerHTML = "";
 }
 
 
@@ -520,6 +574,9 @@ buttonsCheck.forEach(function(check) {
         }
         if (e.target.classList.contains('reduce')) {
             checkReduce();
+        }
+        if (e.target.classList.contains('reduce-for')) {
+            checkReduceFor();
         }
         
         
@@ -764,5 +821,16 @@ function checkReduce() {
     }
     
     const average = array.reduce(findAverage, 0);
+    alert(average);
+}
+
+function checkReduceFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    let sum = 0;
+    for(let i = 0; i < array.length; i++){
+        sum = sum + array[i]; 
+    }
+    let average = sum / array.length;
     alert(average);
 }
