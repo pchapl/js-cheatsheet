@@ -27,10 +27,12 @@ function checkType() {
     } else if(input.value === 'true' || input.value === 'false') {
         input.value = ''
         checkResult.innerHTML = 'Это булевый тип данных'
-    } else if(input.value === 'Symbol()') {
-        checkResult.innerHTML = 'Символ'
-    } else if(typeof new Object(input.value) ) {
-        checkResult.innerHTML = 'Obj'
+    } else if(input.value.includes('Symbol(') &&  input.value.includes(')')) {
+        input.value = ''
+        checkResult.innerHTML = 'Это тип данных - символ'
+    } else if(input.value.includes('{') &&  input.value.includes('}') || input.value.includes('[') &&  input.value.includes(']')) {
+        input.value = ''
+        checkResult.innerHTML = 'Это тип данных - объект'
     } else if(typeof input.value === 'string' && BigInt(!parseInt(input.value))) {
         input.value = ''
         checkResult.innerHTML = 'Это тип данных - строка'
