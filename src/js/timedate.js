@@ -16,8 +16,14 @@ function showCommentsWDates(userDate) {
 
     document.querySelector('code.td-get-day span.hljs-comment').innerHTML = '// ' + currentDate.getDay();
     document.querySelector('code.td-get-hours span.hljs-comment').innerHTML = '// ' + currentDate.getHours();
+    document.querySelector('code.td-get-minutes span.hljs-comment').innerHTML = '// ' + currentDate.getMinutes();
+    document.querySelector('code.td-get-seconds span.hljs-comment').innerHTML = '// ' + currentDate.getSeconds();
+    document.querySelector('code.td-get-mseconds span.hljs-comment').innerHTML = '// ' + currentDate.getMilliseconds();
+    document.querySelector('code.td-get-time-zone-offset span.hljs-comment').innerHTML = '// ' + currentDate.getTimezoneOffset();
     document.querySelector('code.td-get-time span.hljs-comment').innerHTML = '// ' + currentDate.getTime();
     document.querySelector('code.td-get-full-year span.hljs-comment').innerHTML = '// ' + currentDate.getFullYear();
+    document.querySelector('code.td-get-month span.hljs-comment').innerHTML = '// ' + currentDate.getMonth();
+    document.querySelector('code.td-get-date span.hljs-comment').innerHTML = '// ' + currentDate.getDate();
     document.querySelector('code.td-to-iso span.hljs-comment').innerHTML = '// ' + currentDate.toISOString();
 
 }

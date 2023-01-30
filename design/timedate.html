@@ -28,22 +28,36 @@
 <main class="container">
     <h1 class="center-align">Даты и время в JS</h1>
 
+    <section class="td-metods">
+        <h4>Методы работы с датой</h4>
     <pre>
         <code class="td-new-date">
-const currentDate = new Date('August 14, 2022 14:15:30')</code><code class="td-get-day">
-console.log(currentDate.getDay())
-// 0         </code><code class="td-get-hours">
-console.log(currentDate.getHours())
-// 14       </code><code class="td-get-time">
+const currentDate = new Date('August 14, 2022 14:15:30')</code><code class="td-get-time">
 console.log(currentDate.getTime())
 // 1660475730000        </code><code class="td-get-full-year">
 console.log(currentDate.getFullYear())
-// 2022     </code><code class="td-to-iso">
+// 2022     </code><code class="td-get-month">
+console.log(currentDate.getMonth())
+// 0         </code><code class="td-get-date">
+console.log(currentDate.getDate())
+// 0         </code><code class="td-get-day">
+console.log(currentDate.getDay())
+// 0         </code><code class="td-get-hours">
+console.log(currentDate.getHours())
+// 0         </code><code class="td-get-minutes">
+console.log(currentDate.getMinutes())
+// 0         </code><code class="td-get-seconds">
+console.log(currentDate.getSeconds())
+// 0         </code><code class="td-get-mseconds">
+console.log(currentDate.getMilliseconds())
+// 0         </code><code class="td-get-time-zone-offset">
+console.log(currentDate.getTimezoneOffset())
+// 14       </code><code class="td-to-iso">
 console.log(currentDate.toISOString())
 // 2022-08-14T11:15:30.000Z
         </code>
     </pre>
-
+    </section>
 
 </main>
 
