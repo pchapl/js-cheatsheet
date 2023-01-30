@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+    
+    <!--    project styles-->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+    
+    
+    <title>Браузерные события</title>
+    
+</head>
+
+<body>
+    <div class="wrapper">
+        <header></header>
+        <main class="events-main__container">
+            <h2>Events (Браузерные события)</h2>
+            <p>Событие – это сигнал от браузера о том, что что-то произошло. Все DOM-узлы подают такие сигналы (хотя события бывают и не только в DOM).</p>
+            <div class="events-main__why">
+                <h5>Зачем нужны:</h5>
+                На такие события можно назначит функцию-обработчик, которая сработает, как только событие произошло.<br>
+                Благодаря этому код JavaScript может реагировать на различные действия пользователя. 
+            </div>
+            <div class="events-main__which">
+                <h5>Какие бывают:</h5>
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12">
+                            
+                            <ul class="collapsible popout">
+                                <li>
+                                    <div class="collapsible-header">События мыши</div>
+                                    <div class="collapsible-body">
+                                        <span class="list-title">click</span> – происходит, когда кликнули на элемент левой кнопкой мыши (на устройствах с сенсорными экранами оно происходит при касании).<br>
+                                        <span class="list-title">contextmenu</span> – происходит, когда кликнули на элемент правой кнопкой мыши.<br>
+                                        <span class="list-title">mouseover/mouseout</span> – когда мышь наводится на/покидает элемент.<br>
+                                        <span class="list-title">mousedown/mouseup</span> – когда нажали/отжали кнопку мыши на элементе.<br>
+                                        <span class="list-title">mousemove</span> – при движении мыши.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header">События на элементах управления</div>
+                                    <div class="collapsible-body">
+                                        <span class="list-title">submit</span> – пользователь отправил форму &lt;form&gt;.<br>
+                                        <span class="list-title">focus</span> – пользователь фокусируется на элементе, например нажимает на &lt;input&gt;.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header">Клавиатурные события</div>
+                                    <div class="collapsible-body">
+                                        <span class="list-title">keydown/keyup</span> – когда пользователь нажимает/отпускает клавишу.<br>
+                                        <span class="list-title">keypress</span> – событие происходит, когда пользователь нажал клавишу на клавиатуре над элементом.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header">События документа</div>
+                                    <div class="collapsible-body">
+                                        <span class="list-title">DOMContentLoaded</span> – когда HTML загружен и обработан, DOM документа полностью построен и доступен.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>       
+                    </div>
+                </div>
+                Есть еще много разных событий, их полный список можно посмотреть в полезных ссылках ниже или, например, <a href="https://developer.mozilla.org/ru/docs/Web/Events">здесь</a>.
+            </div>
+                
+                
+                
+                
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+    
+    
+    
+    
+    <script src="./assets/dist/js/main.js"></script>
+    <script src="./assets/libraries/highlights/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>
