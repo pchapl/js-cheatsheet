@@ -46,6 +46,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('slice-add')) {
             addInputSlice();
         }
+        if (e.target.classList.contains('concat-add')) {
+            addInputConcat();
+        }
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
         }
@@ -102,6 +105,13 @@ function addInputSlice() {
     parent.appendChild(input);
 }
 
+function addInputConcat() {
+    let parent = document.querySelector('.arrays__input-concat');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-concat" type="text">`;
+    parent.appendChild(input);
+}
+
 function addInputForEach() {
     let parent = document.querySelector('.arrays__input-foreach');
     let input = document.createElement('div');
@@ -148,6 +158,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('slice-done')) {
             doneSlice();
+        }
+        if (e.target.classList.contains('concat-done')) {
+            doneConcat();
         }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
@@ -395,6 +408,47 @@ function doneSlice() {
     document.querySelector('.arrays__result-slice').innerHTML = '[' + result + '];';
 }
 
+function doneConcat() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-concat");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        if (isNaN(d)) {
+            elements.push(d);
+        } else {
+            elements.push(Number(d));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let string = "Манго";
+    let number = 100;
+    let berries = ["Вишня", "Черника"];
+
+    let concat = elements.concat(string, number, berries);
+
+    let result = [];
+    for (let i = 0; i < concat.length; i++) {
+        if (isNaN(concat[i])) {
+            result.push(' ' + '"' + concat[i] + '"');
+        } else {
+            result.push(' ' + concat[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-concat').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-concat').innerHTML = '[' + result + '];';
+}
+
 function doneForEach() {
     let elements = [];
     let data = document.querySelectorAll("#arrays__data-foreach");
@@ -499,6 +553,9 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('slice-reset')) {
             resetSlice();
         }
+        if (e.target.classList.contains('concat-reset')) {
+            resetConcat();
+        }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
         }
@@ -579,6 +636,17 @@ function resetSlice() {
     document.querySelector(".arrays__input-slice").innerHTML = "";
     document.querySelector('.arrays__result-slice').innerHTML = "";
     document.querySelector('.arrays__old-slice').innerHTML = "";
+}
+
+function resetConcat() {
+    let data = document.querySelectorAll("#arrays__data-concat");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-concat").innerHTML = "";
+    document.querySelector('.arrays__result-concat').innerHTML = "";
+    document.querySelector('.arrays__old-concat').innerHTML = "";
 }
 
 function resetForEach() {
