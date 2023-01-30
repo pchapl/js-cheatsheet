@@ -49,6 +49,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('concat-add')) {
             addInputConcat();
         }
+        if (e.target.classList.contains('join-add')) {
+            addInputJoin();
+        }
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
         }
@@ -112,6 +115,13 @@ function addInputConcat() {
     parent.appendChild(input);
 }
 
+function addInputJoin() {
+    let parent = document.querySelector('.arrays__input-join');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-join" type="text">`;
+    parent.appendChild(input);
+}
+
 function addInputForEach() {
     let parent = document.querySelector('.arrays__input-foreach');
     let input = document.createElement('div');
@@ -161,6 +171,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('concat-done')) {
             doneConcat();
+        }
+        if (e.target.classList.contains('join-done')) {
+            doneJoin();
         }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
@@ -449,6 +462,34 @@ function doneConcat() {
     document.querySelector('.arrays__result-concat').innerHTML = '[' + result + '];';
 }
 
+function doneJoin() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-join");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        if (isNaN(d)) {
+            elements.push(d);
+        } else {
+            elements.push(Number(d));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let result = elements.join(', ');
+
+    document.querySelector('.arrays__old-join').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-join').innerHTML = result;
+}
+
 function doneForEach() {
     let elements = [];
     let data = document.querySelectorAll("#arrays__data-foreach");
@@ -556,6 +597,9 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('concat-reset')) {
             resetConcat();
         }
+        if (e.target.classList.contains('join-reset')) {
+            resetJoin();
+        }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
         }
@@ -647,6 +691,17 @@ function resetConcat() {
     document.querySelector(".arrays__input-concat").innerHTML = "";
     document.querySelector('.arrays__result-concat').innerHTML = "";
     document.querySelector('.arrays__old-concat').innerHTML = "";
+}
+
+function resetJoin() {
+    let data = document.querySelectorAll("#arrays__data-join");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-join").innerHTML = "";
+    document.querySelector('.arrays__result-join').innerHTML = "";
+    document.querySelector('.arrays__old-join').innerHTML = "";
 }
 
 function resetForEach() {
