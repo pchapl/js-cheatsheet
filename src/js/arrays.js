@@ -70,6 +70,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('filter-add')) {
             addInputFilter();
         }
+        if (e.target.classList.contains('find-add')) {
+            addInputFind();
+        }
         
         
     })
@@ -173,6 +176,13 @@ function addInputFilter() {
     parent.appendChild(input);
 }
 
+function addInputFind() {
+    let parent = document.querySelector('.arrays__input-find');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-find" type="text">`;
+    parent.appendChild(input);
+}
+
 
 //done
 
@@ -222,6 +232,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('filter-done')) {
             doneFilter();
+        }
+        if (e.target.classList.contains('find-done')) {
+            doneFind();
         }
     })
 })
@@ -713,6 +726,35 @@ function doneFilter() {
     document.querySelector('.arrays__result-filter').innerHTML = '[' + result + '];';
 }
 
+function doneFind() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-find");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        elements.push(Number(d));
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.find(function (element) {
+        return element === 5;
+    });
+
+    console.log(typeof result)
+
+    /*let result = [];
+    for (let i = 0; i < arrayEven.length; i++) {
+        result.push(' ' + arrayEven[i]);
+    }*/
+
+    document.querySelector('.arrays__old-find').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-find').innerHTML = result;
+}
+
 
 //reset
 
@@ -762,6 +804,9 @@ buttonsReset.forEach(function(reset) {
         }
         if (e.target.classList.contains('filter-reset')) {
             resetFilter();
+        }
+        if (e.target.classList.contains('find-reset')) {
+            resetFind();
         }
         
     })
@@ -925,6 +970,17 @@ function resetFilter() {
     document.querySelector('.arrays__old-filter').innerHTML = "";
 }
 
+function resetFind() {
+    let data = document.querySelectorAll("#arrays__data-find");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-find").innerHTML = "";
+    document.querySelector('.arrays__result-find').innerHTML = "";
+    document.querySelector('.arrays__old-find').innerHTML = "";
+}
+
 
 //check
 
@@ -1028,6 +1084,12 @@ buttonsCheck.forEach(function(check) {
         }
         if (e.target.classList.contains('filter-for')) {
             checkFilterFor();
+        }
+        if (e.target.classList.contains('find')) {
+            checkFind();
+        }
+        if (e.target.classList.contains('find-for')) {
+            checkFindFor();
         }
         
         
@@ -1305,4 +1367,27 @@ function checkFilterFor() {
         };
     }
     alert(arrayOdds);
+}
+
+function checkFind() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    const arrayFind = array.find(function (element) {
+        return element === 2;
+    });
+    alert(arrayFind);
+}
+
+function checkFindFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    const arrayFind = (array) => {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === 2) {
+            return array[i];
+            }
+        }
+        return undefined;
+    };
+    alert(arrayFind(array));
 }

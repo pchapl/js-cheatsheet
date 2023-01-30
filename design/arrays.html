@@ -1729,18 +1729,98 @@ let arrayEven = array.filter(function (num) {
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">find</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
+                  <div class="collapsible-body"><span>Возвращает первый найденный в массиве элемент, который подходит под условие в переданной колбэк-функции. Если в массиве не найдётся ни одного подходящего элемента, то вернётся значение undefined.</span>
+                    <pre>
+                      <code class="js">
+array.find(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Функция должна возвращать булевое значение true или false. find() вернёт первый элемент, на котором переданная функция-колбэк вернула true. Попробуем найти число в массиве:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const arrayFind = array.find(function (element) {
+  return element === 2;
+});
+// колбэк вернул true, потому что в массиве есть число 2
+
+alert(arrayFind);
+// выведет значение найденного элемента: 2
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check find">Проверить</button>
+                          </pre>
+                      </div>
                     </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Этот же пример, написанный с помощью классического цикла for:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const arrayFind = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === 2) {
+      return array[i];
+    }
+  }
+  return undefined;
+};
+
+alert(arrayFind(array));
+// также выведет значение: 2
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check find-for">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод find(), чтобы узнать, есть ли там число 5:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-find"></div>];</div></div>
+const arrayFind = array.find(function (element) {
+  return element === 5;
+});
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add find-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done find-done">
+                            Применить метод find()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-find" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Результат:</p>
+                          <pre class="arrays__result-find" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset find-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
+
                   </div>
                 </li>
 
