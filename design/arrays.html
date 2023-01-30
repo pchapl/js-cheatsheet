@@ -154,7 +154,7 @@ alert(fruits); // Вишня, Абрикос
                                 <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
   let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-pop"></div>];</div></div>
-  alert(array.pop());
+  array.pop();
   alert(array);
                               </pre>
 
@@ -172,7 +172,7 @@ alert(fruits); // Вишня, Абрикос
                             <pre class="arrays__old-pop" class="arrays-code"></pre>
                             <p class="arrays__text-bold">Значение, которое возвращается:</p>
                             <div class="arrays__delete-pop"></div>
-                            <p class="arrays__text-bold">Новый массив:</p>
+                            <p class="arrays__text-bold">Преобразованный массив:</p>
                             <pre class="arrays__result-pop" class="arrays-code"></pre>
                           </div>
                         </div>
@@ -213,9 +213,9 @@ alert(fruits); // Вишня, Абрикос, Черника
 
                             <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-push"></div>];</div></div>
-array.push("Новый элемент");
-alert(array);
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-push"></div>];</div></div>
+  array.push("Новый элемент");
+  alert(array);
                           </pre>
                           
                         </div>
@@ -230,7 +230,7 @@ alert(array);
                       <div class="arrays__out">
                         <p class="arrays__text-bold">Исходный массив:</p>
                         <pre class="arrays__old-push" class="arrays-code"></pre>
-                        <p class="arrays__text-bold">Новый массив:</p>
+                        <p class="arrays__text-bold">Преобразованный массив:</p>
                         <pre class="arrays__result-push" class="arrays-code"></pre>
                       </div>
                     </div>
@@ -272,9 +272,9 @@ alert(fruits); // Абрикос, Черника
 
                             <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-shift"></div>];</div></div>
-alert(array.pop());
-alert(array);
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-shift"></div>];</div></div>
+  array.pop();
+  alert(array);
                           </pre>
 
                         </div>
@@ -291,7 +291,7 @@ alert(array);
                         <pre class="arrays__old-shift" class="arrays-code"></pre>
                         <p class="arrays__text-bold">Значение, которое возвращается:</p>
                         <div class="arrays__delete-shift"></div>
-                        <p class="arrays__text-bold">Новый массив:</p>
+                        <p class="arrays__text-bold">Преобразованный массив:</p>
                         <pre class="arrays__result-shift" class="arrays-code"></pre>
                       </div>
                     </div>
@@ -333,9 +333,9 @@ alert(fruits); // Вишня, Абрикос, Черника
 
                             <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-unshift"></div>];</div></div>
-array.unshift("Новый элемент");
-alert(array);
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-unshift"></div>];</div></div>
+  array.unshift("Новый элемент");
+  alert(array);
                           </pre>
                           
                         </div>
@@ -350,7 +350,7 @@ alert(array);
                       <div class="arrays__out">
                         <p class="arrays__text-bold">Исходный массив:</p>
                         <pre class="arrays__old-unshift" class="arrays-code"></pre>
-                        <p class="arrays__text-bold">Новый массив:</p>
+                        <p class="arrays__text-bold">Преобразованный массив:</p>
                         <pre class="arrays__result-unshift" class="arrays-code"></pre>
                       </div>
                     </div>
@@ -445,9 +445,9 @@ alert(fruits); // Банан, Манго, Груша, Яблоко, Мандар
 
                             <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-splice"></div>];</div></div>
-alert(array.splice(1, 2));
-alert(array);
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-splice"></div>];</div></div>
+  array.splice(1, 2);
+  alert(array);
                           </pre>
 
                         </div>
@@ -464,7 +464,7 @@ alert(array);
                         <pre class="arrays__old-splice" class="arrays-code"></pre>
                         <p class="arrays__text-bold">Значение, которое возвращается:</p>
                         <div class="arrays__delete-splice"></div>
-                        <p class="arrays__text-bold">Новый массив:</p>
+                        <p class="arrays__text-bold">Преобразованный массив:</p>
                         <pre class="arrays__result-splice" class="arrays-code"></pre>
                       </div>
                     </div>
@@ -520,9 +520,8 @@ alert(fruits.slice(-1));
 
                             <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-slice"></div>];</div></div>
-alert(array.slice(0, 2));
-alert(array);
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-slice"></div>];</div></div>
+  array.slice(0, 2);
                           </pre>
                         </div>
                         <button class="waves-effect waves-light btn arrays__button_add slice-add">
@@ -590,12 +589,12 @@ alert(fruits.concat(orange, berries));
 
                             <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-concat"></div>];</div></div>
-let string = "Манго";
-let number = 100;
-let berries = ["Вишня", "Черника"];
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-concat"></div>];</div></div>
+  let string = "Манго";
+  let number = 100;
+  let berries = ["Вишня", "Черника"];
 
-array.concat(string, number, berries); 
+  array.concat(string, number, berries); 
                           </pre>
                         </div>
                         <button class="waves-effect waves-light btn arrays__button_add concat-add">
@@ -679,8 +678,8 @@ alert(string);
 
                             <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-join"></div>];</div></div>
-let string = array.join(', ');
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-join"></div>];</div></div>
+  let string = array.join(', ');
                           </pre>
                         </div>
                         <button class="waves-effect waves-light btn arrays__button_add join-add">
@@ -802,12 +801,12 @@ alert(numbers[0]);
 
                             <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-sort"></div>];</div></div>
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-sort"></div>];</div></div>
 
-array.sort(function(a, b) {
-  return a - b;
-});
-let min = array[0];
+  array.sort(function(a, b) {
+    return a - b;
+  });
+  let min = array[0];
                           </pre>
 
                         </div>
@@ -835,6 +834,102 @@ let min = array[0];
                   </div>
                 </div>
                   
+
+                </div>
+              </li>
+
+              <li>
+                <div class="collapsible-header arrays-collapsible-header">reverse</div>
+                <div class="collapsible-body"><span>Изменяет порядок следования элементов в массиве на обратный.</span>
+                  <pre>
+                    <code class="js">
+array.reverse();
+// не принимает аргументов
+                    </code>
+                  </pre>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">Метод reverse() не создаёт новый массив, а изменяет текущий. Это означает, что возвращаемое значение — это только ссылка на исходный массив:</p>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин"];
+const result = fruits.reverse();
+
+alert(result);
+// Мандарин, Яблоко, Банан
+
+alert(fruits);
+// тоже Мандарин, Яблоко, Банан
+
+alert(result === fruits);
+// true, так как result - это ссылка на исходный массив fruits
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check reverse">Проверить</button>
+                        </pre>
+                    </div>
+                  </div>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">Если у массива есть «дырки» между элементами, то метод reverse развернёт массив с учётом этих «дырок». Метод создает элементы в массиве, которые заполняют пробелы в нем. Каждый из этих созданных элементов имеет значение undefined:</p>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+fruits[5] = "Манго";
+// добавим значение "Манго" под индексом 5
+
+alert(fruits);
+// получился массив с "дыркой" - Банан, Яблоко, Мандарин, , , Манго
+alert(fruits[3]);
+// undefined, так как элемента нет
+
+fruits.reverse();
+
+alert(fruits);
+// метод развернул массив с учетом "дырок" - Манго, , , Мандарин, Яблоко, Банан
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check reverse-empty">Проверить</button>
+                        </pre>
+                    </div>
+                  </div>
+
+                  <div class="arrays__test">
+                    <h3 class="arrays__title-small">Практика</h3>
+                    <div class="arrays__block">
+                      <div class="arrays__results">
+                        <div class="arrays__task">
+                          <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                            reverse():</p>
+                          <div class="arrays__field">
+
+                            <pre class="arrays-code">
+                              <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-reverse"></div>];</div></div>
+  array.reverse();
+                          </pre>
+                        </div>
+                        <button class="waves-effect waves-light btn arrays__button_add reverse-add">
+                          Добавить элементы
+                        </button>
+
+                        <button class="waves-effect waves-light btn arrays__button_done reverse-done">
+                          Применить метод reverse()
+                        </button>
+                      </div>
+                      <div class="arrays__out">
+                        <p class="arrays__text-bold">Исходный массив:</p>
+                        <pre class="arrays__old-reverse" class="arrays-code"></pre>
+                        <p class="arrays__text-bold">Преобразованный массив:</p>
+                        <pre class="arrays__result-reverse" class="arrays-code"></pre>
+                      </div>
+                    </div>
+
+                    <button class="waves-effect waves-light btn arrays__button_reset reverse-reset">
+                      Сбросить значения
+                    </button>
+                  </div>
+                </div>
 
                 </div>
               </li>
@@ -995,66 +1090,6 @@ alert(fruits.lastIndexOf("Манго"));
 // выведет -1
                           </code>
   <button class="waves-effect waves-light btn arrays__check last-index-of">Проверить</button>
-                        </pre>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
-
-
-              <li>
-                <div class="collapsible-header arrays-collapsible-header">reverse</div>
-                <div class="collapsible-body"><span>Изменяет порядок следования элементов в массиве на обратный.</span>
-                  <pre>
-                    <code class="js">
-array.reverse();
-// не принимает аргументов
-                    </code>
-                  </pre>
-
-                  <div class="array-code__item">
-                    <p class="arrays__text">Метод reverse() не создаёт новый массив, а изменяет текущий. Это означает, что возвращаемое значение — это только ссылка на исходный массив:</p>
-                      <div class="arrays-code">
-                        <pre>
-                          <code class="js">
-const fruits = ["Банан", "Яблоко", "Мандарин"];
-const result = fruits.reverse();
-
-alert(result);
-// Мандарин, Яблоко, Банан
-
-alert(fruits);
-// тоже Мандарин, Яблоко, Банан
-
-alert(result === fruits);
-// true, так как result - это ссылка на исходный массив fruits
-                          </code>
-  <button class="waves-effect waves-light btn arrays__check reverse">Проверить</button>
-                        </pre>
-                    </div>
-                  </div>
-
-                  <div class="array-code__item">
-                    <p class="arrays__text">Если у массива есть «дырки» между элементами, то метод reverse развернёт массив с учётом этих «дырок». Метод создает элементы в массиве, которые заполняют пробелы в нем. Каждый из этих созданных элементов имеет значение undefined:</p>
-                      <div class="arrays-code">
-                        <pre>
-                          <code class="js">
-let fruits = ["Банан", "Яблоко", "Мандарин"];
-fruits[5] = "Манго";
-// добавим значение "Манго" под индексом 5
-
-alert(fruits);
-// получился массив с "дыркой" - Банан, Яблоко, Мандарин, , , Манго
-alert(fruits[3]);
-// undefined, так как элемента нет
-
-fruits.reverse();
-
-alert(fruits);
-// метод развернул массив с учетом "дырок" - Манго, , , Мандарин, Яблоко, Банан
-                          </code>
-  <button class="waves-effect waves-light btn arrays__check reverse-empty">Проверить</button>
                         </pre>
                     </div>
                   </div>

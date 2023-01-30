@@ -55,6 +55,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('sort-add')) {
             addInputSort();
         }
+        if (e.target.classList.contains('reverse-add')) {
+            addInputReverse();
+        }
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
         }
@@ -132,6 +135,13 @@ function addInputSort() {
     parent.appendChild(input);
 }
 
+function addInputReverse() {
+    let parent = document.querySelector('.arrays__input-reverse');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-reverse" type="text">`;
+    parent.appendChild(input);
+}
+
 function addInputForEach() {
     let parent = document.querySelector('.arrays__input-foreach');
     let input = document.createElement('div');
@@ -187,6 +197,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('sort-done')) {
             doneSort();
+        }
+        if (e.target.classList.contains('reverse-done')) {
+            doneReverse();
         }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
@@ -545,6 +558,43 @@ function doneSort() {
     document.querySelector(".arrays__delete-sort").innerHTML = min;
 }
 
+function doneReverse() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-reverse");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        if (isNaN(d)) {
+            elements.push(d);
+        } else {
+            elements.push(Number(d));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    elements.reverse();
+
+    let result = [];
+    for (let i = 0; i < elements.length; i++) {
+        if (isNaN(elements[i])) {
+            result.push(' ' + '"' + elements[i] + '"');
+        } else {
+            result.push(' ' + elements[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-reverse').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-reverse').innerHTML = '[' + result + '];';
+}
+
 function doneForEach() {
     let elements = [];
     let data = document.querySelectorAll("#arrays__data-foreach");
@@ -657,6 +707,9 @@ buttonsReset.forEach(function(reset) {
         }
         if (e.target.classList.contains('sort-reset')) {
             resetSort();
+        }
+        if (e.target.classList.contains('reverse-reset')) {
+            resetReverse();
         }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
@@ -772,6 +825,17 @@ function resetSort() {
     document.querySelector('.arrays__result-sort').innerHTML = "";
     document.querySelector('.arrays__old-sort').innerHTML = "";
     document.querySelector(".arrays__delete-sort").innerHTML = "";
+}
+
+function resetReverse() {
+    let data = document.querySelectorAll("#arrays__data-reverse");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-reverse").innerHTML = "";
+    document.querySelector('.arrays__result-reverse').innerHTML = "";
+    document.querySelector('.arrays__old-reverse').innerHTML = "";
 }
 
 function resetForEach() {
