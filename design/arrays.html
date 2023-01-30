@@ -1827,18 +1827,125 @@ const arrayFind = array.find(function (element) {
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">findIndex</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
+                  <div class="collapsible-body"><span>Возвращает индекс первого найденного в массиве элемента, который подходит под условие переданной функции-предиката (true-false). Если же ни одного подходящего элемента не найдётся, то метод вернёт -1.</span>
+                    <pre>
+                      <code class="js">
+array.find(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Для примера возьмём два массива: в одном будут разные числа, во втором - только чётные. И попробуем найти в каждом массиве нечетное число и вернуть его индекс:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayEven = [2, 4, 6];
+// исходные массивы
+
+// напишем функцию, которая будет искать нечетные числа:
+function isOdd(element) {
+  return element % 2 !== 0;
+}
+
+// применим метод find(), куда поместим функцию isOdd:
+
+alert(array(findIndex.isOdd));
+// выведет 0 - это индекс первого нечетного числа в массиве
+
+alert(arrayEven(findIndex.isOdd));
+// выведет -1, потому что в этом массиве нет нечетных чисел
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findindex">Проверить</button>
+                          </pre>
+                      </div>
                     </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Тот же пример через классический цикл for:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayEven = [2, 4, 6];
+// исходные массивы
+
+// напишем функцию-предикат,
+// которая вернет true или false:
+
+function isOdd(element) {
+  return element % 2 !== 0
+}
+
+// напишем функцию, которая будет принимать 2 аргумента:
+// массив и функцию-предикат:
+
+function findIndex(array, predicate) {
+  for (let i = 0; i < array.length; i++) {
+
+    // Если элемент удовлетворяет условию,
+    // то возвращаем его индекс
+    if (predicate(array[i])) {
+      return i;
+    }
+  }
+  return -1
+}
+
+// подставим в функцию findIndex наши аргументы - 
+// массивы array и arrayEven, а также функцию isOdd
+
+alert(findIndex(array, isOdd));
+// выведет 0 - это индекс первого нечетного числа в массиве
+
+alert(findIndex(arrayEven, isOdd));
+// выведет -1, потому что в этом массиве нет нечетных чисел
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findindex-for">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод findIndex(), чтобы узнать, есть ли в массиве четное число, и в случае успеха, вернуть его индекс:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-findindex"></div>];</div></div>
+const arrayFindEven = array.findIndex(function (element) {
+  return element % 2 === 0;
+});
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add findindex-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done findindex-done">
+                            Применить метод findIndex()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-findindex" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Результат:</p>
+                          <pre class="arrays__result-findindex" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset findindex-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
+
+
                   </div>
                 </li>
 

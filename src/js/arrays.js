@@ -73,6 +73,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('find-add')) {
             addInputFind();
         }
+        if (e.target.classList.contains('findindex-add')) {
+            addInputFindIndex();
+        }
         
         
     })
@@ -183,6 +186,13 @@ function addInputFind() {
     parent.appendChild(input);
 }
 
+function addInputFindIndex() {
+    let parent = document.querySelector('.arrays__input-findindex');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-findindex" type="text">`;
+    parent.appendChild(input);
+}
+
 
 //done
 
@@ -235,6 +245,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('find-done')) {
             doneFind();
+        }
+        if (e.target.classList.contains('findindex-done')) {
+            doneFindIndex();
         }
     })
 })
@@ -744,15 +757,30 @@ function doneFind() {
         return element === 5;
     });
 
-    console.log(typeof result)
-
-    /*let result = [];
-    for (let i = 0; i < arrayEven.length; i++) {
-        result.push(' ' + arrayEven[i]);
-    }*/
-
     document.querySelector('.arrays__old-find').innerHTML = '[' + old + '];';
     document.querySelector('.arrays__result-find').innerHTML = result;
+}
+
+function doneFindIndex() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-findindex");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        elements.push(Number(d));
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.findIndex(function (element) {
+        return element % 2 === 0;
+    });
+
+    document.querySelector('.arrays__old-findindex').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-findindex').innerHTML = result;
 }
 
 
@@ -807,6 +835,9 @@ buttonsReset.forEach(function(reset) {
         }
         if (e.target.classList.contains('find-reset')) {
             resetFind();
+        }
+        if (e.target.classList.contains('findindex-reset')) {
+            resetFindIndex();
         }
         
     })
@@ -981,6 +1012,17 @@ function resetFind() {
     document.querySelector('.arrays__old-find').innerHTML = "";
 }
 
+function resetFindIndex() {
+    let data = document.querySelectorAll("#arrays__data-findindex");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-findindex").innerHTML = "";
+    document.querySelector('.arrays__result-findindex').innerHTML = "";
+    document.querySelector('.arrays__old-findindex').innerHTML = "";
+}
+
 
 //check
 
@@ -1090,6 +1132,12 @@ buttonsCheck.forEach(function(check) {
         }
         if (e.target.classList.contains('find-for')) {
             checkFindFor();
+        }
+        if (e.target.classList.contains('findindex')) {
+            checkFindIndex();
+        }
+        if (e.target.classList.contains('findindex-for')) {
+            checkFindIndexFor();
         }
         
         
@@ -1390,4 +1438,37 @@ function checkFindFor() {
         return undefined;
     };
     alert(arrayFind(array));
+}
+
+function checkFindIndex() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayEven = [2, 4, 6];
+    
+    function isOdd(element) {
+        return element % 2 !== 0;
+    }
+    
+    alert(array.findIndex(isOdd));
+    alert(arrayEven.findIndex(isOdd));
+}
+
+function checkFindIndexFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayEven = [2, 4, 6];
+    
+    function isOdd(element) {
+        return element % 2 !== 0
+    }
+
+    function findIndex(array, predicate) {
+        for (let i = 0; i < array.length; i++) {
+            if (predicate(array[i])) {
+            return i;
+        }
+    }
+    return -1
+}
+
+    alert(findIndex(array, isOdd));
+    alert(findIndex(arrayEven, isOdd));
 }
