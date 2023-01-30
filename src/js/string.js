@@ -9,11 +9,11 @@ const btn_second = document.querySelector('.btn_second');
 const answer_first = document.querySelector('.answer_first');
 const answer_second = document.querySelector('.answer_second');
 
-btn_first.addEventListener('click', function () {
+btn_first?.addEventListener('click', function () {
     answer_first.innerHTML = `<pre><code>let newStr = str[0].toUpperCase() + str.slice(1);</code></pre>`
 });
 
-btn_second.addEventListener('click', function () {
+btn_second?.addEventListener('click', function () {
     answer_second.innerHTML = "Для поиска без учёта регистра символов переведём всю строку в нижний регистр, а потом проверим, есть ли в ней искомые подстроки:" + `<br>` +
 
         `<pre><code></code>function checkSpam(str) {
