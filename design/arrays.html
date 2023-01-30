@@ -791,6 +791,51 @@ alert(numbers[0]);
                     </div>
                   </div>
 
+                  <div class="arrays__test">
+                    <h3 class="arrays__title-small">Практика</h3>
+                    <div class="arrays__block">
+                      <div class="arrays__results">
+                        <div class="arrays__task">
+                          <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод
+                            sort(), чтобы отсортировать числа по возрастанию, вывести отсортированный массив и наименьшее число:</p>
+                          <div class="arrays__field">
+
+                            <pre class="arrays-code">
+                              <div class="arrays__practice"><pre class="arrays-code__let">
+let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-sort"></div>];</div></div>
+
+array.sort(function(a, b) {
+  return a - b;
+});
+let min = array[0];
+                          </pre>
+
+                        </div>
+                        <button class="waves-effect waves-light btn arrays__button_add sort-add">
+                          Добавить элементы
+                        </button>
+
+                        <button class="waves-effect waves-light btn arrays__button_done sort-done">
+                          Применить метод sort()
+                        </button>
+                      </div>
+                      <div class="arrays__out">
+                        <p class="arrays__text-bold">Исходный массив:</p>
+                        <pre class="arrays__old-sort" class="arrays-code"></pre>
+                        <p class="arrays__text-bold">Отсортированный массив:</p>
+                        <pre class="arrays__result-sort" class="arrays-code"></pre>
+                        <p class="arrays__text-bold">Минимальное число:</p>
+                        <div class="arrays__delete-sort"></div>
+                      </div>
+                    </div>
+
+                    <button class="waves-effect waves-light btn arrays__button_reset sort-reset">
+                      Сбросить значения
+                    </button>
+                  </div>
+                </div>
+                  
+
                 </div>
               </li>
 

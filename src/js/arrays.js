@@ -52,6 +52,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('join-add')) {
             addInputJoin();
         }
+        if (e.target.classList.contains('sort-add')) {
+            addInputSort();
+        }
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
         }
@@ -122,6 +125,13 @@ function addInputJoin() {
     parent.appendChild(input);
 }
 
+function addInputSort() {
+    let parent = document.querySelector('.arrays__input-sort');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-sort" type="text">`;
+    parent.appendChild(input);
+}
+
 function addInputForEach() {
     let parent = document.querySelector('.arrays__input-foreach');
     let input = document.createElement('div');
@@ -174,6 +184,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('join-done')) {
             doneJoin();
+        }
+        if (e.target.classList.contains('sort-done')) {
+            doneSort();
         }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
@@ -490,6 +503,48 @@ function doneJoin() {
     document.querySelector('.arrays__result-join').innerHTML = result;
 }
 
+function doneSort() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-sort");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        if (isNaN(d)) {
+            elements.push(d);
+        } else {
+            elements.push(Number(d));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    elements.sort(function(a, b) {
+        return a - b;
+    });
+
+    let result = [];
+    for (let i = 0; i < elements.length; i++) {
+        if (isNaN(elements[i])) {
+            result.push(' ' + '"' + elements[i] + '"');
+        } else {
+            result.push(' ' + elements[i]);
+        }
+    }
+
+    let min = result[0];
+
+    document.querySelector('.arrays__old-sort').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-sort').innerHTML = '[' + result + '];';
+    document.querySelector(".arrays__delete-sort").innerHTML = min;
+}
+
 function doneForEach() {
     let elements = [];
     let data = document.querySelectorAll("#arrays__data-foreach");
@@ -600,6 +655,9 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('join-reset')) {
             resetJoin();
         }
+        if (e.target.classList.contains('sort-reset')) {
+            resetSort();
+        }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
         }
@@ -702,6 +760,18 @@ function resetJoin() {
     document.querySelector(".arrays__input-join").innerHTML = "";
     document.querySelector('.arrays__result-join').innerHTML = "";
     document.querySelector('.arrays__old-join').innerHTML = "";
+}
+
+function resetSort() {
+    let data = document.querySelectorAll("#arrays__data-sort");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-sort").innerHTML = "";
+    document.querySelector('.arrays__result-sort').innerHTML = "";
+    document.querySelector('.arrays__old-sort').innerHTML = "";
+    document.querySelector(".arrays__delete-sort").innerHTML = "";
 }
 
 function resetForEach() {
