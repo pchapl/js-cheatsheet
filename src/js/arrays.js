@@ -79,6 +79,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('every-add')) {
             addInputEvery();
         }
+        if (e.target.classList.contains('some-add')) {
+            addInputSome();
+        }
         
         
     })
@@ -203,6 +206,13 @@ function addInputEvery() {
     parent.appendChild(input);
 }
 
+function addInputSome() {
+    let parent = document.querySelector('.arrays__input-some');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-some" type="text">`;
+    parent.appendChild(input);
+}
+
 
 //done
 
@@ -261,6 +271,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('every-done')) {
             doneEvery();
+        }
+        if (e.target.classList.contains('some-done')) {
+            doneSome();
         }
     })
 })
@@ -826,6 +839,28 @@ function doneEvery() {
     document.querySelector('.arrays__result-every').innerHTML = result;
 }
 
+function doneSome() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-some");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        elements.push(Number(d));
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.some(function (num) {
+        return num % 2 === 0;
+    })
+
+    document.querySelector('.arrays__old-some').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-some').innerHTML = result;
+}
+
 
 //reset
 
@@ -884,6 +919,9 @@ buttonsReset.forEach(function(reset) {
         }
         if (e.target.classList.contains('every-reset')) {
             resetEvery();
+        }
+        if (e.target.classList.contains('some-reset')) {
+            resetSome();
         }
         
     })
@@ -1078,6 +1116,17 @@ function resetEvery() {
     document.querySelector(".arrays__input-every").innerHTML = "";
     document.querySelector('.arrays__result-every').innerHTML = "";
     document.querySelector('.arrays__old-every').innerHTML = "";
+}
+
+function resetSome() {
+    let data = document.querySelectorAll("#arrays__data-some");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-some").innerHTML = "";
+    document.querySelector('.arrays__result-some').innerHTML = "";
+    document.querySelector('.arrays__old-some').innerHTML = "";
 }
 
 
