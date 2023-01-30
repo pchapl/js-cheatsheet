@@ -1951,37 +1951,96 @@ const arrayFindEven = array.findIndex(function (element) {
 
 
                 <li>
-                  <div class="collapsible-header arrays-collapsible-header">flatMap</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
+                  <div class="collapsible-header arrays-collapsible-header">every</div>
+                  <div class="collapsible-body"><span>Позволяет решить задачу, когда необходимо узнать, что все элементы в массиве соответствуют условию в колбэке.</span>
+                    <pre>
+                      <code class="js">
+array.every(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Проверим, все ли числа в массиве больше или равны единице:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayNums = array.every(function (num) {
+  return num >= 1;
+})
+
+alert(arrayNums);
+// выведет true, потому что все числа в массиве больше 1
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check every">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Пример через классический цил for:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayNums = function (array) {
+  for(let i = 0; i < array.length; i++){
+    if(array[i] >= 1){
+      return true;
+    }
+  }
+  return false;
+}
+
+
+alert(arrayNums(array));
+// также выведет true
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check every-for">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод every(), чтобы узнать, все ли элементы одинаковые:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-every"></div>];</div></div>
+const arrayElements = array.every(function (element) {
+  return element === array[0];
+})
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add every-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done every-done">
+                            Применить метод every()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-every" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Результат:</p>
+                          <pre class="arrays__result-every" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset every-reset">
+                        Сбросить значения
+                      </button>
                     </div>
                   </div>
-                </li>
 
 
-                <li>
-                  <div class="collapsible-header arrays-collapsible-header">every</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
-                    </div>
                   </div>
                 </li>
 
@@ -2024,6 +2083,24 @@ console.log(fruits); // Яблоко, Апельсин, Груша
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">findLastIndex</div>
+                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
+                    <div class="arrays-code">
+                      <pre>
+                          <code class="js">
+let fruits = ["Яблоко", "Апельсин"];
+  
+fruits.push("Груша"); // добавляем "Груша"
+                            
+console.log(fruits); // Яблоко, Апельсин, Груша
+                          </code>
+                        </pre>
+                    </div>
+                  </div>
+                </li>
+
+
+                <li>
+                  <div class="collapsible-header arrays-collapsible-header">flatMap</div>
                   <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
                     <div class="arrays-code">
                       <pre>

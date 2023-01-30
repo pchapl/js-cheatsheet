@@ -76,6 +76,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('findindex-add')) {
             addInputFindIndex();
         }
+        if (e.target.classList.contains('every-add')) {
+            addInputEvery();
+        }
         
         
     })
@@ -193,6 +196,13 @@ function addInputFindIndex() {
     parent.appendChild(input);
 }
 
+function addInputEvery() {
+    let parent = document.querySelector('.arrays__input-every');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-every" type="text">`;
+    parent.appendChild(input);
+}
+
 
 //done
 
@@ -248,6 +258,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('findindex-done')) {
             doneFindIndex();
+        }
+        if (e.target.classList.contains('every-done')) {
+            doneEvery();
         }
     })
 })
@@ -783,6 +796,36 @@ function doneFindIndex() {
     document.querySelector('.arrays__result-findindex').innerHTML = result;
 }
 
+function doneEvery() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-every");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        if (isNaN(d)) {
+            elements.push(d);
+        } else {
+            elements.push(Number(d));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let result = elements.every(function (element) {
+        return element === elements[0];
+    })
+
+    document.querySelector('.arrays__old-every').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-every').innerHTML = result;
+}
+
 
 //reset
 
@@ -838,6 +881,9 @@ buttonsReset.forEach(function(reset) {
         }
         if (e.target.classList.contains('findindex-reset')) {
             resetFindIndex();
+        }
+        if (e.target.classList.contains('every-reset')) {
+            resetEvery();
         }
         
     })
@@ -1023,6 +1069,17 @@ function resetFindIndex() {
     document.querySelector('.arrays__old-findindex').innerHTML = "";
 }
 
+function resetEvery() {
+    let data = document.querySelectorAll("#arrays__data-every");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-every").innerHTML = "";
+    document.querySelector('.arrays__result-every').innerHTML = "";
+    document.querySelector('.arrays__old-every').innerHTML = "";
+}
+
 
 //check
 
@@ -1138,6 +1195,12 @@ buttonsCheck.forEach(function(check) {
         }
         if (e.target.classList.contains('findindex-for')) {
             checkFindIndexFor();
+        }
+        if (e.target.classList.contains('every')) {
+            checkEvery();
+        }
+        if (e.target.classList.contains('every-for')) {
+            checkEveryFor();
         }
         
         
@@ -1471,4 +1534,25 @@ function checkFindIndexFor() {
 
     alert(findIndex(array, isOdd));
     alert(findIndex(arrayEven, isOdd));
+}
+
+function checkEvery() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayNums = array.every(function (num) {
+        return num >= 1;
+    })
+    alert(arrayNums);
+}
+
+function checkEveryFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayNums = function (array) {
+        for(let i = 0; i < array.length; i++){
+            if(array[i] >= 1){
+                return true;
+            }
+        }
+        return false;
+    }
+    alert(arrayNums(array));
 }
