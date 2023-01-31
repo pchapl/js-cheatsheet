@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     hljs.highlightAll();
-    document.querySelector('code.td-new-date span.hljs-string').innerHTML = `<input type="text" id="td-date-input" value="August 14, 2022 14:15:30">`;
+    document.querySelector('code.td-user-date span.hljs-string').innerHTML = `<input type="text" id="td-date-input" value="August 14, 2022 14:15:30">`;
     showCommentsWDates(document.querySelector('#td-date-input').value);
     document.querySelector('#td-date-input').addEventListener('input', (event) => {
         let userDate = event.target.value;
@@ -27,3 +27,10 @@ function showCommentsWDates(userDate) {
     document.querySelector('code.td-to-iso span.hljs-comment').innerHTML = '// ' + currentDate.toISOString();
 
 }
+
+
+
+
+
+
+

@@ -27,11 +27,54 @@
 <body>
 <main class="container">
     <h1 class="center-align">Даты и время в JS</h1>
+    <section class="td">
+        <h3>что такое объект Date</h3>
+        <section>Date — это специальный объект для работы со временем. Он является встроенным в движок браузера, поэтому
+            посмотреть что у него внутри не так-то просто.
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date">Источники</a>
+            сообщают, что внутри него хранится timestamp (количество милисекунд с 1 января 1970 года UTC) и какая-то
+            магия.
+        </section>
+        <section>
+            <h5>Что важно понять?</h5>
+            В объекте date мы не можем разделить дату и время — это единая сущность. нельзя просто так взять и задать
+            только время без даты.
+        </section>
+        <section>
+            <h5>Почему?</h5>
+            Потому что внутри объекта записано количество милисекунд, которое преобразуется в “человеческий” формат с
+            помощью <span class="td-strike">чёртовой матери</span> магии
+        </section>
 
+    <section class="td-create-new-date">
+        <h5>но не будем тянуть кота за яичницу и посмотрим</h5>
+        <h3>как создать объект Date</h3>
+        <pre>
+            <code class="td-now-date">
+//создаём Date с текущей датой и временем:
+const now = new Date();
+console.log(nowDate); //
+            </code><code class="td-string-date">
+//создаём Date с переданным значением времени. Значение должно быть совместимым с IETF RFC 2822 или с ISO8601:
+const fromString = new Date('August 14, 2022 14:15:30');
+console.log(fromString); //
+            </code><code class="td-value-date">
+//создаём объект Date с временем, равным количеству миллисекунд (тысячная доля секунды), прошедших с 1 января 1970 года UTC+0:
+ const fromMiliseconds = new Date(628021800000);
+console.log(fromMiliseconds); //
+            </code><code class="td-params-date">
+//создаём объект Date с заданными компонентами в местном часовом поясе. Обязательны только первые два аргумента:
+const fromParameters = new Date(1995, 11, 17, 3, 24, 0);
+console.log(fromParameters); //
+        </code>
+        </pre>
+    </section>
+
+    </section>
     <section class="td-metods">
-        <h4>Методы работы с датой</h4>
-    <pre>
-        <code class="td-new-date">
+        <h3>методы работы с датой</h3>
+        <pre>
+        <code class="td-user-date">
 const currentDate = new Date('August 14, 2022 14:15:30')</code><code class="td-get-time">
 console.log(currentDate.getTime())
 // 1660475730000        </code><code class="td-get-full-year">
