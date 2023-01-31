@@ -56,5 +56,4 @@ document.addEventListener('DOMContentLoaded', function() {
         startingTop: '3%',
         endingTop: '10%'
     });
-  });
-
+});
