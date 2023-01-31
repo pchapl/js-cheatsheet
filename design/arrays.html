@@ -2104,10 +2104,10 @@ function isOdd(element) {
 
 // применим метод find(), куда поместим функцию isOdd:
 
-alert(array(findIndex.isOdd));
+alert(array.findIndex(isOdd));
 // выведет 0 - это индекс первого нечетного числа в массиве
 
-alert(arrayEven(findIndex.isOdd));
+alert(arrayEven.findIndex(isOdd));
 // выведет -1, потому что в этом массиве нет нечетных чисел
                             </code>
   <button class="waves-effect waves-light btn arrays__check findindex">Проверить</button>
@@ -2301,7 +2301,7 @@ const arrayElements = array.every(function (element) {
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">some</div>
-                  <div class="collapsible-body"><span> позволяет узнать, есть ли в массиве хотя бы один элемент, удовлетворяющий условию в функции-колбэке. Колбэк-функция будет вызываться для каждого элемента массива до тех пор, пока не вернётся true, либо пока не закончатся элементы массива.</span>
+                  <div class="collapsible-body"><span> Позволяет узнать, есть ли в массиве хотя бы один элемент, удовлетворяющий условию в функции-колбэке. Колбэк-функция будет вызываться для каждого элемента массива до тех пор, пока не вернётся true, либо пока не закончатся элементы массива.</span>
                     <pre>
                       <code class="js">
 array.some(callback(element, index, array), thisArg);
@@ -2314,14 +2314,14 @@ array.some(callback(element, index, array), thisArg);
                           <pre>
                             <code class="js">
 const array = [1, 2, 3, 4, 5]; 
-const arrayNums = array.every(function (num) {
+const arrayNums = array.some(function (num) {
   return num % 2 !== 0;
 })
 
 alert(arrayNums);
 // выведет true, потому что в массиве есть нечетное число
                             </code>
-  <button class="waves-effect waves-light btn arrays__check every">Проверить</button>
+  <button class="waves-effect waves-light btn arrays__check some">Проверить</button>
                           </pre>
                       </div>
                     </div>
@@ -2345,7 +2345,7 @@ const arrayNums = function (array) {
 alert(arrayNums(array));
 // также выведет true
                             </code>
-  <button class="waves-effect waves-light btn arrays__check every-for">Проверить</button>
+  <button class="waves-effect waves-light btn arrays__check some-for">Проверить</button>
                           </pre>
                       </div>
                     </div>
@@ -2526,10 +2526,10 @@ function isOdd(element) {
 
 // применим метод findLastIndex(), куда поместим функцию isOdd:
 
-alert(array(findLastIndex.isOdd));
+alert(array.findLastIndex(isOdd));
 // выведет 4 - это индекс последнего нечетного числа в массиве
 
-alert(arrayEven(findLastIndex.isOdd));
+alert(arrayEven.findLastIndex(isOdd));
 // выведет -1, потому что в этом массиве нет нечетных чисел
                             </code>
   <button class="waves-effect waves-light btn arrays__check findlastindex">Проверить</button>

@@ -871,11 +871,9 @@ function doneFindLastIndex() {
         old.push(' ' + data[i].value);
     }
 
-    function isEven (element) {
-        return element % 2 === 0;
-    }
-
-    let result = elements.findLastIndex(isEven);
+    let result = elements.findLast(function (element) {
+        return element % 2 !== 0;
+    });
 
     document.querySelector('.arrays__old-findlastindex').innerHTML = '[' + old + '];';
     document.querySelector('.arrays__result-findlastindex').innerHTML = result;
@@ -1387,6 +1385,12 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('every-for')) {
             checkEveryFor();
         }
+        if (e.target.classList.contains('some')) {
+            checkSome();
+        }
+        if (e.target.classList.contains('some-for')) {
+            checkSomeFor();
+        }
         
         
     })
@@ -1867,6 +1871,27 @@ function checkEveryFor() {
     const arrayNums = function (array) {
         for(let i = 0; i < array.length; i++){
             if(array[i] >= 1){
+                return true;
+            }
+        }
+        return false;
+    }
+    alert(arrayNums(array));
+}
+
+function checkSome() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayNums = array.some(function (num) {
+        return num % 2 !== 0;
+    })
+    alert(arrayNums);
+}
+
+function checkSomeFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayNums = function (array) {
+        for(let i = 0; i < array.length; i++){
+            if(array[i] % 2 !== 0){
                 return true;
             }
         }
