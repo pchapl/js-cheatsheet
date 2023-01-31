@@ -111,6 +111,7 @@ alert(arr[7]);
 
       <div class="arrays-array_methods">
         <h3>Методы массивов</h3>
+
         <p class="arrays__text">Методы массивов часто дают разработчику удобные инструменты, позволяющие красиво решать самые разные задачи по преобразованию данных. Бывают методы копирования, удаления и добавления элементов, методы, которые изменяют исходный массив или возвращают новый, а также многие другие.</p>
         <p class="arrays__text">В нашем справочнике методы массивов разделены на две большие группы, которые различаются возможностью принимать функцию обратного вызова (callback function). Методы, которые не могут принимать колбэк, объединены в первую группу, а методы, принимающие колбэк - во вторую.</p>
 
@@ -1208,7 +1209,7 @@ alert(fruits);
     
                   <li>
                     <div class="collapsible-header arrays-collapsible-header">values</div>
-                    <div class="collapsible-body"><span>Возвращает объект Array Iterator, содержащий значения для каждого индекса в массиве.</span>
+                    <div class="collapsible-body"><span>Возвращает объект Array Iterator, который содержит значение для каждого индекса в массиве.</span>
                       <pre>
                         <code class="js">
     array.values();
@@ -1276,8 +1277,6 @@ alert(fruits);
           </div>
 
           <h5 class="arrays__title-min">Прочие методы</h5>
-
-          <p class="arrays__text-center">Описанные выше методы являются самыми распространенными в этой категории. Но есть и другие.</p>
           
           <div class="container">
             <div class="row">
@@ -2321,6 +2320,138 @@ const arrayNums = array.some(function (num) {
                   </div>
                 </li>
 
+                <li>
+                  <div class="collapsible-header arrays-collapsible-header">flatMap</div>
+                  <div class="collapsible-body"><span>Метод идентичен последовательному вызову map().flat() с параметром depth = 1, он применяется для трансформации исходных данных с уменьшением вложенности. Был добавлен в стандарте ES2019. Если вы поддерживаете браузеры, выпущенные раньше 2018 года, то понадобится полифил.</span>
+                    <pre>
+                      <code class="js">
+array.flatMap(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Для примера рассмотрим функцию, которая принимает значение и возвращает массив из двух элементов, каждый из которых дублирует значение:</p>
+                      <pre>
+                        <code class="js">
+const array = [1, 2, 3]; 
+// исходный массив
+
+// напишем функцию, которая возвращает массив из элементов
+// и дублирует их:
+
+const duplicate = function (element) {
+return [element, element];
+}
+                        </code>
+                      </pre>
+                    </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Если применить функцию к массиву, получим вложенный массив:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3]; 
+
+const duplicate = function (element) {
+  return [element, element];
+}
+
+// применим функцию к массиву, трансформируя его с помощью map:
+
+alert(array.map(duplicate));
+console.log(array.map(duplicate));
+// выведет вложенный массив [[1, 1], [2, 2], [3, 3]]
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check flatmap-map">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Извлечь вложенные массивы можно с помощью flat:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3]; 
+
+const duplicate = function (element) {
+  return [element, element];
+}
+
+// добавляем метод flat к методу map:
+
+alert(array.map(duplicate).flat()); 
+console.log(array.map(duplicate).flat());
+// выведет готовый результат - [1, 1, 2, 2, 3, 3]
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check flatmap-flatmap">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">В функциональном программировании такие действия с массивами встречаются часто. Поэтому появился метод .flatMap(), который упрощает код. Данный метод более эффективный, чем вызов map().flat() по отдельности, поскольку обход массива совершается только один раз:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3]; 
+
+const duplicate = function (element) {
+  return [element, element];
+}
+
+alert(array.flatMap(duplicate)); 
+console.log(array.flatMap(duplicate));
+// выведет готовый результат - [1, 1, 2, 2, 3, 3]
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check flatmap">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод flatMap(), чтобы сформировать на основе исходного массива новый массив из элементов и их квадратов:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-flatmap"></div>];</div></div>
+const duplicateSquare = array.flatMap(function (element) {
+  return [element, element**2];
+});
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add flatmap-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done flatmap-done">
+                            Применить метод flatMap()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-flatmap" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Новый массив:</p>
+                          <pre class="arrays__result-flatmap" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset flatmap-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
+
+                  </div>
+                </li>
+
               </ul>
             </div>
           </div>
@@ -2792,74 +2923,6 @@ const arrayFindEven = array.findLastIndex(function (element) {
                 </li>
 
               </ul>
-            </div>
-          </div>
-        </div>
-
-        <h5 class="arrays__title-min">Прочие методы</h5>
-
-        <div class="container">
-          <div lass="row">
-            <div class="col s12">
-
-              <ul class="collapsible popout">
-
-                <li>
-                  <div class="collapsible-header arrays-collapsible-header">flatMap</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
-                    </div>
-                  </div>
-                </li>
-
-
-                <li>
-                  <div class="collapsible-header arrays-collapsible-header">group</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
-                    </div>
-                  </div>
-                </li>
-
-
-                <li>
-                  <div class="collapsible-header arrays-collapsible-header">groupToMap</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
-                    </div>
-                  </div>
-                </li>
-
-
-              </ul>
-
             </div>
           </div>
         </div>

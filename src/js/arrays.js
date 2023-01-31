@@ -79,6 +79,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('some-add')) {
             addInputSome();
         }
+        if (e.target.classList.contains('flatmap-add')) {
+            addInputFlatMap();
+        }
         if (e.target.classList.contains('find-add')) {
             addInputFind();
         }
@@ -91,9 +94,6 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('findlastindex-add')) {
             addInputFindLastIndex();
         }
-        
-        
-        
     })
 })
 
@@ -216,6 +216,13 @@ function addInputSome() {
     parent.appendChild(input);
 }
 
+function addInputFlatMap() {
+    let parent = document.querySelector('.arrays__input-flatmap');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-flatmap" type="text">`;
+    parent.appendChild(input);
+}
+
 function addInputFind() {
     let parent = document.querySelector('.arrays__input-find');
     let input = document.createElement('div');
@@ -303,6 +310,9 @@ buttonsDone.forEach(function(done) {
         if (e.target.classList.contains('some-done')) {
             doneSome();
         }
+        if (e.target.classList.contains('flatmap-done')) {
+            doneFlatMap();
+        }
         if (e.target.classList.contains('find-done')) {
             doneFind();
         }
@@ -315,7 +325,6 @@ buttonsDone.forEach(function(done) {
         if (e.target.classList.contains('findlastindex-done')) {
             doneFindLastIndex();
         }
-        
     })
 })
 
@@ -946,6 +955,37 @@ function doneSome() {
     document.querySelector('.arrays__result-some').innerHTML = result;
 }
 
+function doneFlatMap() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-flatmap");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let duplicateSquare = elements.flatMap(function (element) {
+        return [element, element**2];
+    });
+
+    let result = [];
+    for (let i = 0; i < duplicateSquare.length; i++) {
+        result.push(' ' + duplicateSquare[i]);
+    }
+
+    document.querySelector('.arrays__old-flatmap').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-flatmap').innerHTML = '[' + result + '];';
+}
+
 function doneFind() {
     let elements = [];
     let data = document.querySelectorAll("#arrays__data-find");
@@ -1108,6 +1148,9 @@ buttonsReset.forEach(function(reset) {
         }
         if (e.target.classList.contains('some-reset')) {
             resetSome();
+        }
+        if (e.target.classList.contains('flatmap-reset')) {
+            resetFlatMap();
         }
         if (e.target.classList.contains('find-reset')) {
             resetFind();
@@ -1315,6 +1358,17 @@ function resetSome() {
     document.querySelector(".arrays__input-some").innerHTML = "";
     document.querySelector('.arrays__result-some').innerHTML = "";
     document.querySelector('.arrays__old-some').innerHTML = "";
+}
+
+function resetFlatMap() {
+    let data = document.querySelectorAll("#arrays__data-flatmap");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-flatmap").innerHTML = "";
+    document.querySelector('.arrays__result-flatmap').innerHTML = "";
+    document.querySelector('.arrays__old-flatmap').innerHTML = "";
 }
 
 function resetFind() {
@@ -1530,6 +1584,15 @@ buttonsCheck.forEach(function(check) {
         }
         if (e.target.classList.contains('findlastindex-for')) {
             checkFindLastIndexFor();
+        }
+        if (e.target.classList.contains('flatmap-map')) {
+            checkFlatMapMap();
+        }
+        if (e.target.classList.contains('flatmap-flatmap')) {
+            checkFlatMapFlatMap();
+        }
+        if (e.target.classList.contains('flatmap')) {
+            checkFlatMap();
         }
         
         
@@ -2066,5 +2129,35 @@ function checkEveryFor() {
         return false;
     }
     alert(arrayNums(array));
+}
+
+function checkFlatMapMap() {
+    const array = [1, 2, 3]; 
+    const duplicate = function (element) {
+        return [element, element];
+    }
+    
+    alert(array.map(duplicate));
+    console.log(array.map(duplicate));
+}
+
+function checkFlatMapFlatMap() {
+    const array = [1, 2, 3]; 
+    const duplicate = function (element) {
+        return [element, element];
+    }
+    
+    alert(array.map(duplicate).flat());
+    console.log(array.map(duplicate).flat());
+}
+
+function checkFlatMap() {
+    const array = [1, 2, 3]; 
+    const duplicate = function (element) {
+        return [element, element];
+    }
+    
+    alert(array.flatMap(duplicate)); 
+    console.log(array.flatMap(duplicate));
 }
 
