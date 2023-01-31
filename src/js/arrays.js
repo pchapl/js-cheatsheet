@@ -1224,6 +1224,9 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('keys-for')) {
             checkKeysFor();
         }
+        if (e.target.classList.contains('fill')) {
+            checkFill();
+        }
         if (e.target.classList.contains('foreach')) {
             checkForEach();
         }
@@ -1495,6 +1498,13 @@ function checkKeysFor() {
     for (let key of keys) {
         alert(key);
     }
+}
+
+function checkFill() {
+    const fruits = ["Банан", "Яблоко", "Мандарин", "Груша"];
+    alert(fruits.fill("Манго", 2, 4));
+    alert(fruits.fill("Манго", 1));
+    alert(fruits.fill("Манго"));
 }
 
 function checkForEach() {

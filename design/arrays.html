@@ -1351,18 +1351,52 @@ for (let key of keys) {
 
               <li>
                 <div class="collapsible-header arrays-collapsible-header">fill</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                  <div class="arrays-code">
-                    <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
+                <div class="collapsible-body"><span>Заполняет массив указанным значением.</span>
+                  <pre>
+                    <code class="js">
+array.fill(value, start, end);
+                    </code>
+                  </pre>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">Параметры:</p>
+                    <ul id="arrays__ul">
+                      <li id="arrays__li">
+                        value - значение, которым будет заполнен массив; 
+                      </li>
+                      <li id="arrays__li_two">
+                        start (необязательный параметр) - индекс элемента, с которого начинается заполнение массива (по умолчанию - 0); допускается использование отрицательных значений, в этом случае индекс рассчитывается по формуле array.length + start;
+                      </li>
+                      <li id="arrays__li_three">
+                        end (необязательный параметр) - индекс элемента, на котором заканчивается заполнение массива (по умолчанию - array.length); допускается использование отрицательных значений, в этом случае индекс рассчитывается по формуле array.length + end;
+                      </li>
+                    </ul>
                   </div>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">Метод заполняет все элементы массива от начального до конечного индексов одним значением и изменяет существующий массив, а не возвращает новый:</p>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин", "Груша"];
+
+alert(fruits.fill("Манго", 2, 4)); 
+// заполнить массив значением "Манго" со 2 по 4 индекс
+// выведет Банан, Яблоко, Манго, Манго
+
+alert(fruits.fill("Манго", 1)); 
+// заполнить массив значением "Манго" с 1 индекса
+// выведет Банан, Манго, Манго, Манго
+
+alert(fruits.fill("Манго")); 
+// заполнить весь массив значением "Манго"
+// выведет Манго, Манго, Манго, Манго
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check fill">Проверить</button>
+                        </pre>
+                    </div>
+                  </div>
+
                 </div>
               </li>
 
