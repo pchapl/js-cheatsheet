@@ -58,6 +58,9 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('reverse-add')) {
             addInputReverse();
         }
+        if (e.target.classList.contains('includes-add')) {
+            addInputIncludes();
+        }
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
         }
@@ -164,6 +167,13 @@ function addInputReverse() {
     let parent = document.querySelector('.arrays__input-reverse');
     let input = document.createElement('div');
     input.innerHTML = `<input class="arrays__data" id="arrays__data-reverse" type="text">`;
+    parent.appendChild(input);
+}
+
+function addInputIncludes() {
+    let parent = document.querySelector('.arrays__input-includes');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-includes" type="text">`;
     parent.appendChild(input);
 }
 
@@ -288,6 +298,9 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('reverse-done')) {
             doneReverse();
+        }
+        if (e.target.classList.contains('includes-done')) {
+            doneIncludes();
         }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
@@ -683,6 +696,8 @@ function doneSort() {
             };
         })
         elements.push("");
+    } else {
+        elements = deleteEmpty;
     }
 
     let result = [];
@@ -734,6 +749,38 @@ function doneReverse() {
 
     document.querySelector('.arrays__old-reverse').innerHTML = '[' + old + '];';
     document.querySelector('.arrays__result-reverse').innerHTML = '[' + result + '];';
+}
+
+function doneIncludes() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-includes");
+    let search = document.querySelector('#arrays__search-includes');
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        }  else {
+            elements.push(dataValue);
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let searchValue = search.value;
+    let result = elements.includes(searchValue);
+
+    console.log(typeof searchValue)
+
+    document.querySelector('.arrays__old-includes').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-includes').innerHTML = result;
 }
 
 function doneForEach() {
@@ -1128,6 +1175,9 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('reverse-reset')) {
             resetReverse();
         }
+        if (e.target.classList.contains('includes-reset')) {
+            resetIncludes();
+        }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
         }
@@ -1281,6 +1331,18 @@ function resetReverse() {
     document.querySelector(".arrays__input-reverse").innerHTML = "";
     document.querySelector('.arrays__result-reverse').innerHTML = "";
     document.querySelector('.arrays__old-reverse').innerHTML = "";
+}
+
+function resetIncludes() {
+    let data = document.querySelectorAll("#arrays__data-includes");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-includes").innerHTML = "";
+    document.querySelector('.arrays__result-includes').innerHTML = "";
+    document.querySelector('.arrays__old-includes').innerHTML = "";
+    document.querySelector('#arrays__search-includes').value = "";
 }
 
 function resetForEach() {

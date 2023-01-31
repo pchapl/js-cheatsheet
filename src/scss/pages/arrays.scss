@@ -11,11 +11,24 @@
     flex: 1 1 auto;
 }
 
-#arrays__data-pop, #arrays__data-push, #arrays__data-shift, #arrays__data-unshift, #arrays__data-splice, #arrays__data-slice, #arrays__data-concat, #arrays__data-join, #arrays__data-sort, #arrays__data-reverse, #arrays__data-foreach, #arrays__data-map, #arrays__data-reduce, #arrays__data-reduceright, #arrays__data-filter, #arrays__data-every, #arrays__data-some, #arrays__data-flatmap, #arrays__data-find, #arrays__data-findindex, #arrays__data-findlast, #arrays__data-findlastindex {
+#arrays__data-pop, #arrays__data-push, #arrays__data-shift, #arrays__data-unshift, #arrays__data-splice, #arrays__data-slice, #arrays__data-concat, #arrays__data-join, #arrays__data-sort, #arrays__data-reverse, #arrays__data-includes, #arrays__data-foreach, #arrays__data-map, #arrays__data-reduce, #arrays__data-reduceright, #arrays__data-filter, #arrays__data-every, #arrays__data-some, #arrays__data-flatmap, #arrays__data-find, #arrays__data-findindex, #arrays__data-findlast, #arrays__data-findlastindex {
     height: 2rem;
     width: 7rem;
     text-align: center;
     border: 1px solid black;
+}
+
+#arrays__search-includes {
+    height: 2rem;
+    width: 7rem;
+    margin: 0;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.arrays__practice-search {
+    display: flex;
+    align-items: flex-end;
 }
 
 .arrays__practice {
