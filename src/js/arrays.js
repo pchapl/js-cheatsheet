@@ -1212,6 +1212,18 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('copywithin-end')) {
             checkCopyWithinEnd();
         }
+        if (e.target.classList.contains('entries')) {
+            checkEntries();
+        }
+        if (e.target.classList.contains('entries-for')) {
+            checkEntriesFor();
+        }
+        if (e.target.classList.contains('keys')) {
+            checkKeys();
+        }
+        if (e.target.classList.contains('keys-for')) {
+            checkKeysFor();
+        }
         if (e.target.classList.contains('foreach')) {
             checkForEach();
         }
@@ -1450,6 +1462,39 @@ function checkCopyWithin() {
 function checkCopyWithinEnd() {
     let fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Манго"];
     alert(fruits.copyWithin(-3, 0, -1));
+}
+
+function checkEntries() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const entries = fruits.entries();
+    alert(entries.next().value);
+    alert(entries.next().value);
+    alert(entries.next().value);
+}
+
+function checkEntriesFor() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const entries = fruits.entries();
+    for (let element of entries) {
+        alert(element);
+    }
+}
+
+function checkKeys() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const keys = fruits.keys();
+    alert(keys.next().value);
+    alert(keys.next().value);
+    alert(keys.next().value);
+    alert(keys.next().value);
+}
+
+function checkKeysFor() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const keys = fruits.keys();
+    for (let key of keys) {
+        alert(key);
+    }
 }
 
 function checkForEach() {
