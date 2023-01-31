@@ -1,0 +1,84 @@
+// -----Блок fluid-----
+#events_fluid {
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+}
+
+#events_fluid_c {
+    width:800px;
+    height:376px;
+    margin:0 auto;
+    display:block;
+}
+// -----Конец блока fluid-----
+
+// -----Блок confetti-----
+$back: #143741;
+$white: #f3f3f8;
+$red: #FF4B47;
+$green: #40E64F;
+$yellow: #E0C93B;
+$orange: #F58F39;
+$blue: #39BAC5;
+$size: 1.2rem;
+
+div.events_confetti_an {
+    width: $size;
+    height: $size;
+    display: inline-block;
+    position: absolute;
+    // left: 0; 
+    // right: 0;
+    // margin-left: auto; 
+    // margin-right: auto;
+    // width: 100px;
+    left: 50%;
+    top: 240%;
+    transform: translate(-50%,-50%);
+    p.events_confetti_an {
+        width: $size;
+        height: $size;
+        background: $white;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0;
+    }
+    
+    &:nth-of-type(5n + 1) {
+        p.events_confetti_an {
+            background-color: $red;
+        }
+    }
+    &:nth-of-type(5n + 2) {
+        p.events_confetti_an {
+            background-color: $orange;
+        }
+    }
+    &:nth-of-type(5n + 3) {
+        p.events_confetti_an {
+            background-color: $green;
+        }
+    }
+    &:nth-of-type(5n + 4) {
+        p.events_confetti_an {
+            background-color: $blue;
+        }
+    }
+    &:nth-of-type(5n) {
+        p.events_confetti_an {
+            background-color: $yellow;
+        }
+    }
+}
+// -----Конец блока confetti-----
+
+// -----Блока keys-----
+#keyInput {
+    width: 30px;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+.key-color {
+    color: red;
+}
