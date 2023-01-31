@@ -67,8 +67,17 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('reduce-add')) {
             addInputReduce();
         }
+        if (e.target.classList.contains('reduceright-add')) {
+            addInputReduceRight();
+        }
         if (e.target.classList.contains('filter-add')) {
             addInputFilter();
+        }
+        if (e.target.classList.contains('every-add')) {
+            addInputEvery();
+        }
+        if (e.target.classList.contains('some-add')) {
+            addInputSome();
         }
         if (e.target.classList.contains('find-add')) {
             addInputFind();
@@ -82,12 +91,7 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('findlastindex-add')) {
             addInputFindLastIndex();
         }
-        if (e.target.classList.contains('every-add')) {
-            addInputEvery();
-        }
-        if (e.target.classList.contains('some-add')) {
-            addInputSome();
-        }
+        
         
         
     })
@@ -184,10 +188,31 @@ function addInputReduce() {
     parent.appendChild(input);
 }
 
+function addInputReduceRight() {
+    let parent = document.querySelector('.arrays__input-reduceright');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-reduceright" type="text">`;
+    parent.appendChild(input);
+}
+
 function addInputFilter() {
     let parent = document.querySelector('.arrays__input-filter');
     let input = document.createElement('div');
     input.innerHTML = `<input class="arrays__data" id="arrays__data-filter" type="text">`;
+    parent.appendChild(input);
+}
+
+function addInputEvery() {
+    let parent = document.querySelector('.arrays__input-every');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-every" type="text">`;
+    parent.appendChild(input);
+}
+
+function addInputSome() {
+    let parent = document.querySelector('.arrays__input-some');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-some" type="text">`;
     parent.appendChild(input);
 }
 
@@ -216,20 +241,6 @@ function addInputFindLastIndex() {
     let parent = document.querySelector('.arrays__input-findlastindex');
     let input = document.createElement('div');
     input.innerHTML = `<input class="arrays__data" id="arrays__data-findlastindex" type="text">`;
-    parent.appendChild(input);
-}
-
-function addInputEvery() {
-    let parent = document.querySelector('.arrays__input-every');
-    let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-every" type="text">`;
-    parent.appendChild(input);
-}
-
-function addInputSome() {
-    let parent = document.querySelector('.arrays__input-some');
-    let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-some" type="text">`;
     parent.appendChild(input);
 }
 
@@ -280,8 +291,17 @@ buttonsDone.forEach(function(done) {
         if (e.target.classList.contains('reduce-done')) {
             doneReduce();
         }
+        if (e.target.classList.contains('reduceright-done')) {
+            doneReduceRight();
+        }
         if (e.target.classList.contains('filter-done')) {
             doneFilter();
+        }
+        if (e.target.classList.contains('every-done')) {
+            doneEvery();
+        }
+        if (e.target.classList.contains('some-done')) {
+            doneSome();
         }
         if (e.target.classList.contains('find-done')) {
             doneFind();
@@ -295,12 +315,7 @@ buttonsDone.forEach(function(done) {
         if (e.target.classList.contains('findlastindex-done')) {
             doneFindLastIndex();
         }
-        if (e.target.classList.contains('every-done')) {
-            doneEvery();
-        }
-        if (e.target.classList.contains('some-done')) {
-            doneSome();
-        }
+        
     })
 })
 
@@ -309,11 +324,13 @@ function donePop() {
     let data = document.querySelectorAll("#arrays__data-pop");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -347,11 +364,13 @@ function donePush() {
     let data = document.querySelectorAll("#arrays__data-push");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -384,11 +403,13 @@ function doneShift() {
     let data = document.querySelectorAll("#arrays__data-shift");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -422,11 +443,13 @@ function doneUnshift() {
     let data = document.querySelectorAll("#arrays__data-unshift");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -459,11 +482,13 @@ function doneSplice() {
     let data = document.querySelectorAll("#arrays__data-splice");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -506,11 +531,13 @@ function doneSlice() {
     let data = document.querySelectorAll("#arrays__data-slice");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -543,11 +570,13 @@ function doneConcat() {
     let data = document.querySelectorAll("#arrays__data-concat");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -584,11 +613,14 @@ function doneJoin() {
     let data = document.querySelectorAll("#arrays__data-join");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -604,20 +636,22 @@ function doneJoin() {
     let result = elements.join(', ');
 
     document.querySelector('.arrays__old-join').innerHTML = '[' + old + '];';
-    document.querySelector('.arrays__result-join').innerHTML = result;
+    document.querySelector('.arrays__result-join').innerHTML = '"' + result + '"';
 }
 
 function doneSort() {
     let elements = [];
+    let deleteEmpty = [];
     let data = document.querySelectorAll("#arrays__data-sort");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+
+        if (dataValue === '') {
+            deleteEmpty.push(dataValue);
         } else {
-            elements.push(Number(d));
-        }
+            deleteEmpty.push(Number(dataValue));
+        } 
     }
 
     let old = [];
@@ -629,17 +663,22 @@ function doneSort() {
         }
     }
 
-    elements.sort(function(a, b) {
+    deleteEmpty.sort(function(a, b) {
         return a - b;
     });
 
+    if(deleteEmpty.includes("")){
+        elements = deleteEmpty.filter(function (num) {
+            if(typeof num === 'number' && !isNaN(num)){
+                return num;
+            };
+        })
+        elements.push("");
+    }
+
     let result = [];
     for (let i = 0; i < elements.length; i++) {
-        if (isNaN(elements[i])) {
-            result.push(' ' + '"' + elements[i] + '"');
-        } else {
-            result.push(' ' + elements[i]);
-        }
+        result.push(' ' + elements[i]);
     }
 
     let min = result[0];
@@ -654,11 +693,13 @@ function doneReverse() {
     let data = document.querySelectorAll("#arrays__data-reverse");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -691,8 +732,12 @@ function doneForEach() {
     let data = document.querySelectorAll("#arrays__data-foreach");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
     }
 
     let old = [];
@@ -720,8 +765,12 @@ function doneMap() {
     let data = document.querySelectorAll("#arrays__data-map");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
     }
 
     let old = [];
@@ -747,8 +796,12 @@ function doneReduce() {
     let data = document.querySelectorAll("#arrays__data-reduce");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
     }
 
     let old = [];
@@ -764,13 +817,57 @@ function doneReduce() {
     document.querySelector('.arrays__result-reduce').innerHTML = sum;
 }
 
+function doneReduceRight() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-reduceright");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    console.log(elements)
+
+    elements.sort(function(a, b) {
+        return a - b;
+    });
+
+    let sort = [];
+    for (let i = 0; i < elements.length; i++) {
+        sort.push(' ' + elements[i]);
+    }
+
+    console.log(sort)
+
+    let subtraction = elements.reduceRight(function (accumulator, element) {
+        return accumulator - element;
+    });
+
+    document.querySelector('.arrays__old-reduceright').innerHTML = '[' + old + '];';
+    document.querySelector(".arrays__sort-reduceright").innerHTML = '[' + sort + '];';
+    document.querySelector('.arrays__result-reduceright').innerHTML = subtraction;
+}
+
 function doneFilter() {
     let elements = [];
     let data = document.querySelectorAll("#arrays__data-filter");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
     }
 
     let old = [];
@@ -791,104 +888,18 @@ function doneFilter() {
     document.querySelector('.arrays__result-filter').innerHTML = '[' + result + '];';
 }
 
-function doneFind() {
-    let elements = [];
-    let data = document.querySelectorAll("#arrays__data-find");
-
-    for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
-    }
-
-    let old = [];
-    for (let i = 0; i < data.length; i++) {
-        old.push(' ' + data[i].value);
-    }
-
-    let result = elements.find(function (element) {
-        return element === 5;
-    });
-
-    document.querySelector('.arrays__old-find').innerHTML = '[' + old + '];';
-    document.querySelector('.arrays__result-find').innerHTML = result;
-}
-
-function doneFindIndex() {
-    let elements = [];
-    let data = document.querySelectorAll("#arrays__data-findindex");
-
-    for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
-    }
-
-    let old = [];
-    for (let i = 0; i < data.length; i++) {
-        old.push(' ' + data[i].value);
-    }
-
-    let result = elements.findIndex(function (element) {
-        return element % 2 === 0;
-    });
-
-    document.querySelector('.arrays__old-findindex').innerHTML = '[' + old + '];';
-    document.querySelector('.arrays__result-findindex').innerHTML = result;
-}
-
-function doneFindLast() {
-    let elements = [];
-    let data = document.querySelectorAll("#arrays__data-findlast");
-
-    for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
-    }
-
-    let old = [];
-    for (let i = 0; i < data.length; i++) {
-        old.push(' ' + data[i].value);
-    }
-
-    let result = elements.findLast(function (element) {
-        return element % 2 !== 0;
-    });
-
-    document.querySelector('.arrays__old-findlast').innerHTML = '[' + old + '];';
-    document.querySelector('.arrays__result-findlast').innerHTML = result;
-}
-
-function doneFindLastIndex() {
-    let elements = [];
-    let data = document.querySelectorAll("#arrays__data-findlastindex");
-
-    for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
-    }
-
-    let old = [];
-    for (let i = 0; i < data.length; i++) {
-        old.push(' ' + data[i].value);
-    }
-
-    let result = elements.findLastIndex(function (element) {
-        return element % 2 === 0;
-    });
-
-    document.querySelector('.arrays__old-findlastindex').innerHTML = '[' + old + '];';
-    document.querySelector('.arrays__result-findlastindex').innerHTML = result;
-}
-
 function doneEvery() {
     let elements = [];
     let data = document.querySelectorAll("#arrays__data-every");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else if (isNaN(dataValue)) {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -914,8 +925,12 @@ function doneSome() {
     let data = document.querySelectorAll("#arrays__data-some");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
     }
 
     let old = [];
@@ -929,6 +944,110 @@ function doneSome() {
 
     document.querySelector('.arrays__old-some').innerHTML = '[' + old + '];';
     document.querySelector('.arrays__result-some').innerHTML = result;
+}
+
+function doneFind() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-find");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.find(function (element) {
+        return element === 5;
+    });
+
+    document.querySelector('.arrays__old-find').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-find').innerHTML = result;
+}
+
+function doneFindIndex() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-findindex");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.findIndex(function (element) {
+        return element % 2 === 0;
+    });
+
+    document.querySelector('.arrays__old-findindex').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-findindex').innerHTML = result;
+}
+
+function doneFindLast() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-findlast");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.findLast(function (element) {
+        return element % 2 !== 0;
+    });
+
+    document.querySelector('.arrays__old-findlast').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-findlast').innerHTML = result;
+}
+
+function doneFindLastIndex() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-findlastindex");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.findLastIndex(function (element) {
+        return element % 2 === 0;
+    });
+
+    document.querySelector('.arrays__old-findlastindex').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-findlastindex').innerHTML = result;
 }
 
 
@@ -978,8 +1097,17 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('reduce-reset')) {
             resetReduce();
         }
+        if (e.target.classList.contains('reduceright-reset')) {
+            resetReduceRight();
+        }
         if (e.target.classList.contains('filter-reset')) {
             resetFilter();
+        }
+        if (e.target.classList.contains('every-reset')) {
+            resetEvery();
+        }
+        if (e.target.classList.contains('some-reset')) {
+            resetSome();
         }
         if (e.target.classList.contains('find-reset')) {
             resetFind();
@@ -993,12 +1121,7 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('findlastindex-reset')) {
             resetFindLastIndex();
         }
-        if (e.target.classList.contains('every-reset')) {
-            resetEvery();
-        }
-        if (e.target.classList.contains('some-reset')) {
-            resetSome();
-        }
+        
         
     })
 })
@@ -1150,6 +1273,17 @@ function resetReduce() {
     document.querySelector('.arrays__old-reduce').innerHTML = "";
 }
 
+function resetReduceRight() {
+    let data = document.querySelectorAll("#arrays__data-reduceright");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-reduceright").innerHTML = "";
+    document.querySelector('.arrays__result-reduceright').innerHTML = "";
+    document.querySelector('.arrays__old-reduceright').innerHTML = "";
+}
+
 function resetFilter() {
     let data = document.querySelectorAll("#arrays__data-filter");
     for (let i = 0; i < data.length; i++) {
@@ -1159,6 +1293,28 @@ function resetFilter() {
     document.querySelector(".arrays__input-filter").innerHTML = "";
     document.querySelector('.arrays__result-filter').innerHTML = "";
     document.querySelector('.arrays__old-filter').innerHTML = "";
+}
+
+function resetEvery() {
+    let data = document.querySelectorAll("#arrays__data-every");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-every").innerHTML = "";
+    document.querySelector('.arrays__result-every').innerHTML = "";
+    document.querySelector('.arrays__old-every').innerHTML = "";
+}
+
+function resetSome() {
+    let data = document.querySelectorAll("#arrays__data-some");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-some").innerHTML = "";
+    document.querySelector('.arrays__result-some').innerHTML = "";
+    document.querySelector('.arrays__old-some').innerHTML = "";
 }
 
 function resetFind() {
@@ -1203,28 +1359,6 @@ function resetFindLastIndex() {
     document.querySelector(".arrays__input-findlastindex").innerHTML = "";
     document.querySelector('.arrays__result-findlastindex').innerHTML = "";
     document.querySelector('.arrays__old-findlastindex').innerHTML = "";
-}
-
-function resetEvery() {
-    let data = document.querySelectorAll("#arrays__data-every");
-    for (let i = 0; i < data.length; i++) {
-        data[i].value = '';
-    };
-
-    document.querySelector(".arrays__input-every").innerHTML = "";
-    document.querySelector('.arrays__result-every').innerHTML = "";
-    document.querySelector('.arrays__old-every').innerHTML = "";
-}
-
-function resetSome() {
-    let data = document.querySelectorAll("#arrays__data-some");
-    for (let i = 0; i < data.length; i++) {
-        data[i].value = '';
-    };
-
-    document.querySelector(".arrays__input-some").innerHTML = "";
-    document.querySelector('.arrays__result-some').innerHTML = "";
-    document.querySelector('.arrays__old-some').innerHTML = "";
 }
 
 
@@ -1349,11 +1483,29 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('reduce-for')) {
             checkReduceFor();
         }
+        if (e.target.classList.contains('reduceright')) {
+            checkReduceRight();
+        }
+        if (e.target.classList.contains('reduceright-for')) {
+            checkReduceRightFor();
+        }
         if (e.target.classList.contains('filter')) {
             checkFilter();
         }
         if (e.target.classList.contains('filter-for')) {
             checkFilterFor();
+        }
+        if (e.target.classList.contains('every')) {
+            checkEvery();
+        }
+        if (e.target.classList.contains('every-for')) {
+            checkEveryFor();
+        }
+        if (e.target.classList.contains('some')) {
+            checkSome();
+        }
+        if (e.target.classList.contains('some-for')) {
+            checkSomeFor();
         }
         if (e.target.classList.contains('find')) {
             checkFind();
@@ -1379,18 +1531,7 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('findlastindex-for')) {
             checkFindLastIndexFor();
         }
-        if (e.target.classList.contains('every')) {
-            checkEvery();
-        }
-        if (e.target.classList.contains('every-for')) {
-            checkEveryFor();
-        }
-        if (e.target.classList.contains('some')) {
-            checkSome();
-        }
-        if (e.target.classList.contains('some-for')) {
-            checkSomeFor();
-        }
+        
         
         
     })
@@ -1710,6 +1851,33 @@ function checkReduceFor() {
     alert(average);
 }
 
+function checkReduceRight() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    function findAverage(accumulator, element, index, array) {
+        const sum = accumulator + element;
+        
+        if (index === 0) {
+            return sum / array.length;
+        }
+        return sum;
+    }
+    
+    const average = array.reduceRight(findAverage, 0);
+    alert(average);
+}
+
+function checkReduceRightFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    let sum = 0;
+    for(let i = array.length - 1; i >= 0; i--){
+        sum = sum + array[i]; 
+    }
+    let average = sum / array.length;
+    alert(average);
+}
+
 function checkFilter() {
     const array = [1, 2, 3, 4, 5]; 
     
@@ -1729,6 +1897,27 @@ function checkFilterFor() {
         };
     }
     alert(arrayOdds);
+}
+
+function checkSome() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayNums = array.some(function (num) {
+        return num % 2 !== 0;
+    })
+    alert(arrayNums);
+}
+
+function checkSomeFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayNums = function (array) {
+        for(let i = 0; i < array.length; i++){
+            if(array[i] % 2 !== 0){
+                return true;
+            }
+        }
+        return false;
+    }
+    alert(arrayNums(array));
 }
 
 function checkFind() {
@@ -1879,23 +2068,3 @@ function checkEveryFor() {
     alert(arrayNums(array));
 }
 
-function checkSome() {
-    const array = [1, 2, 3, 4, 5]; 
-    const arrayNums = array.some(function (num) {
-        return num % 2 !== 0;
-    })
-    alert(arrayNums);
-}
-
-function checkSomeFor() {
-    const array = [1, 2, 3, 4, 5]; 
-    const arrayNums = function (array) {
-        for(let i = 0; i < array.length; i++){
-            if(array[i] % 2 !== 0){
-                return true;
-            }
-        }
-        return false;
-    }
-    alert(arrayNums(array));
-}

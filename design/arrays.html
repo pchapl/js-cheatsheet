@@ -127,7 +127,7 @@ alert(arr[7]);
 
                   <li>
                     <div class="collapsible-header arrays-collapsible-header">pop</div>
-                    <div class="collapsible-body"><span>Удаляет последний элемент из массива и возвращает его значение.
+                    <div class="collapsible-body"><span>Удаляет последний элемент из массива и возвращает его значение. Если метод применяется к пустому массиву, то возвращаемое значение метода будет undefined.
                       </span>
                       <div class="arrays-code">
                         <pre>
@@ -639,8 +639,8 @@ alert(fruits.concat(orange, berries));
                     <div class="collapsible-body"><span>Преобразует каждый из элементов массива в строку и затем выполняет конкатенацию этих строк, вставляя указанный разделитель между элементами.</span>
                       <pre>
                         <code class="js">
-    array.join(separator);
-    // разделитель по умолчанию - запятая, но он может быть любым 
+array.join(separator);
+// разделитель по умолчанию - запятая, но он может быть любым 
                         </code>
                       </pre>
     
@@ -649,13 +649,13 @@ alert(fruits.concat(orange, berries));
                           <div class="arrays-code">
                             <pre>
                               <code class="js">
-    let string = "Банан, Яблоко, Мандарин";
-    let fruits = string.split(', ');
+let string = "Банан, Яблоко, Мандарин";
+let fruits = string.split(', ');
     
-    for (let fruit of fruits) {
-      alert( `Фрукты: ${fruit}.` ); 
-    } 
-    // выведет по порядку элементы массива: Фрукты: Банан (и т.д.)
+for (let fruit of fruits) {
+  alert( `Фрукты: ${fruit}.` ); 
+} 
+// выведет по порядку элементы массива: Фрукты: Банан (и т.д.)
                               </code>
       <button class="waves-effect waves-light btn arrays__check join-split">Проверить</button>
                             </pre>
@@ -667,11 +667,11 @@ alert(fruits.concat(orange, berries));
                           <div class="arrays-code">
                             <pre>
                               <code class="js">
-    let fruits = ["Банан", "Яблоко", "Мандарин"];
-    let string = fruits.join(', ');
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+let string = fruits.join(', ');
     
-    alert(string); 
-    // выведет строку с элементами через запятую и пробел
+alert(string); 
+// выведет строку с элементами через запятую и пробел
                               </code>
       <button class="waves-effect waves-light btn arrays__check join">Проверить</button>
                             </pre>
@@ -689,8 +689,8 @@ alert(fruits.concat(orange, berries));
     
                                 <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-      let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-join"></div>];</div></div>
-      let string = array.join(', ');
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-join"></div>];</div></div>
+  let string = array.join(', ');
                               </pre>
                             </div>
                             <button class="waves-effect waves-light btn arrays__button_add join-add">
@@ -724,10 +724,10 @@ alert(fruits.concat(orange, berries));
                     <div class="collapsible-body"><span>Cортирует элементы массива на месте без создания копии массива.</span>
                       <pre>
                         <code class="js">
-    array.sort(compareFunction)
-    // может принимать функцию обратного вызова, но это не итерационный метод;
-    // он изменяет массив на месте, не принимает thisArg 
-    // и может вызывать обратный вызов несколько раз для одного индекса.
+array.sort(compareFunction)
+// может принимать функцию обратного вызова, но это не итерационный метод;
+// он изменяет массив на месте, не принимает thisArg 
+// и может вызывать обратный вызов несколько раз для одного индекса.
                         </code>
                       </pre>
     
@@ -736,17 +736,17 @@ alert(fruits.concat(orange, berries));
                           <div class="arrays-code">
                             <pre>
                               <code class="js">
-    let fruits = ["Банан", "Яблоко", "Мандарин"];
-    fruits.sort();
-    alert(fruits); 
-    // выведет Банан, Мандарин, Яблоко
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+fruits.sort();
+alert(fruits); 
+// выведет Банан, Мандарин, Яблоко
     
     
-    let numbers = [15, 50, 3];
-    numbers.sort();
-    alert(numbers); 
-    // выведет 15, 3, 50 (метод сравнил числа как строки 
-    // и вывел по возрастанию: "15", "3", "50")
+let numbers = [15, 50, 3];
+numbers.sort();
+alert(numbers); 
+// выведет 15, 3, 50 (метод сравнил числа как строки 
+// и вывел по возрастанию: "15", "3", "50")
                               </code>
       <button class="waves-effect waves-light btn arrays__check sort">Проверить</button>
                             </pre>
@@ -755,6 +755,7 @@ alert(fruits.concat(orange, berries));
     
                       <div class="array-code__item">
                         <p class="arrays__text">Во многих случаях требуется совсем не это, поэтому в метод sort() можно передать функцию сравнения, которая упорядочивает два значения.</p>
+                        <p class="arrays__text">Неопределенные элементы при сортировке всегда оказываются в конце массива. Это происходит, даже если указана специальная функция сортировки: неопределенные значения никогда не передаются в заданную функцию</p>
                         <p class="arrays__text">Функция сравнения должна принимать два аргумента a и b, и возвращать одно из следующих значений:</p>
                         <ul id="arrays__ul">
                           <li id="arrays__li">
@@ -771,12 +772,12 @@ alert(fruits.concat(orange, berries));
                           <div class="arrays-code">
                             <pre>
                               <code class="js">
-    let numbers = [15, 50, 3, 30, 1, 150];
-    numbers.sort(function(a, b) {
-      return a - b;
-    });
-    alert(numbers); 
-    // выведет 1, 3, 15, 30, 50, 150
+let numbers = [15, 50, 3, 30, 1, 150];
+numbers.sort(function(a, b) {
+  return a - b;
+});
+alert(numbers); 
+// выведет 1, 3, 15, 30, 50, 150
                               </code>
       <button class="waves-effect waves-light btn arrays__check sort-callback-up">Проверить</button>
                             </pre>
@@ -788,13 +789,13 @@ alert(fruits.concat(orange, berries));
                           <div class="arrays-code">
                             <pre>
                               <code class="js">
-    let numbers = [15, 50, 3, 30, 1, 150];
-    numbers.sort(function(a, b) {
-      return b - a;
-    });
-    alert(numbers[0]); 
-    // выведет 150, потому что первый элемент массива
-    // теперь число с максимальным значением
+let numbers = [15, 50, 3, 30, 1, 150];
+numbers.sort(function(a, b) {
+  return b - a;
+});
+alert(numbers[0]); 
+// выведет 150, потому что первый элемент массива
+// теперь число с максимальным значением
                               </code>
       <button class="waves-effect waves-light btn arrays__check sort-callback-max">Проверить</button>
                             </pre>
@@ -812,12 +813,12 @@ alert(fruits.concat(orange, berries));
     
                                 <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-      let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-sort"></div>];</div></div>
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-sort"></div>];</div></div>
     
-      array.sort(function(a, b) {
-        return a - b;
-      });
-      let min = array[0];
+  array.sort(function(a, b) {
+    return a - b;
+  });
+  let min = array[0];
                               </pre>
     
                             </div>
@@ -854,8 +855,8 @@ alert(fruits.concat(orange, berries));
                     <div class="collapsible-body"><span>Изменяет порядок следования элементов в массиве на обратный.</span>
                       <pre>
                         <code class="js">
-    array.reverse();
-    // не принимает аргументов
+array.reverse();
+// не принимает аргументов
                         </code>
                       </pre>
     
@@ -864,17 +865,17 @@ alert(fruits.concat(orange, berries));
                           <div class="arrays-code">
                             <pre>
                               <code class="js">
-    const fruits = ["Банан", "Яблоко", "Мандарин"];
-    const result = fruits.reverse();
+const fruits = ["Банан", "Яблоко", "Мандарин"];
+const result = fruits.reverse();
     
-    alert(result);
-    // Мандарин, Яблоко, Банан
+alert(result);
+// Мандарин, Яблоко, Банан
     
-    alert(fruits);
-    // тоже Мандарин, Яблоко, Банан
+alert(fruits);
+// тоже Мандарин, Яблоко, Банан
     
-    alert(result === fruits);
-    // true, так как result - это ссылка на исходный массив fruits
+alert(result === fruits);
+// true, так как result - это ссылка на исходный массив fruits
                               </code>
       <button class="waves-effect waves-light btn arrays__check reverse">Проверить</button>
                             </pre>
@@ -886,19 +887,19 @@ alert(fruits.concat(orange, berries));
                           <div class="arrays-code">
                             <pre>
                               <code class="js">
-    let fruits = ["Банан", "Яблоко", "Мандарин"];
-    fruits[5] = "Манго";
-    // добавим значение "Манго" под индексом 5
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+fruits[5] = "Манго";
+// добавим значение "Манго" под индексом 5
     
-    alert(fruits);
-    // получился массив с "дыркой" - Банан, Яблоко, Мандарин, , , Манго
-    alert(fruits[3]);
-    // undefined, так как элемента нет
+alert(fruits);
+// получился массив с "дыркой" - Банан, Яблоко, Мандарин, , , Манго
+alert(fruits[3]);
+// undefined, так как элемента нет
     
-    fruits.reverse();
+fruits.reverse();
     
-    alert(fruits);
-    // метод развернул массив с учетом "дырок" - Манго, , , Мандарин, Яблоко, Банан
+alert(fruits);
+// метод развернул массив с учетом "дырок" - Манго, , , Мандарин, Яблоко, Банан
                               </code>
       <button class="waves-effect waves-light btn arrays__check reverse-empty">Проверить</button>
                             </pre>
@@ -916,8 +917,8 @@ alert(fruits.concat(orange, berries));
     
                                 <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-      let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-reverse"></div>];</div></div>
-      array.reverse();
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-reverse"></div>];</div></div>
+  array.reverse();
                               </pre>
                             </div>
                             <button class="waves-effect waves-light btn arrays__button_add reverse-add">
@@ -1556,15 +1557,16 @@ array.method(callback, thisArg);
           </ul>
           <p class="arrays__text">У некоторых методов есть и дополнительные параметры колбэка. </p>
           <p class="arrays__text">То, что должен вернуть колбэк, зависит от метода массива, который был вызван.</p>
+          <p>Функция callback вызывается только для индексов массива, имеющих присвоенные значения (включая undefined); она не вызывается для индексов, которые были удалены или которым значения никогда не присваивались. Элементы массива, не прошедшие проверку функцией callback, просто пропускаются и не включаются в новый массив.</p>
           <p class="arrays__text">Кроме того, такие методы могут принимать необязательный параметр thisArg. Это объект, на который может ссылаться ключевое слово this в функции callback. Если аргумент thisArg не указан, в качестве значения this используется undefined. Аргумент thisArg не имеет значения для любого колбэка, определенного с помощью стрелочной функции, поскольку стрелочные функции не имеют собственной привязки this.</p>
         </div>
+
+        <h5 class="arrays__title-min">Перебор и преобразование массивов</h5>
 
         <div class="container">
           <div class="row">
             <div class="col s12">
-
               <ul class="collapsible popout">
-
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">forEach</div>
@@ -1743,7 +1745,7 @@ let arrayPlusOne = array.map(function (num) {
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">reduce</div>
-                  <div class="collapsible-body"><span>Применяет функцию к аккумулятору и каждому значению массива (слева-направо), сводя его к одному значению. Функция-колбэк будет вызвана для каждого элемента массива, и всегда должна возвращать результат.</span>
+                  <div class="collapsible-body"><span>Применяет функцию к аккумулятору и каждому значению массива (слева-направо), сводя его к одному значению. Функция-колбэк будет вызвана для каждого элемента массива, и всегда должна возвращать результат. reduce() не выполняет функцию для элементов массива без значений.</span>
                     <pre>
                       <code class="js">
 array.reduce(callback(accumulator, element, index, array), initialValue);
@@ -1883,6 +1885,157 @@ const sum = numbers.reduce(function (accumulator, element) {
                   </div>
                 </li>
 
+                <li>
+                  <div class="collapsible-header arrays-collapsible-header">reduceRight</div>
+                  <div class="collapsible-body"><span>Метод reduceRight работает точно так же как и reduce. Отличие в том, что reduceRight применяет функцию к аккумулятору и каждому значению массива справа налево, сводя его к одному значению. reduceRight() не выполняет функцию для элементов массива без значений.</span>
+                    <pre>
+                      <code class="js">
+array.reduceRight(callback(accumulator, element, index, array), initialValue);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Сама функция-колбэк в методе reduce может принимать четыре параметра:</p>
+                      <ul id="arrays__ul">
+                        <li id="arrays__li">
+                          accumulator - текущее значение аккумулятора; 
+                        </li>
+                        <li id="arrays__li_two">
+                          element — элемент массива в текущей итерации;
+                        </li>
+                        <li id="arrays__li_three">
+                          index — индекс текущего элемента;
+                        </li>
+                        <li id="arrays__li_three">
+                          array — сам массив, который мы перебираем.
+                        </li>
+                      </ul>
+                      <p class="arrays__text">initialValue - необязательный параметр. Если значение initialValue предоставляется, то accumulator является значением initialValue при первом вызове функции, а значение element будет равным первому значению в массиве. Если аргумент initialValue не задан, то значение accumulator будет равным первому значению в массиве, а значение element будет равным второму значению в массиве.</p>
+                    </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Чтобы разобрать работу метода со всеми аргументами, вычислим сумму всех элементов массива, а после определим среднее арифметическое:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+// создадим функцию-колбэк, которая суммирует числа
+// и вычисляет среднее арифметическое:
+function findAverage(accumulator, element, index, array) {
+  const sum = accumulator + element;
+
+  // Если мы прошли весь цикл и находимся на первом элементе
+  // (так как применяется метод reduceRight, перебор элементов
+  // будет идти справа налево - от последнего к первому),
+  // вычисляем среднее арифметическое делением 
+  // на количество элементов:
+  if (index === 0) {
+    return sum / array.length;
+  }
+
+  return sum;
+}
+
+// помещаем функцию-колбэк в метод reduceRigth и задаем 
+// начальное значение для аккумулятора (равное 0):
+const average = array.reduceRight(findAverage, 0);
+
+alert(average);
+// выведет среднее арифметическое элементов массива: 3
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check reduceright">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <p class="arrays__text">Запишем пример кода более лаконично:</p>
+                    <pre>
+                      <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const average = array.reduceRight(function (accumulator, element, index, array) {
+    const sum = accumulator + element;
+    if (index === 0) {
+        return sum / array.length;
+    }
+  return sum;
+}, 0);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Тот же пример, написанный через классический цикл for:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+let sum = 0;
+
+// проходимся циклом по массиву справа налево:
+for(let i = array.length - 1; i >= 0; i--){
+  sum = sum + array[i]; 
+}
+let average = sum / array.length;
+
+alert(average);
+// также выведет среднее арифметическое элементов массива: 3
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check reduceright-for">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод reduceRight(), чтобы вычесть числа справа налево, при этом массив должен быть отсортирован по возрастанию чисел, чтобы вычитание происходило из большего числа:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+const numbers = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-reduceright"></div>];</div></div>
+numbers.sort(function(a, b) {
+  return a - b;
+});
+
+const subtraction = numbers.reduceRight(function (accumulator, element) {
+  return accumulator - element;
+});
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add reduceright-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done reduceright-done">
+                            Применить метод reduceRight()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-reduceright" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Отсортированный массив:</p>
+                          <pre class="arrays__sort-reduceright" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Результат:</p>
+                          <pre class="arrays__result-reduceright" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset reduceright-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
+
+                  </div>
+                </li>
+
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">filter</div>
@@ -1976,10 +2129,209 @@ let arrayEven = array.filter(function (num) {
                     </div>
                   </div>
 
+                  </div>
+                </li>
+
+                <li>
+                  <div class="collapsible-header arrays-collapsible-header">every</div>
+                  <div class="collapsible-body"><span>Позволяет решить задачу, когда необходимо узнать, что все элементы в массиве соответствуют условию в колбэке. Возвращает значение true, если функция будет true для всех элементов массива; в противном случае возвращается значение false. Если массив не содержит элементов, метод every возвращает значение true.</span>
+                    <pre>
+                      <code class="js">
+array.every(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Проверим, все ли числа в массиве больше или равны единице:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayNums = array.every(function (num) {
+  return num >= 1;
+})
+
+alert(arrayNums);
+// выведет true, потому что все числа в массиве больше 1
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check every">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Пример через классический цил for:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayNums = function (array) {
+  for(let i = 0; i < array.length; i++){
+    if(array[i] >= 1){
+      return true;
+    }
+  }
+  return false;
+}
+
+
+alert(arrayNums(array));
+// также выведет true
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check every-for">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод every(), чтобы узнать, все ли элементы одинаковые:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-every"></div>];</div></div>
+const arrayElements = array.every(function (element) {
+  return element === array[0];
+})
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add every-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done every-done">
+                            Применить метод every()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-every" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Результат:</p>
+                          <pre class="arrays__result-every" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset every-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
+
 
                   </div>
                 </li>
 
+
+                <li>
+                  <div class="collapsible-header arrays-collapsible-header">some</div>
+                  <div class="collapsible-body"><span> Позволяет узнать, есть ли в массиве хотя бы один элемент, удовлетворяющий условию в функции-колбэке. Колбэк-функция будет вызываться для каждого элемента массива до тех пор, пока не вернётся true, либо пока не закончатся элементы массива.</span>
+                    <pre>
+                      <code class="js">
+array.some(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Проверим, есть ли в массиве хотя бы одно нечетное число:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayNums = array.some(function (num) {
+  return num % 2 !== 0;
+})
+
+alert(arrayNums);
+// выведет true, потому что в массиве есть нечетное число
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check some">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Пример через классический цил for:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayNums = function (array) {
+  for(let i = 0; i < array.length; i++){
+    if(array[i] % 2 !== 0){
+      return true;
+    }
+  }
+  return false;
+}
+
+
+alert(arrayNums(array));
+// также выведет true
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check some-for">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод some(), чтобы узнать, есть ли в массиве хотя бы одно четное число:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-some"></div>];</div></div>
+const arrayNums = array.some(function (num) {
+  return num % 2 === 0;
+})
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add some-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done some-done">
+                            Применить метод some()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-some" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Результат:</p>
+                          <pre class="arrays__result-some" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset some-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
+
+
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h5 class="arrays__title-min">Поиск элементов</h5>
+
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <ul class="collapsible popout">
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">find</div>
@@ -2202,197 +2554,6 @@ const arrayFindEven = array.findIndex(function (element) {
 
                   </div>
                 </li>
-
-
-                <li>
-                  <div class="collapsible-header arrays-collapsible-header">every</div>
-                  <div class="collapsible-body"><span>Позволяет решить задачу, когда необходимо узнать, что все элементы в массиве соответствуют условию в колбэке.</span>
-                    <pre>
-                      <code class="js">
-array.every(callback(element, index, array), thisArg);
-                      </code>
-                    </pre>
-
-                    <div class="array-code__item">
-                      <p class="arrays__text">Проверим, все ли числа в массиве больше или равны единице:</p>
-                        <div class="arrays-code">
-                          <pre>
-                            <code class="js">
-const array = [1, 2, 3, 4, 5]; 
-const arrayNums = array.every(function (num) {
-  return num >= 1;
-})
-
-alert(arrayNums);
-// выведет true, потому что все числа в массиве больше 1
-                            </code>
-  <button class="waves-effect waves-light btn arrays__check every">Проверить</button>
-                          </pre>
-                      </div>
-                    </div>
-
-                    <div class="array-code__item">
-                      <p class="arrays__text">Пример через классический цил for:</p>
-                        <div class="arrays-code">
-                          <pre>
-                            <code class="js">
-const array = [1, 2, 3, 4, 5]; 
-const arrayNums = function (array) {
-  for(let i = 0; i < array.length; i++){
-    if(array[i] >= 1){
-      return true;
-    }
-  }
-  return false;
-}
-
-
-alert(arrayNums(array));
-// также выведет true
-                            </code>
-  <button class="waves-effect waves-light btn arrays__check every-for">Проверить</button>
-                          </pre>
-                      </div>
-                    </div>
-
-                    <div class="arrays__test">
-                      <h3 class="arrays__title-small">Практика</h3>
-                      <div class="arrays__block">
-                        <div class="arrays__results">
-                          <div class="arrays__task">
-                            <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод every(), чтобы узнать, все ли элементы одинаковые:</p>
-                            <div class="arrays__field">
-
-                              <pre class="arrays-code">
-                                <div class="arrays__practice"><pre class="arrays-code__let">
-const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-every"></div>];</div></div>
-const arrayElements = array.every(function (element) {
-  return element === array[0];
-})
-                            </pre>
-
-                          </div>
-                          <button class="waves-effect waves-light btn arrays__button_add every-add">
-                            Добавить элементы
-                          </button>
-
-                          <button class="waves-effect waves-light btn arrays__button_done every-done">
-                            Применить метод every()
-                          </button>
-                        </div>
-                        <div class="arrays__out">
-                          <p class="arrays__text-bold">Исходный массив:</p>
-                          <pre class="arrays__old-every" class="arrays-code"></pre>
-                          <p class="arrays__text-bold">Результат:</p>
-                          <pre class="arrays__result-every" class="arrays-code"></pre>
-                        </div>
-                      </div>
-
-                      <button class="waves-effect waves-light btn arrays__button_reset every-reset">
-                        Сбросить значения
-                      </button>
-                    </div>
-                  </div>
-
-
-                  </div>
-                </li>
-
-
-                <li>
-                  <div class="collapsible-header arrays-collapsible-header">some</div>
-                  <div class="collapsible-body"><span> Позволяет узнать, есть ли в массиве хотя бы один элемент, удовлетворяющий условию в функции-колбэке. Колбэк-функция будет вызываться для каждого элемента массива до тех пор, пока не вернётся true, либо пока не закончатся элементы массива.</span>
-                    <pre>
-                      <code class="js">
-array.some(callback(element, index, array), thisArg);
-                      </code>
-                    </pre>
-
-                    <div class="array-code__item">
-                      <p class="arrays__text">Проверим, есть ли в массиве хотя бы одно нечетное число:</p>
-                        <div class="arrays-code">
-                          <pre>
-                            <code class="js">
-const array = [1, 2, 3, 4, 5]; 
-const arrayNums = array.some(function (num) {
-  return num % 2 !== 0;
-})
-
-alert(arrayNums);
-// выведет true, потому что в массиве есть нечетное число
-                            </code>
-  <button class="waves-effect waves-light btn arrays__check some">Проверить</button>
-                          </pre>
-                      </div>
-                    </div>
-
-                    <div class="array-code__item">
-                      <p class="arrays__text">Пример через классический цил for:</p>
-                        <div class="arrays-code">
-                          <pre>
-                            <code class="js">
-const array = [1, 2, 3, 4, 5]; 
-const arrayNums = function (array) {
-  for(let i = 0; i < array.length; i++){
-    if(array[i] % 2 !== 0){
-      return true;
-    }
-  }
-  return false;
-}
-
-
-alert(arrayNums(array));
-// также выведет true
-                            </code>
-  <button class="waves-effect waves-light btn arrays__check some-for">Проверить</button>
-                          </pre>
-                      </div>
-                    </div>
-
-                    <div class="arrays__test">
-                      <h3 class="arrays__title-small">Практика</h3>
-                      <div class="arrays__block">
-                        <div class="arrays__results">
-                          <div class="arrays__task">
-                            <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод some(), чтобы узнать, есть ли в массиве хотя бы одно четное число:</p>
-                            <div class="arrays__field">
-
-                              <pre class="arrays-code">
-                                <div class="arrays__practice"><pre class="arrays-code__let">
-const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-some"></div>];</div></div>
-const arrayNums = array.some(function (num) {
-  return num % 2 === 0;
-})
-                            </pre>
-
-                          </div>
-                          <button class="waves-effect waves-light btn arrays__button_add some-add">
-                            Добавить элементы
-                          </button>
-
-                          <button class="waves-effect waves-light btn arrays__button_done some-done">
-                            Применить метод some()
-                          </button>
-                        </div>
-                        <div class="arrays__out">
-                          <p class="arrays__text-bold">Исходный массив:</p>
-                          <pre class="arrays__old-some" class="arrays-code"></pre>
-                          <p class="arrays__text-bold">Результат:</p>
-                          <pre class="arrays__result-some" class="arrays-code"></pre>
-                        </div>
-                      </div>
-
-                      <button class="waves-effect waves-light btn arrays__button_reset some-reset">
-                        Сбросить значения
-                      </button>
-                    </div>
-                  </div>
-
-
-                  </div>
-                </li>
-
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">findLast</div>
@@ -2630,6 +2791,18 @@ const arrayFindEven = array.findLastIndex(function (element) {
                   </div>
                 </li>
 
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h5 class="arrays__title-min">Прочие методы</h5>
+
+        <div class="container">
+          <div lass="row">
+            <div class="col s12">
+
+              <ul class="collapsible popout">
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">flatMap</div>
@@ -2685,35 +2858,17 @@ console.log(fruits); // Яблоко, Апельсин, Груша
                 </li>
 
 
-                <li>
-                  <div class="collapsible-header arrays-collapsible-header">reduceRight</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
-                    </div>
-                  </div>
-                </li>
-
-
               </ul>
 
             </div>
           </div>
         </div>
+
+
+            </div>
+          </div>
+        </div>
       </div>
-
-
-
-
-
 
 
   </div>
