@@ -1067,6 +1067,213 @@ alert(fruits.concat(orange, berries));
             </div>
           </div>
 
+          <h5 class="arrays__title-min">Методы, возвращающие Array Iterator</h5>
+
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <ul class="collapsible popout">
+
+                  <li>
+                    <div class="collapsible-header arrays-collapsible-header">entries</div>
+                    <div class="collapsible-body"><span>Копирует часть массива в тот же массив и возвращает его без изменения размера.</span>
+                      <pre>
+                        <code class="js">
+    array.entries();
+                        </code>
+                      </pre>
+    
+                      <div class="array-code__item">
+                        <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
+                        <p class="arrays__text">Итератор – это объект, который отслеживает свою текущую позицию, одновременно получая элементы в коллекции по одному.</p>
+                        <ul id="arrays__ul">
+                          <li id="arrays__li">
+                            Итератор возвращает объект с двумя свойствами: done и value. 
+                          </li>
+                          <li id="arrays__li_two">
+                            Итератор предоставляет метод next(), который возвращает следующий элемент в последовательности.
+                          </li>
+                          <li id="arrays__li_three">
+                            Когда последовательность завершится, значение value будет равно undefined, а done будет равным true.
+                          </li>
+                        </ul>
+                      </div>
+    
+                      <div class="array-code__item">
+                        <p class="arrays__text">entries() возвращает новый объект Array Iterator, который содержит пары ключей и значений для каждого индекса массива:</p>
+                          <div class="arrays-code">
+                            <pre>
+                              <code class="js">
+    const fruits = ["Банан", "Яблоко", "Мандарин"];
+    const entries = fruits.entries();
+    
+    alert(entries.next().value); // 0, "Банан"
+    alert(entries.next().value); // 1, "Яблоко"
+    alert(entries.next().value); // 2, "Мандарин"
+                              </code>
+      <button class="waves-effect waves-light btn arrays__check entries">Проверить</button>
+                            </pre>
+                        </div>
+                      </div>
+    
+                      <div class="array-code__item">
+                        <p class="arrays__text">Чтобы получить пары ключ-значение, оптимально использование цикла for of:</p>
+                          <div class="arrays-code">
+                            <pre>
+                              <code class="js">
+    const fruits = ["Банан", "Яблоко", "Мандарин"];
+    const entries = fruits.entries();
+    
+    for (let element of entries) {
+      alert(element);
+    }
+    // проходим циклом по объекту 
+    // и выводим пары ключ-значение
+                              </code>
+      <button class="waves-effect waves-light btn arrays__check entries-for">Проверить</button>
+                            </pre>
+                        </div>
+                      </div>
+    
+                    </div>
+                  </li>
+    
+    
+                  <li>
+                    <div class="collapsible-header arrays-collapsible-header">keys</div>
+                    <div class="collapsible-body"><span>Возвращает объект Array Iterator, который содержит ключи каждого индекса в массиве.</span>
+                      <pre>
+                        <code class="js">
+    array.keys();
+                        </code>
+                      </pre>
+    
+                      <div class="array-code__item">
+                        <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
+                        <p class="arrays__text">Итератор – это объект, который отслеживает свою текущую позицию, одновременно получая элементы в коллекции по одному.</p>
+                        <ul id="arrays__ul">
+                          <li id="arrays__li">
+                            Итератор возвращает объект с двумя свойствами: done и value. 
+                          </li>
+                          <li id="arrays__li_two">
+                            Итератор предоставляет метод next(), который возвращает следующий элемент в последовательности.
+                          </li>
+                          <li id="arrays__li_three">
+                            Когда последовательность завершится, значение value будет равно undefined, а done будет равным true.
+                          </li>
+                        </ul>
+                      </div>
+    
+                      <div class="array-code__item">
+                        <p class="arrays__text">Метод возвращает новый объект Array Iterator, который содержит ключи для каждого элемента в массиве и может быть расширен с помощью метода next():</p>
+                          <div class="arrays-code">
+                            <pre>
+                              <code class="js">
+    const fruits = ["Банан", "Яблоко", "Мандарин"];
+    const keys = fruits.keys();
+    
+    alert(keys.next().value); // 0
+    alert(keys.next().value); // 1
+    alert(keys.next().value); // 2
+    alert(keys.next().value); // undefined
+                              </code>
+      <button class="waves-effect waves-light btn arrays__check keys">Проверить</button>
+                            </pre>
+                        </div>
+                      </div>
+    
+                      <div class="array-code__item">
+                        <p class="arrays__text">Чтобы получить ключи, оптимально использовать цикл for of:</p>
+                          <div class="arrays-code">
+                            <pre>
+                              <code class="js">
+    const fruits = ["Банан", "Яблоко", "Мандарин"];
+    const keys = fruits.keys();
+    
+    for (let key of keys) {
+      alert(key);
+    }
+    // проходим циклом по объекту 
+    // и выводим ключи по порядку
+                              </code>
+      <button class="waves-effect waves-light btn arrays__check keys-for">Проверить</button>
+                            </pre>
+                        </div>
+                      </div>
+    
+    
+                    </div>
+                  </li>
+    
+                  <li>
+                    <div class="collapsible-header arrays-collapsible-header">values</div>
+                    <div class="collapsible-body"><span>Возвращает объект Array Iterator, содержащий значения для каждого индекса в массиве.</span>
+                      <pre>
+                        <code class="js">
+    array.values();
+                        </code>
+                      </pre>
+    
+                      <div class="array-code__item">
+                        <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
+                        <p class="arrays__text">Итератор – это объект, который отслеживает свою текущую позицию, одновременно получая элементы в коллекции по одному.</p>
+                        <ul id="arrays__ul">
+                          <li id="arrays__li">
+                            Итератор возвращает объект с двумя свойствами: done и value. 
+                          </li>
+                          <li id="arrays__li_two">
+                            Итератор предоставляет метод next(), который возвращает следующий элемент в последовательности.
+                          </li>
+                          <li id="arrays__li_three">
+                            Когда последовательность завершится, значение value будет равно undefined, а done будет равным true.
+                          </li>
+                        </ul>
+                      </div>
+    
+                      <div class="array-code__item">
+                        <p class="arrays__text">Пример использования values() с помощью метода next():</p>
+                          <div class="arrays-code">
+                            <pre>
+                              <code class="js">
+    const fruits = ["Банан", "Яблоко", "Мандарин"];
+    const values = fruits.values();
+    
+    alert(values.next().value); // Банан
+    alert(values.next().value); // Яблоко
+    alert(values.next().value); // Мандарин
+    alert(values.next().value); // undefined
+                              </code>
+      <button class="waves-effect waves-light btn arrays__check values">Проверить</button>
+                            </pre>
+                        </div>
+                      </div>
+    
+                      <div class="array-code__item">
+                        <p class="arrays__text">Чтобы получить значение каждого индекса, оптимально использовать цикл for of:</p>
+                          <div class="arrays-code">
+                            <pre>
+                              <code class="js">
+    const fruits = ["Банан", "Яблоко", "Мандарин"];
+    const values = fruits.values();
+    
+    for (let value of values) {
+      alert(value);
+    }
+    // проходим циклом по объекту 
+    // и выводим значения индексов по порядку
+                              </code>
+      <button class="waves-effect waves-light btn arrays__check values-for">Проверить</button>
+                            </pre>
+                        </div>
+                      </div>
+    
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <h5 class="arrays__title-min">Прочие методы</h5>
 
           <p class="arrays__text-center">Описанные выше методы являются самыми распространенными в этой категории. Но есть и другие.</p>
@@ -1218,138 +1425,6 @@ alert(fruits.copyWithin(-3, 0, -1));
 
 
               <li>
-                <div class="collapsible-header arrays-collapsible-header">entries</div>
-                <div class="collapsible-body"><span>Копирует часть массива в тот же массив и возвращает его без изменения размера.</span>
-                  <pre>
-                    <code class="js">
-array.entries();
-                    </code>
-                  </pre>
-
-                  <div class="array-code__item">
-                    <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
-                    <p class="arrays__text">Итератор – это объект, который отслеживает свою текущую позицию, одновременно получая элементы в коллекции по одному.</p>
-                    <ul id="arrays__ul">
-                      <li id="arrays__li">
-                        Итератор возвращает объект с двумя свойствами: done и value. 
-                      </li>
-                      <li id="arrays__li_two">
-                        Итератор предоставляет метод next(), который возвращает следующий элемент в последовательности.
-                      </li>
-                      <li id="arrays__li_three">
-                        Когда последовательность завершится, значение value будет равно undefined,а done будет равным true.
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="array-code__item">
-                    <p class="arrays__text">entries() возвращает новый объект Array Iterator, который содержит пары ключей и значений для каждого индекса массива:</p>
-                      <div class="arrays-code">
-                        <pre>
-                          <code class="js">
-const fruits = ["Банан", "Яблоко", "Мандарин"];
-const entries = fruits.entries();
-
-alert(entries.next().value); // 0, "Банан"
-alert(entries.next().value); // 1, "Яблоко"
-alert(entries.next().value); // 2, "Мандарин"
-                          </code>
-  <button class="waves-effect waves-light btn arrays__check entries">Проверить</button>
-                        </pre>
-                    </div>
-                  </div>
-
-                  <div class="array-code__item">
-                    <p class="arrays__text">Чтобы получить пары ключ-значение, оптимально использование цикла for of:</p>
-                      <div class="arrays-code">
-                        <pre>
-                          <code class="js">
-const fruits = ["Банан", "Яблоко", "Мандарин"];
-const entries = fruits.entries();
-
-for (let element of entries) {
-  alert(element);
-}
-// проходим циклом по объекту 
-// и выводим пары ключ-значение
-                          </code>
-  <button class="waves-effect waves-light btn arrays__check entries-for">Проверить</button>
-                        </pre>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
-
-
-              <li>
-                <div class="collapsible-header arrays-collapsible-header">keys</div>
-                <div class="collapsible-body"><span>Возвращает объект Array Iterator, который содержит ключи каждого индекса в массиве.</span>
-                  <pre>
-                    <code class="js">
-array.keys();
-                    </code>
-                  </pre>
-
-                  <div class="array-code__item">
-                    <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
-                    <p class="arrays__text">Итератор – это объект, который отслеживает свою текущую позицию, одновременно получая элементы в коллекции по одному.</p>
-                    <ul id="arrays__ul">
-                      <li id="arrays__li">
-                        Итератор возвращает объект с двумя свойствами: done и value. 
-                      </li>
-                      <li id="arrays__li_two">
-                        Итератор предоставляет метод next(), который возвращает следующий элемент в последовательности.
-                      </li>
-                      <li id="arrays__li_three">
-                        Когда последовательность завершится, значение value будет равно undefined,а done будет равным true.
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="array-code__item">
-                    <p class="arrays__text">Метод возвращает новый объект Array Iterator, который содержит ключи для каждого элемента в массиве и может быть расширен с помощью метода next():</p>
-                      <div class="arrays-code">
-                        <pre>
-                          <code class="js">
-const fruits = ["Банан", "Яблоко", "Мандарин"];
-const keys = fruits.keys();
-
-alert(keys.next().value); // 0
-alert(keys.next().value); // 1
-alert(keys.next().value); // 2
-alert(keys.next().value); // undefined
-                          </code>
-  <button class="waves-effect waves-light btn arrays__check keys">Проверить</button>
-                        </pre>
-                    </div>
-                  </div>
-
-                  <div class="array-code__item">
-                    <p class="arrays__text">Чтобы получить ключи, можно использовать цикл for of:</p>
-                      <div class="arrays-code">
-                        <pre>
-                          <code class="js">
-const fruits = ["Банан", "Яблоко", "Мандарин"];
-const keys = fruits.keys();
-
-for (let key of keys) {
-  alert(key);
-}
-// проходим циклом по объекту 
-// и выводим ключи по порядку
-                          </code>
-  <button class="waves-effect waves-light btn arrays__check keys-for">Проверить</button>
-                        </pre>
-                    </div>
-                  </div>
-
-
-                </div>
-              </li>
-
-
-              <li>
                 <div class="collapsible-header arrays-collapsible-header">fill</div>
                 <div class="collapsible-body"><span>Заполняет массив указанным значением.</span>
                   <pre>
@@ -1403,38 +1478,51 @@ alert(fruits.fill("Манго"));
 
               <li>
                 <div class="collapsible-header arrays-collapsible-header">toLocaleString</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                  <div class="arrays-code">
-                    <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
-                  </div>
-                </div>
-              </li>
+                <div class="collapsible-body"><span>Позволяет преобразовать и объединить все элементы массива в одно строковое значение.</span>
+                  <pre>
+                    <code class="js">
+array.toLocaleString();
+                    </code>
+                  </pre>
 
-              <li>
-                <div class="collapsible-header arrays-collapsible-header">values</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                  <div class="arrays-code">
-                    <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
+                  <div class="array-code__item">
+                    <p class="arrays__text">Элементы массива в зависимости от их типа преобразуются в строки с использованием своих собственных методов toLocaleString():</p>
+                    <ul id="arrays__ul">
+                      <li id="arrays__li">
+                        Object: Object.prototype.toLocaleString();
+                      </li>
+                      <li id="arrays__li_two">
+                        Number: Number.prototype.toLocaleString();
+                      </li>
+                      <li id="arrays__li_three">
+                        Date: Date.prototype.toLocaleString();
+                      </li>
+                    </ul>
                   </div>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">Пример использования метода:</p>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+// создадим массив с разными типами элементов:
+
+const arr = [5, "Яблоко", new Date()];
+
+alert(arr.toLocaleString()); 
+// выведет значение переменной arr, преобразованной
+// с помощью метода в строку:
+// 5, Яблоко, 31.01.2023, 05:03:53 (актуальная дата)
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check tolocalstring">Проверить</button>
+                        </pre>
+                    </div>
+                  </div>
+
                 </div>
               </li>
-              </ul>
+            </ul>
+
 
             </div>
           </div>
@@ -1442,7 +1530,7 @@ console.log(fruits); // Яблоко, Апельсин, Груша
 
       </div>
 
-      <div class="arrays-iteration">
+      <div class="arrays-callback">
         <h4 class="arrays__title-medium">Методы, принимающие callback function</h4>
         <div class="array-code__item">
           

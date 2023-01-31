@@ -1224,8 +1224,17 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('keys-for')) {
             checkKeysFor();
         }
+        if (e.target.classList.contains('values')) {
+            checkValues();
+        }
+        if (e.target.classList.contains('values-for')) {
+            checkValuesFor();
+        }
         if (e.target.classList.contains('fill')) {
             checkFill();
+        }
+        if (e.target.classList.contains('tolocalstring')) {
+            checkToLocalString();
         }
         if (e.target.classList.contains('foreach')) {
             checkForEach();
@@ -1500,11 +1509,33 @@ function checkKeysFor() {
     }
 }
 
+function checkValues() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const values = fruits.values();
+    alert(values.next().value);
+    alert(values.next().value);
+    alert(values.next().value);
+    alert(values.next().value);
+}
+
+function checkValuesFor() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const values = fruits.values();
+    for (let value of values) {
+        alert(value);
+    }
+}
+
 function checkFill() {
     const fruits = ["Банан", "Яблоко", "Мандарин", "Груша"];
     alert(fruits.fill("Манго", 2, 4));
     alert(fruits.fill("Манго", 1));
     alert(fruits.fill("Манго"));
+}
+
+function checkToLocalString() {
+    const arr = [5, "Яблоко", new Date()];
+    alert(arr.toLocaleString()); 
 }
 
 function checkForEach() {
