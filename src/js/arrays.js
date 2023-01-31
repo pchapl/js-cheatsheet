@@ -76,6 +76,12 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('findindex-add')) {
             addInputFindIndex();
         }
+        if (e.target.classList.contains('findlast-add')) {
+            addInputFindLast();
+        }
+        if (e.target.classList.contains('findlastindex-add')) {
+            addInputFindLastIndex();
+        }
         if (e.target.classList.contains('every-add')) {
             addInputEvery();
         }
@@ -199,6 +205,20 @@ function addInputFindIndex() {
     parent.appendChild(input);
 }
 
+function addInputFindLast() {
+    let parent = document.querySelector('.arrays__input-findlast');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-findlast" type="text">`;
+    parent.appendChild(input);
+}
+
+function addInputFindLastIndex() {
+    let parent = document.querySelector('.arrays__input-findlastindex');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-findlastindex" type="text">`;
+    parent.appendChild(input);
+}
+
 function addInputEvery() {
     let parent = document.querySelector('.arrays__input-every');
     let input = document.createElement('div');
@@ -268,6 +288,12 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('findindex-done')) {
             doneFindIndex();
+        }
+        if (e.target.classList.contains('findlast-done')) {
+            doneFindLast();
+        }
+        if (e.target.classList.contains('findlastindex-done')) {
+            doneFindLastIndex();
         }
         if (e.target.classList.contains('every-done')) {
             doneEvery();
@@ -809,6 +835,52 @@ function doneFindIndex() {
     document.querySelector('.arrays__result-findindex').innerHTML = result;
 }
 
+function doneFindLast() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-findlast");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        elements.push(Number(d));
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.findLast(function (element) {
+        return element % 2 !== 0;
+    });
+
+    document.querySelector('.arrays__old-findlast').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-findlast').innerHTML = result;
+}
+
+function doneFindLastIndex() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-findlastindex");
+
+    for (let i = 0; i < data.length; i++) {
+        let d = data[i].value;
+        elements.push(Number(d));
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    function isEven (element) {
+        return element % 2 === 0;
+    }
+
+    let result = elements.findLastIndex(isEven);
+
+    document.querySelector('.arrays__old-findlastindex').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-findlastindex').innerHTML = result;
+}
+
 function doneEvery() {
     let elements = [];
     let data = document.querySelectorAll("#arrays__data-every");
@@ -916,6 +988,12 @@ buttonsReset.forEach(function(reset) {
         }
         if (e.target.classList.contains('findindex-reset')) {
             resetFindIndex();
+        }
+        if (e.target.classList.contains('findlast-reset')) {
+            resetFindLast();
+        }
+        if (e.target.classList.contains('findlastindex-reset')) {
+            resetFindLastIndex();
         }
         if (e.target.classList.contains('every-reset')) {
             resetEvery();
@@ -1107,6 +1185,28 @@ function resetFindIndex() {
     document.querySelector('.arrays__old-findindex').innerHTML = "";
 }
 
+function resetFindLast() {
+    let data = document.querySelectorAll("#arrays__data-findlast");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-findlast").innerHTML = "";
+    document.querySelector('.arrays__result-findlast').innerHTML = "";
+    document.querySelector('.arrays__old-findlast').innerHTML = "";
+}
+
+function resetFindLastIndex() {
+    let data = document.querySelectorAll("#arrays__data-findlastindex");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-findlastindex").innerHTML = "";
+    document.querySelector('.arrays__result-findlastindex').innerHTML = "";
+    document.querySelector('.arrays__old-findlastindex').innerHTML = "";
+}
+
 function resetEvery() {
     let data = document.querySelectorAll("#arrays__data-every");
     for (let i = 0; i < data.length; i++) {
@@ -1268,6 +1368,18 @@ buttonsCheck.forEach(function(check) {
         }
         if (e.target.classList.contains('findindex-for')) {
             checkFindIndexFor();
+        }
+        if (e.target.classList.contains('findlast')) {
+            checkFindLast();
+        }
+        if (e.target.classList.contains('findlast-for')) {
+            checkFindLastFor();
+        }
+        if (e.target.classList.contains('findlastindex')) {
+            checkFindLastIndex();
+        }
+        if (e.target.classList.contains('findlastindex-for')) {
+            checkFindLastIndexFor();
         }
         if (e.target.classList.contains('every')) {
             checkEvery();
@@ -1669,6 +1781,77 @@ function checkFindIndexFor() {
 
     alert(findIndex(array, isOdd));
     alert(findIndex(arrayEven, isOdd));
+}
+
+function checkFindLast() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayEven = array.findLast(function (element) {
+        return element % 2 === 0;
+    });
+    alert(arrayEven);
+}
+
+function checkFindLastFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayEven = (array) => {
+        let even = [];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 2 === 0) {
+                even.push(array[i]);
+            } 
+        }
+
+        if(even.length !== 0) {
+            even.sort(function(a, b) {
+                return b - a;
+            });
+            return even[0];
+        }
+
+        return undefined;
+    };
+    alert(arrayEven(array));
+}
+
+function checkFindLastIndex() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayEven = [2, 4, 6];
+    
+    function isOdd(element) {
+        return element % 2 !== 0;
+    }
+    
+    alert(array.findLastIndex(isOdd));
+    alert(arrayEven.findLastIndex(isOdd));
+}
+
+function checkFindLastIndexFor() {
+    const array = [1, 2, 3, 4, 5];  
+    const arrayEven = [2, 4, 6];
+    
+    function isOdd(element) {
+        return element % 2 !== 0
+    }
+
+    function findLastIndex(array, predicate) {
+        let odd = [];
+        for (let i = 0; i < array.length; i++) {
+            if (predicate(array[i])) {
+                odd.push(i);
+            }
+        }
+
+        if(odd.length !== 0) {
+            odd.sort(function(a, b) {
+                return b - a;
+            });
+            return odd[0];
+        }
+
+    return -1
+}
+    alert(findLastIndex(array, isOdd));
+    alert(findLastIndex(arrayEven, isOdd));
 }
 
 function checkEvery() {

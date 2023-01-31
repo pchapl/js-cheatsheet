@@ -1268,7 +1268,7 @@ alert(fruits.concat(orange, berries));
                       </div>
     
                   </li>
-                  
+
                 </ul>
               </div>
             </div>
@@ -2396,36 +2396,237 @@ const arrayNums = array.some(function (num) {
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">findLast</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
+                  <div class="collapsible-body"><span>Выполняет итерацию массива в обратном порядке и возвращает первое значение элемента, которое удовлетворяет заданной функции проверки. Если в массиве не найдётся ни одного подходящего элемента, то вернётся значение undefined.</span>
+                    <pre>
+                      <code class="js">
+array.findLast(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Функция должна возвращать булевое значение true или false. findLast() вернёт первый элемент с конца массива, на котором переданная функция-колбэк вернула true. Попробуем найти наибольшее четное число:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const arrayEven = array.findLast(function (element) {
+  return element % 2 === 0;
+});
+// колбэк вернул true, потому что в массиве есть четные числа
+
+alert(arrayEven);
+// выведет значение найденного элемента: 4
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findlast">Проверить</button>
+                          </pre>
+                      </div>
                     </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Этот же пример, написанный с помощью классического цикла for:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const arrayEven = (array) => {
+  let even = [];
+  for (let i = 0; i < array.length; i++) {
+      if (array[i] % 2 === 0) {
+          even.push(array[i]);
+      } 
+  }
+
+  if(even.length !== 0) {
+      even.sort(function(a, b) {
+          return b - a;
+      });
+      return even[0];
+  }
+  
+  return undefined;
+};
+
+alert(arrayEven(array));
+// также выведет значение: 4
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findlast-for">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод findLast(), чтобы узнать, есть ли там нечетные числа, и вернуть наибольшее:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-findlast"></div>];</div></div>
+const arrayOdd = array.findLast(function (element) {
+  return element % 2 !== 0;
+});
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add findlast-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done findlast-done">
+                            Применить метод findlast()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-findlast" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Результат:</p>
+                          <pre class="arrays__result-findlast" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset findlast-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
+
                   </div>
                 </li>
 
 
                 <li>
                   <div class="collapsible-header arrays-collapsible-header">findLastIndex</div>
-                  <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>
-                    <div class="arrays-code">
-                      <pre>
-                          <code class="js">
-let fruits = ["Яблоко", "Апельсин"];
-  
-fruits.push("Груша"); // добавляем "Груша"
-                            
-console.log(fruits); // Яблоко, Апельсин, Груша
-                          </code>
-                        </pre>
+                  <div class="collapsible-body"><span>Выполняет итерацию массива в обратном порядке и возвращает индекс первого элемента, удовлетворяющего заданной функции-колбэку. Если ни один элемент не удовлетворяет условию функции, возвращается -1.</span>
+                    <pre>
+                      <code class="js">
+array.findLastIndex(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Для примера возьмём два массива: в одном будут разные числа, во втором - только чётные. И попробуем найти в каждом массиве нечетные числа и вернуть индекс последнего:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayEven = [2, 4, 6];
+// исходные массивы
+
+// напишем функцию, которая будет искать нечетные числа:
+function isOdd(element) {
+  return element % 2 !== 0;
+}
+
+// применим метод findLastIndex(), куда поместим функцию isOdd:
+
+alert(array(findLastIndex.isOdd));
+// выведет 4 - это индекс последнего нечетного числа в массиве
+
+alert(arrayEven(findLastIndex.isOdd));
+// выведет -1, потому что в этом массиве нет нечетных чисел
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findlastindex">Проверить</button>
+                          </pre>
+                      </div>
                     </div>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Тот же пример через классический цикл for:</p>
+                        <div class="arrays-code">
+                          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayEven = [2, 4, 6];
+// исходные массивы
+
+// напишем функцию-предикат,
+// которая вернет true или false:
+
+function isOdd(element) {
+  return element % 2 !== 0
+}
+
+// напишем функцию, которая будет принимать 2 аргумента:
+// массив и функцию-предикат:
+
+function findLastIndex(array, predicate) {
+  let odd = [];
+  for (let i = 0; i < array.length; i++) {
+      if (predicate(array[i])) {
+          odd.push(i);
+      }
+  }
+
+  if(odd.length !== 0) {
+      odd.sort(function(a, b) {
+          return b - a;
+      });
+      return odd[0];
+  }
+
+return -1
+}
+
+// подставим в функцию findLastIndex наши аргументы - 
+// массивы array и arrayEven, а также функцию isOdd
+
+alert(findIndex(array, isOdd));
+// выведет 4 - это индекс последнего нечетного числа в массиве
+
+alert(findIndex(arrayEven, isOdd));
+// выведет -1, потому что в этом массиве нет нечетных чисел
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findlastindex-for">Проверить</button>
+                          </pre>
+                      </div>
+                    </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод findLastIndex(), чтобы узнать, есть ли в массиве четные числа, и в случае успеха, вернуть индекс последнего:</p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-findlastindex"></div>];</div></div>
+const arrayFindEven = array.findLastIndex(function (element) {
+  return element % 2 === 0;
+});
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add findlastindex-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done findindex-done">
+                            Применить метод findLastIndex()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-findlastindex" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Результат:</p>
+                          <pre class="arrays__result-findlastindex" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset findlastindex-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
+
                   </div>
                 </li>
 
