@@ -871,8 +871,8 @@ function doneFindLastIndex() {
         old.push(' ' + data[i].value);
     }
 
-    let result = elements.findLast(function (element) {
-        return element % 2 !== 0;
+    let result = elements.findLastIndex(function (element) {
+        return element % 2 === 0;
     });
 
     document.querySelector('.arrays__old-findlastindex').innerHTML = '[' + old + '];';
