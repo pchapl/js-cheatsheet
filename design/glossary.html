@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" type="image/png">
+
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+    <!-- materialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+    <!--    project styles -->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+
+    <title>Глоссарий</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <main>
+        <div class="main__container">
+            <h1 class="teal-text">Глоссарий</h1>
+            <div>
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header teal lighten-5"><i
+                                class="material-icons">code</i><abbr>AJAX</abbr></div>
+                        <div class="collapsible-body"><span>Asyncronous JavaScript and XML - это технология обращения к серверу без перезагрузки страницы. Способ построения интерактивных пользовательских web-приложений посредством фонового обмена информацией браузера с сервером. Термин <abbr>AJAX</abbr> обозначил Джесси Джеймс Гаррет в 2005 году. Первыми приложениями, использующими данную технологию, стал сервис карт Google Maps и почтовый клиент Gmail.</span>
+                            <p>Преимущества:</p>
+                            <ol>
+                                <li>экономия трафика пользователя;</li>
+                                <li>снижение нагрузки на сервер;</li>
+                                <li>ускорение реагирования интерфейса на команды пользователя.</li>
+                            </ol>
+                            <p>Недостатки:</p>
+                            <ol>
+                                <li>не всегда возможна интеграция со стандартным набором инструментов браузера;</li>
+                                <li>контент, загружаемый динамически, не доступен поисковым системам, поэтому необходимо
+                                    обеспечить альтернативный доступ к содержимому ресурса;
+                                </li>
+                                <li>неправильный учет статистики перемещения пользователя по сайту;</li>
+                                <li>в браузере пользователя должен быть включен JavaScript.</li>
+                            </ol>
+                            <div>
+                                <p>Полезные ссылки:</p>
+                                <div>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/Guide/AJAX/Getting_Started">MDN</a>
+                                </div>
+                                <div><a href="https://itchief.ru/javascript/ajax-introduction">Что такое AJAX? Создание
+                                    асинхронных запросов</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-4"><i class="material-icons">code</i>async/await
+                        </div>
+                        <div class="collapsible-body"><span>Относительно новый способ написания асинхронного кода в JS. Им оборачивают промис. Он делает код более читаемым и чистым, чем промисы и функции обратного вызова.</span>
+                            <p>Подробнее можно почитать <a href="ссылка на страницу">тут</a></p>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/async_function">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/async-await">Учебник</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-3"><i
+                                class="material-icons">code</i><abbr>IIFE</abbr></div>
+                        <div class="collapsible-body"><span>Immediately-invoked function expressions означает функцию, запускаемую сразу после объявления. Для создания <abbr>IIFE</abbr> необходимо обернуть функцию в круглые скобки (оператор группировки), превратив её в выражение, и затем вызвать её с помощью еще одних круглых скобок: (function(){})().</span>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://developer.mozilla.org/ru/docs/Glossary/IIFE">MDN</a></p>
+                                <p><a href="https://learn.javascript.ru/closure#bloki-koda-i-tsikly-iife">Учебник</a>
+                                </p>
+                                <p><a href="https://habr.com/ru/company/ruvds/blog/494868/">Почему пора перестать
+                                    использовать JavaScript IIFE</a></p>
+                                <p><a href="https://doka.guide/js/closures/#chto-takoe-iife">Что такое IIFE? (Дока)</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-2"><i
+                                class="material-icons">code</i><abbr>JSON</abbr></div>
+                        <div class="collapsible-body"><span>JavaScript Object Notation представляет легковесный формат хранения и передачи данных.</span>
+                            <p><abbr>JSON</abbr> описывает структуру и организацию данных JavaScript. Простота <abbr>JSON</abbr>
+                                привела к тому, что в настоящий момент он является наиболее популярным форматом передачи
+                                данных в среде web, вытеснив другой некогда популярный формат xml. Отличительная
+                                особенность формата - его легко интерпретировать не только машинам, но и людям.</p>
+                            <p>формат независим от <abbr>JS</abbr> и может использоваться в любом языке
+                                программирования. PHP, C#, Go, Python и многие другие языки программирования
+                                поддерживают <abbr>JSON</abbr> по умолчанию или с помощью вспомогательных библиотек.</p>
+                            <p>За счёт универсальности формат <abbr>JSON</abbr> упрощает обмен данными. Не важно, какие
+                                технологии используются на клиенте или сервере. Они смогут договориться за счёт
+                                универсального формата.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Objects/JSON">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/json">Учебник</a>
+                                </p>
+                                <p><a href="https://habr.com/ru/post/554274/">Что такое JSON</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-1"><i class="material-icons">code</i>NaN</div>
+                        <div class="collapsible-body"><span>Not A Number (не число) - это значение, получаемое в результате выполнения числовой операции над нечисловым значением.</span>
+                            <p>у NaN есть две особенности:</p>
+                            <ol>
+                                <li>"не число" по типу является числом и typeof NaN вернёт "number".</li>
+                                <li>NaN - единственное значение в JavaScript, которое не равно вообще ничему, в том
+                                    числе самому себе.
+                                </li>
+                            </ol>
+                            <p>Чтобы проверить переменную на NaN, используйте специальную функцию isNaN.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/NaN">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/types#chislo">Учебник</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal"><i class="material-icons">code</i>Анаморфизмы и
+                            катаморфизмы
+                        </div>
+                        <div class="collapsible-body"><span>Анаморфизмы - это фунции, которые отображают некоторый объект на более сложную структуру, содержащую тип объекта. Это процесс разворачивания простой структуры в более сложную. Катаморфизмы противоположны анаморфизмам: они берут объекты более сложной структуры и складывают их в более простые структуры.</span>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://tproger.ru/translations/javascript-cheatsheet/#amrphcatmrph">Определения
+                                    с примерами</a></p>
+                                <p><a href="http://raganwald.com/2016/11/30/anamorphisms-in-javascript.html">Anamorphisms
+                                    in JavaScript</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-1"><i class="material-icons">code</i>Деструктуризация
+                            (Destructuring)
+                        </div>
+                        <div class="collapsible-body"><span>Деструктуризация объектов и массивов - это способ создания новых переменных путем извлечения значений из объектов или массивов. Деструктуризация позволяет извлечь из объекта отдельные значения в переменные или константы.</span>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/destructuring-assignment">Учебник</a>
+                                </p>
+                                <p><a href="https://habr.com/ru/company/otus/blog/594541/">Деструктуризация массивов и
+                                    объектов в JavaScript - в чем разница?</a></p>
+                                <p><a href="https://exploringjs.com/es6/ch_destructuring.html">Destructuring (Exploring
+                                    ES6 by Dr. Axel Rauschmayer)</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-2"><i class="material-icons">code</i>Детерминированность
+                        </div>
+                        <div class="collapsible-body"><span>Функция называется детерминированной тогда, когда для одних и тех же входных параметров она возвращает один и тот же результат. Функция, возвращающая случайное число, не является детерминированной, так как у одного и того же входа мы получим всегда разный результат.</span>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://ru.hexlet.io/courses/js-basics/lessons/deterministic/theory_unit">Детерминированность</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-3"><i class="material-icons">code</i>Замыкание
+                            (Closures)
+                        </div>
+                        <div class="collapsible-body"><span>Замыкания - это функции, которые ссылаются на независимые переменные. Функция определенная в замыкании "помнит" окружение, в котором она создана.</span>
+                            <p>Замыкание - это способность функции во время создания запоминать ссылки на переменные и
+                                параметры, находящиеся в текущей области видимости, в области видимости родительской
+                                функции, в области видимости родителя родительской функции и так до глобальной области
+                                видимости с помощью цепочки областей видимости. Обычно область видимости определяется
+                                при создании функции.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Closures">MDN</a></p>
+                                <p><a href="https://learn.javascript.ru/closure">Учебник</a>
+                                </p>
+                                <p>
+                                    <a href="https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D0%BC-%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-javascript-%D1%80%D0%B0%D0%B7-%D0%B8-%D0%BD%D0%B0%D0%B2%D1%81%D0%B5%D0%B3%D0%B4%D0%B0-c211805b6898">Понимаем
+                                        замыкания в JavaScript. Раз и навсегда</a></p>
+                                <p><a href="https://otus.ru/journal/zamykaniya-v-javascript-kak-ne-nadelat-oshibok/">Замыкания
+                                    в JavaScript: как не наделать ошибок</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-4"><i class="material-icons">code</i>Запоминание или
+                            мемоизация (Memoization)
+                        </div>
+                        <div class="collapsible-body"><span>Мемоизация - это сохранение результатов выполнения функций для предотвращения повторных вычислений. Это один из способов оптимизации, применяемый для увеличения скорости выполнения компьютерных программ.</span>
+                            <p>Мемоизация - это запоминание, сохранение чего-либо в памяти. Функции, в которых
+                                используется мемоизация, обычно работают быстрее.</p>
+                            <p>Преимущество мемоизации заключается в том, что мы избегаем повторного выполнения функции
+                                с одинаковыми аргументами. Недостатком является то, что мы вынуждены выделять
+                                дополнительную память для сохранения результатов.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://habr.com/ru/post/666522/">Что такое мемоизация? Как и когда
+                                    использовать мемоизацию в JavaScript и React</a></p>
+                                <p>
+                                    <a href="https://medium.com/nuances-of-programming/%D0%BC%D0%B5%D0%BC%D0%BE%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BA%D0%B0%D0%BA-%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D1%83%D1%81%D0%BA%D0%BE%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D0%B5%D0%B1-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9-f2db2aa61e33">Мемоизация
+                                        как средство ускорения веб-приложений</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-3"><i class="material-icons">code</i>Инкремент и
+                            декремент
+                        </div>
+                        <div class="collapsible-body"><span>Инкремент и декремент - унарные операции, которые увеличивают и уменьшают на единицу число, записанное в переменную (обычно на 1).</span>
+                            <p>У них есть постфиксная и префиксная формы. При использовании префиксной нотации сначала
+                                происходит изменение переменной, а потом возврат. При использовании постфиксной нотации
+                                — наоборот. Правило работает одинаково для инкремента и декремента.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Decrement">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/operators#inkrement-dekrement">Учебник</a>
+                                </p>
+                                <p><a href="https://ru.hexlet.io/courses/js-basics/lessons/mutators/theory_unit">Инкремент
+                                    и декремент</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-2"><i class="material-icons">code</i>Интерполяция
+                        </div>
+                        <div class="collapsible-body"><span>Интерполяция - это новый способ построения строк стандарта ES6 через вставку значений переменных в строку-шаблон с помощью фигурных скобок. Например, `Hi, ${name}!`.</span>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Template_literals">MDN</a>
+                                </p>
+                                <p><a href="https://ru.hexlet.io/courses/js-basics/lessons/interpolation/theory_unit">Интерполяция</a>
+                                </p>
+                                <p><a href="http://jsraccoon.ru/es6-interpolation">ES6: Интерполяция</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-1"><i class="material-icons">code</i>Классы (classes)
+                        </div>
+                        <div class="collapsible-body"><span>Классы - это относительно новый способ написания функций-конструкторов в JS. Это синтаксический сахар для функций-конструкторов. В основе классов лежат те же прототипы и прототипное наследование.</span>
+                            <p>Подробнее о классах <a href="#">тут</a>.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/classes">Учебник</a>
+                                </p>
+                                <p><a href="https://habr.com/ru/post/518386/">JavaScript: полное руководство по
+                                    классам</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal"><i class="material-icons">code</i>Конкатенация</div>
+                        <div class="collapsible-body"><span>Конкатенация - операция соединения вещей друг с другом. В JavaScript конкатенация чаще всего используется для соединения значений переменных друг с другом, или строк со строками. Склеивание строк всегда происходит в том же порядке, в котором записаны операнды. Левый операнд становится левой частью строки, а правый - правой.</span>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/First_steps/Strings#%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0%D1%82%D0%B5%D0%BD%D0%B0%D1%86%D0%B8%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA">MDN</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-1"><i class="material-icons">code</i>Литералы</div>
+                        <div class="collapsible-body"><span>Литералы - это простейшие данные с которыми может работать программа. Литерал - любое значение указанное явным образом.</span>
+                            <ul>
+                                <li>Литералы целого типа - целые числа в различном представлении.</li>
+                                <li>Вещественные литералы - дробные числа. Целая часть отделяется от дробной точкой.
+                                </li>
+                                <li>Логические значения - истина (true) и ложь (false).</li>
+                                <li>Строковые литералы - последовательность символов, заключенная в одинарные или
+                                    двойные кавычки. Например: "ваше имя", 'ваше имя'.
+                                </li>
+                            </ul>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Grammar_and_types#%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D0%BB%D1%8B">MDN</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-2"><i class="material-icons">code</i>Модули
+                            (Modules)
+                        </div>
+                        <div class="collapsible-body"><span>Модули - это кусочки кода, которые хранятся в отдельных файлах. Это делает код более понятным и простым в обслуживании.</span>
+                            <p>Модули позволяют объединять (использовать) код из разных файлов и избавляют нас от
+                                необходимости держать весь код в одном большом файле.</p>
+                            <p>В современном JavaScript осталось два основных стандарта модульных систем. Это CommonJS,
+                                которая является основной для платформы Node.js, и ESM (ECMAScript 6 модули), которая
+                                была принята как стандарт для языка и внесена в спецификацию ES2015.</p>
+                            <p>Модульность решает следующие задачи: обеспечение поддержки изоляции кода, определение
+                                зависимостей между модулями и доставка кода в среду выполнения.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Modules">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/modules">Учебник</a>
+                                </p>
+                                <p><a href="https://doka.guide/js/modules/">Модули, import/export (Дока)</a></p>
+                                <p><a href="https://habr.com/ru/post/267639/">Тонкости модульной системы ECMAScript 2015
+                                    (ES6)</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-3"><i class="material-icons">code</i>Область
+                            видимости (Scope)
+                        </div>
+                        <div class="collapsible-body"><span>Область видимости - это место, где (или откуда) мы имеем доступ к переменным или функциям. JS имеет три типа областей видимости: глобальная, функциональная и блочная.</span>
+                            <p>Механизм областей видимости в JavaScript ограничивает видимость переменных и функций в
+                                разных частях программы. Области видимости могут вкладываться друг в друга и создавать
+                                иерархию. Переменные и функции, объявленные в области видимости выше по иерархии,
+                                доступны в большем количестве мест программы, но только "вниз". Это значит, что
+                                переменные из родительских областей видимости доступны в дочерних областях, а наоборот –
+                                нет.</p>
+                            <p>Подробнее можно почитать <a href="#">тут</a>.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://doka.guide/js/closures/">Области видимости (Дока)</a></p>
+                                <p><a href="https://habr.com/ru/post/517338/">JavaScript: область видимости простыми
+                                    словами</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-4"><i class="material-icons">code</i>Объект Set
+                        </div>
+                        <div class="collapsible-body"><span>Set (множество) - коллекция для хранения уникальных значений любого типа. Одно и то же значение нельзя добавить в Set больше одного раза.</span>
+                            <p>Set - это неиндексированная коллекция, положить элемент в коллекцию можно, но достать
+                                нельзя. По элементам коллекции можно итерироваться.</p>
+                            <p>Объект Set позволяет хранить уникальные значения, примитивы и ссылки на объекты. Set
+                                проверяет хранящиеся в нем значения с помощью алгоритма SameZeroValue.</p>
+                            <p>Экземпляр Set создается с помощью конструктора Set.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Set">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/map-set#set">Учебник</a>
+                                </p>
+                                <p><a href="https://doka.guide/js/set/">Set (Дока)</a></p>
+                                <p><a href="https://codechick.io/tutorials/javascript/js-set">Set (codechick)</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-5"><i class="material-icons">code</i>Объектная
+                            обертка (Wrapper Objects)
+                        </div>
+                        <div class="collapsible-body"><span>В JavaScript есть 5 типов примитивов: number, string, boolean, null и undefined. При этом типы number, string и boolean имеют так называемые объекты обертки. Объекты обертки могут быть созданы с помощью конструкторов Number(), String() и Boolean().</span>
+                            <p>Объекты обертки имеют специальные методы, но для того чтобы ими пользоваться не
+                                обязательно создавать объект с помощью конструктора. Если вызвать метод у примитива, то
+                                он на время будет сконвертирован в объект и метод успешно выполнится.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Glossary/Primitive#%D0%BE%D0%B1%D1%91%D1%80%D1%82%D0%BA%D0%B8_%D0%BF%D1%80%D0%B8%D0%BC%D0%B8%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D1%85_%D1%82%D0%B8%D0%BF%D0%BE%D0%B2_%D0%B2_javascript ">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/primitives-methods">Учебник</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-4"><i class="material-icons">code</i>Поднятие
+                            (Hoisting)
+                        </div>
+                        <div class="collapsible-body"><span>Поднятие (hoisting) - это поведение, при котором функцию или переменную можно использовать до объявления. Это термин, описывающий подъем переменной или функции в глобальную или функциональную области видимости.</span>
+                            <p>Поднятие предполагает, что объявления переменных и функций физически перемещаются в
+                                начало кода. Ключевое слово var поддерживает hoisting, let и const - нет. JavaScript не
+                                поддерживает поднятие с инициализацией.</p>
+                            <p>Hoisting может привести к нежелательным последствиям в вашей программе. Поэтому лучше
+                                сначала объявлять переменные и функции перед использованием.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://developer.mozilla.org/ru/docs/Glossary/Hoisting">MDN</a></p>
+                                <p><a href="https://doka.guide/js/closures/#podnyatie-peremennyh-hoisting">Hoisting
+                                    (Дока)</a>
+                                </p>
+                                <p>
+                                    <a href="https://medium.com/@stasonmars/%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%80%D0%B0%D0%B5%D0%BC%D1%81%D1%8F-%D1%81-%D0%BF%D0%BE%D0%B4%D0%BD%D1%8F%D1%82%D0%B8%D0%B5%D0%BC-hoisting-%D0%B2-javascript-7d2d27bc51f1">Разбираемся
+                                        с "поднятием" (hoisting) в JavaScript</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-3"><i class="material-icons">code</i>Предикаты</div>
+                        <div class="collapsible-body"><span>Предикат - выражение, отвечающее на вопрос "да" или "нет" с помощью типа boolean.</span>
+                            <p>Функции-предикаты (или функции-вопросы) отвечают на какой-то вопрос и всегда возвращают
+                                либо true, либо false.</p>
+                            <p>Предикаты во всех языках принято именовать особым образом для простоты анализа. В
+                                JavaScript предикаты, как правило, начинаются с префикса is, has или can, но не
+                                ограничены этими словами.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://code-basics.com/ru/languages/javascript/lessons/predicates">Предикаты</a>
+                                </p>
+                                <p><a href="https://ru.hexlet.io/blog/posts/naming-in-programming">Совершенный код:
+                                    именование в программировании</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-2"><i class="material-icons">code</i>Промисы
+                            (Promises)
+                        </div>
+                        <div class="collapsible-body"><span>Промисы - это один из приемов работы с асинхронным кодом в JS. Промис - это глобальный объект Promise. Он позволяет отследить выполнение асинхронной операции и сохранить её результат.</span>
+                            <p>Больше можно почитать <a href="#">тут</a>.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/promise-basics">Учебник</a>
+                                </p>
+                                <p><a href="https://doka.guide/js/promise/">Промисы (Дока)</a></p>
+                                <p><a href="https://habr.com/ru/post/439746/">Разбираемся с промисами в JavaScript</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal lighten-1"><i class="material-icons">code</i>Прототип
+                            объекта
+                        </div>
+                        <div class="collapsible-body"><span>Прототипы - это механизм, с помощью которого объекты JavaScript наследуют свойства друг от друга.</span>
+                            <p>Это план (схема или проект) объекта. Он используется как запасной вариант для свойств и
+                                методов, существующих в данном объекте. Это также один из способов обмена свойствами и
+                                функциональностью между объектами.</p>
+                            <p>Узнать больше <a href="#">тут</a>.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Objects/Object_prototypes">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/prototype-inheritance">Учебник</a>
+                                </p>
+                                <p><a href="https://habr.com/ru/post/518360/">Прототипы в JS и малоизвестные факты</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal"><i class="material-icons">code</i>Рекурсия</div>
+                        <div class="collapsible-body"><span>Рекурсия в программировании - это вызов функции из этой же самой функции.</span>
+                            <p>При решении некоторых задач мы можем обнаружить, что решение можно разбить на несколько
+                                простых действий и более простой вариант той же задачи.</p>
+                            <p>Внутри рекурсивной функции обязательно должно находится условие выхода из рекурсии. Иначе
+                                функция будет вызывать саму себя бесконечно.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://learn.javascript.ru/recursion">Учебник</a>
+                                </p>
+                                <p><a href="https://doka.guide/js/recursion/">Рекурсия (Дока)</a></p>
+                                <p><a href="https://codechick.io/tutorials/javascript/js-recursion">Рекурсия
+                                    (codechick)</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-1"><i class="material-icons">code</i>Синтаксический
+                            сахар
+                        </div>
+                        <div class="collapsible-body"><span>Синтаксический сахар - это синтаксические возможности, применение которых не влияет на поведение программы, но делает использование языка более удобным для человека.</span>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://thecode.media/sugar/">Что такое синтаксический сахар</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-2"><i class="material-icons">code</i>Слабая типизация
+                        </div>
+                        <div class="collapsible-body"><span>Слабая типизация - это типизация, при которой язык программирования выполняет множество неявных преобразований типов автоматически, даже если может произойти потеря точности или преобразование неоднозначно.</span>
+                            <p>JavaScript - это язык со слабой типизацией. Он знает о существовании разных типов (числа,
+                                строки и др.), но относится к их использованию не очень строго, пытаясь преобразовывать
+                                информацию, когда это кажется разумным. </p>
+                            <p>В языках со строгой типизацией сложить число со строкой не получится.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://otus.ru/journal/tipizaciya-v-programmirovanii/">Типизация в
+                                    программировании</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-3"><i class="material-icons">code</i>События</div>
+                        <div class="collapsible-body"><span>События - это структура, которая следит за тем, что происходит в браузере, а затем позволяет вам запускать код в ответ на это.</span>
+                            <p>События — это действия или случаи, возникающие в программируемой вами системе, о которых
+                                система сообщает вам для того, чтобы вы могли с ними взаимодействовать.</p>
+                            <p>Больше информации <a href="#">тут</a>.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Building_blocks/Events">Введение
+                                        в события MDN</a></p>
+                                <p><a href="https://developer.mozilla.org/ru/docs/Web/Events">MDN</a></p>
+                                <p><a href="https://learn.javascript.ru/introduction-browser-events">Учебник</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-4"><i class="material-icons">code</i>Фазы события и
+                            Делегирование (event delegation)
+                        </div>
+                        <div class="collapsible-body"><span>Событие делегируется - передается от родителя к дочерним элементам.</span>
+                            <p> Распространение событий состоит из трех фаз или стадий:</p>
+                            <ol>
+                                <li>Фаза захвата или погружения - начиная с window, document и корневого элемента,
+                                    событие опускается до целевого элемента (элемента, вызвавшего событие),
+                                    последовательно проходя через всех его предков
+                                </li>
+                                <li>Целевая фаза - это когда событие достигает целевого элемента</li>
+                                <li>Фаза поднятия или всплытия (не путать с hoisting) - событие поднимается от целевого
+                                    элемента через всех его предков до document и window
+                                </li>
+                            </ol>
+                            <p>Суть Делегирования событий заключается в следующем: если есть много похожих элементов,
+                                события на которых нужно обрабатывать также похожим/одинаковым образом, то вместо того,
+                                чтобы назначить обработчик события каждому элементу, создается один обработчик для
+                                общего родителя.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://learn.javascript.ru/event-delegation">Учебник</a>
+                                </p>
+                                <p><a href="https://habr.com/ru/post/512782/">Простое объяснение делегирования событий в
+                                    JavaScript</a></p>
+                                <p>
+                                    <a href="https://coderlessons.com/articles/veb-razrabotka-articles/delegirovanie-sobytii-javascript-proshche-chem-vy-dumaete">Делегирование
+                                        событий JavaScript проще, чем вы думаете</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-3"><i class="material-icons">code</i>Функция
+                            обратного вызова (Callback Function)
+                        </div>
+                        <div class="collapsible-body"><span>Функция обратного вызова - это функция, вызов которой отложен на будущее (происходит при некоторых условиях).</span>
+                            <p>Коллбэк - это функция, которая должна быть выполнена после того, как другая функция
+                                завершила выполнение.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p><a href="https://developer.mozilla.org/ru/docs/Glossary/Callback_function">MDN</a>
+                                </p>
+                                <p><a href="https://learn.javascript.ru/callbacks">Учебник</a>
+                                </p>
+                                <p><a href="https://ru.hexlet.io/blog/posts/javascript-what-the-heck-is-a-callback">Что
+                                    такое callback-функция в JavaScript?</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header teal darken-2"><i class="material-icons">code</i>Шаблонные
+                            литералы (Template Literals)
+                        </div>
+                        <div class="collapsible-body"><span>Шаблонные литералы - относительно новый способ создания строк в JS. Шаблонные строки объявляются с помощью обратных кавычек.</span>
+                            <p></p>Шаблонная строка может быть многострочной, все переносы строк в ней будут сохранены.
+                            В шаблонной строке с помощью синтаксиса ${ } можно использовать любые выражения JavaScript.
+                            Любой нестроковый результат (например, объект) будет приведён к строке.</p>
+                            <p>Шаблонные строки сейчас - основной способ работы со строками, в которые нужно подставлять
+                                вычисляемые значения.</p>
+                            <div><p>Полезные ссылки:</p>
+                                <p>
+                                    <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Template_literals">MDN</a>
+                                </p>
+                                <p><a href="https://doka.guide/js/template-strings/">Шаблонные строки (Дока)</a></p>
+                                <p><a href="https://codechick.io/tutorials/javascript/js-template-literals">Шаблонные
+                                    строки (codechick)</a></p>
+                                <p><a href="https://habr.com/ru/company/ruvds/blog/511590/">Путь к пониманию шаблонных
+                                    литералов в JavaScript</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+<!--                    <li>-->
+<!--                        <div class="collapsible-header teal darken-1"><i class="material-icons">code</i>30</div>-->
+<!--                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>-->
+<!--                            <div><p>Полезные ссылки:</p>-->
+<!--                                <p><a href="">MDN</a></p>-->
+<!--                                <p><a href="">Учебник</a>-->
+<!--                                </p>-->
+<!--                                <p><a href=""></a></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="./assets/dist/js/main.js"></script>
+</body>
+
+</html>

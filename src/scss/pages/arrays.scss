@@ -1,19 +1,82 @@
-[class*="__container"] {
+.arrays-main__container {
     max-width: 1160px;
     margin: 0 auto;
     padding-left: 2rem;
     padding-right: 2rem;
 }
 
-.wrapper {
+.arrays__wrapper {
     display: flex;
     flex-direction: column;
-}
-
-.main {
     flex: 1 1 auto;
 }
 
-.block {
+#arrays__data-pop, #arrays__data-push, #arrays__data-shift, #arrays__data-unshift, #arrays__data-splice, #arrays__data-slice, #arrays__data-concat, #arrays__data-join, #arrays__data-sort, #arrays__data-reverse, #arrays__data-foreach, #arrays__data-map, #arrays__data-reduce {
+    height: 2rem;
+    width: 7rem;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.arrays__practice {
     display: flex;
+    align-items: center;
+}
+
+.arrays__input {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.arrays-code {
+    color: #383a42;
+    background: #fafafa;
+}
+
+.arrays__old,
+.arrays__delete,
+.arrays__result {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.arrays-code__let {
+    margin: 0;
+}
+
+.arrays-div__input {
+    display: flex;
+    align-items: center;
+}
+
+.arrays-collapsible-header {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.arrays__title-small {
+    margin-top: 5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.arrays__text-bold {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.arrays__out {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+#arrays__li, #arrays__li_two, #arrays__li_three {
+    list-style-type: disc;
+}
+
+#arrays__ul {
+    padding-left: 20px;
 }
