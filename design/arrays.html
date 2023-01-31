@@ -1041,9 +1041,9 @@ alert(fruits);
                       </span>
                       <pre>
                         <code class="js">
-    array.indexOf(searchElement, fromIndex);
-    // fromIndex - необязательный параметр, это индекс в массиве, 
-    // с которого нужно начинать поиск элемента searchElement.
+array.indexOf(searchElement, fromIndex);
+// fromIndex - необязательный параметр, это индекс в массиве, 
+// с которого нужно начинать поиск элемента searchElement.
                         </code>
                       </pre>
     
@@ -1052,17 +1052,54 @@ alert(fruits);
                           <div class="arrays-code">
                             <pre>
                               <code class="js">
-    const fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Мандарин"];
+const fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Мандарин"];
     
-    alert(fruits.indexOf("Мандарин"));
-    // выведет 2 - индекс первого элемента со значением "Мандарин" с начала массива
-    alert(fruits.indexOf("Манго"));
-    // выведет -1
+alert(fruits.indexOf("Мандарин"));
+// выведет 2 - индекс первого элемента со значением "Мандарин" с начала массива
+alert(fruits.indexOf("Манго"));
+// выведет -1
                               </code>
       <button class="waves-effect waves-light btn arrays__check index-of">Проверить</button>
                             </pre>
                         </div>
                       </div>
+
+                      <div class="arrays__test">
+                        <h3 class="arrays__title-small">Практика</h3>
+                        <div class="arrays__block">
+                          <div class="arrays__results">
+                            <div class="arrays__task">
+                              <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы, после чего указать искомый элемент и применить метод
+                                indexOf():</p>
+                              <div class="arrays__field">
+    
+                                <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-indexof"></div>];</div></div><div class="arrays__practice"><div>
+  const element = array.indexOf</div><div class="arrays__practice-search">(<input class="arrays__search" id="arrays__search-indexof" type="text">);</div></div>
+                              </pre>
+                            </div>
+                            <button class="waves-effect waves-light btn arrays__button_add indexof-add">
+                              Добавить элементы
+                            </button>
+    
+                            <button class="waves-effect waves-light btn arrays__button_done indexof-done">
+                              Применить метод indexOf()
+                            </button>
+                          </div>
+                          <div class="arrays__out">
+                            <p class="arrays__text-bold">Исходный массив:</p>
+                            <pre class="arrays__old-indexof" class="arrays-code"></pre>
+                            <p class="arrays__text-bold">Результат:</p>
+                            <pre class="arrays__result-indexof" class="arrays-code"></pre>
+                          </div>
+                        </div>
+    
+                        <button class="waves-effect waves-light btn arrays__button_reset indexof-reset">
+                          Сбросить значения
+                        </button>
+                      </div>
+                    </div>
     
                     </div>
                   </li>
@@ -1097,6 +1134,43 @@ alert(fruits);
                             </pre>
                         </div>
                       </div>
+
+                      <div class="arrays__test">
+                        <h3 class="arrays__title-small">Практика</h3>
+                        <div class="arrays__block">
+                          <div class="arrays__results">
+                            <div class="arrays__task">
+                              <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы, после чего указать искомый элемент и применить метод
+                                lastIndexOf():</p>
+                              <div class="arrays__field">
+    
+                                <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-lastindexof"></div>];</div></div><div class="arrays__practice"><div>
+  const element = array.lastIndexOf</div><div class="arrays__practice-search">(<input class="arrays__search" id="arrays__search-lastindexof" type="text">);</div></div>
+                              </pre>
+                            </div>
+                            <button class="waves-effect waves-light btn arrays__button_add lastindexof-add">
+                              Добавить элементы
+                            </button>
+    
+                            <button class="waves-effect waves-light btn arrays__button_done lastindexof-done">
+                              Применить метод lastIndexOf()
+                            </button>
+                          </div>
+                          <div class="arrays__out">
+                            <p class="arrays__text-bold">Исходный массив:</p>
+                            <pre class="arrays__old-lastindexof" class="arrays-code"></pre>
+                            <p class="arrays__text-bold">Результат:</p>
+                            <pre class="arrays__result-lastindexof" class="arrays-code"></pre>
+                          </div>
+                        </div>
+    
+                        <button class="waves-effect waves-light btn arrays__button_reset lastindexof-reset">
+                          Сбросить значения
+                        </button>
+                      </div>
+                    </div>
     
                     </div>
                   </li>

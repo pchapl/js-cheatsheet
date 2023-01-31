@@ -61,6 +61,12 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('includes-add')) {
             addInputIncludes();
         }
+        if (e.target.classList.contains('indexof-add')) {
+            addInputIndexOf();
+        }
+        if (e.target.classList.contains('lastindexof-add')) {
+            addInputLastIndexOf();
+        }
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
         }
@@ -174,6 +180,20 @@ function addInputIncludes() {
     let parent = document.querySelector('.arrays__input-includes');
     let input = document.createElement('div');
     input.innerHTML = `<input class="arrays__data" id="arrays__data-includes" type="text">`;
+    parent.appendChild(input);
+}
+
+function addInputIndexOf() {
+    let parent = document.querySelector('.arrays__input-indexof');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-indexof" type="text">`;
+    parent.appendChild(input);
+}
+
+function addInputLastIndexOf() {
+    let parent = document.querySelector('.arrays__input-lastindexof');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-lastindexof" type="text">`;
     parent.appendChild(input);
 }
 
@@ -301,6 +321,12 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('includes-done')) {
             doneIncludes();
+        }
+        if (e.target.classList.contains('indexof-done')) {
+            doneIndexOf();
+        }
+        if (e.target.classList.contains('lastindexof-done')) {
+            doneLastIndexOf();
         }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
@@ -777,10 +803,68 @@ function doneIncludes() {
     let searchValue = search.value;
     let result = elements.includes(searchValue);
 
-    console.log(typeof searchValue)
-
     document.querySelector('.arrays__old-includes').innerHTML = '[' + old + '];';
     document.querySelector('.arrays__result-includes').innerHTML = result;
+}
+
+function doneIndexOf() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-indexof");
+    let search = document.querySelector('#arrays__search-indexof');
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        }  else {
+            elements.push(dataValue);
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let searchValue = search.value;
+    let result = elements.indexOf(searchValue);
+
+    document.querySelector('.arrays__old-indexof').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-indexof').innerHTML = result;
+}
+
+function doneLastIndexOf() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-lastindexof");
+    let search = document.querySelector('#arrays__search-lastindexof');
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        }  else {
+            elements.push(dataValue);
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let searchValue = search.value;
+    let result = elements.lastIndexOf(searchValue);
+
+    document.querySelector('.arrays__old-lastindexof').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-lastindexof').innerHTML = result;
 }
 
 function doneForEach() {
@@ -1178,6 +1262,12 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('includes-reset')) {
             resetIncludes();
         }
+        if (e.target.classList.contains('indexof-reset')) {
+            resetIndexOf();
+        }
+        if (e.target.classList.contains('lastindexof-reset')) {
+            resetLastIndexOf();
+        }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
         }
@@ -1343,6 +1433,30 @@ function resetIncludes() {
     document.querySelector('.arrays__result-includes').innerHTML = "";
     document.querySelector('.arrays__old-includes').innerHTML = "";
     document.querySelector('#arrays__search-includes').value = "";
+}
+
+function resetIndexOf() {
+    let data = document.querySelectorAll("#arrays__data-indexof");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-indexof").innerHTML = "";
+    document.querySelector('.arrays__result-indexof').innerHTML = "";
+    document.querySelector('.arrays__old-indexof').innerHTML = "";
+    document.querySelector('#arrays__search-indexof').value = "";
+}
+
+function resetLastIndexOf() {
+    let data = document.querySelectorAll("#arrays__data-lastindexof");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-lastindexof").innerHTML = "";
+    document.querySelector('.arrays__result-lastindexof').innerHTML = "";
+    document.querySelector('.arrays__old-lastindexof').innerHTML = "";
+    document.querySelector('#arrays__search-lastindexof').value = "";
 }
 
 function resetForEach() {
