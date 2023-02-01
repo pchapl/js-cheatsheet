@@ -1,16 +1,3 @@
-.arrays-main__container {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.arrays__wrapper {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-}
-
 .arrays__data {
     height: 2rem;
     width: 7rem;
@@ -130,12 +117,4 @@
 .arrays__out {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
-}
-
-#arrays__li, #arrays__li_two, #arrays__li_three {
-    list-style-type: disc;
-}
-
-#arrays__ul {
-    padding-left: 20px;
 }

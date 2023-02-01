@@ -31,9 +31,41 @@
 </head>
 
 <body>
-  <div class="arrays__wrapper">
-    <header></header>
-    <main class="arrays-main__container">
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+          <ul id="dropdown1" class="dropdown-content">
+              <li><a href="api.html">API</a></li>
+              <li><a href="arrays.html">Arrays</a></li>
+              <li><a href="async.html">Async</a></li>
+              <li><a href="dom.html">DOM</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="functions.html">Functions</a></li>
+              <li><a href="glossary.html">Glossary</a></li>
+              <li><a href="ifelse.html">If Else</a></li>
+              <li><a href="prototypes.html">Prototypes</a></li>
+              <li><a href="regular.html">Regular</a></li>
+              <li><a href="string.html">String</a></li>
+              <li><a href="this.html">this</a></li>
+              <li><a href="timedate.html">TimeDate</a></li>
+              <li><a href="types.html">Types</a></li>
+              <li><a href="variables.html">Variables</a></li>
+              <li><a href="web.html">Web</a></li>
+          </ul>
+          <nav>
+              <div class="nav-wrapper teal lighten-1">
+                  <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                  <ul class="right">
+                      <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                              class="material-icons right">arrow_drop_down</i></a></li>
+                  </ul>
+              </div>
+          </nav>
+
+      </div>
+    </header>
+    <main>
+      <div class="main__container">
 
       <div class="arrays-array">
         <h1 class="arrays__title">Что такое массивы?</h1>
@@ -431,14 +463,14 @@ arr.splice(start, deleteCount, element1, ..., elementN)
 
                   <div class="array-code__item">
                     <p class="arrays__text">Параметры:</p>
-                    <ul id="arrays__ul">
-                      <li id="arrays__li">
+                    <ul class="arrays__ul" style="padding-left: 20px">
+                      <li class="arrays__li" style="list-style-type: disc">
                         <code class="arrays-code_small">start</code> - индекс элемента массива, с которого будут удалены из массива и/или добавлены в массив элементы; можно использовать отрицательные значения, в этом случае <code class="arrays-code_small">start</code> расчитывается по формуле <code class="arrays-code_small">arr.length + start</code>;
                       </li>
-                      <li id="arrays__li_two">
+                      <li class="arrays__li" style="list-style-type: disc">
                         <code class="arrays-code_small">deleteCount</code> (необязательное значение) - число, определяющее количество удаляемых из массива элементов; если <code class="arrays-code_small">deleteCount</code> равен 0, то элементы не удаляются; если значение <code class="arrays-code_small">deleteCount</code> больше количества оставшихся элементов в массиве, то будут удалены все элементы до конца массива;
                       </li>
-                      <li id="arrays__li_three">
+                      <li class="arrays__li" style="list-style-type: disc">
                         <code class="arrays-code_small">elementN</code> (необязательное значение) - добавляемые к массиву элементы. Если не указывать никакого элемента, <code class="arrays-code_small">splice()</code> просто удалит элементы из массива.
                       </li>
                     </ul>
@@ -563,11 +595,11 @@ array.slice(start, end);
 
                   <div class="array-code__item">
                     <p class="arrays__text">Параметры:</p>
-                    <ul id="arrays__ul">
-                      <li id="arrays__li">
+                    <ul class="arrays__ul" style="padding-left: 20px">
+                      <li class="arrays__li" style="list-style-type: disc">
                         <code class="arrays-code_small">start</code> - индекс элемента массива, с которого будут выбраны элементы; если start опущен, то значение по умолчанию будет 0; можно использовать отрицательные значения, в этом случае <code class="arrays-code_small">start</code> расчитывается по формуле <code class="arrays-code_small">arr.length + start</code>;
                       </li>
-                      <li id="arrays__li_two">
+                      <li class="arrays__li" style="list-style-type: disc">
                         <code class="arrays-code_small">end</code> - индекс элемента массива, на котором будет заканчиваться извлечение элементов массива (не включая его); если этот параметр не указан, то будут выбраны все элементы от <code class="arrays-code_small">start</code> и до конца массива; можно использовать отрицательные значения, в этом случае <code class="arrays-code_small">end</code> расчитывается по формуле <code class="arrays-code_small">arr.length + end</code>.
                       </li>
                     </ul>
@@ -844,14 +876,14 @@ alert(numbers);
                         <p class="arrays__text">Во многих случаях требуется совсем не это, поэтому в метод <code class="arrays-code_small">sort()</code> можно передать функцию сравнения, которая упорядочивает два значения.</p>
                         <p class="arrays__text">Неопределенные элементы при сортировке всегда оказываются в конце массива. Это происходит, даже если указана специальная функция сортировки: такие значения никогда не передаются в заданную функцию.</p>
                         <p class="arrays__text">Функция сравнения должна принимать два аргумента - a и b, и возвращать одно из следующих значений:</p>
-                        <ul id="arrays__ul">
-                          <li id="arrays__li">
+                        <ul class="arrays__ul" style="padding-left: 20px">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Отрицательное число, если значение a «меньше» значения b и должно находиться в отсортированном массиве перед b.
                           </li>
-                          <li id="arrays__li_two">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Ноль, если a и b эквивалентны.
                           </li>
-                          <li id="arrays__li_three">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Положительное число, если значение a «больше» значения b.
                           </li>
                         </ul>
@@ -1285,14 +1317,14 @@ array.entries();
                       <div class="array-code__item">
                         <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
                         <p class="arrays__text">Итератор – это объект, который отслеживает свою текущую позицию, одновременно получая элементы в коллекции по одному.</p>
-                        <ul id="arrays__ul">
-                          <li id="arrays__li">
+                        <ul class="arrays__ul" style="padding-left: 20px">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Итератор возвращает объект с двумя свойствами: <code class="arrays-code_small">done</code> и <code class="arrays-code_small">value</code>. 
                           </li>
-                          <li id="arrays__li_two">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Итератор предоставляет метод <code class="arrays-code_small">next()</code>, который возвращает следующий элемент в последовательности.
                           </li>
-                          <li id="arrays__li_three">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Когда последовательность завершится, значение <code class="arrays-code_small">value</code> будет равно <code class="arrays-code_small">undefined</code>, а <code class="arrays-code_small">done</code> будет равным <code class="arrays-code_small">true</code>.
                           </li>
                         </ul>
@@ -1392,14 +1424,14 @@ array.keys();
                       <div class="array-code__item">
                         <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
                         <p class="arrays__text">Итератор – это объект, который отслеживает свою текущую позицию, одновременно получая элементы в коллекции по одному.</p>
-                        <ul id="arrays__ul">
-                          <li id="arrays__li">
+                        <ul class="arrays__ul" style="padding-left: 20px">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Итератор возвращает объект с двумя свойствами: <code class="arrays-code_small">done</code> и <code class="arrays-code_small">value</code>. 
                           </li>
-                          <li id="arrays__li_two">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Итератор предоставляет метод <code class="arrays-code_small">next()</code>, который возвращает следующий элемент в последовательности.
                           </li>
-                          <li id="arrays__li_three">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Когда последовательность завершится, значение <code class="arrays-code_small">value</code> будет равно <code class="arrays-code_small">undefined</code>, а <code class="arrays-code_small">done</code> будет равным <code class="arrays-code_small">true</code>.
                           </li>
                         </ul>
@@ -1500,14 +1532,14 @@ array.values();
                       <div class="array-code__item">
                         <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
                         <p class="arrays__text">Итератор – это объект, который отслеживает свою текущую позицию, одновременно получая элементы в коллекции по одному.</p>
-                        <ul id="arrays__ul">
-                          <li id="arrays__li">
+                        <ul class="arrays__ul" style="padding-left: 20px">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Итератор возвращает объект с двумя свойствами: done и value. 
                           </li>
-                          <li id="arrays__li_two">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Итератор предоставляет метод next(), который возвращает следующий элемент в последовательности.
                           </li>
-                          <li id="arrays__li_three">
+                          <li class="arrays__li" style="list-style-type: disc">
                             Когда последовательность завершится, значение value будет равно undefined, а done будет равным true.
                           </li>
                         </ul>
@@ -1757,14 +1789,14 @@ array.fill(value, start, end);
 
                   <div class="array-code__item">
                     <p class="arrays__text">Параметры:</p>
-                    <ul id="arrays__ul">
-                      <li id="arrays__li">
+                    <ul class="arrays__ul" style="padding-left: 20px">
+                      <li class="arrays__li" style="list-style-type: disc">
                         <code class="arrays-code_small">value</code> - значение, которым будет заполнен массив; 
                       </li>
-                      <li id="arrays__li_two">
+                      <li class="arrays__li" style="list-style-type: disc">
                         <code class="arrays-code_small">start</code> (необязательный параметр) - индекс элемента, с которого начинается заполнение массива (по умолчанию - 0); допускается использование отрицательных значений, в этом случае индекс рассчитывается по формуле <code class="arrays-code_small">array.length + start</code>;
                       </li>
-                      <li id="arrays__li_three">
+                      <li class="arrays__li" style="list-style-type: disc">
                         <code class="arrays-code_small">end</code> (необязательный параметр) - индекс элемента, на котором заканчивается заполнение массива (по умолчанию - <code class="arrays-code_small">array.length</code>); допускается использование отрицательных значений, в этом случае индекс рассчитывается по формуле <code class="arrays-code_small">array.length + end</code>;
                       </li>
                     </ul>
@@ -1810,15 +1842,15 @@ array.toLocaleString();
 
                   <div class="array-code__item">
                     <p class="arrays__text">Элементы массива в зависимости от их типа преобразуются в строки с использованием своих собственных методов <code class="arrays-code_small">toLocaleString()</code>:</p>
-                    <ul id="arrays__ul">
-                      <li id="arrays__li">
-                        <code class="arrays-code_small">Object: Object.prototype.toLocaleString()</code>;
+                    <ul class="arrays__ul" style="padding-left: 20px">
+                      <li class="arrays__li" style="list-style-type: disc">
+                        Object: <code class="arrays-code_small">Object.prototype.toLocaleString()</code>;
                       </li>
-                      <li id="arrays__li_two">
-                        <code class="arrays-code_small">Number: Number.prototype.toLocaleString()</code>;
+                      <li class="arrays__li" style="list-style-type: disc">
+                        Number: <code class="arrays-code_small">Number.prototype.toLocaleString()</code>;
                       </li>
-                      <li id="arrays__li_three">
-                        <code class="arrays-code_small">Date: Date.prototype.toLocaleString()</code>;
+                      <li class="arrays__li" style="list-style-type: disc">
+                        Date: <code class="arrays-code_small">Date.prototype.toLocaleString()</code>;
                       </li>
                     </ul>
                   </div>
@@ -1866,14 +1898,14 @@ array.method(callback, thisArg);
           </pre>
 
           <p class="arrays__text"><code class="arrays-code_small">callback</code> принимает следующие основные параметры:</p>
-          <ul id="arrays__ul">
-            <li id="arrays__li">
+          <ul class="arrays__ul" style="padding-left: 20px">
+            <li class="arrays__li" style="list-style-type: disc">
               <code class="arrays-code_small">element</code> - элемент массива в текущей итерации;
             </li>
-            <li id="arrays__li_two">
+            <li class="arrays__li" style="list-style-type: disc">
               <code class="arrays-code_small">index</code> — индекс текущего элемента;
             </li>
-            <li id="arrays__li_three">
+            <li class="arrays__li" style="list-style-type: disc">
               <code class="arrays-code_small">arr</code> — сам массив, который мы перебираем.
             </li>
           </ul>
@@ -2079,17 +2111,17 @@ array.reduce(callback(accumulator, element, index, array), initialValue);
 
                     <div class="array-code__item">
                       <p class="arrays__text">Сама функция-колбэк в методе <code class="arrays-code_small">reduce()</code> может принимать четыре параметра:</p>
-                      <ul id="arrays__ul">
-                        <li id="arrays__li">
+                      <ul class="arrays__ul" style="padding-left: 20px">
+                        <li class="arrays__li" style="list-style-type: disc">
                           <code class="arrays-code_small">accumulator</code> - текущее значение аккумулятора; 
                         </li>
-                        <li id="arrays__li_two">
+                        <li class="arrays__li" style="list-style-type: disc">
                           <code class="arrays-code_small">element</code> — элемент массива в текущей итерации;
                         </li>
-                        <li id="arrays__li_three">
+                        <li class="arrays__li" style="list-style-type: disc">
                           <code class="arrays-code_small">index</code> — индекс текущего элемента;
                         </li>
-                        <li id="arrays__li_three">
+                        <li class="arrays__li" style="list-style-type: disc">
                           <code class="arrays-code_small">array</code> — сам массив, который мы перебираем.
                         </li>
                       </ul>
@@ -2222,17 +2254,17 @@ array.reduceRight(callback(accumulator, element, index, array), initialValue);
 
                     <div class="array-code__item">
                       <p class="arrays__text">Сама функция-колбэк в методе <code class="arrays-code_small">reduceRight()</code> может принимать четыре параметра:</p>
-                      <ul id="arrays__ul">
-                        <li id="arrays__li">
+                      <ul class="arrays__ul" style="padding-left: 20px">
+                        <li class="arrays__li" style="list-style-type: disc">
                           <code class="arrays-code_small">accumulator</code> - текущее значение аккумулятора; 
                         </li>
-                        <li id="arrays__li_two">
+                        <li class="arrays__li" style="list-style-type: disc">
                           <code class="arrays-code_small">element</code> — элемент массива в текущей итерации;
                         </li>
-                        <li id="arrays__li_three">
+                        <li class="arrays__li" style="list-style-type: disc">
                           <code class="arrays-code_small">index</code> — индекс текущего элемента;
                         </li>
-                        <li id="arrays__li_three">
+                        <li class="arrays__li" style="list-style-type: disc">
                           <code class="arrays-code_small">array</code> — сам массив, который мы перебираем.
                         </li>
                       </ul>
@@ -3264,18 +3296,12 @@ const arrayFindEven = array.findLastIndex(function (element) {
 
 
             </div>
-          </div>
-        </div>
       </div>
-
-
+      </div>
+    </main>
+    <footer></footer>
   </div>
 
-
-
-  </main>
-  <footer></footer>
-  </div>
 
 
   <script src="./assets/dist/js/main.js"></script>
