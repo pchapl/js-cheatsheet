@@ -73,8 +73,25 @@
 }
 
 .arrays-collapsible-header {
-    font-size: 1.2rem;
-    text-align: center;
+    display: flex;
+}
+
+.arrays-collapsible-header__items {
+    display: flex;
+    width: 20%;
+}
+
+.arrays-collapsible-header_title {
+    display: flex;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.arrays-collapsible-header_text {
+    width: 80%;
+    margin: 0;
+    font-size: 1rem;
 }
 
 .arrays__title {

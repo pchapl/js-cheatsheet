@@ -1711,6 +1711,7 @@ function resetReduceRight() {
     document.querySelector(".arrays__input-reduceright").innerHTML = "";
     document.querySelector('.arrays__result-reduceright').innerHTML = "";
     document.querySelector('.arrays__old-reduceright').innerHTML = "";
+    document.querySelector(".arrays__sort-reduceright").innerHTML = "";
 }
 
 function resetFilter() {
