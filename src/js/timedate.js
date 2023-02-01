@@ -6,13 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
         let userDate = event.target.value;
         showCommentsWDates(userDate);
     })
+    showCommentsNewDates();
 })
 
 function showCommentsWDates(userDate) {
-        let currentDate = new Date(userDate);
+    let currentDate;
+    if (userDate === ''){
+        currentDate = new Date();
+    }
+       else {
+        currentDate = new Date(userDate);
         if (isNaN(currentDate)) {
             currentDate = new Date(Number(userDate))
         }
+    }
 
     document.querySelector('code.td-get-day span.hljs-comment').innerHTML = '// ' + currentDate.getDay();
     document.querySelector('code.td-get-hours span.hljs-comment').innerHTML = '// ' + currentDate.getHours();
@@ -26,6 +33,13 @@ function showCommentsWDates(userDate) {
     document.querySelector('code.td-get-date span.hljs-comment').innerHTML = '// ' + currentDate.getDate();
     document.querySelector('code.td-to-iso span.hljs-comment').innerHTML = '// ' + currentDate.toISOString();
 
+}
+
+function showCommentsNewDates() {
+    document.querySelector('code.td-now-date span.hljs-comment').innerHTML = '// ' + new Date();
+    document.querySelector('code.td-string-date span.hljs-comment').innerHTML = '// ' + new Date('June 30, 2016 01:57:16');
+    document.querySelector('code.td-value-date span.hljs-comment').innerHTML = '// ' + new Date(1467251836000);
+    document.querySelector('code.td-params-date span.hljs-comment').innerHTML = '// ' + new Date(2016, 5, 30, 1, 57, 16);
 }
 
 

@@ -49,25 +49,25 @@
     <section class="td-create-new-date">
         <h5>но не будем тянуть кота за яичницу и посмотрим</h5>
         <h3>как создать объект Date</h3>
-        <pre>
-            <code class="td-now-date">
-//создаём Date с текущей датой и временем:
-const now = new Date();
-console.log(nowDate); //
-            </code><code class="td-string-date">
-//создаём Date с переданным значением времени. Значение должно быть совместимым с IETF RFC 2822 или с ISO8601:
-const fromString = new Date('August 14, 2022 14:15:30');
-console.log(fromString); //
-            </code><code class="td-value-date">
-//создаём объект Date с временем, равным количеству миллисекунд (тысячная доля секунды), прошедших с 1 января 1970 года UTC+0:
- const fromMiliseconds = new Date(628021800000);
-console.log(fromMiliseconds); //
-            </code><code class="td-params-date">
-//создаём объект Date с заданными компонентами в местном часовом поясе. Обязательны только первые два аргумента:
-const fromParameters = new Date(1995, 11, 17, 3, 24, 0);
-console.log(fromParameters); //
-        </code>
-        </pre>
+        <h6>создаём Date с текущей датой и временем:</h6>
+        <pre><code class="td-now-date">const now = new Date();
+console.log(nowDate);
+// </code></pre>
+        <h6>Далее создадим одну и ту же дату тремя разными способами.</h6>
+        <h6>создаём Date с переданным значением времени. Значение должно быть совместимым с IETF RFC 2822 или с ISO8601:</h6>
+            <pre><code class="td-string-date">const fromString = new Date('June 30, 2016 01:57:16');
+console.log(fromString);
+//</code></pre>
+        <h6>создаём объект Date с временем, равным количеству миллисекунд (тысячная доля секунды),
+            прошедших с 1 января 1970 года UTC+0:</h6>
+        <pre><code class="td-value-date">const fromMiliseconds = new Date(1467295036000);
+console.log(fromMiliseconds);
+// </code></pre>
+        <h6>создаём объект Date с заданными компонентами в местном часовом поясе.
+            Обязательны только первые два аргумента. Остальные параметры, начиная с часов, будут по умолчанию равны 0, а день — 1:</h6>
+        <pre><code class="td-params-date">const fromParameters = new Date(2016, 5, 30, 1, 57, 16);
+console.log(fromParameters);
+//</code></pre>
     </section>
 
     </section>
