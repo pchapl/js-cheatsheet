@@ -67,6 +67,15 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('lastindexof-add')) {
             addInputLastIndexOf();
         }
+        if (e.target.classList.contains('entries-add')) {
+            addInputEntries();
+        }
+        if (e.target.classList.contains('keys-add')) {
+            addInputKeys();
+        }
+        if (e.target.classList.contains('values-add')) {
+            addInputValues();
+        }
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
         }
@@ -194,6 +203,27 @@ function addInputLastIndexOf() {
     let parent = document.querySelector('.arrays__input-lastindexof');
     let input = document.createElement('div');
     input.innerHTML = `<input class="arrays__data" id="arrays__data-lastindexof" type="text">`;
+    parent.appendChild(input);
+}
+
+function addInputEntries() {
+    let parent = document.querySelector('.arrays__input-entries');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-entries" type="text">`;
+    parent.appendChild(input);
+}
+
+function addInputKeys() {
+    let parent = document.querySelector('.arrays__input-keys');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-keys" type="text">`;
+    parent.appendChild(input);
+}
+
+function addInputValues() {
+    let parent = document.querySelector('.arrays__input-values');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data" id="arrays__data-values" type="text">`;
     parent.appendChild(input);
 }
 
@@ -327,6 +357,15 @@ buttonsDone.forEach(function(done) {
         }
         if (e.target.classList.contains('lastindexof-done')) {
             doneLastIndexOf();
+        }
+        if (e.target.classList.contains('entries-done')) {
+            doneEntries();
+        }
+        if (e.target.classList.contains('keys-done')) {
+            doneKeys();
+        }
+        if (e.target.classList.contains('values-done')) {
+            doneValues();
         }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
@@ -867,6 +906,135 @@ function doneLastIndexOf() {
     document.querySelector('.arrays__result-lastindexof').innerHTML = result;
 }
 
+function doneEntries() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-entries");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let entries = elements.entries();
+    let result = [];
+
+    for (let element of entries) {
+        result.push(element);
+    }
+    
+    for (let i = 0; i < entries.length; i++) {
+        if (isNaN(entries[i])) {
+            result.push(' ' + '"' + entries[i] + '"');
+        } else {
+            result.push(' ' + entries[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-entries').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-entries').innerHTML = result;
+}
+
+function doneKeys() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-keys");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let keys = elements.keys();
+    let result = [];
+
+    for (let key of keys) {
+        result.push(key);
+    }
+    
+    for (let i = 0; i < keys.length; i++) {
+        if (isNaN(keys[i])) {
+            result.push(' ' + '"' + keys[i] + '"');
+        } else {
+            result.push(' ' + keys[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-keys').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-keys').innerHTML = result;
+}
+
+function doneValues() {
+    let elements = [];
+    let data = document.querySelectorAll("#arrays__data-values");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let values = elements.values();
+    let result = [];
+
+    for (let value of values) {
+        result.push(value);
+    }
+    
+    for (let i = 0; i < values.length; i++) {
+        if (isNaN(values[i])) {
+            result.push(' ' + '"' + values[i] + '"');
+        } else {
+            result.push(' ' + values[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-values').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-values').innerHTML = result;
+}
+
 function doneForEach() {
     let elements = [];
     let data = document.querySelectorAll("#arrays__data-foreach");
@@ -1268,6 +1436,15 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('lastindexof-reset')) {
             resetLastIndexOf();
         }
+        if (e.target.classList.contains('entries-reset')) {
+            resetEntries();
+        }
+        if (e.target.classList.contains('keys-reset')) {
+            resetKeys();
+        }
+        if (e.target.classList.contains('values-reset')) {
+            resetValues();
+        }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
         }
@@ -1457,6 +1634,39 @@ function resetLastIndexOf() {
     document.querySelector('.arrays__result-lastindexof').innerHTML = "";
     document.querySelector('.arrays__old-lastindexof').innerHTML = "";
     document.querySelector('#arrays__search-lastindexof').value = "";
+}
+
+function resetEntries() {
+    let data = document.querySelectorAll("#arrays__data-entries");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-entries").innerHTML = "";
+    document.querySelector('.arrays__result-entries').innerHTML = "";
+    document.querySelector('.arrays__old-entries').innerHTML = "";
+}
+
+function resetKeys() {
+    let data = document.querySelectorAll("#arrays__data-keys");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-keys").innerHTML = "";
+    document.querySelector('.arrays__result-keys').innerHTML = "";
+    document.querySelector('.arrays__old-keys').innerHTML = "";
+}
+
+function resetValues() {
+    let data = document.querySelectorAll("#arrays__data-values");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-values").innerHTML = "";
+    document.querySelector('.arrays__result-values').innerHTML = "";
+    document.querySelector('.arrays__old-values').innerHTML = "";
 }
 
 function resetForEach() {
