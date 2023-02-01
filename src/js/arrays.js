@@ -118,196 +118,196 @@ buttonsAdd.forEach(function(add) {
 function addInputPop() {
     let parent = document.querySelector('.arrays__input-pop');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-pop" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-pop" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputPush() {
     let parent = document.querySelector('.arrays__input-push');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-push" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-push" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputShift() {
     let parent = document.querySelector('.arrays__input-shift');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-shift" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-shift" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputUnshift() {
     let parent = document.querySelector('.arrays__input-unshift');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-unshift" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-unshift" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputSplice() {
     let parent = document.querySelector('.arrays__input-splice');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-splice" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-splice" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputSlice() {
     let parent = document.querySelector('.arrays__input-slice');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-slice" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-slice" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputConcat() {
     let parent = document.querySelector('.arrays__input-concat');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-concat" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-concat" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputJoin() {
     let parent = document.querySelector('.arrays__input-join');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-join" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-join" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputSort() {
     let parent = document.querySelector('.arrays__input-sort');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-sort" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-sort" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputReverse() {
     let parent = document.querySelector('.arrays__input-reverse');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-reverse" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-reverse" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputIncludes() {
     let parent = document.querySelector('.arrays__input-includes');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-includes" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-includes" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputIndexOf() {
     let parent = document.querySelector('.arrays__input-indexof');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-indexof" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-indexof" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputLastIndexOf() {
     let parent = document.querySelector('.arrays__input-lastindexof');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-lastindexof" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-lastindexof" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputEntries() {
     let parent = document.querySelector('.arrays__input-entries');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-entries" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-entries" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputKeys() {
     let parent = document.querySelector('.arrays__input-keys');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-keys" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-keys" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputValues() {
     let parent = document.querySelector('.arrays__input-values');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-values" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-values" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputForEach() {
     let parent = document.querySelector('.arrays__input-foreach');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-foreach" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-foreach" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputMap() {
     let parent = document.querySelector('.arrays__input-map');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-map" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-map" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputReduce() {
     let parent = document.querySelector('.arrays__input-reduce');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-reduce" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-reduce" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputReduceRight() {
     let parent = document.querySelector('.arrays__input-reduceright');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-reduceright" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-reduceright" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputFilter() {
     let parent = document.querySelector('.arrays__input-filter');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-filter" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-filter" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputEvery() {
     let parent = document.querySelector('.arrays__input-every');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-every" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-every" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputSome() {
     let parent = document.querySelector('.arrays__input-some');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-some" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-some" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputFlatMap() {
     let parent = document.querySelector('.arrays__input-flatmap');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-flatmap" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-flatmap" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputFind() {
     let parent = document.querySelector('.arrays__input-find');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-find" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-find" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputFindIndex() {
     let parent = document.querySelector('.arrays__input-findindex');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-findindex" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-findindex" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputFindLast() {
     let parent = document.querySelector('.arrays__input-findlast');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-findlast" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-findlast" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputFindLastIndex() {
     let parent = document.querySelector('.arrays__input-findlastindex');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-findlastindex" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-findlastindex" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
@@ -408,7 +408,7 @@ buttonsDone.forEach(function(done) {
 
 function donePop() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-pop");
+    let data = document.querySelectorAll(".arrays__data-pop");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -448,7 +448,7 @@ function donePop() {
 
 function donePush() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-push");
+    let data = document.querySelectorAll(".arrays__data-push");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -487,7 +487,7 @@ function donePush() {
 
 function doneShift() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-shift");
+    let data = document.querySelectorAll(".arrays__data-shift");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -527,7 +527,7 @@ function doneShift() {
 
 function doneUnshift() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-unshift");
+    let data = document.querySelectorAll(".arrays__data-unshift");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -566,7 +566,7 @@ function doneUnshift() {
 
 function doneSplice() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-splice");
+    let data = document.querySelectorAll(".arrays__data-splice");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -615,7 +615,7 @@ function doneSplice() {
 
 function doneSlice() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-slice");
+    let data = document.querySelectorAll(".arrays__data-slice");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -654,7 +654,7 @@ function doneSlice() {
 
 function doneConcat() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-concat");
+    let data = document.querySelectorAll(".arrays__data-concat");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -697,7 +697,7 @@ function doneConcat() {
 
 function doneJoin() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-join");
+    let data = document.querySelectorAll(".arrays__data-join");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -729,7 +729,7 @@ function doneJoin() {
 function doneSort() {
     let elements = [];
     let deleteEmpty = [];
-    let data = document.querySelectorAll("#arrays__data-sort");
+    let data = document.querySelectorAll(".arrays__data-sort");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -779,7 +779,7 @@ function doneSort() {
 
 function doneReverse() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-reverse");
+    let data = document.querySelectorAll(".arrays__data-reverse");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -818,7 +818,7 @@ function doneReverse() {
 
 function doneIncludes() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-includes");
+    let data = document.querySelectorAll(".arrays__data-includes");
     let search = document.querySelector('#arrays__search-includes');
 
     for (let i = 0; i < data.length; i++) {
@@ -848,7 +848,7 @@ function doneIncludes() {
 
 function doneIndexOf() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-indexof");
+    let data = document.querySelectorAll(".arrays__data-indexof");
     let search = document.querySelector('#arrays__search-indexof');
 
     for (let i = 0; i < data.length; i++) {
@@ -878,7 +878,7 @@ function doneIndexOf() {
 
 function doneLastIndexOf() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-lastindexof");
+    let data = document.querySelectorAll(".arrays__data-lastindexof");
     let search = document.querySelector('#arrays__search-lastindexof');
 
     for (let i = 0; i < data.length; i++) {
@@ -908,7 +908,7 @@ function doneLastIndexOf() {
 
 function doneEntries() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-entries");
+    let data = document.querySelectorAll(".arrays__data-entries");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -951,7 +951,7 @@ function doneEntries() {
 
 function doneKeys() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-keys");
+    let data = document.querySelectorAll(".arrays__data-keys");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -994,7 +994,7 @@ function doneKeys() {
 
 function doneValues() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-values");
+    let data = document.querySelectorAll(".arrays__data-values");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1037,7 +1037,7 @@ function doneValues() {
 
 function doneForEach() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-foreach");
+    let data = document.querySelectorAll(".arrays__data-foreach");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1070,7 +1070,7 @@ function doneForEach() {
 
 function doneMap() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-map");
+    let data = document.querySelectorAll(".arrays__data-map");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1101,7 +1101,7 @@ function doneMap() {
 
 function doneReduce() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-reduce");
+    let data = document.querySelectorAll(".arrays__data-reduce");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1127,7 +1127,7 @@ function doneReduce() {
 
 function doneReduceRight() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-reduceright");
+    let data = document.querySelectorAll(".arrays__data-reduceright");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1167,7 +1167,7 @@ function doneReduceRight() {
 
 function doneFilter() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-filter");
+    let data = document.querySelectorAll(".arrays__data-filter");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1198,7 +1198,7 @@ function doneFilter() {
 
 function doneEvery() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-every");
+    let data = document.querySelectorAll(".arrays__data-every");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1230,7 +1230,7 @@ function doneEvery() {
 
 function doneSome() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-some");
+    let data = document.querySelectorAll(".arrays__data-some");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1256,7 +1256,7 @@ function doneSome() {
 
 function doneFlatMap() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-flatmap");
+    let data = document.querySelectorAll(".arrays__data-flatmap");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1287,7 +1287,7 @@ function doneFlatMap() {
 
 function doneFind() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-find");
+    let data = document.querySelectorAll(".arrays__data-find");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1313,7 +1313,7 @@ function doneFind() {
 
 function doneFindIndex() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-findindex");
+    let data = document.querySelectorAll(".arrays__data-findindex");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1339,7 +1339,7 @@ function doneFindIndex() {
 
 function doneFindLast() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-findlast");
+    let data = document.querySelectorAll(".arrays__data-findlast");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1365,7 +1365,7 @@ function doneFindLast() {
 
 function doneFindLastIndex() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-findlastindex");
+    let data = document.querySelectorAll(".arrays__data-findlastindex");
 
     for (let i = 0; i < data.length; i++) {
         let dataValue = data[i].value;
@@ -1487,7 +1487,7 @@ buttonsReset.forEach(function(reset) {
 })
 
 function resetPop() {
-    let data = document.querySelectorAll("#arrays__data-pop");
+    let data = document.querySelectorAll(".arrays__data-pop");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1499,7 +1499,7 @@ function resetPop() {
 }
 
 function resetPush() {
-    let data = document.querySelectorAll("#arrays__data-push");
+    let data = document.querySelectorAll(".arrays__data-push");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1510,7 +1510,7 @@ function resetPush() {
 }
 
 function resetShift() {
-    let data = document.querySelectorAll("#arrays__data-shift");
+    let data = document.querySelectorAll(".arrays__data-shift");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1522,7 +1522,7 @@ function resetShift() {
 }
 
 function resetUnshift() {
-    let data = document.querySelectorAll("#arrays__data-unshift");
+    let data = document.querySelectorAll(".arrays__data-unshift");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1533,7 +1533,7 @@ function resetUnshift() {
 }
 
 function resetSplice() {
-    let data = document.querySelectorAll("#arrays__data-splice");
+    let data = document.querySelectorAll(".arrays__data-splice");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1545,7 +1545,7 @@ function resetSplice() {
 }
 
 function resetSlice() {
-    let data = document.querySelectorAll("#arrays__data-slice");
+    let data = document.querySelectorAll(".arrays__data-slice");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1556,7 +1556,7 @@ function resetSlice() {
 }
 
 function resetConcat() {
-    let data = document.querySelectorAll("#arrays__data-concat");
+    let data = document.querySelectorAll(".arrays__data-concat");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1567,7 +1567,7 @@ function resetConcat() {
 }
 
 function resetJoin() {
-    let data = document.querySelectorAll("#arrays__data-join");
+    let data = document.querySelectorAll(".arrays__data-join");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1578,7 +1578,7 @@ function resetJoin() {
 }
 
 function resetSort() {
-    let data = document.querySelectorAll("#arrays__data-sort");
+    let data = document.querySelectorAll(".arrays__data-sort");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1590,7 +1590,7 @@ function resetSort() {
 }
 
 function resetReverse() {
-    let data = document.querySelectorAll("#arrays__data-reverse");
+    let data = document.querySelectorAll(".arrays__data-reverse");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1601,7 +1601,7 @@ function resetReverse() {
 }
 
 function resetIncludes() {
-    let data = document.querySelectorAll("#arrays__data-includes");
+    let data = document.querySelectorAll(".arrays__data-includes");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1613,7 +1613,7 @@ function resetIncludes() {
 }
 
 function resetIndexOf() {
-    let data = document.querySelectorAll("#arrays__data-indexof");
+    let data = document.querySelectorAll(".arrays__data-indexof");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1625,7 +1625,7 @@ function resetIndexOf() {
 }
 
 function resetLastIndexOf() {
-    let data = document.querySelectorAll("#arrays__data-lastindexof");
+    let data = document.querySelectorAll(".arrays__data-lastindexof");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1637,7 +1637,7 @@ function resetLastIndexOf() {
 }
 
 function resetEntries() {
-    let data = document.querySelectorAll("#arrays__data-entries");
+    let data = document.querySelectorAll(".arrays__data-entries");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1648,7 +1648,7 @@ function resetEntries() {
 }
 
 function resetKeys() {
-    let data = document.querySelectorAll("#arrays__data-keys");
+    let data = document.querySelectorAll(".arrays__data-keys");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1659,7 +1659,7 @@ function resetKeys() {
 }
 
 function resetValues() {
-    let data = document.querySelectorAll("#arrays__data-values");
+    let data = document.querySelectorAll(".arrays__data-values");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1670,7 +1670,7 @@ function resetValues() {
 }
 
 function resetForEach() {
-    let data = document.querySelectorAll("#arrays__data-foreach");
+    let data = document.querySelectorAll(".arrays__data-foreach");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1681,7 +1681,7 @@ function resetForEach() {
 }
 
 function resetMap() {
-    let data = document.querySelectorAll("#arrays__data-map");
+    let data = document.querySelectorAll(".arrays__data-map");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1692,7 +1692,7 @@ function resetMap() {
 }
 
 function resetReduce() {
-    let data = document.querySelectorAll("#arrays__data-reduce");
+    let data = document.querySelectorAll(".arrays__data-reduce");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1703,7 +1703,7 @@ function resetReduce() {
 }
 
 function resetReduceRight() {
-    let data = document.querySelectorAll("#arrays__data-reduceright");
+    let data = document.querySelectorAll(".arrays__data-reduceright");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1714,7 +1714,7 @@ function resetReduceRight() {
 }
 
 function resetFilter() {
-    let data = document.querySelectorAll("#arrays__data-filter");
+    let data = document.querySelectorAll(".arrays__data-filter");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1725,7 +1725,7 @@ function resetFilter() {
 }
 
 function resetEvery() {
-    let data = document.querySelectorAll("#arrays__data-every");
+    let data = document.querySelectorAll(".arrays__data-every");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1736,7 +1736,7 @@ function resetEvery() {
 }
 
 function resetSome() {
-    let data = document.querySelectorAll("#arrays__data-some");
+    let data = document.querySelectorAll(".arrays__data-some");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1747,7 +1747,7 @@ function resetSome() {
 }
 
 function resetFlatMap() {
-    let data = document.querySelectorAll("#arrays__data-flatmap");
+    let data = document.querySelectorAll(".arrays__data-flatmap");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1758,7 +1758,7 @@ function resetFlatMap() {
 }
 
 function resetFind() {
-    let data = document.querySelectorAll("#arrays__data-find");
+    let data = document.querySelectorAll(".arrays__data-find");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1769,7 +1769,7 @@ function resetFind() {
 }
 
 function resetFindIndex() {
-    let data = document.querySelectorAll("#arrays__data-findindex");
+    let data = document.querySelectorAll(".arrays__data-findindex");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1780,7 +1780,7 @@ function resetFindIndex() {
 }
 
 function resetFindLast() {
-    let data = document.querySelectorAll("#arrays__data-findlast");
+    let data = document.querySelectorAll(".arrays__data-findlast");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -1791,7 +1791,7 @@ function resetFindLast() {
 }
 
 function resetFindLastIndex() {
-    let data = document.querySelectorAll("#arrays__data-findlastindex");
+    let data = document.querySelectorAll(".arrays__data-findlastindex");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
