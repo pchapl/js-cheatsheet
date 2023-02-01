@@ -56,10 +56,120 @@
                 </nav>
 
             </div>
-            </header>
+        </header>
         <main>
+            
             <div class="main__container">
-                Как работает браузер
+                <h1 class="web__title">Как работает Web</h1>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12">
+
+                            <ul class="collection">
+
+                                <li class="collection-item avatar">
+                                    <div class="web__card">
+                                        <i class="medium material-icons web__icon-color">account_circle</i>
+                                        <div class="web__content">
+                                            <h5 class="web__content-title">Пользователь</h5>
+                                            <p class="web__content-text">Вводит адрес сайта (доменное имя) в поисковую строку.</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <div class="web__card">
+                                        <i class="medium material-icons web__icon-color_red">dvr</i>
+                                        <div class="web__content">
+                                            <h5 class="web__content-title">Браузер</h5>
+                                            <p class="web__content-text">Знает, что машины понимают только цифры, и ищет IP-адрес сайта: сначала в ближайших местах (история подключений, кэш ОС/роутера), если не находит - идёт в Интернет и отправляет имя DNS-серверам.</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <div class="web__card">
+                                        <i class="medium material-icons web__icon-color_amber">storage</i>
+                                        <div class="web__content">
+                                            <h5 class="web__content-title">DNS-сервер</h5>
+                                            <p class="web__content-text">Находит IP-адрес сайта в адресной книге и отправляет браузеру.</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <div class="web__card">
+                                        <i class="medium material-icons web__icon-color_red">dvr</i>
+                                        <div class="web__content">
+                                            <h5 class="web__content-title">Браузер</h5>
+                                            <p class="web__content-text">Делает http/https-запрос на серверы (по портам 80/443) с помощью протокола TCP (набор правил со способами соединения) и системы трёх рукопожатий:</p>
+                                            <ul>
+                                                <ol>Браузер отправляет запрос на соединение - SYN-пакет.</ol>
+                                                <ol>Сервер подтверждает получение - SYN/ACK-пакет.</ol>
+                                                <ol>Браузер подтверждает, что получил SYN/ACK-пакет - ACK-пакет</ol>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <div class="web__card">
+                                        <i class="medium material-icons web__icon-color_cyan">sync</i>
+                                        <div class="web__content">
+                                            <h5 class="web__content-title">Соединение установлено</h5>
+                                            <p class="web__content-text">(если нет - ошибка 404)</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <div class="web__card">
+                                        <i class="medium material-icons web__icon-color_red">dvr</i>
+                                        <div class="web__content">
+                                            <h5 class="web__content-title">Браузер</h5>
+                                            <p class="web__content-text">Браузер объясняет серверу, что ему нужно: формирует http-заголовок. Он включает: метод получения информации (GET/POST), URL, версию http-протокола, host, connection, cookie и т.п. 
+                                                Отправляет заголовок серверу.</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <div class="web__card">
+                                        <i class="medium material-icons web__icon-color_cyan">dns</i>
+                                        <div class="web__content">
+                                            <h5 class="web__content-title">Сервер</h5>
+                                            <p class="web__content-text">Веб- сервер получает заголовок и начинает обработку, формирует ответ с контентом html-страницы и отправляет браузеру </p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <div class="web__card">
+                                        <i class="medium material-icons web__icon-color_red">dvr</i>
+                                        <div class="web__content">
+                                            <h5 class="web__content-title">Браузер</h5>
+                                            <p class="web__content-text">Браузер получает ответ  (html-страницу в пакетах данных) и начинает процесс рендеринга (постепенное отображение контента на экране). Для этого производится парсинг (сбор данных).</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <div class="web__card">
+                                        <i class="medium material-icons web__icon-color">account_circle</i>
+                                        <div class="web__content">
+                                            <h5 class="web__content-title">Пользователь</h5>
+                                            <p class="web__content-text">Видит страницу</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                
             </div>
         </main>
         <footer></footer>

@@ -1,0 +1,31 @@
+.web__title {
+    margin-top: 5rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.web__card {
+    display: flex;
+}
+
+.web__content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+}
+
+.web__icon-color {
+    color: #00897b;
+}
+
+.web__icon-color_red {
+    color: #ef5350;
+}
+
+.web__icon-color_amber {
+    color: #ffecb3;
+}
+
+.web__icon-color_cyan {
+    color: #80deea;
+}
