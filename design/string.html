@@ -68,6 +68,48 @@
             <p><strong>Важно</strong>: при использовании методов создаётся новая строка, которая записывается в ту же
                 переменную вместо
                 старой строки.</p>
+            <h5>Длина строки</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>length</div>
+                    <div class="collapsible-body"><span>Свойство length содержит длину строки:</span>
+                        <pre>
+                            <code class="js">
+let browserType = 'mozilla';
+browserType.length; // 7
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+            </ul>
+            <h5>Получить символ</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">code</i>[pos], str.at(pos)</div>
+                    <div class="collapsible-body"><span>Получить символ, который занимает позицию pos, можно с помощью
+                            квадратных скобок: <strong>[pos]</strong>.</span>
+                        <p>Также можно использовать метод <strong>str.at(pos)</strong>. Его преимущество
+                            заключается в том, что он допускает отрицательную позицию. Если pos – отрицательное число,
+                            то отсчет ведется от конца строки.
+
+                            Таким образом, .at(-1) означает последний символ, а .at(-2) – тот, что перед ним, и т.д.</p>
+                        <pre>
+                            <code class="js">
+let str = `Hello`;
+
+// получаем первый символ
+alert( str[0] ); // H
+alert( str.at(0) ); // H
+                                
+// получаем последний символ
+alert( str[str.length - 1] ); // o
+alert( str.at(-1) );
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+            </ul>
+
             <h5>Изменить регистр</h5>
             <ul class="collapsible popout expandable">
                 <li>
@@ -443,7 +485,7 @@ String.fromCharCode(72, 101, 108, 108, 111); // "Hello"
                             <br>
                             <br>
 
-                            <code class="answer_first"></code>
+                            <div class="answer_first blue lighten-4"></div>
 
 
                         </span>
@@ -460,7 +502,7 @@ String.fromCharCode(72, 101, 108, 108, 111); // "Hello"
 
                             <p>Функция должна быть нечувствительна к регистру:</p>
                             <pre>
-                        <code>
+                        <code class="js">
 checkSpam('buy ViAgRA now') == true
 checkSpam('free xxxxx') == true
 checkSpam("innocent rabbit") == false
@@ -471,7 +513,37 @@ checkSpam("innocent rabbit") == false
                             <a class="waves-effect waves-light btn btn_second">Решение</a>
                             <br>
                             <br>
-                            <div class="answer_second"></div>
+                            <div class="answer_second blue lighten-4"></div>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">edit</i>Задача 3</div>
+                    <div class="collapsible-body"><span>
+                            <p>Создайте функцию <code class="teal lighten-4">truncate(str, maxlength)</code>, которая
+                                проверяет длину строки <code>str</code> и, если она
+                                превосходит <code>maxlength</code>, заменяет конец <code>str</code> на "…", так, чтобы
+                                её длина стала равна
+                                <code>maxlength</code>.
+
+                                Результатом функции должна быть та же строка, если усечение не требуется, либо, если
+                                необходимо, усечённая строка.
+
+                                Например:
+                            </p>
+                            <pre>
+                        <code class="js">
+truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) = "Вот, что мне хотело…"
+
+truncate("Всем привет!", 20) = "Всем привет!"
+                        </code>
+                    </pre>
+
+                            <br>
+                            <a class="waves-effect waves-light btn btn_third">Решение</a>
+                            <br>
+                            <br>
+                            <div class="answer_third blue lighten-4"></div>
                         </span>
                     </div>
                 </li>
@@ -479,12 +551,14 @@ checkSpam("innocent rabbit") == false
                 <br>
                 <br>
 
+
         </main>
     </div>
 
 
     <script src="./assets/dist/js/main.js"></script>
     <script src="./assets/libraries/highlights/highlight.min.js"></script>
+    <script> hljs.highlightAll();</script>
 </body>
 
 </html>
