@@ -18,13 +18,6 @@
     border: 1px solid black;
 }
 
-/*#arrays__data-pop, #arrays__data-push, #arrays__data-shift, #arrays__data-unshift, #arrays__data-splice, #arrays__data-slice, #arrays__data-concat, #arrays__data-join, #arrays__data-sort, #arrays__data-reverse, #arrays__data-includes, #arrays__data-indexof, #arrays__data-lastindexof, #arrays__data-entries, #arrays__data-keys, #arrays__data-values, #arrays__data-foreach, #arrays__data-map, #arrays__data-reduce, #arrays__data-reduceright, #arrays__data-filter, #arrays__data-every, #arrays__data-some, #arrays__data-flatmap, #arrays__data-find, #arrays__data-findindex, #arrays__data-findlast, #arrays__data-findlastindex {
-    height: 2rem;
-    width: 7rem;
-    text-align: center;
-    border: 1px solid black;
-}*/
-
 #arrays__search-includes, #arrays__search-indexof, #arrays__search-lastindexof {
     height: 2rem;
     width: 7rem;
@@ -53,6 +46,13 @@
     background: #fafafa;
 }
 
+.arrays-code_small {
+    padding: 2px 5px;
+    font-size: 1rem;
+    border-radius: 2px;
+    background: #eee;
+}
+
 .arrays__old,
 .arrays__delete,
 .arrays__result {
@@ -75,6 +75,11 @@
 .arrays-collapsible-header {
     font-size: 1.2rem;
     text-align: center;
+}
+
+.arrays__title {
+    margin-top: 5rem;
+    font-size: 3rem;
 }
 
 .arrays__title-medium {

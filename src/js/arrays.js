@@ -588,7 +588,7 @@ function doneSplice() {
         }
     }
 
-    let splice = elements.splice(1, 2);
+    let splice = elements.splice(1, 2, "Новый элемент");
 
     let del = [];
     for (let i = 0; i < splice.length; i++) {
