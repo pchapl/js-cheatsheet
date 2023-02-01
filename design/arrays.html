@@ -991,35 +991,33 @@ alert(fruits);
 
                   <li>
                     <div class="collapsible-header arrays-collapsible-header">includes</div>
-                    <div class="collapsible-body"><span>Определяет, содержит ли массив определённый элемент, возвращая в зависимости от этого true или false. Такой же метод есть и у строк.</span>
+                    <div class="collapsible-body"><span>Определяет, содержит ли массив определённый элемент, возвращая в зависимости от этого <code class="arrays-code_small">true</code> или <code class="arrays-code_small">false</code>. Такой же метод есть и у строк.</span>
                       <pre>
                         <code class="js">
-    array.includes(searchElement, fromIndex);
-    // fromIndex - необязательный параметр; это индекс в массиве, 
-    // с которого нужно начинать поиск элемента searchElement;
-    // если атрибут опущен, то поиск осуществляется с 0 индекса.
+array.includes(searchElement, fromIndex);
                         </code>
                       </pre>
     
                       <div class="array-code__item">
+                        <p><code class="arrays-code_small">fromIndex</code> - необязательный параметр. Это индекс в массиве, с которого нужно начинать поиск элемента <code class="arrays-code_small">searchElement</code>. Если атрибут не указан, то поиск осуществляется с 0 индекса.</p>
                         <p class="arrays__text">Проверим, есть ли искомый элемент в массиве. Поиск идет с учетом регистра:</p>
                           <div class="arrays-code">
                             <pre>
                               <code class="js">
-    const fruits = ["Банан", "Яблоко", "Мандарин"];
-    const banana = fruits.includes("Банан");
-    alert(banana); 
-    // true
+const fruits = ["Банан", "Яблоко", "Мандарин"];
+const banana = fruits.includes("Банан");
+alert(banana); 
+// true
     
-    const bananaSmall = fruits.includes("банан");
-    alert(bananaSmall); 
-    // false, потому что учитывается регистр
+const bananaSmall = fruits.includes("банан");
+alert(bananaSmall); 
+// false, потому что учитывается регистр
     
-    const orange = fruits.includes("Апельсин");
-    alert(orange); 
-    // false
+const orange = fruits.includes("Апельсин");
+alert(orange); 
+// false
                               </code>
-      <button class="waves-effect waves-light btn arrays__check includes">Проверить</button>
+  <button class="waves-effect waves-light btn arrays__check includes">Проверить</button>
                             </pre>
                         </div>
                       </div>
@@ -1030,7 +1028,7 @@ alert(fruits);
                           <div class="arrays__results">
                             <div class="arrays__task">
                               <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы, после чего указать искомый элемент и применить метод
-                                includes():</p>
+                                <code class="arrays-code_small">includes()</code>:</p>
                               <div class="arrays__field">
     
                                 <pre class="arrays-code">
@@ -1067,18 +1065,16 @@ alert(fruits);
     
                   <li>
                     <div class="collapsible-header arrays-collapsible-header">indexOf</div>
-                    <div class="collapsible-body"><span>Этот метод служит для поиска элемента с начала массива.
-                      </span>
+                    <div class="collapsible-body"><span>Этот метод служит для поиска элемента с начала массива. Возвращает первый индекс искомого элемента.</span>
                       <pre>
                         <code class="js">
 array.indexOf(searchElement, fromIndex);
-// fromIndex - необязательный параметр, это индекс в массиве, 
-// с которого нужно начинать поиск элемента searchElement.
                         </code>
                       </pre>
     
                       <div class="array-code__item">
-                        <p class="arrays__text">Если элемент один, то метод возвращает индекс этого элемента. Если элементов много — возвращает индекс первого подходящего элемента. Если элемента в массиве нет — вернёт -1:</p>
+                        <p><code class="arrays-code_small">fromIndex</code> - необязательный параметр. Это индекс в массиве, с которого нужно начинать поиск элемента <code class="arrays-code_small">searchElement</code>. Если атрибут не указан, то поиск осуществляется с 0 индекса. Значение параметра может быть отрицательным, в этом случае поиск производится, начиная с индекса <code class="arrays-code_small">array.length + fromIndex</code> по возрастанию.</p>
+                        <p class="arrays__text">Если элемент один, то метод возвращает индекс этого элемента. Если элементов много — возвращает индекс первого подходящего элемента. Если элемента в массиве нет — вернёт <code class="arrays-code_small">-1</code>:</p>
                           <div class="arrays-code">
                             <pre>
                               <code class="js">
@@ -1087,9 +1083,9 @@ const fruits = ["Банан", "Яблоко", "Мандарин", "Груша", 
 alert(fruits.indexOf("Мандарин"));
 // выведет 2 - индекс первого элемента со значением "Мандарин" с начала массива
 alert(fruits.indexOf("Манго"));
-// выведет -1
+// выведет -1: такого элемента нет
                               </code>
-      <button class="waves-effect waves-light btn arrays__check index-of">Проверить</button>
+  <button class="waves-effect waves-light btn arrays__check index-of">Проверить</button>
                             </pre>
                         </div>
                       </div>
@@ -1100,7 +1096,7 @@ alert(fruits.indexOf("Манго"));
                           <div class="arrays__results">
                             <div class="arrays__task">
                               <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы, после чего указать искомый элемент и применить метод
-                                indexOf():</p>
+                                <code class="arrays-code_small">indexOf()</code>:</p>
                               <div class="arrays__field">
     
                                 <pre class="arrays-code">
@@ -1137,30 +1133,29 @@ alert(fruits.indexOf("Манго"));
     
                   <li>
                     <div class="collapsible-header arrays-collapsible-header">lastIndexOf</div>
-                    <div class="collapsible-body"><span>Этот метод служит для поиска элемента с конца массива.</span>
+                    <div class="collapsible-body"><span>Этот метод служит для поиска элемента с конца массива. Возвращает последний индекс искомого элемента.</span>
                       <pre>
                         <code class="js">
-    array.indexOf(searchElement, fromIndex);
-    // fromIndex - необязательный параметр, это индекс в массиве, 
-    // с которого нужно начинать поиск элемента searchElement.
+array.indexOf(searchElement, fromIndex);
                         </code>
                       </pre>
     
                       <div class="array-code__item">
-                        <p class="arrays__text">Если элемент один, то метод возвращает индекс этого элемента. Если элементов много — возвращает последний индекс искомого элемента в массиве при первом совпадении. Если элемента в массиве нет — вернёт -1:</p>
+                        <p><code class="arrays-code_small">fromIndex</code> - необязательный параметр. Это индекс в массиве, с которого нужно начинать поиск элемента <code class="arrays-code_small">searchElement</code>. Поиск осуществляется в порядке убывания индекса. Если атрибут не указан, то поиск осуществляется с последнего индекса в массиве. Значение параметра может быть отрицательным, в этом случае поиск производится, начиная с индекса <code class="arrays-code_small">array.length + fromIndex</code>.</p>
+                        <p class="arrays__text">Если элемент один, то метод возвращает индекс этого элемента. Если элементов много — возвращает последний индекс искомого элемента в массиве при первом совпадении. Если элемента в массиве нет — вернёт <code class="arrays-code_small">-1</code>:</p>
                           <div class="arrays-code">
                             <pre>
                               <code class="js">
-    const fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Мандарин"];
+const fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Мандарин"];
     
-    alert(fruits.lastIndexOf("Мандарин"));
-    // выведет 4 - индекс первого элемента со значением "Мандарин" 
-    // с конца массива (последний индекс элемента)
+alert(fruits.lastIndexOf("Мандарин"));
+// выведет 4 - индекс первого элемента со значением "Мандарин" 
+// с конца массива (последний индекс элемента)
     
-    alert(fruits.lastIndexOf("Манго"));
-    // выведет -1
+alert(fruits.lastIndexOf("Манго"));
+// выведет -1
                               </code>
-      <button class="waves-effect waves-light btn arrays__check last-index-of">Проверить</button>
+  <button class="waves-effect waves-light btn arrays__check last-index-of">Проверить</button>
                             </pre>
                         </div>
                       </div>
@@ -1171,7 +1166,7 @@ alert(fruits.indexOf("Манго"));
                           <div class="arrays__results">
                             <div class="arrays__task">
                               <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы, после чего указать искомый элемент и применить метод
-                                lastIndexOf():</p>
+                                <code class="arrays-code_small">lastIndexOf()</code>:</p>
                               <div class="arrays__field">
     
                                 <pre class="arrays-code">
