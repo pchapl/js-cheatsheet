@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+    <!--    project styles-->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+    <title>Объекты, прототивы, классы, конструкторы</title>
+</head>
+
+<body>
+    <header></header>
+
+    <main class="types-main__container">
+        <h3>Объекты, прототивы, классы, конструкторы</h1>
+
+        <div class="row types-intro">
+            <p>В JS 8 типов данных, из них 7 примитивных, так как их значениями могут быть только простые значения (строка, или число, др.). 8й тип - это объект (хранят коллекции данных или более сложные структуры).                        
+            </p>
+                
+            <div id="dataCards" class="col m12 l12">
+                <div class="row types-cards">
+                    <div class="col s12 m6 l6">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="./assets/images/string.png">
+                            </div>
+                            <div class="card-content card-content_color">
+                                <span class="card-title activator white-text text-darken-4">Строка<i class="material-icons right">add_circle</i></span>
+                                <!-- <p><a href="#">This is a link</a></p> -->
+                            </div>
+
+                            <div class="card-reveal">
+                                <span class="card-title card_title_big grey-text text-darken-4">String<i class="material-icons right">close</i></span>
+                                <section>
+                                    <h4>Прототипы</h4>
+                                    <p>
+                                        В JavaScript объекты имеют специальное скрытое свойство [[Prototype]], которое либо равно null, либо ссылается на другой объект. Этот объект называется «прототип».<br> Когда нужно прочитать свойство из object, а оно отсутствует, JavaScript автоматически берёт его из прототипа. В программировании такой механизм называется «прототипным наследованием». 
+                                    </p>
+                                    <p>
+                                        Основная концепция прототипа в JavaScript заключается в том, что один объект может наследовать свойства и методы от другого. В JavaScript прототип можно рассматривать как проект, шаблон или базовый объект, содержащий методы, к которым может обратиться любой созданный экземпляр объекта.
+                                    </p>
+                                </section>                                        
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6 l6">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="./assets/images/number.png">
+                            </div>
+                            <div class="card-content card-content_color">
+                                <span class="card-title activator white-text text-darken-4">Число<i class="material-icons right">add_circle</i></span>
+                                <!-- <p><a href="#">This is a link</a></p> -->
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title card_title_big grey-text text-darken-4">Number<i class="material-icons right">close</i></span>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row types-cards">
+                    <div class="col s12 m6 l6">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="./assets/images/bigint.png">
+                            </div>
+                            <div class="card-content card-content_color">
+                                <span class="card-title activator white-text text-darken-4">Большое целое<i class="material-icons right">add_circle</i></span>
+                                <!-- <p><a href="#">This is a link</a></p> -->
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title card_title_big grey-text text-darken-4">BigInt<i class="material-icons right">close</i></span>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6 l6">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="./assets/images/boolean.png">
+                            </div>
+                            <div class="card-content card-content_color">
+                                <span class="card-title activator white-text text-darken-4">Булев тип<i class="material-icons right">add_circle</i></span>
+                                <!-- <p><a href="#">This is a link</a></p> -->
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title card_title_big grey-text text-darken-4">Boolean<i class="material-icons right">close</i></span>
+                                                                       
+                            </div>
+                        </div>
+                    </div>                               
+                </div> 
+
+                
+                    
+                                
+            </div>
+        </div>
+
+
+
+                
+
+                
+
+           
+
+            
+
+        
+        
+
+
+
+    </main>
+
+    <footer></footer>
+
+
+    <script src="./assets/libraries/highlights/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="./assets/dist/js/main.js"></script>
+</body>
+
+</html>
