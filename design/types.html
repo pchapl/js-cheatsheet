@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+    <!--    project styles-->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+    <title>Типы данных</title>
+</head>
+
+<body>
+    <header></header>
+
+    <main class="types-main__container">
+        <h3>Типы данных</h1>
+        
+        <div class="row types-content">
+            <div class="section scrollspy col m10 l10">
+                
+                <div class="row types-intro">
+                    <p>В JS 8 типов данных, из них 7 примитивных, так как их значениями могут быть только простые значения (строка, или число, др.). 8й тип - это объект (хранят коллекции данных или более сложные структуры).                        
+                    </p>
+                        
+                    <div id="dataCards" class="col m12 l12">
+                        <div class="row types-cards">
+                            <div class="col s12 m6 l6">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/string.png">
+                                    </div>
+                                    <div class="card-content card-content_color">
+                                        <span class="card-title activator white-text text-darken-4">Строка<i class="material-icons right">add_circle</i></span>
+                                        <!-- <p><a href="#">This is a link</a></p> -->
+                                    </div>
+
+                                    <div class="card-reveal">
+                                        <span class="card-title card_title_big grey-text text-darken-4">String<i class="material-icons right">close</i></span>
+                                        <section class="strings">
+                                            <div>
+                                                <p>Строки полезны для хранения данных, которые можно представить в текстовой форме.</p>
+                                                <h4>Синтаксис</h4>
+                                                <pre>
+                                                    <code class="js">
+let lang = "JS";
+let lang = 'JS';
+let langGreeting = `Привет,
+учу
+${a}`;
+                                                    </code>
+                                                </pre>
+                                                <p>Одинарные кавычки = двойные кавычки. В обратные кавычки можно включать переменные и произвольные выражения, они могут занимать более одной строки.
+                                                </p>
+                                            </div>
+                                            
+                                            <div>
+                                                <h4>Спецсимволы</h4> 
+                                                <pre>
+                                                    <code class="js">
+Начинаются с \ - символа экранирования
+
+\n (перевод строки), позволяет создавать многострочные строки 
+с помощью одинарных и двойных кавычек:
+let c = 'Привет,\nJS'
+
+\', \" (кавычки):
+let person = 'I\'m,\nCococo'
+
+\\	(обратный слеш)
+
+\t	(знак табуляции)
+                                                    </code>
+                                                </pre>
+                                            </div>
+    
+                                            <div>
+                                                <h4>Операции со строками</h4> 
+                                                <div>
+                                                    <h5>Контакенация строк (операция сложения).</h5>
+                                                    <p>При сложении двух строк получается новая строка, склеенная из исходных.
+                                                        <pre>
+                                                            <code>
+let like = 'Я люблю'
+let lang = 'JS'
+let result = like + ',' + lang // Я люблю, JS
+                                                            </code>
+                                                        </pre>
+                                                    </p>
+                                                </div>
+    
+                                                <div>
+                                                    <h5>Сравнение строк</h5>
+                                                    <p>                                                
+                                                        Для сравнения используется лексикографический порядок (первые символы алфавита считаются меньше последних).
+                                                        Алгоритм для произвольных строк s1 и s2:<br>
+                                                        1) Сравниваются символы s1[0] и s2[0]. Если символы разные, 
+                                                        то большей будет та строка, символ которой больше. Сравнение завершено.<br>
+                                                        2) Если первые символы совпали, аналогично проверяем 
+                                                        вторые символы. Продолжаем, пока не найдём несовпадение 
+                                                        или не закончится одна из строк.<br>
+                                                        3) Если строки закончились одновременно, то они равны. 
+                                                        Если закончилась одна из строк, то большей строкой 
+                                                        считается строка с большим количеством символов.<br>
+                                                        <pre>
+                                                            <code>        
+console.log('Код' > 'Кодер') // false
+console.log('Кот' > 'Кодер') (true)
+При этом: 'Кот' не равно 'кот', так как сравнение учитывает 
+регистр букв, если необходимо регистронезависимое сравнение, 
+то обе строки приводятся к верхнему или нижнему регистру
+                                                            </code>
+                                                        </pre>
+                                                    </p>
+                                                </div>                                           
+                                            </div>
+                                            
+                                            <div>
+                                                <h6 style="color: red;">Важно понимать!</h6>
+                                                <p>JavaScript различает объекты String и значения строкового 
+                                                    примитива. Строковые литералы (обозначаемые кавычками) и строки, 
+                                                    возвращённые вызовом String в неконструкторном контексте 
+                                                    (то есть, без использования ключевого слова new) являются 
+                                                    строковыми примитивами. Но если создать строку с помощью конструтора (new String), то это будет уже объектом.                                                 
+                                                    <pre>
+                                                        <code>
+let person1 = 'Anna';
+let person2 = new String(person1);
+
+console.log(typeof person1); // выведет 'string'
+console.log(typeof person2);  // выведет 'object'
+                                                        </code>
+                                                    </pre>
+                                                </p>
+                                            </div>
+                                            
+                                            <div>
+                                                <h4>Методы строк</h4>
+                                                <p>
+                                                    Для того, чтобы на строковых примитивах использовать методы объекта String, JavaScript автоматически преобразует 
+                                                    примитивы в объекты String, то есть создаётся специальный «объект-обёртка», который предоставляет нужную функциональность, а после удаляется. Подробнее о методах <a href="string.html">тут</a>.
+                                                </p>                                                
+                                            </div>
+                                        </section>                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m6 l6">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/number.png">
+                                    </div>
+                                    <div class="card-content card-content_color">
+                                        <span class="card-title activator white-text text-darken-4">Число<i class="material-icons right">add_circle</i></span>
+                                        <!-- <p><a href="#">This is a link</a></p> -->
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title card_title_big grey-text text-darken-4">Number<i class="material-icons right">close</i></span>
+                                        <section>
+                                            <p>Числа - примитивный тип данных представляет как целочисленные значения, так и числа с плавающей точкой в диапазоне от -(253 − 1) до 253 − 1, а также специальные значения Infinity, -Infinity и NaN.
+                                            </p>
+                                            <div>
+                                                <h4>Синтаксис</h4>
+                                                <pre>
+                                                    <code class="js">
+let age = 100
+let decimal = 0.101
+let sameDecimal = .101
+let billion = 1e9 // 1 миллиард, "e" производит 
+операцию умножения числа на 1 с указанным количеством нулей   
+
+или вот так с "e"
+let ms = 1e-6 // 0.000001, отрицательное число 
+после "e" подразумевает деление на 1 с указанным количеством нулей
+                                                    </code>
+                                                </pre>
+                                                <div>
+                                                    <h4>Запись в разных системах счисления</h4>
+                                                    <h6>Шестнадцетиричная:</h6>
+                                                    <pre>
+                                                        <code class="js">
+let number = 0xff // 255, 
+при выводе в консоль приводится к десятичной системе счисления                                                  
+                                                        </code>
+                                                    </pre>
+                                                    <h6>Двоичная:</h6>
+                                                    <pre>
+                                                        <code class="js">
+let number = 0b11111111 // 255                                                  
+                                                        </code>
+                                                    </pre>
+                                                    <h6>Восьмиричная:</h6>
+                                                    <pre>
+                                                        <code class="js">
+let number = 0o377 // 255                                                  
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <h4>«Специальные числовые значения»:</h4><br>
+                                                <div>
+                                                1) Infinity (математическая бесконечность),<br>
+                                                2) -Infinity (минус бесконечность),<br>
+                                                <pre>
+                                                    <code class="js">
+console.log( -1 / 0 ); // -Infinity
+                                                    </code>
+                                                </pre>
+                                                3) NaN (Not a number, вычислительная ошибка).
+                                                <pre>
+                                                    <code class="js">
+console.log( "Привет" / 2 ); // NaN, такое деление является ошибкой
+// только одно исключение: NaN ** 0 равно 1
+                                                    </code>
+                                                </pre>
+                                                </div>
+                                                
+                                            </div>
+    
+                                            <div>
+                                                <h4>Методы</h4>
+                                                <p>
+                                                    При использовании методов для чисел (как и для остальных примитивов) важно понимать механизм работы этих методов. Так, если к примитиву обратиться как к объекту (т.е. через точку), то в памяти ВРЕМЕННО для этого примитива создастся объектная версия (обертка) с помощью конструктора new Number (для других типов другие обертки), это и позволяет применять методы к примитивам. Примеры:
+                                                </p>
+                                                <p>
+                                                    1) num.toString(base) возвращает строковое представление числа num в системе счисления base. base может варьироваться от 2 до 36 (по умолчанию 10). Запись: 
+                                                    <pre>
+                                                        <code class="js">
+let number = 255  
+number.toString(16) // ff,
+
+либо
+255..toString(16)
+                                                        </code>
+                                                    </pre>                                        
+                                                </p>
+                                                <p>
+                                                    1) num.toFixed([digits]) форматирует число, используя запись с фиксированной запятой. digits - количество цифр после десятичной запятой. Результатом метода будет являться строка. Данный метод позволяет решить в проблемы неточных вычислений в JS Запись: 
+                                                    <pre>
+                                                        <code class="js">
+let sum = 0.1 + 0.2; 
+console.log(sum); // 0.30000000000000004
+
+дроби, такие как 0.1, 0.2, которые выглядят довольно просто 
+в десятичной системе счисления, на самом деле являются
+бесконечной дробью в двоичной форме.
+
+console.log(sum.toFixed(2)); // 0.30, помог метод toFixed()
+                                                        </code>
+                                                    </pre>                                        
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <h4>Работа с числами</h4>
+                                                <div>
+                                                    <div>
+                                                        <h5>Математические операции</h5>
+                                                        <p>С числами можно выполнять стандартные математические операции (сложения +, вычитания -, умножения *, деления /, взятия остатка от целочисленного деления %), для определения приоритета операций пользуются скобками.    
+                                                            <pre>
+                                                                <code class="js">
+let a = 2
+let b = 3
+console.log(((a + b) * a % 5) ** 2) // 0                                                        
+                                                                </code>
+                                                            </pre>                                                    
+                                                        </p>
+                                                    </div>
+                                                    
+                                                    <div>
+                                                        <h5>Операторы сравнения </h5>
+                                                        - возвращают булевое значение
+                                                        <pre>
+                                                            <code class="js">
+console.log(5 >= 10) // false
+console.log(5 == 10) // false
+console.log(5 != 10) // true
+console.log(5 !== 10) // true                                                       
+                                                            </code>
+                                                        </pre>
+                                                    </div>                                                   
+                                                </div>
+
+                                                <div>
+                                                    <h5>Math</h5>
+                                                    <p>
+                                                        В JavaScript встроен объект Math, который содержит различные математические функции и константы для работы с числами.
+                                                    </p>
+                                                    <div>
+                                                        <h6>Округление</h6>
+                                                        <div>
+                                                            <p>Math.floor - Округление в меньшую сторону</p> 
+                                                            <p>Math.ceil - Округление в большую сторону</p> 
+                                                            <p>Math.round - Округление до ближайшего целого</p>
+                                                            <p>Math.trunc - Производит удаление дробной части без округления</p>
+                                                                <pre>
+                                                                    <code class="js">
+let number = 255.222
+Math.trunc(number) // 255
+        
+                                                                    </code>
+                                                                </pre>                                                    
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Другие математические функции</h6>
+                                                        <div>
+                                                            <p>Math.random() - возвращает псевдослучайное число в диапазоне от 0 (включительно) до 1 (но не включая 1)
+                                                                <pre>
+                                                                    <code class="js">
+Math.random() // 0.019904487089602574 или иное
+        
+                                                                    </code>
+                                                                </pre>
+                                                            </p>
+                                                            <p>Math.max(a, b, c...) - возвращает наибольшее число из перечисленных аргументов.
+                                                            </p>
+                                                            <p>Math.min(a, b, c...) - возвращает наименьшее число из перечисленных аргументов.
+                                                                <pre>
+                                                                    <code class="js">
+Math.min(1, 2) // 1   
+                                                                    </code>
+                                                                </pre>
+                                                            </p>
+                                                            <p>Math.pow(n, power) - возвращает число n, возведённое в степень power.
+                                                                <pre>
+                                                                    <code class="js">
+Math.pow(2, 10) // 2 в степени 10 = 1024 
+                                                                    </code>
+                                                                </pre>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h6>Другие полезные функции</h6>
+                                                        <div>
+                                                            <p>1) Преобразование к числу (+ или Number()).
+                                                                <pre>
+                                                                    <code class="js">
+let a = '2'
+let b = '5'
+console.log(+a + Number(b)) // 7    
+                                                                    </code>
+                                                                </pre> 
+                                                            </p>
+                                                            <p>2) Преобразование к числу, если строка в точности не является числом: функции parseInt (возвращает целое число) и parseFloat (возвращает число с плавающей точкой).
+                                                                <pre>
+                                                                    <code class="js">
+console.log(parseFloat('12.5em')) // 12.5
+console.log(parseInt('100px')) // 100
+console.log(parseInt('0xff', 16) ); // 255, 
+parseInt() имеет необязательный 2й параметр, 
+который определяет систему счисления.        
+                                                                    </code>
+                                                                </pre> 
+                                                            </p>
+                                                            <p>3) isNaN(value) - преобразует значение в число и проверяет является ли оно NaN.<br>
+                                                                Важно знать, что значение NaN уникально тем, что оно не является равным ничему другому, даже самому себе.
+                                                                <pre>
+                                                                    <code class="js">
+console.log(isNaN("str")) // true
+console.log( NaN === NaN ) // false   
+                                                                    </code>
+                                                                </pre> 
+                                                            </p>
+    
+                                                            <p>4) isFinite(value) - преобразует аргумент в число и возвращает true, если оно является обычным числом, т.е. не NaN/Infinity/-Infinity.
+                                                                <pre>
+                                                                    <code class="js">
+console.log(isFinite("15")) // true
+console.log(isFinite("str")) // false, потому что специальное значение: NaN   
+                                                                    </code>
+                                                                </pre> 
+                                                            </p>
+    
+                                                            <p>5) Number.isNaN(value) - возвращает true только в том случае, если аргумент принадлежит к типу number и является NaN. Во всех остальных случаях возвращает false.
+                                                                <pre>
+                                                                    <code class="js">
+console.log(Number.isNaN(NaN)) // true
+console.log(Number.isNaN("str" / 2)) // true   
+                                                                    </code>
+                                                                </pre> 
+                                                            </p>
+    
+                                                            <p>6) Number.isFinite(value) - возвращает true только в том случае, если аргумент принадлежит к типу number и не является NaN/Infinity/-Infinity. Во всех остальных случаях возвращает false.
+                                                                <pre>
+                                                                    <code class="js">
+console.log(Number.isFinite(123)) // true
+console.log(Number.isFinite(2 / 0)) // false  
+                                                                    </code>
+                                                                </pre> 
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row types-cards">
+                            <div class="col s12 m6 l6">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/bigint.png">
+                                    </div>
+                                    <div class="card-content card-content_color">
+                                        <span class="card-title activator white-text text-darken-4">Большое целое<i class="material-icons right">add_circle</i></span>
+                                        <!-- <p><a href="#">This is a link</a></p> -->
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title card_title_big grey-text text-darken-4">BigInt<i class="material-icons right">close</i></span>
+                                        <section>
+                                            <p>Cпециальный числовой примитив, который предоставляет возможность работать с целыми числами произвольной длины.                                                
+                                            </p>
+                                            <div>
+                                                <h4>Синтаксис</h4>
+                                                <p>Чтобы создать значение типа BigInt, необходимо добавить n в конец числового литерала или вызвать функцию BigInt, которая создаст число типа BigInt из переданного аргумента. Аргументом может быть число, строка и др.
+                                                    <pre>
+                                                        <code class="js">
+let bigint = 1234567890123456789012345678901234567890n;
+
+let sameBigint = BigInt("1234567890123456789012345678901234567890");
+
+let bigNumber = BigInt(10) // то же самое, что и 10n
+                                                        </code>
+                                                    </pre>
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <h4>Работа с BigInt</h4>
+                                                <div>
+                                                    <h5>Математические операторы</h5>
+                                                    <p>
+                                                        Для BigInt определены операции сложения +, вычитания -, умножения *, взятия остатка от деления %, возведение в степень **. Операция деления / также работает, но дробная часть будет отброшена. Унарный оператор '+' нельзя применить. Все операции с числами типа bigint возвращают bigint. 
+                                                    </p>                                                    
+                                                    <pre>
+                                                        <code class="js">
+console.log(1n + 2n) // 3n
+console.log(5n / 2n) // 2n
+                                                        </code>
+                                                    </pre>
+                                                    <p>В математических операциях мы не можем смешивать bigint и обычные числа. Мы должны явно их конвертировать: используя либо BigInt(), либо Number()
+                                                        <pre>
+                                                            <code class="js">
+let bigint = 1n;
+let number = 2;
+
+// конвертируем number в bigint
+console.log(bigint + BigInt(number)); // 3n
+
+// конвертируем bigint в number
+console.log(Number(bigint) + number); // 3
+                                                            </code>
+                                                        </pre>    
+                                                    </p>
+                                                </div>
+                                                
+                                                <div>
+                                                    <h5>Операции сравнения</h5>
+                                                    <p>Операции сравнения, такие как <, >, работают с bigint и обычными числами как обычно.
+                                                        <pre>
+                                                            <code class="js">
+console.log(2n > 1n) // true
+console.log(2n > 1) // true
+                                                            </code>
+                                                        </pre>
+                                                    </p>
+                                                </div>
+
+                                                <div>
+                                                    <h5>Логические операции</h5>
+                                                    <p>
+                                                        В if или любом другом логическом операторе bigint число ведёт себя как обычное число. 
+                                                        <pre>
+                                                            <code class="js">
+if (0n) {
+    // никогда не выполнится, это false
+}
+                                                            </code>
+                                                        </pre>
+                                                    </p>
+                                                </div>
+
+                                                <div>
+                                                    <h4>Методы BigInt</h4>
+                                                    <p>
+                                                        Методы BigInt работают также, как и методы других примитивов. Если к BigInt обратиться как к объекту (т.е. через точку), то в памяти ВРЕМЕННО для этого примитива создастся объектная версия (обертка) что и позволит применить методы. Примеры:
+                                                        <pre>
+                                                            <code class="js">
+let bigNumber = 10n
+console.log(bigNumber.toString()) // 10
+console.log(bigNumber.valueOf()) // 10n
+
+                                                            </code>
+                                                        </pre>
+                                                    </p>
+                                                </div>
+                                            </div>                                        
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m6 l6">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/boolean.png">
+                                    </div>
+                                    <div class="card-content card-content_color">
+                                        <span class="card-title activator white-text text-darken-4">Булев тип<i class="material-icons right">add_circle</i></span>
+                                        <!-- <p><a href="#">This is a link</a></p> -->
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title card_title_big grey-text text-darken-4">Boolean<i class="material-icons right">close</i></span>
+                                        <section>
+                                            <p>Логический или булев тип (boolean) может принимать лишь истинное (true) и ложное (false) значения. Назван он так в честь Джорджа Буля, одного из основателей математической логики.                                                
+                                            </p>
+                                            <div>
+                                                <h4>Синтаксис</h4>
+                                                <p>Явное указание значения
+                                                    <pre>
+                                                        <code class="js">
+let truthyValue = true // «Истина»
+let falsyValue = false // «Ложь»
+                                                        </code>
+                                                    </pre>
+                                                </p>
+
+                                                <p>Функция Boolean
+                                                    <pre>
+                                                        <code class="js">
+let truthyValue = Boolean(1) // «Истина»
+let falsyValue = Boolean('') // «Ложь»
+                                                        </code>
+                                                    </pre>
+                                                </p>
+
+                                                <p>Использование выражений, значениями которых будут «истина» или «ложь»
+                                                    <pre>
+                                                        <code class="js">
+let truthyValue = Boolean(4 < 5)
+let anotherTruthy = 4 < 5
+
+console.log(truthyValue) // true
+console.log(anotherTruthy) // true
+                                                        </code>
+                                                    </pre>
+                                                </p>
+
+                                                <p>Использование в условных выражениях
+                                                    <pre>
+                                                        <code class="js">
+let isCorrect = true
+if (isCorrect) {
+    // выполнится,
+} else {
+    // не выполнится
+}
+                                                        </code>
+                                                    </pre>
+                                                </p>
+                                                
+                                            </div>
+
+                                            <div>
+                                                <h4>Логическре преобразование типов</h4>
+                                                <p>0, -0, null, false, NaN, undefined, пустая строка (""), становяся false. Все остальные значения - true
+                                                    <pre>
+                                                        <code class="js">
+let falsy1 = Boolean(),
+    falsy2 = Boolean(0),
+    falsy4 = Boolean(''),
+    falsy5 = Boolean(false)
+
+let truthy1 = Boolean(true),
+    truthy3 = Boolean('false'),
+    truthy5 = Boolean([]),
+    truthy6 = Boolean({})
+                                                        </code>
+                                                    </pre>
+                                                </p>                                                    
+                                            </div>
+
+                                            <div>
+                                                <h4>Методы Bollean</h4>
+                                                <p>
+                                                    Методы Bollean работают также, как и методы других примитивов. Если к Bollean обратиться как к объекту (т.е. через точку), то в памяти ВРЕМЕННО для этого примитива создастся объектная версия (обертка) что и позволит применить методы. Примеры:
+                                                </p>                                                
+                                                <pre>
+                                                    <code class="js">
+let bool = true
+console.log(bool.toString()) // true
+console.log(bool.valueOf()) // true
+                                                    </code>
+                                                </pre>
+                                            </div>
+                                        </section>                                        
+                                    </div>
+                                </div>
+                            </div>                               
+                        </div> 
+
+                        <div class="row types-cards">
+                            <div class="col s12 m6 l6">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/null.png">
+                                    </div>
+                                    <div class="card-content card-content_color">
+                                        <span class="card-title activator white-text text-darken-4">null<i class="material-icons right">add_circle</i></span>
+                                        <!-- <p><a href="#">This is a link</a></p> -->
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title card_title_big grey-text text-darken-4">null<i class="material-icons right">close</i></span>
+                                        <section>
+                                            <p>
+                                                Специальное значение null является примитивом. Оно формирует отдельный тип, который содержит только значение null, т.е. «ничего», «пусто» или «значение неизвестно».
+                                            </p> 
+                                            <div>                                                
+                                                Используется, когда нужно обозначить намеренное отсутствие значения. В контексте логических операций, рассматривается как ложное. 
+                                                <pre>
+                                                    <code>
+let age = null // значение age неизвестно
+                                                    </code>
+                                                </pre>
+                                            </div>                                        
+                                            <p>
+                                                В языке существует похожий примитив undefined, он обозначает, что значение ещё не установлено. Их можно легко спутать, потому что оба обозначают отсутствие значения. Разница состоит в том, что null обозначает намеренное отсутствие, а undefined — неявное (неопределнность).
+                                            </p>
+                                            <div>
+                                                <h6 style="color: red;">Важно знать!</h6>
+                                                <p> Результатом вызова typeof null является "object". 
+                                                Это официально признанная ошибка в typeof, ведущая начало 
+                                                с времён создания JavaScript и сохранённая для совместимости. 
+                                                Конечно, null не является объектом. 
+                                                Это специальное значение с отдельным типом.
+                                                </p>                                                
+                                            </div>
+
+                                            <div>
+                                                <h6 style="color: red;">Важно знать!</h6>
+                                                <p>
+                                                    При проверке на null или undefined, помните о различии между операторами равенства (==) и идентичности (===): с первым, выполняется преобразование типов.
+                                                </p>                                                
+                                                <pre>
+                                                    <code>
+null === undefined // false
+null  == undefined // true
+                                                    </code>
+                                                </pre>                                
+                                            </div>
+                                                <p>
+                                                    У null нет соответствующего «объекта-обёртки», он не имеет никаких методов.
+                                                </p>
+                                            <div>
+
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>  
+                            
+                            <div class="col s12 m6 l6">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/undefined.png">
+                                    </div>
+                                    <div class="card-content card-content_color">
+                                        <span class="card-title activator white-text text-darken-4">undefined<i class="material-icons right">add_circle</i></span>
+                                        <!-- <p><a href="#">This is a link</a></p> -->
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title card_title_big grey-text text-darken-4">undefined<i class="material-icons right">close</i></span>
+                                        <section>
+                                            <p>Примитивный тип данных, состоящий из одного значения undefined.  Используется, чтобы обозначить неизвестное или неопределённое значение.<br>
+                                            JavaScript автоматически устанавливает значение undefined объявленным переменным, которые не были проинициализированы значением (не присвоено значение).
+                                            </p>
+                                            <div>
+                                                <h4>Синтаксис</h4>
+                                                <pre>
+                                                    <code class="js">
+let age
+console.log(age) // undefined
+                                                    </code>
+                                                </pre>  
+                                            </div>
+
+                                            <div>Функция возвращает undefined, если она не возвращает какого-либо значения.
+                                                <pre>
+                                                    <code class="js">
+function findValue() {
+    let a = 1
+    sum = a + 1
+}
+console.log(findValue()) // undefined
+                                                    </code>
+                                                </pre>
+                                            </div>
+
+                                            <p>
+                                                У undefined нет соответствующего «объекта-обёртки», он не имеют никаких методов.
+                                            </p>
+                                        </section>                                        
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                            
+                        <div class="row types-cards">
+                            <div class="col s12 m6 l6">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/symbol.png">
+                                    </div>
+                                    <div class="card-content card-content_color">
+                                        <span class="card-title activator white-text text-darken-4">Символ<i class="material-icons right">add_circle</i></span>
+                                        <!-- <p><a href="#">This is a link</a></p> -->
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title card_title_big grey-text text-darken-4">Symbol<i class="material-icons right">close</i></span>
+                                        <section>
+                                            <p>
+                                                Символ — примитивный тип, значения которого создаются с помощью вызова функции Symbol. Каждый созданный символ уникален. Символы могут использоваться в качестве имён свойств в объектах. Символьные свойства могут быть прочитаны только при прямом обращении и не видны при обычных операциях.
+                                            </p>
+                                            <div>
+                                                <h4>Синтаксис</h4>
+                                                <p>
+                                                    «Символ» представляет собой уникальный идентификатор. Для создания символа нужно вызвать функцию  Symbol. Создание символа через конструктор new Symbol() не поддерживается.         
+                                                    <pre>
+                                                        <code class="js">
+let id = Symbol()
+                                                        </code>
+                                                    </pre>                                           
+                                                </p>                                                
+                                                <p>
+                                                    При создании, символу можно дать описание (имя), в основном использующееся для отладки кода. Символы гарантированно уникальны. Даже если мы создадим множество символов с одинаковым описанием, это всё равно будут разные символы. Описание – это просто метка, которая ни на что не влияет.
+                                                    <pre>
+                                                        <code class="js">
+let id = Symbol("name")
+                                                        </code>
+                                                    </pre>
+                                                </p>                                                
+                                            </div>
+
+                                            <div>
+                                                <h4>Использование</h4>
+                                                <p>
+                                                    Символы используются для создания скрытых свойств объектов. В отличие от свойств, ключом которых является строка, символьные свойства может читать только владелец символа. Символьное свойство не появится в for..in, не будет модифицировано прямым обращением, так как другой скрипт не знает о нашем символе. Таким образом, свойство будет защищено от случайной перезаписи или использования.<br>
+                                                    Для использования символа при литеральном объявлении объекта {...}, его необходимо заключить в квадратные скобки.
+                                                    <pre>
+                                                        <code class="js">
+let secondaryId = Symbol()
+
+let user = {
+    'id': 193,
+    'name': 'Ольга',
+    [secondaryId]: 'olga-1'
+}
+
+for (const prop in user) {
+console.log(prop, user[prop])
+}
+// id 193
+// name Ольга
+
+console.log(user[secondaryId]) // olga-1
+                                                        </code>
+                                                    </pre>
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <h4>Свойства</h4>
+                                                <p>Symbol.length - cодержит длину, всегда равную 0 (нулю).</p>
+                                                <p>Symbol.prototype - cодержит прототип конструктора Symbol.</p>
+                                            </div>
+
+                                            <div>
+                                                <h4>Глобальные символы</h4>
+                                                <div>
+                                                    <p>
+                                                        Если созданный уникальный символ нужен в нескольких местах программы, то нужно воспользоваться глобальным реестром символов, который хранит символы по строковым ключам. При обращении по ключу всегда будет возвращаться один и тот же символ.
+                                                    </p> 
+                                                    <p>
+                                                        Для работы с этим реестром используется 2 метода:<br>
+                                                        1) Symbol.for(ключ) — возвращает символ, хранящийся по ключу. Если символа ещё не существует, он создаётся автоматически<br>
+                                                        2) Symbol.keyFor(символ) — возвращает строковый ключ, который хранит переданный символ или undefined, если символ не хранится в реестре.
+                                                        <pre>
+                                                            <code class="js">
+let secondaryId = Symbol()
+
+let user = {
+    'id': 193,
+    'name': 'Ольга',
+    [secondaryId]: 'olga-1'
+}
+console.log(Symbol.keyFor(secondaryId)) // undefined
+
+let newSym = Symbol.for('registryKey')
+user[newSym] = 'hello'
+console.log(Symbol.keyFor(newSym)) // registryKey
+                                                            </code>
+                                                        </pre>
+                                                    </p>                                                    
+                                                </div>                                                
+                                            </div>
+
+                                            <div>
+                                                <h4>Симтемные символы</h4>
+                                                <p>
+                                                    Символы активно используются внутри самого JavaScript, чтобы определять поведение объектов. Самый известный символ Symbol.iterator, который позволяет реализовать обход конструкции с помощью синтаксических конструкций for..of.  
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <h6 style="color: red;">Полезно знать</h6>
+                                                <p>Чтобы обойти for..in и получить все свойства объекта с ключами-символами можно использовать встроенный метод Object.getOwnPropertySymbols(obj), который возвращает массив символов и позволяет получить символьные свойства конкретного объекта.
+                                                    <pre>
+                                                        <code>
+let object1 = {};
+let a = Symbol('a');
+let b = Symbol.for('b');
+
+object1[a] = 'localSymbol';
+object1[b] = 'globalSymbol';
+
+const objectSymbols = Object.getOwnPropertySymbols(object1);
+
+console.log(objectSymbols) // [Symbol(a), Symbol(b)]
+                                                        </code>
+                                                    </pre>
+                                                </p>
+                                            </div>
+
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col s12 m6 l6">
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="./assets/images/object.png">
+                                    </div>
+                                    <div class="card-content card-content_color">
+                                        <span class="card-title activator white-text text-darken-4">Объект<i class="material-icons right">add_circle</i></span>
+                                        <!-- <p><a href="#">This is a link</a></p> -->
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title card_title_big grey-text text-darken-4">Object<i class="material-icons right">close</i></span>
+                                        <section>
+                                            <p>
+                                                Объекты - непримитивный типа данных, используются для хранения коллекций различных значений и более сложных сущностей. 
+                                            </p>                                            
+                                            <div>
+                                                <h4>Синтаксис</h4>
+                                                Объект может быть создан с помощью:
+                                                <p>
+                                                    1) литерала объекта - фигурных скобок {…} с необязательным списком свойств.<br>
+                                                    Свойство – это пара «ключ: значение», где ключ/имя/идентификатор – это строка/символ (ограничений к именам нет - можно назвать let и др.), а значение может быть чем угодно (в т.ч. другой объект, массив, функция (об этом <a href="#methods">далее</a>)).
+                                                </p> 
+                                                
+                                                <p>
+                                                    2) конструктора объекта new Object()
+                                                </p>
+                                                <pre>
+                                                    <code class="js">
+const user = new Object({title: 'Война и мир', author: 'Лев Толстой'}) 
+
+const user = {     
+    name: "John",  
+    age: 30,
+    children: ['Rita', 'Alex'],
+    favoriteBook: {
+        title: '1984',
+        author: 'Orwell',
+    },
+    "likes cats": true, 
+};  
+// имя свойства может состоять из нескольких слов, 
+// но тогда оно должно быть заключено в кавычки (любой их тип)
+// последнее свойство может заканчиваться "висячей запятой" 
+                                                    </code>
+                                                </pre>
+                                            </div>
+
+                                            <div>
+                                                <h6 style="color: red;">Важно знать и понимать!</h6>
+                                                <p>
+                                                    Одно из фундаментальных отличий объектов от примитивов заключается в том, что объекты хранятся и копируются «по ссылке» ("адресу в памяти"), тогда как примитивные значения: строки, числа, логические значения и т.д. – всегда копируются «как целое значение». Поэтому даже если переменная, которой присвоен объект (хранит ссылку на этот объект), обьявлена через const, свойства хранимого объекта можно менять. Изменение внутреннего состояния не изменяет ссылку.
+                                                </p>                                               
+                                            </div>
+
+                                            <div>
+                                                <h4>Свойства объекта</h4>
+                                                <p>
+                                                    Для обращения к свойствам используется запись «через точку». Для свойств, имена которых состоят из нескольких слов для доступа к свойствам используются квадратные скобки (внутри них кавычки любого типа). В большинстве случаев, когда имена свойств известны и просты, используется запись через точку (можно и [], если хочется).                                          
+                                                    <pre>
+                                                        <code class="js">
+console.log(user.name) // John
+console.log(user.age) // 30
+console.log(user["likes cats"]) // true
+                                                        </code>
+                                                    </pre>
+                                                </p>
+
+                                                <p>
+                                                    Для добавления свойства обращамся к нему и испольуем оператор присваивания "=".                                         
+                                                    <pre>
+                                                        <code class="js">
+user.isDev = true
+console.log(user.isDev) // true
+
+user["likes dogs"] = true
+console.log(user["likes dogs"]) // true
+                                                        </code>
+                                                    </pre>
+                                                </p>
+
+                                                <p>
+                                                    Для удаления свойства используется оператор delete. Но чаще свойства не удаляют, а сбрасывают значение, устанавливая undefined.                                                
+                                                    <pre>
+                                                        <code class="js">
+delete user.age
+delete user["likes cats"];
+user["likes cats"] = undefined
+                                                        </code>
+                                                    </pre>
+                                                </p>
+
+                                                <p>
+                                                    Для проверки существования свойства в объекте используется специальный оператор "in".
+                                                    <pre>
+                                                        <code class="js">
+let user = {name: "John", age: 30};
+
+console.log("age" in user) // true, user.age существует
+console.log("blabla" in user) // false, user.blabla не существует
+                                                        </code>
+                                                    </pre>
+                                                </p>
+
+                                                <p>
+                                                    Для перебора всех свойств объекта используется цикл for..in. При таком переборе свойства с целочисленными ключами сортируются по возрастанию, остальные располагаются в порядке создания.
+                                                    <pre>
+                                                        <code class="js">
+let user = { 
+    name: "John",
+    age: 30,
+};
+
+user.isDev = true
+
+for (let key in user) {
+    console.log(key) // name, age, isDev - значения ключей
+    console.log(user[key]) // John, 30, true
+}
+                                                        </code>
+                                                    </pre>
+                                                </p>                                                
+                                            </div>
+
+                                            <div id="methods">
+                                                <h4>Методы объекта</h4>
+                                                <p>
+                                                    Свойства объекта могут быть функциями. Метод - это функция в объекте,которая дает возможность "что-то делать" нашему объекту.<br>
+                                                    Метод можно создать через присвоение свойству функции, созданной через Function Expression / Function Declaration.
+                                                    <pre>
+                                                        <code class="js">
+// пример 1
+let user = {name: "John"};
+
+user.sayHi = function() {
+    console.log("Привет!");
+}; // присвоили свойству функции созданной через Function Expression.
+
+user.sayHi() // Привет!
+
+// пример 2
+let cat = {
+    name: 'Кузя',
+    
+    play: function() {
+        console.log('Люблю играть')
+    }, // полная запись
+
+    speak() {
+        console.log('Мяу')
+    } // сокращенная запись
+}
+
+cat.play() // Люблю играть
+cat.speak() // Мяу
+                                                        </code>
+                                                    </pre>
+                                                </p>
+
+                                                <p>
+                                                    Методу объекта обычно требуется доступ к информации, хранящейся в объекте. Для доступа к ней внутри объекта метод может использовать ключевое слово this. Подробнее о нем <a href="this.html">тут</a>.
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <h4>Сранение объектов</h4>
+                                                <p>
+                                                    JavaScript сравнивает не значения свойств объектов, а адреса в памяти, по которым эти объекты хранятся. Поэтому любое сравнение двух объектов будет возвращать false, даже если они выглядят одинаково.
+                                                    <pre>
+                                                        <code class="js">
+const book = {title: 'Дюна'} // один объект
+const anotherBook = {title: 'Дюна'} // другой объект
+
+console.log(book === anotherBook) // false
+                                                        </code>
+                                                    </pre>
+                                                </p> 
+
+                                                <p>
+                                                    Сравнение будет возвращать true, только если мы сравниваем переменные, указывающие на один и тот же объект.
+                                                    <pre>
+                                                        <code class="js">
+const book = {title: 'Дюна'}
+const anotherBook = book // в anotherBook записывается ссылка на тот же объект
+
+console.log(book === anotherBook) // true
+                                                        </code>
+                                                    </pre>
+                                                </p> 
+                                            </div>
+
+                                            <div>
+                                                <h4>Копирование объекта</h4>
+                                                <p>
+                                                    При копировании переменной копируется ссылка, но сам объект не дублируется.
+                                                    <pre>
+                                                        <code class="js">
+let user = {name: 'John'};
+
+let admin = user;
+
+admin.name = 'Pete'; // изменено по ссылке из переменной "admin"
+
+console.log(user.name); // 'Pete', изменения видны по ссылке из переменной "user"
+                                                        </code>
+                                                    </pre>
+                                                </p>                                               
+                                            </div>
+
+                                            <div>
+                                                <h4>Клонирование объекта</h4>
+                                                <div>
+                                                    <h5>Перебор свойств и "копирование на примитивном уровне"</h5>
+                                                    
+                                                    <pre>
+                                                        <code class="js">
+let user = {
+    name: "John",
+    age: 30
+};
+    
+let clone = {}; // новый пустой объект
+
+for (let key in user) {
+clone[key] = user[key];
+} // копируем все свойства user в него
+
+clone.name = "Pete"; // изменим в нём данные
+
+console.log(user.name); // все ещё John в первоначальном объекте
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <div>
+                                                    <h5>Метод Object.assign</h5>
+                                                    <p>
+                                                        Метод копирует свойства всех исходных объектов в целевой объект и возвращает целевой объект («поверхностную копию», так как вложенные объекты копируются по ссылке). 
+                                                    </p>
+                                                    
+                                                    <h6>Синтаксис</h6>
+                                                    <pre>
+                                                        <code class="js">
+Object.assign(dest, [src1, src2, src3...])
+// dest — целевой объект.
+// аргументы src1, ..., srcN - исходные объекты
+                                                        </code>
+                                                    </pre>
+
+                                                    <h6>Примеры</h6>
+                                                    <pre>
+                                                        <code class="js">
+let user = {name: "John"};
+let permissions1 = {canView: true};
+let permissions2 = {canEdit: true};
+
+Object.assign(user, permissions1, permissions2);
+
+// теперь user = {name: "John", canView: true, canEdit: true}
+                                                        </code>
+                                                    </pre> 
+                                                    
+                                                    <pre>
+                                                        <code class="js">
+// можно использовать для замены цикла for..in для простого клонирования
+let user = {
+    name: "John",
+    age: 30
+};
+    
+let clone = Object.assign({}, user);
+                                                        </code>
+                                                    </pre> 
+                                                </div>   
+
+                                            </div>
+
+                                            <div id="fatherObject">
+                                                <h4>Объект - прародитель</h4>
+                                                <p>
+                                                    В JavaScript объект является прародителем всех других сущностей. Все типы данных и структуры, кроме примитивных, являются потомками объекта. Так как объект — это сущность с набором свойств то, т.о., массив и функция - это тоже объекты. 
+                                                </p>
+                                                    
+                                                <pre>
+                                                    <code class="js">
+const shows = ['Breakind Bad', 'The Office', 'Silicon Valley']
+shows.length // это свойство массива
+                                                        
+                                                    </code>
+                                                </pre>
+
+                                                <p>
+                                                    Про функцию еще можно сказать, что это объект первого класса. Это означает, что функцию можно использовать так же, как и другие типы данных: сохранять в переменную, передавать аргументом и возвращать из функции.
+                                                </p>
+                                                <pre>
+                                                    <code class="js">
+function sum(a, b) {
+return a + b
+}
+
+sum.arguments // можно вызвать свойство функции
+sum.someField = 'value' // можно присвоить значение в поле
+console.log(sum.name) // sum
+console.log(sum.length) // 2
+console.dir(sum) // способ посмотреть свойства заданного объекта
+
+ответ консоли
+
+ƒ sum(a, b)
+someField: "value"
+arguments: null
+caller: null
+length: 2
+name: "sum"
+prototype: {constructor: ƒ}
+[[Prototype]]: ƒ ()                                                        
+                                                    </code>
+                                                </pre>
+
+                                                <p>
+                                                    В выводе консоли есть и свойство someField, которое мы присвоили, и набор встроенных свойств и методов.<br>
+                                                    Если развернуть [[Prototype]]: ƒ (), то прототипом текущего прототипа как раз является объект, поэтому его и можно назвать прародителем (о прототипах подробнее <a href="prototypes.html">тут</a>).
+                                                </p>
+                                                <p>
+                                                    Объект также является прототипом прототипов Map, Set, WeakMap, WeakSet. 
+                                                </p>
+
+                                                <p>
+                                                    Кроме того, в JS есть еще встроенные объекты, такие как Date и Math.
+                                                </p>                                                   
+                                                
+                                            </div>
+
+                                            <div>
+                                                <h4>Объекты-обертки</h4>
+                                                <p>
+                                                    Каждый примитив имеет свой собственный «объект-обёртку» (кроме null и undefined). Конструкторы для примитива являются наследниками объекта и предназначены только для внутреннего пользования. Создание «объектов-обёрток» для примитивов при помощи такого синтаксиса как,например, new Number(1) или new Boolean(false) в JavaScript, очень не рекомендуется. 
+                                                </p>
+                                                    <pre>
+                                                        <code class="js">
+console.log(typeof 0) // "число"
+console.log(typeof new Number(0)) // "object"!
+                                                        </code>
+                                                    </pre>  
+                                            </div>
+                                        </section>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+
+
+
+                <div class="row inputType" id="inputType">
+                    <h2 class="section scrollspy">Проверка типа</h2>
+                    <div class="col">
+                        <p class="inputType__description">Здесь можно проверить тип данных. Введи примитивный тип данных, либо объект, созданный с помощью литерала, либо символ, созданный с помощью Symbol().</p>
+                        <div class="inputType__wrap">
+                            <input id="inputType__inputCheck"></input>
+                            <button id="inputType__buttonCheck">Проверь</button>
+                        </div>                        
+                        <div id="inputType__checkResult"></div>
+                    </div>
+                    
+                </div>
+
+                <div id="joke" class="section scrollspy">
+                    <div class="joke__intro">
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Шуточка</a>
+                        <object class="joke__gif" data="./assets/images/types_laughingDog.gif" type=""></object>                        
+                    </div>
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal joke__modal">
+                        <div class="modal-content joke__modal-content_size">
+                            <img class="joke__image" src="./assets/images/types_fun.png" alt="joke_types">
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Закрыть</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col hide-on-small-only m2 l2">
+                <ul class="section table-of-contents" style="position: fixed" >
+                    <li><a href="#dataCards">Типы данных</a></li>
+                    <li><a href="#inputType">Проверка типа</a></li>
+                    <li><a href="#joke">Шуточка</a></li>
+                </ul>
+            </div>
+
+        
+        
+        </div>
+
+
+    </main>
+
+    <footer></footer>
+
+
+    <script src="./assets/libraries/highlights/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="./assets/dist/js/main.js"></script>
+</body>
+
+</html>

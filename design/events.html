@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+    <!--    project styles-->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+
+
+    <title>Браузерные события</title>
+
+</head>
+
+<body>
+<div class="wrapper">
+    <header></header>
+
+    <main class="events-main__container">
+        <h2>Events (Браузерные события)</h2>
+        <p>Событие – это сигнал от браузера о том, что что-то произошло. Все DOM-узлы подают такие сигналы (хотя события
+            бывают и не только в DOM).</p>
+        <div class="events-main__why">
+            <h5>Зачем нужны:</h5>
+            На такие события можно назначит функцию-обработчик, которая сработает, как только событие произошло.<br>
+            Благодаря этому код JavaScript может реагировать на различные действия пользователя.
+        </div>
+
+        <div class="events-main__which">
+            <h5>Какие бывают:</h5>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="collapsible popout">
+                            <li>
+                                <div class="collapsible-header">События мыши</div>
+                                <div class="collapsible-body">
+                                    <span class="list-title">click</span> – происходит, когда кликнули на элемент левой
+                                    кнопкой мыши (на устройствах с сенсорными экранами оно происходит при касании).<br>
+                                    <span class="list-title">contextmenu</span> – происходит, когда кликнули на элемент
+                                    правой кнопкой мыши.<br>
+                                    <span class="list-title">mouseover/mouseout</span> – когда мышь наводится
+                                    на/покидает элемент.<br>
+                                    <span class="list-title">mousedown/mouseup</span> – когда нажали/отжали кнопку мыши
+                                    на элементе.<br>
+                                    <span class="list-title">mousemove</span> – при движении мыши.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">События на элементах управления</div>
+                                <div class="collapsible-body">
+                                    <span class="list-title">submit</span> – пользователь отправил форму
+                                    &lt;form&gt;.<br>
+                                    <span class="list-title">focus</span> – пользователь фокусируется на элементе,
+                                    например нажимает на &lt;input&gt;.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">Клавиатурные события</div>
+                                <div class="collapsible-body">
+                                    <span class="list-title">keydown/keyup</span> – когда пользователь
+                                    нажимает/отпускает клавишу.<br>
+                                    <span class="list-title">keypress</span> – событие происходит, когда пользователь
+                                    нажал клавишу на клавиатуре над элементом.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">События документа</div>
+                                <div class="collapsible-body">
+                                    <span class="list-title">DOMContentLoaded</span> – когда HTML загружен и обработан,
+                                    DOM документа полностью построен и доступен.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            Есть еще много разных событий, их полный список можно посмотреть <a
+                href="https://developer.mozilla.org/ru/docs/Web/Events" target="_blank">здесь</a>.
+        </div>
+
+        <div class="events-main__how">
+            <h5>Как назначить событие:</h5>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+
+                        <ul class="collapsible popout">
+                            <li>
+                                <div class="collapsible-header">Атрибут HTML: onclick="..."</div>
+                                <div class="collapsible-body">
+                                    HTML-атрибуты используются редко потому, что JavaScript в HTML-теге выглядит немного
+                                    странно. К тому же много кода там не напишешь.<br>
+                                    Обработчик может быть назначен прямо в разметке, в атрибуте, который называется on&lt;событие&gt;
+                                    (onclick, onkeydown, onmouseout и <a
+                                        href="https://www.w3schools.com/tags/ref_eventattributes.asp" target="_blank">другие</a>).
+                                    <div class="events-code">
+                                            <pre>
+                                                <code class="language-html">
+&lt;script&gt;
+    function count() {
+        for(let i=1; i&lt;=3; i++) {
+            alert("Считаем: " + i);
+        }
+    }
+&lt;/script&gt;
+
+&lt;input type="button" onclick="count()" value="Считать до трех!"&gt;
+                                                </code>
+                                            </pre>
+                                    </div>
+                                    <script>
+                                        function count() {
+                                            for (let i = 1; i <= 3; i++) {
+                                                alert("Считаем: " + i);
+                                            }
+                                        }
+                                    </script>
+
+                                    <input type="button" onclick="count()" value="Считать до трех!">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">DOM-свойство: elem.onclick = function</div>
+                                <div class="collapsible-body">
+                                    DOM-свойства вполне можно использовать, но мы не можем назначить больше одного
+                                    обработчика на один тип события. Во многих случаях с этим ограничением можно
+                                    мириться.
+                                    <br>
+                                    Можно назначать обработчик, используя свойство DOM-элемента on&lt;событие&gt;.
+                                    <div class="events-code">
+                                            <pre>
+                                                <code class="language-html">
+&lt;input id="elem" type="button" value="Нажми на кнопку!"&gt;
+&lt;script&gt;
+    elem.onclick = function() {
+        alert('Получишь результат!');
+    };
+&lt;/script&gt;
+                                                </code>
+                                            </pre>
+                                    </div>
+                                    <input id="elem" type="button" value="Нажми на кнопку!">
+                                    <script>
+                                        elem.onclick = function () {
+                                            alert('Получишь результат!');
+                                        };
+                                    </script>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header">Специальные методы: elem.addEventListener(event,
+                                    handler[, phase]) для добавления, removeEventListener для удаления
+                                </div>
+                                <div class="collapsible-body">
+                                    Этот способ самый гибкий, однако нужно писать больше всего кода. Есть несколько
+                                    типов событий, которые работают только через него, к примеру transitionend и
+                                    DOMContentLoaded. Также addEventListener поддерживает объекты в качестве
+                                    обработчиков событий. В этом случае вызывается метод объекта handleEvent.
+                                    <br><br>
+                                    element.addEventListener(eventType, handler, options)
+                                    <ul class="indented-list">
+                                        <li><span class="list-title">element</span> — любой HTMLElement на странице</li>
+                                        <li><span class="list-title">eventType</span> — строка, содержащая название
+                                            события. Наиболее популярные события 'click', 'change', 'submit', 'keydown',
+                                            'mousemove', 'mouseenter', 'mouseleave'.
+                                        </li>
+                                        <li><span class="list-title">handler</span> — функция, которая будет вызвана,
+                                            когда событие произойдет.
+                                        </li>
+                                        <li><span class="list-title">options/capture</span> — необязательный параметр,
+                                            который описывает дополнительные свойства для срабатывания события.
+                                            <ul class="veryindented-list">
+                                                <li><span class="list-title">capture</span> — включает или выключает
+                                                    захват события элементом, на который установлен обработчик. Это
+                                                    значит, что событие сначала сработает на элементе и только потом
+                                                    сработает на всех вложенных элементах. Принимает значение true или
+                                                    false.
+                                                </li>
+                                                <li><span class="list-title">options: { capture: bool, passive: bool, once: bool }</span>
+                                                    — при передаче объекта аргумент будет распознан как объект настроек,
+                                                    так можно установить больше параметров.
+                                                    <ul>
+                                                        <li><span class="list-title">passive</span> – говорит о том, что
+                                                            внутри handler никогда не будет вызвана функция
+                                                            event.preventDefault(), если функция event.preventDefault()
+                                                            все-таки вызвана, браузер должен её игнорировать и выводить
+                                                            предупредительное сообщение в консоль.
+                                                        </li>
+                                                        <li><span class="list-title">once</span> – включает
+                                                            автоматическую отписку от события после первого
+                                                            срабатывания.
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <br>
+                                    У объекта event есть специальные методы, такие как <span class="list-title">preventDefault()</span>
+                                    и <span class="list-title">stopPropagation()</span>. Остальные методы практически не
+                                    используются:
+                                    <ul>
+                                        <li><span class="list-title">preventDefault()</span> позволяет заблокировать
+                                            стандартное поведение браузера. Например, по клику на ссылке — заблокировать
+                                            переход по этой ссылке;
+                                        </li>
+                                        <li><span class="list-title">stopPropagation()</span> позволяет остановить
+                                            всплытие события по DOM-дереву.
+                                        </li>
+                                    </ul>
+                                    <br>
+                                    В этом примере с помощью preventDefault заменено стандартное поведение ссылки при
+                                    клике на нее.
+                                    <div class="events-code">
+                                            <pre>
+                                                <code class="language-html">
+&lt;a href="http://slither.io/" target="_blank"&gt;Ссылка на червячков&lt;/a&gt;
+&lt;a href="http://slither.io/" target="_blank" id="custom"&gt;Ссылка с измененным поведением&lt;/a&gt;
+&lt;div id="result"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    const linkElement = document.querySelector('#custom')
+    const resultElement = document.querySelector('#result')
+
+    linkElement.addEventListener('click', function (event) {
+    event.preventDefault()
+
+    resultElement.innerText = 'Вы нажали на ссылку, но ничего не произошло!'
+        setTimeout(function () {
+        resultElement.innerText = ''
+    }, 2500)
+})
+&lt;/script&gt;
+                                                </code>
+                                            </pre>
+                                    </div>
+                                    <a href="http://slither.io/" target="_blank">Ссылка на червячков</a><br>
+                                    <a href="http://slither.io/" target="_blank" id="custom">Ссылка с измененным
+                                        поведением</a>
+                                    <div id="slitherresult"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="events-main__fun">
+            <h5>А теперь повеселимся!</h5>
+            <p>Ниже будут примеры использования событий. Почувствуй разницу!</p>
+
+            <div id="events_fluid">
+                <h6>Жидкость</h6>
+                В данной анимации используются 4 браузерных события: mouseup, mousemove, mousedown и click (для кнопки
+                изменения цветов). <br><br>
+
+                <div id="events_fluid_field">
+                    <button id="events_fluid_reset">Новые цвета</button>
+
+                    <canvas id="events_fluid_c"></canvas>
+                </div>
+                Исходный код этой модели можно посмотреть <a href="https://codepen.io/dissimulate/pen/nLNMKQ"
+                                                             target="_blank">здесь</a>.
+            </div>
+            <br><br>
+            <div id="events_confetti">
+                <h6>Конфетти</h6>
+                А здесь использованы всего 2 события: mousedown - конфетти появляются и живут своей жизнью, mouseup -
+                они исчезают (ощути отличие от click). Как далеко разлетятся эти наглые цветные шарики? Решать только
+                тебе! <br><br>
+                <button id="events_confetti_btn">Конфетти</button>
+
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an" data-un><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <div class="events_confetti_an"><p class="events_confetti_an"></p></div>
+                <br><br>
+                Исходный код этой модели можно посмотреть <a href="https://codepen.io/danwilson/pen/qOWyBB"
+                                                             target="_blank">здесь</a>.
+            </div>
+            <br><br>
+            <div id="events_keys">
+                <h6>Коды клавиш</h6>
+                Поставьте курсор в поле ввода и нажмите любую клавишу: <input id="keyInput" type="text"><br>
+                А вы заметили, что keypress не такой как все? На какие клавиши это событие не реагирует? Как отличаются
+                коды заглавных букв и строчных? А цифр верхнего блока клавиатуры и бокового? А совпадают ли keyCode
+                одной и той же клавиши, но с разной языковой раскладкой? А code? Войдет ли это в ТОП-7 загадок
+                Вселенной?
+                <table class="RealTable" width="100%">
+                    <tbody>
+                    <tr>
+                        <th>
+                        </th>
+                        <th>key
+                        </th>
+                        <th>keyCode
+                        </th>
+                        <th>code
+                        </th>
+                        <th>charCode
+                        </th>
+                    </tr>
+                    <tr>
+                        <td id="keyInfo_keydown">keydown</td>
+                        <td id="keyInfo_keydown_1"></td>
+                        <td id="keyInfo_keydown_2"></td>
+                        <td id="keyInfo_keydown_3"></td>
+                        <td id="keyInfo_keydown_4"></td>
+                    </tr>
+                    <tr>
+                        <td id="keyInfo_keypress">keypress</td>
+                        <td id="keyInfo_keypress_1"></td>
+                        <td id="keyInfo_keypress_2"></td>
+                        <td id="keyInfo_keypress_3"></td>
+                        <td id="keyInfo_keypress_4"></td>
+                    </tr>
+                    <tr>
+                        <td id="keyInfo_keyup">keyup</td>
+                        <td id="keyInfo_keyup_1"></td>
+                        <td id="keyInfo_keyup_2"></td>
+                        <td id="keyInfo_keyup_3"></td>
+                        <td id="keyInfo_keyup_4"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>KeyPress возвращает ASCII код нажатого символа. Это значит, что событие вернет разные коды, если
+                пользователь нажал по букве "а", или "А", или "f", несмотря на то, что на клавиатуре это одна и та же
+                кнопка. Т.е. это событие учитывает регистр символа, языковую раскладку, состояние клавиш Shift, Caps
+                Lock, Alt, Ctrl. Можно сказать, что это более «интеллектуальное» событие по сравнению с keyDown/keyUp.
+                <br>
+                Хоть onKeyPress и учитывает состояние Shift, Caps Lock, Alt, Ctrl, т.к. они влияют на то как и какой
+                именно отобразится символ, но с помощью этого события нельзя определить состояние этих клавиш. Для этого
+                нужно использовать keyUp/keyDown.<br>
+                Два простых и похожих свойства: keyCode возвращает код нажатой клавиши, keyChar — ASCII код нажатого
+                символа. Как понимаешь, при нажатии одной клавиши, значения этих свойств должны отличаться.<br><br>
+            </div>
+        </div>
+
+</main>
+
+<footer class="page-footer teal lighten-1">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span></h5>
+                <div>
+                    <div class="setup"></div>
+                    <div class="punchline"></div>
+                    <div class="error"></div>
+                </div>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Полезные ссылки</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc">Notion
+                        Frontend 34</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/">Современный учебник
+                        JavaScript</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference">Справочник по
+                        JavaScript. MDN</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT">Сложный
+                        JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/">JavaScript Дока</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2023
+            <a class="grey-text text-lighten-4 right" href="about.html">О прекрасных разработчицах этого гайда</a>
+        </div>
+    </div>
+</footer>
+</div>
+
+
+<script src="./assets/dist/js/main.js"></script>
+<script src="./assets/libraries/highlights/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+
+</html>
