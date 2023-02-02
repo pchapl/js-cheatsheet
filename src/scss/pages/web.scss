@@ -10,6 +10,22 @@
     text-align: center;
 }
 
+.web__title_small {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.web__title_tiny {
+
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.web__content-text {
+    margin-top: 2rem;
+}
+
 .web__card {
     display: flex;
 }
@@ -38,4 +54,35 @@
 
 .web-col {
     display: flex;
+}
+
+.web-request {
+    display: flex;
+    flex-direction: column;
+}
+
+.web-button {
+    align-self: center;
+    margin: 2rem;
+}
+
+.web-gif-success, .web-gif-unsuccess {
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.web-headers-success, .web-headers-unsuccess {
+    margin-top: 2rem;
+}
+
+.web-iconcode-green {
+    color: #00c853;
+}
+
+.web-iconcode-red {
+    color: #d50000;
+}
+
+.web-col-request {
+    margin: 1rem 0 2rem 0;
 }

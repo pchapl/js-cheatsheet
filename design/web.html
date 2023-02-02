@@ -60,7 +60,8 @@
         <main>
             
             <div class="main__container">
-                <h1 class="web__title">Как работает Web?</h1>
+                <h1 class="web__title">Как работает Web</h1>
+                <h2 class="web__title_tiny">Что делает браузер, чтобы загрузить Веб-страницу?</h2>
 
                 <div class="container">
                     <div class="row">
@@ -73,7 +74,7 @@
                                         <i class="medium material-icons web__icon-color">account_circle</i>
                                         <div class="web__content">
                                             <h5 class="web__content-title">Пользователь</h5>
-                                            <p class="web__content-text">Вводит адрес сайта (доменное имя) в поисковую строку.</p>
+                                            <p class="web__content-text">Вводит адрес сайта в поисковую строку браузера.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -83,7 +84,15 @@
                                         <i class="medium material-icons web__icon-color_red">dvr</i>
                                         <div class="web__content">
                                             <h5 class="web__content-title">Браузер</h5>
-                                            <p class="web__content-text">Знает, что машины понимают только цифры, и ищет IP-адрес сайта: сначала в ближайших местах (история подключений, кэш ОС/роутера), если не находит - идёт в Интернет и отправляет имя DNS-серверам.</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Получает адрес. Возьмем для примера https://www.google.com. Вот, что в нем есть:</p>
+                                            <ul class="web-ul" style="padding-left: 20px">
+                                                <li class="web-li" style="list-style-type: disc">https - это протокол (может быть незащищенный (http) или защищенный (https));</li>
+                                                <li class="web-li" style="list-style-type: disc">google.com - это host, по которому нужно сделать обращение: он представлен доменным именем;</li>
+                                                <li class="web-li" style="list-style-type: disc">/index.html - это адрес ресурса, который нужно получить на веб-сервере.</li>
+                                            </ul>
+                                            <p class="web__content-text" style="margin-top: 1rem">Браузер делает разбор адреса. Он знает, что машины понимают только цифры. Поэтому берет host и на его основе получает IP-адрес (это адрес веб-сервера). Другими словами, происходит преобразование (resolve) доменного имени в IP-адрес. Для этого использутеся DNS-сервер (Domain Name Server).</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Однако, если ранее адрес уже использовался, то запрос к DNS не делается, потому что эта информация кэшируется. Браузер сначала ищет айпишник в ближайших местах (история подключений, кэш ОС/роутера), и, если находит адрес там, то берет его из локального кэша. Если не находит - отправляет host DNS-серверу.</p>
+                                            <p class="web__content-text"></p>
                                         </div>
                                     </div>
                                 </li>
@@ -93,7 +102,7 @@
                                         <i class="medium material-icons web__icon-color_amber">storage</i>
                                         <div class="web__content">
                                             <h5 class="web__content-title">DNS-сервер</h5>
-                                            <p class="web__content-text">Находит IP-адрес сайта в адресной книге и отправляет браузеру.</p>
+                                            <p class="web__content-text" style=" margin-top: 1rem">Находит IP-адрес сайта в адресной книге и отправляет браузеру.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -103,12 +112,19 @@
                                         <i class="medium material-icons web__icon-color_red">dvr</i>
                                         <div class="web__content">
                                             <h5 class="web__content-title">Браузер</h5>
-                                            <p class="web__content-text">Делает http/https-запрос на серверы (по портам 80/443) с помощью протокола TCP (набор правил со способами соединения) и системы трёх рукопожатий:</p>
-                                            <ul>
-                                                <ol>Браузер отправляет запрос на соединение - SYN-пакет.</ol>
-                                                <ol>Сервер подтверждает получение - SYN/ACK-пакет.</ol>
-                                                <ol>Браузер подтверждает, что получил SYN/ACK-пакет - ACK-пакет</ol>
+                                            <p class="web__content-text" style="margin-top: 1rem">Получает IP-адрес, и теперь можно установить TCP-соединение с веб-сервером. TCP - это протокол с набором правил, по которым осуществляется соединение. При TCP-соединении обязательно подтверждение получения информации: если подтверждение не получено, то информация отправляется заново.</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Для TCP-соединения есть важная характеристика: порт, по которому оно должно быть установлено:</p>
+                                            <ul class="web-ul" style="padding-left: 20px">
+                                                <li class="web-li" style="list-style-type: disc">80 - для http-протокола;</li>
+                                                <li class="web-li" style="list-style-type: disc">443 - для https-протокола.</li>
                                             </ul>
+                                            <p class="web__content-text" style="margin-top: 1rem">При установке TCP-соединения идет обмен пакетами с флагами ACK/SYN/FIN. Если мы взаимодействуем по https-протоколу, то происходит так называемое трехстороннее рукопожатие TCP (TLS handshake) - это обмен сертификатами, проверка подлинности сертификатов, обмен публичными ключами, т.е. происходит установка доверенного соединения:</p>
+                                            <ul class="web-ul" style="padding-left: 20px">
+                                                <li class="web-li" style="list-style-type: disc">SYN-пакет: браузер отправляет запрос на соединение;</li>
+                                                <li class="web-li" style="list-style-type: disc">SYN/ACK-пакет: сервер подтверждает получение;</li>
+                                                <li class="web-li" style="list-style-type: disc">ACK-пакет: браузер подтверждает, что получил SYN/ACK-пакет.</li>
+                                            </ul>
+                                            
                                         </div>
                                     </div>
                                 </li>
@@ -118,7 +134,6 @@
                                         <i class="medium material-icons web__icon-color_cyan">sync</i>
                                         <div class="web__content">
                                             <h5 class="web__content-title">Соединение установлено</h5>
-                                            <p class="web__content-text">(если нет - ошибка 404)</p>
                                         </div>
                                     </div>
                                 </li>
@@ -129,9 +144,11 @@
                                         <div class="web__content">
                                             <div>
                                                 <h5 class="web__content-title">Браузер</h5>
-                                                <p class="web__content-text">Браузер объясняет серверу, что ему нужно: формирует http-заголовок.</p>
-                                                <p>Он включает: метод получения информации (GET/POST), URL, версию http-протокола, host, connection, cookie и т.п.</p>
-                                                <p>Браузер отправляет заголовок серверу.</p>
+                                                <p class="web__content-text style" style="margin-top: 1rem">Когда соединение установлено, мы переходим к http-части.</p>
+                                                <p class="web__content-text style" style="margin-top: 1rem">Браузер объясняет серверу, что ему нужно: формирует http-заголовок.</p>
+                                                <p class="web__content-text style" style="margin-top: 1rem">Это простой текстовый заголовок. Он включает в себя: метод получения информации (GET/POST или другие), URL, версию http-протокола, которая используется клиентом, host, connection (чаще всего close), cookie и т.п.</p>
+                                                <p class="web__content-text style" style="margin-top: 1rem">Можно отметить, что до версии http-протокола 1.0 не было поддержки виртуальных хостов и нельзя было указать такой заголовок, как host. Начиная с версии 1.0 почти везде используются виртуальные веб-сервера, когда можно на одном веб-сервере хостить несколько веб-серверов, разделенных по хостам. Поэтому в http-заголовке указывается заголовок host и имя хоста, которое, как правило, совпадает с доменным именем.</p>
+                                                <p class="web__content-text style" style="margin-top: 1rem">После формирования http-заголовка браузер отправляет его серверу.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -142,7 +159,12 @@
                                         <i class="medium material-icons web__icon-color_cyan">dns</i>
                                         <div class="web__content">
                                             <h5 class="web__content-title">Сервер</h5>
-                                            <p class="web__content-text">Веб- сервер получает заголовок и начинает обработку, формирует ответ с контентом html-страницы и отправляет браузеру </p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Веб-сервер получает заголовок и производит обработку, формирует ответ и отправляет браузеру.</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Ответом может быть:</p>
+                                            <ul class="web-ul" style="padding-left: 20px">
+                                                <li class="web-li" style="list-style-type: disc">в случае успеха - заголовок со status code 200 и html-страница;</li>
+                                                <li class="web-li" style="list-style-type: disc">в случае ошибки - сообщение об ошибке.</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </li>
@@ -152,7 +174,16 @@
                                         <i class="medium material-icons web__icon-color_red">dvr</i>
                                         <div class="web__content">
                                             <h5 class="web__content-title">Браузер</h5>
-                                            <p class="web__content-text">Браузер получает ответ  (html-страницу в пакетах данных) и начинает процесс рендеринга (постепенное отображение контента на экране). Для этого производится парсинг (сбор данных).</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Если пришел заголовок со status code 200, браузер берет полученную html-страницу (которая приходит в пакетах данных) и делает парсинг (сбор данных).</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">HTML - достаточно сложный язык, он не парсится в один проход. Части парсинга:</p>
+                                            <ul class="web-ul" style="padding-left: 20px">
+                                                <li class="web-li" style="list-style-type: disc">лексический анализ - выделение лексем, токенов;</li>
+                                                <li class="web-li" style="list-style-type: disc">синтаксический анализ - проверка правильности самого языка;</li>
+                                                <li class="web-li" style="list-style-type: disc">парсинг - формирование дерева распарсенных элементов.</li>
+                                            </ul>
+                                            <p class="web__content-text" style="margin-top: 1rem">При парсинге HTML создаются DOM и CSSOM - два дерева, и непосредственно rendering tree с набором элементов, на основе которого происходит отображение страницы. Процесс рендеринга - это и есть постепенное отображение контента на экране.</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Если на странице есть скрипты, они могут изменять положение элементов, их размер. В таком случае запускаются дополнительные процессы reflow и redraw. Эти процессы происходят как минимум по одному разу в процессе парсинга.</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Наконец, происходит отображение страницы на основе распарсенной информации.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -162,7 +193,7 @@
                                         <i class="medium material-icons web__icon-color">account_circle</i>
                                         <div class="web__content">
                                             <h5 class="web__content-title">Пользователь</h5>
-                                            <p class="web__content-text">Видит страницу</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Видит страницу и взаимодействует с ней.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -173,30 +204,55 @@
                 </div>
 
                 <h4 class="web__title_medium">Запросы в действии</h4>
-                <p class="web__content-text">Чтобы увидеть, сработал ли запрос и какие заголовки были переданы на сервер, нажмите на кнопку. Запрос отправится к открытому <a href="https://developers.giphy.com/explorer/" target="_blank">API гифок</a>. В первом варианте адрес запроса введен правильно, поэтому должна появиться гифка. А во втором варианте адрес введен неверно, и вернется ошибка:</p>
+                <p class="web__content-text">Сделаем самостоятельно fetch-запрос к открытому API гифок <a href="https://developers.giphy.com/explorer/" target="_blank">GIPHY</a> и попробуем получить картинку. Подробнее о работе API и fetch-запросах можно <a href="./api.html">прочитать здесь.</a></p>
+                <pre>
+                    <code>
+async function loadData() {
+    let response = await fetch("https://api.giphy.com/v1/gifs/translate?api_key=вставить_API_Key_с_сайта_GIPHY=cat");
+    let data = await response.json();
+
+    try {
+        if(response.status === 200){
+            // здесь пишем код, который должен вывести на странице гифку, status code и headers              
+        } else {
+            throw new Error ("Проверьте корректность запроса.");
+        }           
+    } catch (error) {
+        console.log(error.message);
+        // а здесь пишем код, который должен вывести на страницу сообщение об ошибке
+    }
+}
+loadData();
+                    </code>
+                </pre>
+                <p class="web__content-text">Чтобы увидеть, сработал ли запрос и какие заголовки были переданы на сервер, нажмите на кнопку "Посмотреть гифку". Запрос в варианте "Успешный запрос" был создан правильно, поэтому должна появиться гифка. А во втором варианте запрос был создан неверно (с опечаткой), и вернется ошибка:</p>
 
                 <div class="container">
                     <div class="row">
-                        <div class="col s12 web-col">
+                        <div class="col s12 web-col web-col-request">
 
                             <div class="card-panel col s6 teal lighten-5">
-                                <h5 class="web__title-small">Успешный запрос</h5>
+                                <h5 class="web__title_small">Успешный запрос</h5>
                                 <div class="web-request">
                                     <button class="waves-effect waves-light btn web-button web-button-success">Посмотреть гифку</button>
-                                    <div class="web-status-success"></div>
-                                    <div class="web-headers-success"></div>
-                                    <div class="web-header-success"></div>
-                                    <div class="web-gif-success"></div>
+                                    <div class="web-request__result">
+                                        <div class="web-status-success"></div>
+                                        <div class="web-headers-success"></div>
+                                        <div class="web-header-success"></div>
+                                        <div class="web-gif-success"></div></div>
                                 </div>
                             </div>
                             <div class="card-panel col s6 red lighten-5">
-                                <h5 class="web__title-small">Ошибка запроса</h5>
+                                <h5 class="web__title_small">Ошибка запроса</h5>
                                 <div class="web-request">
                                     <button class="waves-effect waves-light btn web-button web-button-unsuccess">Посмотреть гифку</button>
-                                    <div class="web-status-unsuccess"></div>
-                                    <div class="web-headers-unsuccess"></div>
-                                    <div class="web-header-unsuccess"></div>
-                                    <div class="web-gif-unsuccess"></div>
+                                    <div class="web-request__result">
+                                        <div class="web-status-unsuccess"></div>
+                                        <div class="web-headers-unsuccess"></div>
+                                        <div class="web-header-unsuccess"></div>
+                                        <div class="web-gif-unsuccess"></div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
