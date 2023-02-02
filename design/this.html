@@ -33,6 +33,160 @@
   </head>
 
   <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="api.html">API</a></li>
+                <li><a href="arrays.html">Arrays</a></li>
+                <li><a href="async.html">Async</a></li>
+                <li><a href="dom.html">DOM</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="functions.html">Functions</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="ifelse.html">If Else</a></li>
+                <li><a href="prototypes.html">Prototypes</a></li>
+                <li><a href="regular.html">Regular</a></li>
+                <li><a href="string.html">String</a></li>
+                <li><a href="this.html">this</a></li>
+                <li><a href="timedate.html">TimeDate</a></li>
+                <li><a href="types.html">Types</a></li>
+                <li><a href="variables.html">Variables</a></li>
+                <li><a href="web.html">Web</a></li>
+            </ul>
+            <nav>
+                <div class="nav-wrapper teal lighten-1">
+                    <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                    <ul class="right">
+                        <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+  
+        </div>
+      </header>
+      <main class="main-container">
+        <h1>Ключевое слово <strong>this</strong></h1>
+        <p>Специальное слово в языке JavaScript, которое позволяет методам объектов и функциям получить доступ к информации внутри объекта.</p>
+        <p>Что же значит <strong>this</strong>? В коде это слово заменяет имя объекта, информацию из которого мы пытаемся получить. В зависимости от того, какой объект вызывает метод, будет меняться и значение <strong>this</strong>.</p>
+        <p>Давайте рассмотрим пример. Создадим объект user с данными пользователя и методом sayHi, который будет приветствовать пользователя по имени. Для этого нашему методу потребуется доступ к информации с именем пользователя, и вот тут нам и пригодится слово this.</p>
+        <p>Смотрите:</p>
+        <pre>
+          <code class="js">
+            let user = {
+              name: "John",
+              age: 30,
+            
+              sayHi() {
+                // "this" - это "текущий объект".
+                alert(this.name);
+              }
+            
+            };
+            
+            user.sayHi(); // John
+          </code>
+        </pre>
+        <p>Метод sayHi вызывается объектом user, поэтому в данном примере значением this является user.</p>
+        <p>Конечно, в данном примере мы можем поприветствовать пользователя по имени и без помощи this — просто обратившись к объекту через внешнюю переменную, в которой хранится ссылка на этот объект.</p>
+        <pre>
+          <code class="js">
+            let user = {
+              name: "John",
+              age: 30,
+            
+              sayHi() {
+                alert(user.name); // "user" вместо "this"
+              }
+            
+            };
+          </code>
+        </pre>
+        <p>Метод sayHi в данном случае тоже вернет John. Зачем же тогда писать лишние строчки кода и использовать this?</p>
+        <p>Дело в том, что обращаясь к данным объекта напрямую через переменную, мы ставим работу нашего кода в зависимость от этой переменной. Если мы сохраним ссылку на объект в другую переменную, например, admin = user, и перезапишем саму переменную user, код будет работать неправильно. Метод sayHi выдаст ошибку при работе с объектом admin.</p>
+        <pre>
+          <code class="js">
+            let user = {
+              name: "John",
+              age: 30,
+            
+              sayHi() {
+                alert( user.name ); // приведёт к ошибке
+              }
+            
+            };
+            
+            
+            let admin = user;
+            user = null; // перезапишем переменную для наглядности, теперь она не хранит ссылку на объект.
+            
+            admin.sayHi(); // TypeError: Cannot read property 'name' of null
+          </code>
+        </pre>
+        <p>Чтобы методы всегда работали с <span>данным</span> объектом, тем самым, который их вызывает, мы и используем ключевое словво <span>this</span>.</p>
+        <h2><strong>this</strong> не является фиксированным</h2>
+        <p>В JavaScript ключевое слово this ведёт себя иначе, чем в большинстве других языков программирования. Его можно использовать в любой функции, даже если это не метод объекта.</p>
+        <p>В следующем примере нет синтаксической ошибки:</p>
+        <pre>
+          <code class="js">
+            function sayHi() {
+              alert( this.name );
+            }
+          </code>
+        </pre>
+        <p>Значение this вычисляется во время выполнения кода, в зависимости от контекста.</p>
+        <p>Например, здесь одна и та же функция назначена двум разным объектам и имеет различное значение this в вызовах:</p>
+        <pre>
+          <code class="js">
+            let user = { name: "John" };
+            let admin = { name: "Admin" };
+            
+            function sayHi() {
+              alert( this.name );
+            }
+            
+            // используем одну и ту же функцию в двух объектах
+            user.f = sayHi;
+            admin.f = sayHi;
+            
+            // эти вызовы имеют  разное значение this
+            // "this" внутри функции - это объект "перед точкой"
+            user.f(); // John  (this == user)
+            admin.f(); // Admin  (this == admin)
+            
+            admin['f'](); // Admin (нет разницы между использованием точки или квадратных скобок для доступа к объекту)
+          </code>
+        </pre>
+        <p>Правило простое: если вызывается obj.f(), то во время вызова f, this – это obj. Так что, в приведённом выше примере это либо user, либо admin.</p>
+        <h2>У стрелочных функций нет <strong>this</strong></h2>
+        <p>Стрелочные функции особенные: у них нет своего «собственного» this. Если мы ссылаемся на this внутри такой функции, то оно берётся из внешней «нормальной» функции.</p>
+        <p>Например, здесь arrow() использует значение this из внешнего метода user.sayHi():</p>
+        <pre>
+          <code class="js">
+            let user = {
+              firstName: "Ilya",
+              sayHi() {
+                let arrow = () => alert(this.firstName);
+                arrow();
+              }
+            };
+            
+            user.sayHi(); // Ilya
+          </code>
+        </pre>
+        <p>Это особенность стрелочных функций. Она полезна, когда мы на самом деле не хотим иметь отдельное this, а скорее хотим взять его из внешнего контекста.</p>
+        <h3>Подведем итог</h3>
+        <ul>
+          <li>Методы могут ссылаться на объект через this.</li>
+          <li>Значение this определяется во время исполнения кода.</li>
+          <li>При объявлении любой функции в ней можно использовать this, но этот this не имеет значения до тех пор, пока функция не будет вызвана.</li>
+          <li>Функция может быть скопирована между объектами (из одного объекта в другой).</li>
+          <li>Когда функция вызывается синтаксисом «метода» – object.method(), значением this во время вызова является object.</li>
+          <li>Cтрелочные функции являются особенными – у них нет this. Когда внутри стрелочной функции обращаются к this, то его значение берётся извне.</li>
+        </ul>
+      </main>
+    </div>
     <script src="./assets/dist/js/main.js"></script>
   </body>
 </html>
