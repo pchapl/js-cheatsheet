@@ -38,8 +38,8 @@ btn_third?.addEventListener('click', function () {
         return (str.length > maxlength) ?
           str.slice(0, maxlength - 1) + '…' : str;
       }
-    </code>
-    </pre></blockquote>`
+      </pre></code>
+    </blockquote>`
 });
 
 
