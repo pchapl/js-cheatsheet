@@ -11,27 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function showCommentsWDates(userDate) {
     let currentDate;
-    if (userDate === ''){
+    if (userDate === '') {
         currentDate = new Date();
-    }
-       else {
+    } else if (userDate.match(/^\d{2,}, \d+/)) {
+        const params = userDate.split(',').map(el => Number(el));
+        currentDate = new Date(...params);
+    } else {
         currentDate = new Date(userDate);
         if (isNaN(currentDate)) {
             currentDate = new Date(Number(userDate))
         }
     }
 
-    document.querySelector('code.td-get-day span.hljs-comment').innerHTML = '// ' + currentDate.getDay();
-    document.querySelector('code.td-get-hours span.hljs-comment').innerHTML = '// ' + currentDate.getHours();
-    document.querySelector('code.td-get-minutes span.hljs-comment').innerHTML = '// ' + currentDate.getMinutes();
-    document.querySelector('code.td-get-seconds span.hljs-comment').innerHTML = '// ' + currentDate.getSeconds();
-    document.querySelector('code.td-get-mseconds span.hljs-comment').innerHTML = '// ' + currentDate.getMilliseconds();
-    document.querySelector('code.td-get-time-zone-offset span.hljs-comment').innerHTML = '// ' + currentDate.getTimezoneOffset();
-    document.querySelector('code.td-get-time span.hljs-comment').innerHTML = '// ' + currentDate.getTime();
-    document.querySelector('code.td-get-full-year span.hljs-comment').innerHTML = '// ' + currentDate.getFullYear();
-    document.querySelector('code.td-get-month span.hljs-comment').innerHTML = '// ' + currentDate.getMonth();
-    document.querySelector('code.td-get-date span.hljs-comment').innerHTML = '// ' + currentDate.getDate();
-    document.querySelector('code.td-to-iso span.hljs-comment').innerHTML = '// ' + currentDate.toISOString();
+    document.querySelector('code.td-get-day span.hljs-comment').innerHTML = '// ' + currentDate.getDay() + ' — день недели, где 0 = воскресенье';
+    document.querySelector('code.td-get-hours span.hljs-comment').innerHTML = '// ' + currentDate.getHours() + ' — часы с 0 до 23';
+    document.querySelector('code.td-get-minutes span.hljs-comment').innerHTML = '// ' + currentDate.getMinutes() + ' — минуты от 0 до 59';
+    document.querySelector('code.td-get-seconds span.hljs-comment').innerHTML = '// ' + currentDate.getSeconds() + ' — секунды от 0 до 59';
+    document.querySelector('code.td-get-mseconds span.hljs-comment').innerHTML = '// ' + currentDate.getMilliseconds() + ' — миллисекунды от 0 до 999.';
+    document.querySelector('code.td-get-time-zone-offset span.hljs-comment').innerHTML = '// ' + currentDate.getTimezoneOffset() + ' — смещение в минутах между текущей часовой зоной и UTC';
+    document.querySelector('code.td-get-time span.hljs-comment').innerHTML = '// ' + currentDate.getTime() + ' — timestamp';
+    document.querySelector('code.td-get-full-year span.hljs-comment').innerHTML = '// ' + currentDate.getFullYear() + ' — год';
+    document.querySelector('code.td-get-month span.hljs-comment').innerHTML = '// ' + currentDate.getMonth() + ' — месяц с 0 до 11, где 0 = январь';
+    document.querySelector('code.td-get-date span.hljs-comment').innerHTML = '// ' + currentDate.getDate() + ' — день месяца с 1 до 31';
+    document.querySelector('code.td-to-iso span.hljs-comment').innerHTML = '// ' + currentDate.toISOString() + ' — дата в ISO формате';
 
 }
 
