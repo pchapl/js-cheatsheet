@@ -26,36 +26,33 @@
 <body>
 <div class="wrapper">
     <header class="header">
-        <div class="header__container">
-            <ul id="dropdown1" class="dropdown-content">
-                <li><a href="api.html">API</a></li>
-                <li><a href="arrays.html">Arrays</a></li>
-                <li><a href="async.html">Async</a></li>
-                <li><a href="dom.html">DOM</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="functions.html">Functions</a></li>
-                <li><a href="glossary.html">Glossary</a></li>
-                <li><a href="ifelse.html">If Else</a></li>
-                <li><a href="prototypes.html">Prototypes</a></li>
-                <li><a href="regular.html">Regular</a></li>
-                <li><a href="string.html">String</a></li>
-                <li><a href="this.html">this</a></li>
-                <li><a href="timedate.html">TimeDate</a></li>
-                <li><a href="types.html">Types</a></li>
-                <li><a href="variables.html">Variables</a></li>
-                <li><a href="web.html">Web</a></li>
-            </ul>
-            <nav>
-                <div class="nav-wrapper teal lighten-1">
-                    <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
-                    <ul class="right">
-                        <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
-                                class="material-icons right">arrow_drop_down</i></a></li>
-                    </ul>
-                </div>
-            </nav>
-
-        </div>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="api.html">API</a></li>
+            <li><a href="arrays.html">Arrays</a></li>
+            <li><a href="async.html">Async</a></li>
+            <li><a href="dom.html">DOM</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="functions.html">Functions</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="ifelse.html">If Else</a></li>
+            <li><a href="prototypes.html">Prototypes</a></li>
+            <li><a href="regular.html">Regular</a></li>
+            <li><a href="string.html">String</a></li>
+            <li><a href="this.html">this</a></li>
+            <li><a href="timedate.html">TimeDate</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="variables.html">Variables</a></li>
+            <li><a href="web.html">Web</a></li>
+        </ul>
+        <nav class="teal lighten-1">
+            <div class="nav-wrapper teal lighten-1 nav__container">
+                <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                <ul class="right">
+                    <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -177,7 +174,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-1"><i class="material-icons">code</i>Деструктуризация
+                        <div class="collapsible-header teal darken-1 grey-text text-lighten-3"><i class="material-icons">code</i>Деструктуризация
                             (Destructuring)
                         </div>
                         <div class="collapsible-body"><span>Деструктуризация объектов и массивов - это способ создания новых переменных путем извлечения значений из объектов или массивов. Деструктуризация позволяет извлечь из объекта отдельные значения в переменные или константы.</span>
@@ -195,7 +192,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-2"><i class="material-icons">code</i>Детерминированность
+                        <div class="collapsible-header teal darken-2 grey-text text-lighten-3"><i class="material-icons">code</i>Детерминированность
                         </div>
                         <div class="collapsible-body"><span>Функция называется детерминированной тогда, когда для одних и тех же входных параметров она возвращает один и тот же результат. Функция, возвращающая случайное число, не является детерминированной, так как у одного и того же входа мы получим всегда разный результат.</span>
                             <div><p>Полезные ссылки:</p>
@@ -205,7 +202,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-3"><i class="material-icons">code</i>Замыкание
+                        <div class="collapsible-header teal darken-3 grey-text text-lighten-3"><i class="material-icons">code</i>Замыкание
                             (Closures)
                         </div>
                         <div class="collapsible-body"><span>Замыкания - это функции, которые ссылаются на независимые переменные. Функция определенная в замыкании "помнит" окружение, в котором она создана.</span>
@@ -227,7 +224,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-4"><i class="material-icons">code</i>Запоминание или
+                        <div class="collapsible-header teal darken-4 grey-text text-lighten-2"><i class="material-icons">code</i>Запоминание или
                             мемоизация (Memoization)
                         </div>
                         <div class="collapsible-body"><span>Мемоизация - это сохранение результатов выполнения функций для предотвращения повторных вычислений. Это один из способов оптимизации, применяемый для увеличения скорости выполнения компьютерных программ.</span>
@@ -247,7 +244,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-3"><i class="material-icons">code</i>Инкремент и
+                        <div class="collapsible-header teal darken-3 grey-text text-lighten-3"><i class="material-icons">code</i>Инкремент и
                             декремент
                         </div>
                         <div class="collapsible-body"><span>Инкремент и декремент - унарные операции, которые увеличивают и уменьшают на единицу число, записанное в переменную (обычно на 1).</span>
@@ -266,7 +263,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-2"><i class="material-icons">code</i>Интерполяция
+                        <div class="collapsible-header teal darken-2 grey-text text-lighten-3"><i class="material-icons">code</i>Интерполяция
                         </div>
                         <div class="collapsible-body"><span>Интерполяция - это новый способ построения строк стандарта ES6 через вставку значений переменных в строку-шаблон с помощью фигурных скобок. Например, `Hi, ${name}!`.</span>
                             <div><p>Полезные ссылки:</p>
@@ -280,7 +277,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-1"><i class="material-icons">code</i>Классы (classes)
+                        <div class="collapsible-header teal darken-1 grey-text text-lighten-3"><i class="material-icons">code</i>Классы (classes)
                         </div>
                         <div class="collapsible-body"><span>Классы - это относительно новый способ написания функций-конструкторов в JS. Это синтаксический сахар для функций-конструкторов. В основе классов лежат те же прототипы и прототипное наследование.</span>
                             <p>Подробнее о классах <a href="#">тут</a>.</p>
@@ -496,7 +493,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-1"><i class="material-icons">code</i>Синтаксический
+                        <div class="collapsible-header teal darken-1 grey-text text-lighten-3"><i class="material-icons">code</i>Синтаксический
                             сахар
                         </div>
                         <div class="collapsible-body"><span>Синтаксический сахар - это синтаксические возможности, применение которых не влияет на поведение программы, но делает использование языка более удобным для человека.</span>
@@ -506,7 +503,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-2"><i class="material-icons">code</i>Слабая типизация
+                        <div class="collapsible-header teal darken-2 grey-text text-lighten-3"><i class="material-icons">code</i>Слабая типизация
                         </div>
                         <div class="collapsible-body"><span>Слабая типизация - это типизация, при которой язык программирования выполняет множество неявных преобразований типов автоматически, даже если может произойти потеря точности или преобразование неоднозначно.</span>
                             <p>JavaScript - это язык со слабой типизацией. Он знает о существовании разных типов (числа,
@@ -520,7 +517,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-3"><i class="material-icons">code</i>События</div>
+                        <div class="collapsible-header teal darken-3 grey-text text-lighten-3"><i class="material-icons">code</i>События</div>
                         <div class="collapsible-body"><span>События - это структура, которая следит за тем, что происходит в браузере, а затем позволяет вам запускать код в ответ на это.</span>
                             <p>События — это действия или случаи, возникающие в программируемой вами системе, о которых
                                 система сообщает вам для того, чтобы вы могли с ними взаимодействовать.</p>
@@ -535,7 +532,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-4"><i class="material-icons">code</i>Фазы события и
+                        <div class="collapsible-header teal darken-4 grey-text text-lighten-2"><i class="material-icons">code</i>Фазы события и
                             Делегирование (event delegation)
                         </div>
                         <div class="collapsible-body"><span>Событие делегируется - передается от родителя к дочерним элементам.</span>
@@ -566,7 +563,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-3"><i class="material-icons">code</i>Функция
+                        <div class="collapsible-header teal darken-3 grey-text text-lighten-3"><i class="material-icons">code</i>Функция
                             обратного вызова (Callback Function)
                         </div>
                         <div class="collapsible-body"><span>Функция обратного вызова - это функция, вызов которой отложен на будущее (происходит при некоторых условиях).</span>
@@ -583,7 +580,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header teal darken-2"><i class="material-icons">code</i>Шаблонные
+                        <div class="collapsible-header teal darken-2 grey-text text-lighten-3"><i class="material-icons">code</i>Шаблонные
                             литералы (Template Literals)
                         </div>
                         <div class="collapsible-body"><span>Шаблонные литералы - относительно новый способ создания строк в JS. Шаблонные строки объявляются с помощью обратных кавычек.</span>
@@ -606,7 +603,7 @@
                         </div>
                     </li>
 <!--                    <li>-->
-<!--                        <div class="collapsible-header teal darken-1"><i class="material-icons">code</i>30</div>-->
+<!--                        <div class="collapsible-header teal darken-1 grey-text text-lighten-3"><i class="material-icons">code</i>30</div>-->
 <!--                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span>-->
 <!--                            <div><p>Полезные ссылки:</p>-->
 <!--                                <p><a href="">MDN</a></p>-->
@@ -620,6 +617,44 @@
             </div>
         </div>
     </main>
+
+    <footer class="page-footer teal lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span></h5>
+                    <div>
+                        <div class="setup"></div>
+                        <div class="punchline"></div>
+                        <div class="error"></div>
+                    </div>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Полезные ссылки</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc">Notion
+                            Frontend 34</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/">Современный учебник
+                            JavaScript</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference">Справочник по
+                            JavaScript. MDN</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT">Сложный
+                            JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/">JavaScript Дока</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2023
+                <a class="grey-text text-lighten-4 right" href="about.html">О прекрасных разработчицах этого гайда</a>
+            </div>
+        </div>
+    </footer>
 </div>
 
 <script src="./assets/dist/js/main.js"></script>
