@@ -1,21 +1,21 @@
-.arrays-main__container {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.arrays__wrapper {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-}
-
-#arrays__data-pop, #arrays__data-push, #arrays__data-shift, #arrays__data-unshift, #arrays__data-splice, #arrays__data-slice, #arrays__data-concat, #arrays__data-join, #arrays__data-sort, #arrays__data-reverse, #arrays__data-foreach, #arrays__data-map, #arrays__data-reduce {
+.arrays__data {
     height: 2rem;
     width: 7rem;
     text-align: center;
     border: 1px solid black;
+}
+
+#arrays__search-includes, #arrays__search-indexof, #arrays__search-lastindexof {
+    height: 2rem;
+    width: 7rem;
+    margin: 0;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.arrays__practice-search {
+    display: flex;
+    align-items: flex-end;
 }
 
 .arrays__practice {
@@ -31,6 +31,13 @@
 .arrays-code {
     color: #383a42;
     background: #fafafa;
+}
+
+.arrays-code_small {
+    padding: 2px 5px;
+    font-size: 1rem;
+    border-radius: 2px;
+    background: #eeeeee;
 }
 
 .arrays__old,
@@ -53,14 +60,53 @@
 }
 
 .arrays-collapsible-header {
-    font-size: 1.2rem;
-    text-align: center;
+    display: flex;
+}
+
+.arrays-collapsible-header__items {
+    display: flex;
+    width: 20%;
+}
+
+.arrays-collapsible-header_title {
+    display: flex;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.arrays-collapsible-header_text {
+    width: 80%;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.arrays__title {
+    margin-top: 5rem;
+    font-size: 3rem;
+}
+
+.arrays__title-medium {
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
 }
 
 .arrays__title-small {
     margin-top: 5rem;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.arrays__title-min {
+    margin-top: 5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.arrays__text-center {
+    text-align: center;
 }
 
 .arrays__text-bold {
@@ -71,12 +117,4 @@
 .arrays__out {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
-}
-
-#arrays__li, #arrays__li_two, #arrays__li_three {
-    list-style-type: disc;
-}
-
-#arrays__ul {
-    padding-left: 20px;
 }
