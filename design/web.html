@@ -60,7 +60,7 @@
         <main>
             
             <div class="main__container">
-                <h1 class="web__title">Как работает Web</h1>
+                <h1 class="web__title">Как работает Web?</h1>
 
                 <div class="container">
                     <div class="row">
@@ -133,15 +133,6 @@
                                                 <p>Он включает: метод получения информации (GET/POST), URL, версию http-протокола, host, connection, cookie и т.п.</p>
                                                 <p>Браузер отправляет заголовок серверу.</p>
                                             </div>
-                                            
-                                            <div>
-                                                <p>Чтобы увидеть, как работает запрос, нажмите на кнопку. Вы отправите запрос к открытому API полезных советов, и в ответ получите совет.</p>
-                                                <button class="waves-effect waves-light btn web-button">Получить совет</button>
-                                                <div class="web-advice"></div> 
-                                                <div class="web-status"></div>
-                                                <div class="web-method"></div>
-                                            </div>
-                                            
                                         </div>
                                     </div>
                                 </li>
@@ -177,6 +168,37 @@
                                 </li>
                                 
                             </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="web__title_medium">Запросы в действии</h4>
+                <p class="web__content-text">Чтобы увидеть, сработал ли запрос и какие заголовки были переданы на сервер, нажмите на кнопку. Запрос отправится к открытому <a href="https://developers.giphy.com/explorer/" target="_blank">API гифок</a>. В первом варианте адрес запроса введен правильно, поэтому должна появиться гифка. А во втором варианте адрес введен неверно, и вернется ошибка:</p>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 web-col">
+
+                            <div class="card-panel col s6 teal lighten-5">
+                                <h5 class="web__title-small">Успешный запрос</h5>
+                                <div class="web-request">
+                                    <button class="waves-effect waves-light btn web-button web-button-success">Посмотреть гифку</button>
+                                    <div class="web-status-success"></div>
+                                    <div class="web-headers-success"></div>
+                                    <div class="web-header-success"></div>
+                                    <div class="web-gif-success"></div>
+                                </div>
+                            </div>
+                            <div class="card-panel col s6 red lighten-5">
+                                <h5 class="web__title-small">Ошибка запроса</h5>
+                                <div class="web-request">
+                                    <button class="waves-effect waves-light btn web-button web-button-unsuccess">Посмотреть гифку</button>
+                                    <div class="web-status-unsuccess"></div>
+                                    <div class="web-headers-unsuccess"></div>
+                                    <div class="web-header-unsuccess"></div>
+                                    <div class="web-gif-unsuccess"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

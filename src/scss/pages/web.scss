@@ -4,6 +4,12 @@
     text-align: center;
 }
 
+.web__title_medium {
+    margin-top: 5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
 .web__card {
     display: flex;
 }
@@ -28,4 +34,8 @@
 
 .web__icon-color_cyan {
     color: #80deea;
+}
+
+.web-col {
+    display: flex;
 }
