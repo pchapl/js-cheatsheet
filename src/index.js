@@ -8,3 +8,5 @@ import './js/string.js';
 import './js/web.js';
 
 const Materialize = require('materialize-css/dist/js/materialize.min');
+
+import './js/timedate.js'

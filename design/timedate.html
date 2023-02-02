@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+    <!--  code styles-->
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+
+    <!--    project styles-->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+
+
+    <title>Даты и время в JS</title>
+
+
+</head>
+
+<body>
+<header class="header">
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="api.html">API</a></li>
+        <li><a href="arrays.html">Arrays</a></li>
+        <li><a href="dom.html">DOM</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="ifelse.html">If Else</a></li>
+        <li><a href="prototypes.html">Prototypes</a></li>
+        <li><a href="regular.html">Regular</a></li>
+        <li><a href="string.html">String</a></li>
+        <li><a href="this.html">this</a></li>
+        <li><a href="timedate.html">TimeDate</a></li>
+        <li><a href="types.html">Types</a></li>
+        <li><a href="variables.html">Variables</a></li>
+        <li><a href="web.html">Web</a></li>
+    </ul>
+    <nav class="teal lighten-1">
+        <div class="nav-wrapper teal lighten-1 nav__container">
+            <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+            <ul class="right">
+                <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                        class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main class="container">
+    <h1 class="center-align">Даты и время в JS</h1>
+    <section class="td">
+        <h3>что такое объект Date</h3>
+        <section>Date — это специальный объект для работы со временем. Он является встроенным в движок браузера, поэтому
+            посмотреть что у него внутри не так-то просто.
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date">Источники</a>
+            сообщают, что внутри него хранится timestamp (количество миллисекунд с 1 января 1970 года UTC) и какая-то
+            магия.
+        </section>
+        <section>
+            <h5>Что важно понять?</h5>
+            В объекте date мы не можем разделить дату и время — это единая сущность. нельзя просто так взять и задать
+            только время без даты.
+        </section>
+        <section>
+            <h5>Почему?</h5>
+            Потому что внутри объекта записано количество миллисекунд, которое преобразуется в “человеческий” формат с
+            помощью <span class="td-strike">чёртовой матери</span> магии
+        </section>
+    </section>
+
+    <section class="td-magic">
+        <h3 class="td_title">Про магию и почему важно использовать объект Date в программировании</h3>
+        <section>
+            т.к. работа со временем крутится вокруг таймстампа, то часто можно увидеть что-то вроде этого:
+            <pre><code>let Jan02_1970 = new Date(24 * 60 * 60 * 1000); //получим 02.01.1970 UTC+0</code></pre>
+            или этого
+            <pre><code>const milliseconds = 31449600000;
+let days = milliseconds / (1000 * 60 * 60 * 24)//получим 364 дня</code></pre>
+
+            <div class="td_text">и кажется, что ну вот же всё просто: бери и переводи миллисекунды в дни/часы/месяцы. зачем же тогда вообще нужен специальный объект для работы со временем??</div>
+            <div class="td_text">но кроме очевидных високосных годов и переводов часов на летнее время, существуют ситуации,
+                <a href="https://www.computerra.ru/181607/leap-second-consequences/">когда сутки становятся длинее на секунду. </a>А если возникает необходимость работы с историческими датами, можно вспомнить историю о том, как в 1908 <a href="https://lenta.ru/articles/2019/05/02/olympics_late/">сборная России опоздала на Олимпиаду</a> из-за того, что Россия на тот момент еще пользовалась юлианским календарем, в то время как Англия уже перешла на григорианский.</div>
+            <div class="td_text">
+                как раз все эти нюансы учтены внутри объекта Date, чтобы мы могли получить верную дату.
+            </div>
+        </section>
+    </section>
+
+    <section class="td-create-new-date">
+        <h3>как создать объект Date</h3>
+        <h6>создаём Date с текущей датой и временем:</h6>
+        <pre><code class="td-now-date">const now = new Date();
+console.log(nowDate);
+// </code></pre>
+        <h5 class="td_title">Далее создадим одну и ту же дату тремя разными способами.</h5>
+        <h6>создаём Date с переданным значением времени. Значение должно быть совместимым с IETF RFC 2822 или с
+            ISO8601:</h6>
+        <pre><code class="td-string-date">const fromString = new Date('June 30, 2016 01:57:16');
+console.log(fromString);
+//</code></pre>
+        <h6>создаём объект Date с временем, равным количеству миллисекунд (тысячная доля секунды),
+            прошедших с 1 января 1970 года UTC+0:</h6>
+        <pre><code class="td-value-date">const fromMiliseconds = new Date(1467295036000);
+console.log(fromMiliseconds);
+// </code></pre>
+        <h6>создаём объект Date с заданными параметрами (год, месяц, день, часы, минуты, секунды, миллисекунды) в местном часовом поясе.
+            Обязательны только первые два аргумента. Остальные параметры, начиная с часов, будут по умолчанию равны
+            0, а день — 1:</h6>
+        <pre><code class="td-params-date">const fromParameters = new Date(2016, 5, 30, 1, 57, 16);
+console.log(fromParameters);
+//</code></pre>
+    </section>
+
+
+    <section class="td-metods">
+        <h3>методы работы с датой</h3>
+        <section>Далее можно попробовать ввести дату разными способами и посмотреть, что возвращают get-методы</section>
+        <pre>
+        <code class="td-user-date">
+const currentDate = new Date('August 14, 2022 14:15:30')</code><code class="td-get-time">
+console.log(currentDate.getTime())
+// 1660475730000        </code><code class="td-get-full-year">
+console.log(currentDate.getFullYear())
+// 2022     </code><code class="td-get-month">
+console.log(currentDate.getMonth())
+// 0         </code><code class="td-get-date">
+console.log(currentDate.getDate())
+// 0         </code><code class="td-get-day">
+console.log(currentDate.getDay())
+// 0         </code><code class="td-get-hours">
+console.log(currentDate.getHours())
+// 0         </code><code class="td-get-minutes">
+console.log(currentDate.getMinutes())
+// 0         </code><code class="td-get-seconds">
+console.log(currentDate.getSeconds())
+// 0         </code><code class="td-get-mseconds">
+console.log(currentDate.getMilliseconds())
+// 0         </code><code class="td-get-time-zone-offset">
+console.log(currentDate.getTimezoneOffset())
+// 14       </code><code class="td-to-iso">
+console.log(currentDate.toISOString())
+// 2022-08-14T11:15:30.000Z
+        </code>
+    </pre>
+    </section>
+
+    <section>
+        <h4>а ещё</h4>
+        <div class="td_text">
+            С датами можно производить математические операции. главное помнить, что мы просто складываем или вычитаем количество миллисекунд! Поэтому если вы заранее не привели ваши даты к utc формату, то результат может быть некорректным.
+        </div>
+        <div class="td_text">
+            Ещё очень важная и крутая возможность — это автоисправление даты. Можно задать 32 декабря и оно превратится в 1 января.
+        </div>
+            <pre><code>
+const newDate = new Date(2022, 11, 32);
+// 2023-01-01
+            </code></pre>
+
+    </section>
+
+    <section>
+        <h3>библиотеки</h3>
+        <div class="td_text">
+             здесь должна быть инфа про библиотек
+        </div>
+    </section>
+</main>
+
+<footer class="page-footer teal lighten-1">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <div>
+                    <h5 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
+                    </h5>
+                    <div>
+                        <div class="setup"></div>
+                        <div class="punchline"></div>
+                        <div class="error"></div>
+                    </div>
+                </div>
+                <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Полезные ссылки</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc">Notion
+                        Frontend 34</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/">Современный учебник
+                        JavaScript</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference">Справочник по
+                        JavaScript. MDN</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT">Сложный
+                        JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/">JavaScript Дока</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2023
+            <a class="grey-text text-lighten-4 right" href="about.html">О прекрасных разработчицах этого гайда</a>
+        </div>
+    </div>
+</footer>
+
+<script src="./assets/dist/js/main.js"></script>
+<script src="./assets/libraries/highlights/highlight.min.js"></script>
+</body>
+
+</html>
