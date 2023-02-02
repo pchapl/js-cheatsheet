@@ -83,6 +83,22 @@
     color: #d50000;
 }
 
-.web-col-request {
-    margin: 1rem 0 2rem 0;
+.web-result-items {
+    display: flex;
+    margin-bottom: 5rem;
+}
+
+.web-result-item {
+    width: 50%;
+}
+
+.web-code {
+    padding: 2px 5px;
+    font-size: 1rem;
+    border-radius: 2px;
+    background: #eeeeee;
+}
+
+.web-links {
+    margin: 3rem 0;
 }

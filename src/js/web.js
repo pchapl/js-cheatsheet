@@ -1,20 +1,3 @@
-/*let buttonAdvice = document.querySelectorAll(".web-button");
-
-buttonAdvice.forEach(function(advice) {
-    advice?.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    if (e.target.classList.contains('.web-button-success')) {
-        success();
-    }
-    if (e.target.classList.contains('.web-button-unsuccess')) {
-        unsuccess();
-    }
-})
-})*/
-
-
-
 let buttonSuccess = document.querySelector(".web-button-success");
 buttonSuccess?.addEventListener('click', (e) => {
     e.preventDefault();
@@ -40,7 +23,7 @@ buttonSuccess?.addEventListener('click', (e) => {
             if(response.status === 200){
                 document.querySelector(".web-gif-success").innerHTML += `<img src="${data.data.images.fixed_height.url}" alt = "">`;
                 document.querySelector(".web-status-success").innerHTML = `Status Code: <i class="tiny material-icons web-iconcode-green">fiber_manual_record</i>${response.status}`;
-                document.querySelector(".web-headers-success").innerHTML = "Headers:";
+                document.querySelector(".web-headers-success").innerHTML = "Response Headers:";
                 for (let i = 0; i < headersStr.length; i++) {
                     document.querySelector(".web-header-success").innerHTML += `<div class="web-header">${headersStr[i]}</div>`;
                 }           
@@ -51,7 +34,7 @@ buttonSuccess?.addEventListener('click', (e) => {
             console.log(error.message);
             document.querySelector(".web-gif-success").innerHTML = error.message;
             document.querySelector(".web-status-success").innerHTML = `Status Code: <i class="tiny material-icons web-iconcode-red">fiber_manual_record</i>${response.status}`;
-            document.querySelector(".web-headers-success").innerHTML = "Headers:";
+            document.querySelector(".web-headers-success").innerHTML = "Response Headers:";
             for (let i = 0; i < headersStr.length; i++) {
                 document.querySelector(".web-header-success").innerHTML += `<div class="web-header">${headersStr[i]}</div>`;
             }  
@@ -66,7 +49,7 @@ buttonUnsuccess?.addEventListener('click', (e) => {
     e.preventDefault();
 
     async function unsuccess() {
-        let response = await fetch("https://api.giphy.com/v1/gifs/translat?api_key=C0ZP0xR1klDe6ID8tIORjR17tQTEUjYx&s=cat");
+        let response = await fetch("https://api.giphy.com/v1/gifs/translat?api_key=вставить_API_Key_с_сайта_GIPHY=cat");
         let data = await response.json();
         let headersObject = [...response.headers];
 
@@ -85,7 +68,7 @@ buttonUnsuccess?.addEventListener('click', (e) => {
             if(response.status === 200){
                 document.querySelector(".web-gif-unsuccess").innerHTML += `<img src="${data.data.images.fixed_height.url}" alt = "">`;
                 document.querySelector(".web-status-unsuccess").innerHTML = `Status Code: <i class="tiny material-icons web-iconcode-green">fiber_manual_record</i>${response.status}`;
-                document.querySelector(".web-headers-unsuccess").innerHTML = "Headers:";
+                document.querySelector(".web-headers-unsuccess").innerHTML = "Response Headers:";
                 for (let i = 0; i < headersStr.length; i++) {
                     document.querySelector(".web-header-unsuccess").innerHTML += `<div class="web-header">${headersStr[i]}</div>`;
                 }     
@@ -97,7 +80,7 @@ buttonUnsuccess?.addEventListener('click', (e) => {
             console.log(error.message);
             document.querySelector(".web-gif-unsuccess").innerHTML = error;
             document.querySelector(".web-status-unsuccess").innerHTML = `Status Code: <i class="tiny material-icons web-iconcode-red">fiber_manual_record</i>${response.status}`;
-            document.querySelector(".web-headers-unsuccess").innerHTML = "Headers:";
+            document.querySelector(".web-headers-unsuccess").innerHTML = "Response Headers:";
             for (let i = 0; i < headersStr.length; i++) {
                 document.querySelector(".web-header-unsuccess").innerHTML += `<div class="web-header">${headersStr[i]}</div>`;
             }
