@@ -58,6 +58,24 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('reverse-add')) {
             addInputReverse();
         }
+        if (e.target.classList.contains('includes-add')) {
+            addInputIncludes();
+        }
+        if (e.target.classList.contains('indexof-add')) {
+            addInputIndexOf();
+        }
+        if (e.target.classList.contains('lastindexof-add')) {
+            addInputLastIndexOf();
+        }
+        if (e.target.classList.contains('entries-add')) {
+            addInputEntries();
+        }
+        if (e.target.classList.contains('keys-add')) {
+            addInputKeys();
+        }
+        if (e.target.classList.contains('values-add')) {
+            addInputValues();
+        }
         if (e.target.classList.contains('foreach-add')) {
             addInputForEach();
         }
@@ -67,99 +85,229 @@ buttonsAdd.forEach(function(add) {
         if (e.target.classList.contains('reduce-add')) {
             addInputReduce();
         }
-        
-        
+        if (e.target.classList.contains('reduceright-add')) {
+            addInputReduceRight();
+        }
+        if (e.target.classList.contains('filter-add')) {
+            addInputFilter();
+        }
+        if (e.target.classList.contains('every-add')) {
+            addInputEvery();
+        }
+        if (e.target.classList.contains('some-add')) {
+            addInputSome();
+        }
+        if (e.target.classList.contains('flatmap-add')) {
+            addInputFlatMap();
+        }
+        if (e.target.classList.contains('find-add')) {
+            addInputFind();
+        }
+        if (e.target.classList.contains('findindex-add')) {
+            addInputFindIndex();
+        }
+        if (e.target.classList.contains('findlast-add')) {
+            addInputFindLast();
+        }
+        if (e.target.classList.contains('findlastindex-add')) {
+            addInputFindLastIndex();
+        }
     })
 })
 
 function addInputPop() {
     let parent = document.querySelector('.arrays__input-pop');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-pop" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-pop" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputPush() {
     let parent = document.querySelector('.arrays__input-push');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-push" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-push" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputShift() {
     let parent = document.querySelector('.arrays__input-shift');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-shift" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-shift" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputUnshift() {
     let parent = document.querySelector('.arrays__input-unshift');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-unshift" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-unshift" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputSplice() {
     let parent = document.querySelector('.arrays__input-splice');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-splice" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-splice" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputSlice() {
     let parent = document.querySelector('.arrays__input-slice');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-slice" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-slice" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputConcat() {
     let parent = document.querySelector('.arrays__input-concat');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-concat" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-concat" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputJoin() {
     let parent = document.querySelector('.arrays__input-join');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-join" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-join" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputSort() {
     let parent = document.querySelector('.arrays__input-sort');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-sort" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-sort" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputReverse() {
     let parent = document.querySelector('.arrays__input-reverse');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-reverse" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-reverse" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputIncludes() {
+    let parent = document.querySelector('.arrays__input-includes');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-includes" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputIndexOf() {
+    let parent = document.querySelector('.arrays__input-indexof');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-indexof" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputLastIndexOf() {
+    let parent = document.querySelector('.arrays__input-lastindexof');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-lastindexof" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputEntries() {
+    let parent = document.querySelector('.arrays__input-entries');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-entries" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputKeys() {
+    let parent = document.querySelector('.arrays__input-keys');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-keys" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputValues() {
+    let parent = document.querySelector('.arrays__input-values');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-values" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputForEach() {
     let parent = document.querySelector('.arrays__input-foreach');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-foreach" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-foreach" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputMap() {
     let parent = document.querySelector('.arrays__input-map');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-map" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-map" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
 function addInputReduce() {
     let parent = document.querySelector('.arrays__input-reduce');
     let input = document.createElement('div');
-    input.innerHTML = `<input class="arrays__data" id="arrays__data-reduce" type="text">`;
+    input.innerHTML = `<input class="arrays__data arrays__data-reduce" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputReduceRight() {
+    let parent = document.querySelector('.arrays__input-reduceright');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-reduceright" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputFilter() {
+    let parent = document.querySelector('.arrays__input-filter');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-filter" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputEvery() {
+    let parent = document.querySelector('.arrays__input-every');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-every" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputSome() {
+    let parent = document.querySelector('.arrays__input-some');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-some" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputFlatMap() {
+    let parent = document.querySelector('.arrays__input-flatmap');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-flatmap" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputFind() {
+    let parent = document.querySelector('.arrays__input-find');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-find" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputFindIndex() {
+    let parent = document.querySelector('.arrays__input-findindex');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-findindex" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputFindLast() {
+    let parent = document.querySelector('.arrays__input-findlast');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-findlast" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
+    parent.appendChild(input);
+}
+
+function addInputFindLastIndex() {
+    let parent = document.querySelector('.arrays__input-findlastindex');
+    let input = document.createElement('div');
+    input.innerHTML = `<input class="arrays__data arrays__data-findlastindex" type="text" style="height: 2rem; width: 7rem; text-align: center; border: 1px solid black">`;
     parent.appendChild(input);
 }
 
@@ -201,6 +349,24 @@ buttonsDone.forEach(function(done) {
         if (e.target.classList.contains('reverse-done')) {
             doneReverse();
         }
+        if (e.target.classList.contains('includes-done')) {
+            doneIncludes();
+        }
+        if (e.target.classList.contains('indexof-done')) {
+            doneIndexOf();
+        }
+        if (e.target.classList.contains('lastindexof-done')) {
+            doneLastIndexOf();
+        }
+        if (e.target.classList.contains('entries-done')) {
+            doneEntries();
+        }
+        if (e.target.classList.contains('keys-done')) {
+            doneKeys();
+        }
+        if (e.target.classList.contains('values-done')) {
+            doneValues();
+        }
         if (e.target.classList.contains('foreach-done')) {
             doneForEach();
         }
@@ -210,19 +376,48 @@ buttonsDone.forEach(function(done) {
         if (e.target.classList.contains('reduce-done')) {
             doneReduce();
         }
+        if (e.target.classList.contains('reduceright-done')) {
+            doneReduceRight();
+        }
+        if (e.target.classList.contains('filter-done')) {
+            doneFilter();
+        }
+        if (e.target.classList.contains('every-done')) {
+            doneEvery();
+        }
+        if (e.target.classList.contains('some-done')) {
+            doneSome();
+        }
+        if (e.target.classList.contains('flatmap-done')) {
+            doneFlatMap();
+        }
+        if (e.target.classList.contains('find-done')) {
+            doneFind();
+        }
+        if (e.target.classList.contains('findindex-done')) {
+            doneFindIndex();
+        }
+        if (e.target.classList.contains('findlast-done')) {
+            doneFindLast();
+        }
+        if (e.target.classList.contains('findlastindex-done')) {
+            doneFindLastIndex();
+        }
     })
 })
 
 function donePop() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-pop");
+    let data = document.querySelectorAll(".arrays__data-pop");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -253,14 +448,16 @@ function donePop() {
 
 function donePush() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-push");
+    let data = document.querySelectorAll(".arrays__data-push");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -290,14 +487,16 @@ function donePush() {
 
 function doneShift() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-shift");
+    let data = document.querySelectorAll(".arrays__data-shift");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -328,14 +527,16 @@ function doneShift() {
 
 function doneUnshift() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-unshift");
+    let data = document.querySelectorAll(".arrays__data-unshift");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -365,14 +566,16 @@ function doneUnshift() {
 
 function doneSplice() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-splice");
+    let data = document.querySelectorAll(".arrays__data-splice");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -385,7 +588,7 @@ function doneSplice() {
         }
     }
 
-    let splice = elements.splice(1, 2);
+    let splice = elements.splice(1, 2, "Новый элемент");
 
     let del = [];
     for (let i = 0; i < splice.length; i++) {
@@ -412,14 +615,16 @@ function doneSplice() {
 
 function doneSlice() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-slice");
+    let data = document.querySelectorAll(".arrays__data-slice");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -449,14 +654,16 @@ function doneSlice() {
 
 function doneConcat() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-concat");
+    let data = document.querySelectorAll(".arrays__data-concat");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -490,14 +697,17 @@ function doneConcat() {
 
 function doneJoin() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-join");
+    let data = document.querySelectorAll(".arrays__data-join");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -513,20 +723,22 @@ function doneJoin() {
     let result = elements.join(', ');
 
     document.querySelector('.arrays__old-join').innerHTML = '[' + old + '];';
-    document.querySelector('.arrays__result-join').innerHTML = result;
+    document.querySelector('.arrays__result-join').innerHTML = '"' + result + '"';
 }
 
 function doneSort() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-sort");
+    let deleteEmpty = [];
+    let data = document.querySelectorAll(".arrays__data-sort");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+
+        if (dataValue === '') {
+            deleteEmpty.push(dataValue);
         } else {
-            elements.push(Number(d));
-        }
+            deleteEmpty.push(Number(dataValue));
+        } 
     }
 
     let old = [];
@@ -538,17 +750,24 @@ function doneSort() {
         }
     }
 
-    elements.sort(function(a, b) {
+    deleteEmpty.sort(function(a, b) {
         return a - b;
     });
 
+    if(deleteEmpty.includes("")){
+        elements = deleteEmpty.filter(function (num) {
+            if(typeof num === 'number' && !isNaN(num)){
+                return num;
+            };
+        })
+        elements.push("");
+    } else {
+        elements = deleteEmpty;
+    }
+
     let result = [];
     for (let i = 0; i < elements.length; i++) {
-        if (isNaN(elements[i])) {
-            result.push(' ' + '"' + elements[i] + '"');
-        } else {
-            result.push(' ' + elements[i]);
-        }
+        result.push(' ' + elements[i]);
     }
 
     let min = result[0];
@@ -560,14 +779,16 @@ function doneSort() {
 
 function doneReverse() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-reverse");
+    let data = document.querySelectorAll(".arrays__data-reverse");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        if (isNaN(d)) {
-            elements.push(d);
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
         } else {
-            elements.push(Number(d));
+            elements.push(Number(dataValue));
         }
     }
 
@@ -595,13 +816,236 @@ function doneReverse() {
     document.querySelector('.arrays__result-reverse').innerHTML = '[' + result + '];';
 }
 
-function doneForEach() {
+function doneIncludes() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-foreach");
+    let data = document.querySelectorAll(".arrays__data-includes");
+    let search = document.querySelector('#arrays__search-includes');
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        }  else {
+            elements.push(dataValue);
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let searchValue = search.value;
+    let result = elements.includes(searchValue);
+
+    document.querySelector('.arrays__old-includes').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-includes').innerHTML = result;
+}
+
+function doneIndexOf() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-indexof");
+    let search = document.querySelector('#arrays__search-indexof');
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        }  else {
+            elements.push(dataValue);
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let searchValue = search.value;
+    let result = elements.indexOf(searchValue);
+
+    document.querySelector('.arrays__old-indexof').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-indexof').innerHTML = result;
+}
+
+function doneLastIndexOf() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-lastindexof");
+    let search = document.querySelector('#arrays__search-lastindexof');
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        }  else {
+            elements.push(dataValue);
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let searchValue = search.value;
+    let result = elements.lastIndexOf(searchValue);
+
+    document.querySelector('.arrays__old-lastindexof').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-lastindexof').innerHTML = result;
+}
+
+function doneEntries() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-entries");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let entries = elements.entries();
+    let result = [];
+
+    for (let element of entries) {
+        result.push(element);
+    }
+    
+    for (let i = 0; i < entries.length; i++) {
+        if (isNaN(entries[i])) {
+            result.push(' ' + '"' + entries[i] + '"');
+        } else {
+            result.push(' ' + entries[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-entries').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-entries').innerHTML = result;
+}
+
+function doneKeys() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-keys");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let keys = elements.keys();
+    let result = [];
+
+    for (let key of keys) {
+        result.push(key);
+    }
+    
+    for (let i = 0; i < keys.length; i++) {
+        if (isNaN(keys[i])) {
+            result.push(' ' + '"' + keys[i] + '"');
+        } else {
+            result.push(' ' + keys[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-keys').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-keys').innerHTML = result;
+}
+
+function doneValues() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-values");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            elements.push(dataValue);
+        } else if (isNaN(dataValue) && dataValue !== '') {
+            elements.push(dataValue);
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let values = elements.values();
+    let result = [];
+
+    for (let value of values) {
+        result.push(value);
+    }
+    
+    for (let i = 0; i < values.length; i++) {
+        if (isNaN(values[i])) {
+            result.push(' ' + '"' + values[i] + '"');
+        } else {
+            result.push(' ' + values[i]);
+        }
+    }
+
+    document.querySelector('.arrays__old-values').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-values').innerHTML = result;
+}
+
+function doneForEach() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-foreach");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
     }
 
     let old = [];
@@ -626,11 +1070,15 @@ function doneForEach() {
 
 function doneMap() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-map");
+    let data = document.querySelectorAll(".arrays__data-map");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
     }
 
     let old = [];
@@ -653,11 +1101,15 @@ function doneMap() {
 
 function doneReduce() {
     let elements = [];
-    let data = document.querySelectorAll("#arrays__data-reduce");
+    let data = document.querySelectorAll(".arrays__data-reduce");
 
     for (let i = 0; i < data.length; i++) {
-        let d = data[i].value;
-        elements.push(Number(d));
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
     }
 
     let old = [];
@@ -671,6 +1123,270 @@ function doneReduce() {
 
     document.querySelector('.arrays__old-reduce').innerHTML = '[' + old + '];';
     document.querySelector('.arrays__result-reduce').innerHTML = sum;
+}
+
+function doneReduceRight() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-reduceright");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    console.log(elements)
+
+    elements.sort(function(a, b) {
+        return a - b;
+    });
+
+    let sort = [];
+    for (let i = 0; i < elements.length; i++) {
+        sort.push(' ' + elements[i]);
+    }
+
+    console.log(sort)
+
+    let subtraction = elements.reduceRight(function (accumulator, element) {
+        return accumulator - element;
+    });
+
+    document.querySelector('.arrays__old-reduceright').innerHTML = '[' + old + '];';
+    document.querySelector(".arrays__sort-reduceright").innerHTML = '[' + sort + '];';
+    document.querySelector('.arrays__result-reduceright').innerHTML = subtraction;
+}
+
+function doneFilter() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-filter");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let arrayEven = elements.filter(function (num) {
+        return num % 2 == 0;
+    })
+
+    let result = [];
+    for (let i = 0; i < arrayEven.length; i++) {
+        result.push(' ' + arrayEven[i]);
+    }
+
+    document.querySelector('.arrays__old-filter').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-filter').innerHTML = '[' + result + '];';
+}
+
+function doneEvery() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-every");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else if (isNaN(dataValue)) {
+            elements.push(dataValue);
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        if (isNaN(data[i].value)) {
+            old.push(' ' + '"' + data[i].value + '"');
+        } else {
+            old.push(' ' + data[i].value);
+        }
+    }
+
+    let result = elements.every(function (element) {
+        return element === elements[0];
+    })
+
+    document.querySelector('.arrays__old-every').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-every').innerHTML = result;
+}
+
+function doneSome() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-some");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.some(function (num) {
+        return num % 2 === 0;
+    })
+
+    document.querySelector('.arrays__old-some').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-some').innerHTML = result;
+}
+
+function doneFlatMap() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-flatmap");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let duplicateSquare = elements.flatMap(function (element) {
+        return [element, element**2];
+    });
+
+    let result = [];
+    for (let i = 0; i < duplicateSquare.length; i++) {
+        result.push(' ' + duplicateSquare[i]);
+    }
+
+    document.querySelector('.arrays__old-flatmap').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-flatmap').innerHTML = '[' + result + '];';
+}
+
+function doneFind() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-find");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.find(function (element) {
+        return element === 5;
+    });
+
+    document.querySelector('.arrays__old-find').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-find').innerHTML = result;
+}
+
+function doneFindIndex() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-findindex");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.findIndex(function (element) {
+        return element % 2 === 0;
+    });
+
+    document.querySelector('.arrays__old-findindex').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-findindex').innerHTML = result;
+}
+
+function doneFindLast() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-findlast");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.findLast(function (element) {
+        return element % 2 !== 0;
+    });
+
+    document.querySelector('.arrays__old-findlast').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-findlast').innerHTML = result;
+}
+
+function doneFindLastIndex() {
+    let elements = [];
+    let data = document.querySelectorAll(".arrays__data-findlastindex");
+
+    for (let i = 0; i < data.length; i++) {
+        let dataValue = data[i].value;
+        if (dataValue === '') {
+            dataValue;
+        } else {
+            elements.push(Number(dataValue));
+        }
+    }
+
+    let old = [];
+    for (let i = 0; i < data.length; i++) {
+        old.push(' ' + data[i].value);
+    }
+
+    let result = elements.findLastIndex(function (element) {
+        return element % 2 === 0;
+    });
+
+    document.querySelector('.arrays__old-findlastindex').innerHTML = '[' + old + '];';
+    document.querySelector('.arrays__result-findlastindex').innerHTML = result;
 }
 
 
@@ -711,6 +1427,24 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('reverse-reset')) {
             resetReverse();
         }
+        if (e.target.classList.contains('includes-reset')) {
+            resetIncludes();
+        }
+        if (e.target.classList.contains('indexof-reset')) {
+            resetIndexOf();
+        }
+        if (e.target.classList.contains('lastindexof-reset')) {
+            resetLastIndexOf();
+        }
+        if (e.target.classList.contains('entries-reset')) {
+            resetEntries();
+        }
+        if (e.target.classList.contains('keys-reset')) {
+            resetKeys();
+        }
+        if (e.target.classList.contains('values-reset')) {
+            resetValues();
+        }
         if (e.target.classList.contains('foreach-reset')) {
             resetForEach();
         }
@@ -720,12 +1454,40 @@ buttonsReset.forEach(function(reset) {
         if (e.target.classList.contains('reduce-reset')) {
             resetReduce();
         }
+        if (e.target.classList.contains('reduceright-reset')) {
+            resetReduceRight();
+        }
+        if (e.target.classList.contains('filter-reset')) {
+            resetFilter();
+        }
+        if (e.target.classList.contains('every-reset')) {
+            resetEvery();
+        }
+        if (e.target.classList.contains('some-reset')) {
+            resetSome();
+        }
+        if (e.target.classList.contains('flatmap-reset')) {
+            resetFlatMap();
+        }
+        if (e.target.classList.contains('find-reset')) {
+            resetFind();
+        }
+        if (e.target.classList.contains('findindex-reset')) {
+            resetFindIndex();
+        }
+        if (e.target.classList.contains('findlast-reset')) {
+            resetFindLast();
+        }
+        if (e.target.classList.contains('findlastindex-reset')) {
+            resetFindLastIndex();
+        }
+        
         
     })
 })
 
 function resetPop() {
-    let data = document.querySelectorAll("#arrays__data-pop");
+    let data = document.querySelectorAll(".arrays__data-pop");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -737,7 +1499,7 @@ function resetPop() {
 }
 
 function resetPush() {
-    let data = document.querySelectorAll("#arrays__data-push");
+    let data = document.querySelectorAll(".arrays__data-push");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -748,7 +1510,7 @@ function resetPush() {
 }
 
 function resetShift() {
-    let data = document.querySelectorAll("#arrays__data-shift");
+    let data = document.querySelectorAll(".arrays__data-shift");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -760,7 +1522,7 @@ function resetShift() {
 }
 
 function resetUnshift() {
-    let data = document.querySelectorAll("#arrays__data-unshift");
+    let data = document.querySelectorAll(".arrays__data-unshift");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -771,7 +1533,7 @@ function resetUnshift() {
 }
 
 function resetSplice() {
-    let data = document.querySelectorAll("#arrays__data-splice");
+    let data = document.querySelectorAll(".arrays__data-splice");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -783,7 +1545,7 @@ function resetSplice() {
 }
 
 function resetSlice() {
-    let data = document.querySelectorAll("#arrays__data-slice");
+    let data = document.querySelectorAll(".arrays__data-slice");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -794,7 +1556,7 @@ function resetSlice() {
 }
 
 function resetConcat() {
-    let data = document.querySelectorAll("#arrays__data-concat");
+    let data = document.querySelectorAll(".arrays__data-concat");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -805,7 +1567,7 @@ function resetConcat() {
 }
 
 function resetJoin() {
-    let data = document.querySelectorAll("#arrays__data-join");
+    let data = document.querySelectorAll(".arrays__data-join");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -816,7 +1578,7 @@ function resetJoin() {
 }
 
 function resetSort() {
-    let data = document.querySelectorAll("#arrays__data-sort");
+    let data = document.querySelectorAll(".arrays__data-sort");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -828,7 +1590,7 @@ function resetSort() {
 }
 
 function resetReverse() {
-    let data = document.querySelectorAll("#arrays__data-reverse");
+    let data = document.querySelectorAll(".arrays__data-reverse");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -838,8 +1600,77 @@ function resetReverse() {
     document.querySelector('.arrays__old-reverse').innerHTML = "";
 }
 
+function resetIncludes() {
+    let data = document.querySelectorAll(".arrays__data-includes");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-includes").innerHTML = "";
+    document.querySelector('.arrays__result-includes').innerHTML = "";
+    document.querySelector('.arrays__old-includes').innerHTML = "";
+    document.querySelector('#arrays__search-includes').value = "";
+}
+
+function resetIndexOf() {
+    let data = document.querySelectorAll(".arrays__data-indexof");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-indexof").innerHTML = "";
+    document.querySelector('.arrays__result-indexof').innerHTML = "";
+    document.querySelector('.arrays__old-indexof').innerHTML = "";
+    document.querySelector('#arrays__search-indexof').value = "";
+}
+
+function resetLastIndexOf() {
+    let data = document.querySelectorAll(".arrays__data-lastindexof");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-lastindexof").innerHTML = "";
+    document.querySelector('.arrays__result-lastindexof').innerHTML = "";
+    document.querySelector('.arrays__old-lastindexof').innerHTML = "";
+    document.querySelector('#arrays__search-lastindexof').value = "";
+}
+
+function resetEntries() {
+    let data = document.querySelectorAll(".arrays__data-entries");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-entries").innerHTML = "";
+    document.querySelector('.arrays__result-entries').innerHTML = "";
+    document.querySelector('.arrays__old-entries').innerHTML = "";
+}
+
+function resetKeys() {
+    let data = document.querySelectorAll(".arrays__data-keys");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-keys").innerHTML = "";
+    document.querySelector('.arrays__result-keys').innerHTML = "";
+    document.querySelector('.arrays__old-keys').innerHTML = "";
+}
+
+function resetValues() {
+    let data = document.querySelectorAll(".arrays__data-values");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-values").innerHTML = "";
+    document.querySelector('.arrays__result-values').innerHTML = "";
+    document.querySelector('.arrays__old-values').innerHTML = "";
+}
+
 function resetForEach() {
-    let data = document.querySelectorAll("#arrays__data-foreach");
+    let data = document.querySelectorAll(".arrays__data-foreach");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -850,7 +1681,7 @@ function resetForEach() {
 }
 
 function resetMap() {
-    let data = document.querySelectorAll("#arrays__data-map");
+    let data = document.querySelectorAll(".arrays__data-map");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -861,7 +1692,7 @@ function resetMap() {
 }
 
 function resetReduce() {
-    let data = document.querySelectorAll("#arrays__data-reduce");
+    let data = document.querySelectorAll(".arrays__data-reduce");
     for (let i = 0; i < data.length; i++) {
         data[i].value = '';
     };
@@ -869,6 +1700,106 @@ function resetReduce() {
     document.querySelector(".arrays__input-reduce").innerHTML = "";
     document.querySelector('.arrays__result-reduce').innerHTML = "";
     document.querySelector('.arrays__old-reduce').innerHTML = "";
+}
+
+function resetReduceRight() {
+    let data = document.querySelectorAll(".arrays__data-reduceright");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-reduceright").innerHTML = "";
+    document.querySelector('.arrays__result-reduceright').innerHTML = "";
+    document.querySelector('.arrays__old-reduceright').innerHTML = "";
+    document.querySelector(".arrays__sort-reduceright").innerHTML = "";
+}
+
+function resetFilter() {
+    let data = document.querySelectorAll(".arrays__data-filter");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-filter").innerHTML = "";
+    document.querySelector('.arrays__result-filter').innerHTML = "";
+    document.querySelector('.arrays__old-filter').innerHTML = "";
+}
+
+function resetEvery() {
+    let data = document.querySelectorAll(".arrays__data-every");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-every").innerHTML = "";
+    document.querySelector('.arrays__result-every').innerHTML = "";
+    document.querySelector('.arrays__old-every').innerHTML = "";
+}
+
+function resetSome() {
+    let data = document.querySelectorAll(".arrays__data-some");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-some").innerHTML = "";
+    document.querySelector('.arrays__result-some').innerHTML = "";
+    document.querySelector('.arrays__old-some').innerHTML = "";
+}
+
+function resetFlatMap() {
+    let data = document.querySelectorAll(".arrays__data-flatmap");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-flatmap").innerHTML = "";
+    document.querySelector('.arrays__result-flatmap').innerHTML = "";
+    document.querySelector('.arrays__old-flatmap').innerHTML = "";
+}
+
+function resetFind() {
+    let data = document.querySelectorAll(".arrays__data-find");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-find").innerHTML = "";
+    document.querySelector('.arrays__result-find').innerHTML = "";
+    document.querySelector('.arrays__old-find').innerHTML = "";
+}
+
+function resetFindIndex() {
+    let data = document.querySelectorAll(".arrays__data-findindex");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-findindex").innerHTML = "";
+    document.querySelector('.arrays__result-findindex').innerHTML = "";
+    document.querySelector('.arrays__old-findindex').innerHTML = "";
+}
+
+function resetFindLast() {
+    let data = document.querySelectorAll(".arrays__data-findlast");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-findlast").innerHTML = "";
+    document.querySelector('.arrays__result-findlast').innerHTML = "";
+    document.querySelector('.arrays__old-findlast').innerHTML = "";
+}
+
+function resetFindLastIndex() {
+    let data = document.querySelectorAll(".arrays__data-findlastindex");
+    for (let i = 0; i < data.length; i++) {
+        data[i].value = '';
+    };
+
+    document.querySelector(".arrays__input-findlastindex").innerHTML = "";
+    document.querySelector('.arrays__result-findlastindex').innerHTML = "";
+    document.querySelector('.arrays__old-findlastindex').innerHTML = "";
 }
 
 
@@ -954,6 +1885,30 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('copywithin-end')) {
             checkCopyWithinEnd();
         }
+        if (e.target.classList.contains('entries')) {
+            checkEntries();
+        }
+        if (e.target.classList.contains('entries-for')) {
+            checkEntriesFor();
+        }
+        if (e.target.classList.contains('keys')) {
+            checkKeys();
+        }
+        if (e.target.classList.contains('keys-for')) {
+            checkKeysFor();
+        }
+        if (e.target.classList.contains('values')) {
+            checkValues();
+        }
+        if (e.target.classList.contains('values-for')) {
+            checkValuesFor();
+        }
+        if (e.target.classList.contains('fill')) {
+            checkFill();
+        }
+        if (e.target.classList.contains('tolocalstring')) {
+            checkToLocalString();
+        }
         if (e.target.classList.contains('foreach')) {
             checkForEach();
         }
@@ -969,6 +1924,64 @@ buttonsCheck.forEach(function(check) {
         if (e.target.classList.contains('reduce-for')) {
             checkReduceFor();
         }
+        if (e.target.classList.contains('reduceright')) {
+            checkReduceRight();
+        }
+        if (e.target.classList.contains('reduceright-for')) {
+            checkReduceRightFor();
+        }
+        if (e.target.classList.contains('filter')) {
+            checkFilter();
+        }
+        if (e.target.classList.contains('filter-for')) {
+            checkFilterFor();
+        }
+        if (e.target.classList.contains('every')) {
+            checkEvery();
+        }
+        if (e.target.classList.contains('every-for')) {
+            checkEveryFor();
+        }
+        if (e.target.classList.contains('some')) {
+            checkSome();
+        }
+        if (e.target.classList.contains('some-for')) {
+            checkSomeFor();
+        }
+        if (e.target.classList.contains('find')) {
+            checkFind();
+        }
+        if (e.target.classList.contains('find-for')) {
+            checkFindFor();
+        }
+        if (e.target.classList.contains('findindex')) {
+            checkFindIndex();
+        }
+        if (e.target.classList.contains('findindex-for')) {
+            checkFindIndexFor();
+        }
+        if (e.target.classList.contains('findlast')) {
+            checkFindLast();
+        }
+        if (e.target.classList.contains('findlast-for')) {
+            checkFindLastFor();
+        }
+        if (e.target.classList.contains('findlastindex')) {
+            checkFindLastIndex();
+        }
+        if (e.target.classList.contains('findlastindex-for')) {
+            checkFindLastIndexFor();
+        }
+        if (e.target.classList.contains('flatmap-map')) {
+            checkFlatMapMap();
+        }
+        if (e.target.classList.contains('flatmap-flatmap')) {
+            checkFlatMapFlatMap();
+        }
+        if (e.target.classList.contains('flatmap')) {
+            checkFlatMap();
+        }
+        
         
         
     })
@@ -1170,6 +2183,68 @@ function checkCopyWithinEnd() {
     alert(fruits.copyWithin(-3, 0, -1));
 }
 
+function checkEntries() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const entries = fruits.entries();
+    alert(entries.next().value);
+    alert(entries.next().value);
+    alert(entries.next().value);
+}
+
+function checkEntriesFor() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const entries = fruits.entries();
+    for (let element of entries) {
+        alert(element);
+    }
+}
+
+function checkKeys() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const keys = fruits.keys();
+    alert(keys.next().value);
+    alert(keys.next().value);
+    alert(keys.next().value);
+    alert(keys.next().value);
+}
+
+function checkKeysFor() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const keys = fruits.keys();
+    for (let key of keys) {
+        alert(key);
+    }
+}
+
+function checkValues() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const values = fruits.values();
+    alert(values.next().value);
+    alert(values.next().value);
+    alert(values.next().value);
+    alert(values.next().value);
+}
+
+function checkValuesFor() {
+    let fruits = ["Банан", "Яблоко", "Мандарин"];
+    const values = fruits.values();
+    for (let value of values) {
+        alert(value);
+    }
+}
+
+function checkFill() {
+    const fruits = ["Банан", "Яблоко", "Мандарин", "Груша"];
+    alert(fruits.fill("Манго", 2, 4));
+    alert(fruits.fill("Манго", 1));
+    alert(fruits.fill("Манго"));
+}
+
+function checkToLocalString() {
+    const arr = [5, "Яблоко", new Date()];
+    alert(arr.toLocaleString()); 
+}
+
 function checkForEach() {
     const fruits = ["Банан", "Яблоко", "Мандарин"];
     fruits.forEach((element, index, arr) => {
@@ -1225,3 +2300,251 @@ function checkReduceFor() {
     let average = sum / array.length;
     alert(average);
 }
+
+function checkReduceRight() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    function findAverage(accumulator, element, index, array) {
+        const sum = accumulator + element;
+        
+        if (index === 0) {
+            return sum / array.length;
+        }
+        return sum;
+    }
+    
+    const average = array.reduceRight(findAverage, 0);
+    alert(average);
+}
+
+function checkReduceRightFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    let sum = 0;
+    for(let i = array.length - 1; i >= 0; i--){
+        sum = sum + array[i]; 
+    }
+    let average = sum / array.length;
+    alert(average);
+}
+
+function checkFilter() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    const arrayOdds = array.filter(function (num) {
+        return num % 2 !== 0
+    })
+    alert(arrayOdds);
+}
+
+function checkFilterFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    const arrayOdds = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 !== 0) {
+            arrayOdds.push(array[i]);
+        };
+    }
+    alert(arrayOdds);
+}
+
+function checkSome() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayNums = array.some(function (num) {
+        return num % 2 !== 0;
+    })
+    alert(arrayNums);
+}
+
+function checkSomeFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayNums = function (array) {
+        for(let i = 0; i < array.length; i++){
+            if(array[i] % 2 !== 0){
+                return true;
+            }
+        }
+        return false;
+    }
+    alert(arrayNums(array));
+}
+
+function checkFind() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    const arrayFind = array.find(function (element) {
+        return element === 2;
+    });
+    alert(arrayFind);
+}
+
+function checkFindFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    
+    const arrayFind = (array) => {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === 2) {
+            return array[i];
+            }
+        }
+        return undefined;
+    };
+    alert(arrayFind(array));
+}
+
+function checkFindIndex() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayEven = [2, 4, 6];
+    
+    function isOdd(element) {
+        return element % 2 !== 0;
+    }
+    
+    alert(array.findIndex(isOdd));
+    alert(arrayEven.findIndex(isOdd));
+}
+
+function checkFindIndexFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayEven = [2, 4, 6];
+    
+    function isOdd(element) {
+        return element % 2 !== 0
+    }
+
+    function findIndex(array, predicate) {
+        for (let i = 0; i < array.length; i++) {
+            if (predicate(array[i])) {
+            return i;
+        }
+    }
+    return -1
+}
+
+    alert(findIndex(array, isOdd));
+    alert(findIndex(arrayEven, isOdd));
+}
+
+function checkFindLast() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayEven = array.findLast(function (element) {
+        return element % 2 === 0;
+    });
+    alert(arrayEven);
+}
+
+function checkFindLastFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayEven = (array) => {
+        let even = [];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 2 === 0) {
+                even.push(array[i]);
+            } 
+        }
+
+        if(even.length !== 0) {
+            even.sort(function(a, b) {
+                return b - a;
+            });
+            return even[0];
+        }
+
+        return undefined;
+    };
+    alert(arrayEven(array));
+}
+
+function checkFindLastIndex() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayEven = [2, 4, 6];
+    
+    function isOdd(element) {
+        return element % 2 !== 0;
+    }
+    
+    alert(array.findLastIndex(isOdd));
+    alert(arrayEven.findLastIndex(isOdd));
+}
+
+function checkFindLastIndexFor() {
+    const array = [1, 2, 3, 4, 5];  
+    const arrayEven = [2, 4, 6];
+    
+    function isOdd(element) {
+        return element % 2 !== 0
+    }
+
+    function findLastIndex(array, predicate) {
+        let odd = [];
+        for (let i = 0; i < array.length; i++) {
+            if (predicate(array[i])) {
+                odd.push(i);
+            }
+        }
+
+        if(odd.length !== 0) {
+            odd.sort(function(a, b) {
+                return b - a;
+            });
+            return odd[0];
+        }
+
+    return -1
+}
+    alert(findLastIndex(array, isOdd));
+    alert(findLastIndex(arrayEven, isOdd));
+}
+
+function checkEvery() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayNums = array.every(function (num) {
+        return num >= 1;
+    })
+    alert(arrayNums);
+}
+
+function checkEveryFor() {
+    const array = [1, 2, 3, 4, 5]; 
+    const arrayNums = function (array) {
+        for(let i = 0; i < array.length; i++){
+            if(array[i] >= 1){
+                return true;
+            }
+        }
+        return false;
+    }
+    alert(arrayNums(array));
+}
+
+function checkFlatMapMap() {
+    const array = [1, 2, 3]; 
+    const duplicate = function (element) {
+        return [element, element];
+    }
+    
+    alert(array.map(duplicate));
+    console.log(array.map(duplicate));
+}
+
+function checkFlatMapFlatMap() {
+    const array = [1, 2, 3]; 
+    const duplicate = function (element) {
+        return [element, element];
+    }
+    
+    alert(array.map(duplicate).flat());
+    console.log(array.map(duplicate).flat());
+}
+
+function checkFlatMap() {
+    const array = [1, 2, 3]; 
+    const duplicate = function (element) {
+        return [element, element];
+    }
+    
+    alert(array.flatMap(duplicate)); 
+    console.log(array.flatMap(duplicate));
+}
+
