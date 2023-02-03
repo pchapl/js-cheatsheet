@@ -1,7 +1,15 @@
-.tasks__task2 {
+.prorotypes__title {
+    font-size: 3rem;
+}
+
+.tasks__task2,
+.tasks__task4 {
     display: flex;
 }
 
-.tasks__input2 {
-    width: 5rem;
+.tasks__input2,
+.tasks__input4 {
+    width: 15rem !important;
+    border: 1px solid green !important;
+    margin-left: 2rem !important;
 }
