@@ -9,6 +9,7 @@ import './js/api.js';
 import './js/glossary.js'
 import './js/ifelse.js';
 import './js/web.js';
+import './js/prototypes.js';
 
 const Materialize = require('materialize-css/dist/js/materialize.min');
 
