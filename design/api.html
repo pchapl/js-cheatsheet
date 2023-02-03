@@ -19,6 +19,7 @@
 
     <!--    project styles -->
     <link rel="stylesheet" href="./assets/dist/css/main.css">
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
 
     <title>API</title>
 </head>
@@ -77,11 +78,12 @@
             </div>
             <div class="api-details">
                 <h2>Работа с <abbr>API</abbr></h2>
-                <p>В JavaScript имеется собственный встроенный способ отправки запросов <abbr>API</abbr>. Это Fetch <abbr>API</abbr>, современный,
+                <p>В JavaScript имеется собственный встроенный способ отправки запросов <abbr>API</abbr>. Это Fetch
+                    <abbr>API</abbr>, современный,
                     гибкий и универсальный стандарт создания серверных запросов с промисами.</p>
                 <ul class="collapsible popout">
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Синтаксис</div>
+                        <div class="collapsible-header"><i class="material-icons">code</i>Синтаксис</div>
                         <div class="collapsible-body"><span>Функция fetch() принимает два параметра: адрес ресурса, на который требуется отправить запрос, и объект с настройками. Второй параметр опционален и может не использоваться:</span>
                             <pre>
                                 <code class="js">
@@ -110,14 +112,16 @@
                                 </code>
                             </pre>
                             <p>В случае успешного выполнения fetch() мы получим от сервера ответ - response (специальный
-                                объект ответа) в <abbr>JSON</abbr>. Чтобы прочитать <abbr>JSON</abbr> используем метод json() у объекта с
+                                объект ответа) в <abbr>JSON</abbr>. Чтобы прочитать <abbr>JSON</abbr> используем метод
+                                json() у объекта с
                                 ответом:</p>
                             <pre>
                                 <code class="js">
                                     .then((response) => response.json())
                                 </code>
                             </pre>
-                            <p>Встроенный метод json() автоматически извлечёт <abbr>JSON</abbr>-данные из ответа, преобразует их в
+                            <p>Встроенный метод json() автоматически извлечёт <abbr>JSON</abbr>-данные из ответа,
+                                преобразует их в
                                 объект или массив, и вернёт новый промис. Можно продолжать цепочку then и, например,
                                 вывести
                                 данные в консоль:</p>
@@ -129,27 +133,55 @@
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">place</i>Отправка информации на сервер
+                        <div class="collapsible-header"><i class="material-icons">code</i>Отправка информации на сервер
                         </div>
                         <div class="collapsible-body"><span>Работа с fetch() не ограничивается лишь получением данных от сервера. Можно также их
                             передавать на сервер. Для этого необходимо задать объект и передать его как второй аргумент
                             функции fetch().</span></div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">whatshot</i>Примеры <abbr>API</abbr></div>
-                        <div class="collapsible-body"><span></span>
+                        <div class="collapsible-header"><i class="material-icons">code</i>Примеры <abbr>API</abbr></div>
+                        <div class="collapsible-body"><span>Вставим на страницу несколько забавных апишек.</span>
+                            <div>
+                                <div class="nasa">
+                                    <h3><abbr>NASA</abbr></h3>
+                                    <p>Эта позволяет нам получить доступ к базе <abbr>NASA</abbr> и ставить на страницу
+                                        картинку и немного информации про неё. Правда, для этого надо получить ключ на
+                                        <a href="https://api.nasa.gov">сайте</a>.</p>
+                                    <img src="" alt="" class="image">
+                                    <div>
+                                        <h6 class="title"></h6>
+                                        <div class="info"></div>
+                                    </div>
+                                </div>
 
+                                <div class="yesno">
+                                    <h3>Yes or No</h3>
+                                    <p>А <a href="https://yesno.wtf">эта</a> позволяет получить ответ "да" или "нет" и
+                                        сопровождает его соответствующей гифкой.</p>
+                                    <div class="answer"></div>
+                                    <img src="" alt="" class="img">
+                                </div>
+
+                                <div class="hobby">
+                                    <h3>Bored <abbr>API</abbr></h3>
+                                    <p>А если скучно, <a href="https://www.boredapi.com/">эта</a> апи поможет выбрать
+                                        новое хобби.</p>
+                                    <div class="activity"></div>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">whatshot</i>Полезные ссылки</div>
+                        <div class="collapsible-header"><i class="material-icons">code</i>Полезные ссылки</div>
                         <div class="collapsible-body"><span></span>
                             <p>
                                 <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Client-side_web_APIs/Introduction">MDN</a>
                             </p>
                             <p><a href="https://doka.guide/js/api/">Что такое <abbr>API</abbr> (Дока)</a></p>
                             <p><a href="https://htmlweb.ru/api/"><abbr>API</abbr> сервисы</a></p>
-                            <p><a href="https://github.com/toddmotto/public-apis">A collective list of free <abbr>API</abbr>s</a></p>
+                            <p><a href="https://github.com/toddmotto/public-apis">A collective list of free
+                                <abbr>API</abbr>s</a></p>
                         </div>
                     </li>
                 </ul>
@@ -202,6 +234,8 @@
 </div>
 
 <script src="./assets/dist/js/main.js"></script>
+<script src="./assets/libraries/highlights/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 
 </body>
 
