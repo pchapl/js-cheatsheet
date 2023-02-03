@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    if (!document.querySelector('.td-magic')) {
+        return
+    }
     hljs.highlightAll();
     document.querySelector('code.td-user-date span.hljs-string').innerHTML = `<input type="text" id="td-date-input" value="August 14, 2022 14:15:30">`;
     showCommentsWDates(document.querySelector('#td-date-input').value);

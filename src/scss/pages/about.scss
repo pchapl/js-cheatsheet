@@ -1,0 +1,32 @@
+img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+[class*="__title"] {
+  font-size: 1.9rem;
+}
+
+.developers-card__individual {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.developers-card__info {
+  display: flex;
+  align-items: center;
+}
+
+.developers-card__photo {
+  width: 30%;
+  align-self: center;
+}
+
+.developers-card__details {
+  width: 70%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
