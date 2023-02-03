@@ -2,7 +2,7 @@ let heartEl = document.getElementById('heart')
 let inputEl = document.getElementById('input')
 let btnEl = document.getElementById('btn')
 
-input?.addEventListener('input', handleInput)
+inputEl?.addEventListener('input', handleInput)
 
 function handleInput(e) {
     if (e.target.value == 1) {
@@ -29,7 +29,7 @@ function handleInput(e) {
     }
 }
 
-btn?.addEventListener('click', handleReset)
+btnEl?.addEventListener('click', handleReset)
 
 function handleReset() {
     inputEl.value = ''; heartEl.classList.remove('green');
