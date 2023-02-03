@@ -1,0 +1,104 @@
+.web__title {
+    margin-top: 5rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.web__title_medium {
+    margin-top: 5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.web__title_small {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.web__title_tiny {
+
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.web__content-text {
+    margin-top: 2rem;
+}
+
+.web__card {
+    display: flex;
+}
+
+.web__content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+}
+
+.web__icon-color {
+    color: #00897b;
+}
+
+.web__icon-color_red {
+    color: #ef5350;
+}
+
+.web__icon-color_amber {
+    color: #ffecb3;
+}
+
+.web__icon-color_cyan {
+    color: #80deea;
+}
+
+.web-col {
+    display: flex;
+}
+
+.web-request {
+    display: flex;
+    flex-direction: column;
+}
+
+.web-button {
+    align-self: center;
+    margin: 2rem;
+}
+
+.web-gif-success, .web-gif-unsuccess {
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.web-headers-success, .web-headers-unsuccess {
+    margin-top: 2rem;
+}
+
+.web-iconcode-green {
+    color: #00c853;
+}
+
+.web-iconcode-red {
+    color: #d50000;
+}
+
+.web-result-items {
+    display: flex;
+    margin-bottom: 5rem;
+}
+
+.web-result-item {
+    width: 50%;
+}
+
+.web-code {
+    padding: 2px 5px;
+    font-size: 1rem;
+    border-radius: 2px;
+    background: #eeeeee;
+}
+
+.web-links {
+    margin: 3rem 0;
+}
