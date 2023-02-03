@@ -6,6 +6,7 @@ import './js/index.js';
 import './js/types.js';
 import './js/string.js';
 import './js/api.js';
+import './js/glossary.js'
 
 const Materialize = require('materialize-css/dist/js/materialize.min');
 

@@ -148,10 +148,12 @@
                                     <p>Эта позволяет нам получить доступ к базе <abbr>NASA</abbr> и ставить на страницу
                                         картинку и немного информации про неё. Правда, для этого надо получить ключ на
                                         <a href="https://api.nasa.gov">сайте</a>.</p>
-                                    <img src="" alt="" class="image">
-                                    <div>
-                                        <h6 class="title"></h6>
-                                        <div class="info"></div>
+                                    <div class="nasa-api">
+                                        <div class="nasa-image"><img src="" alt="" class="image"></div>
+                                        <div class="nasa-info">
+                                            <h6 class="title"></h6>
+                                            <div class="info"></div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -159,16 +161,33 @@
                                     <h3>Yes or No</h3>
                                     <p>А <a href="https://yesno.wtf">эта</a> позволяет получить ответ "да" или "нет" и
                                         сопровождает его соответствующей гифкой.</p>
-                                    <div class="answer"></div>
-                                    <img src="" alt="" class="img">
+                                    <div class="get-answer">
+                                        <div class="answer teal-text text-accent-3"></div>
+                                        <div class="yesno-image"><img src="" alt="" class="img"></div>
+                                    </div>
                                 </div>
 
                                 <div class="hobby">
                                     <h3>Bored <abbr>API</abbr></h3>
-                                    <p>А если скучно, <a href="https://www.boredapi.com/">эта</a> апи поможет выбрать
-                                        новое хобби.</p>
-                                    <div class="activity"></div>
+                                    <p>А если скучно, <a href="https://www.boredapi.com/">эта</a> апи поможет найти
+                                        занятие.</p>
+                                    <div class="activity teal-text text-accent-3"></div>
                                 </div>
+
+                                <div class="pokemons">
+                                    <h3><abbr>API</abbr> покемонов</h3>
+                                    <p>Это бесплатный <abbr>API</abbr>, для доступа к которому не требуется
+                                        аутентификация. Можно запрашивать конкретных покемонов,
+                                        движения, игры, локации и многое другое.</p>
+                                    <div class="catchpokemon">
+                                        <div id="pokemon" class="pokemon"></div>
+                                        <button id="button" class="waves-effect waves-light btn" type='button'>Catch
+                                            Pokemon
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="cats"></div>
                             </div>
                         </div>
                     </li>

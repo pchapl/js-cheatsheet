@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', function () {
+    let elems = document.querySelectorAll('.collapsible');
+    let instances = M.Collapsible.init(elems, {
+        accordion: false
+    });
+});
+
 document?.addEventListener("DOMContentLoaded", function (event) {
     fetch(
         "https://api.nasa.gov/planetary/apod?api_key=jg4kSp5vTeI5dPMsPdSBYzn7g0hIVocOuXl5cQt7"
@@ -35,3 +42,40 @@ document?.addEventListener("DOMContentLoaded", function (event) {
         })
         .catch((error) => console.log(error));
 });
+
+const container = document.getElementById("pokemon");
+
+document?.addEventListener("click", function (event) {
+    if (!event.target.matches("#button")) return;
+
+    const pokemonNumber = getRandomInt(1, 893);
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonNumber}`)
+        .then((response) => response.json())
+        .then((data) => renderPokemon(data))
+        .catch(() => renderError());
+});
+
+function renderPokemon(data) {
+    container.innerHTML = "";
+    let img = document.createElement("img");
+    img.src = data.sprites.front_default;
+    img.alt = data.name;
+
+    let text = document.createElement("p");
+    text.className = "pokemonName";
+    text.innerHTML = data.name;
+
+    container.appendChild(text);
+    container.appendChild(img);
+}
+
+function renderError() {
+    container.innerHTML = "Whoops, something went wrong. Please try again!";
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
