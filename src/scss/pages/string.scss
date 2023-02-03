@@ -17,3 +17,34 @@
 .block {
     display: flex;
 }
+
+.string__title-min {
+    margin-top: 5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.string__title-medium {
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+
+}
+
+.string-collapsible-header__items {
+    display: flex;
+    width: 20%;
+}
+
+.string-collapsible-header {
+    display: flex;
+}
+
+.string-collapsible-header_title {
+    display: flex;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
