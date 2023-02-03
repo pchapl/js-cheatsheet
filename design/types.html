@@ -20,7 +20,33 @@
 </head>
 
 <body>
-    <header></header>
+    <header class="header">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="api.html">API</a></li>
+            <li><a href="arrays.html">Arrays</a></li>
+            <li><a href="dom.html">DOM</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="ifelse.html">If Else</a></li>
+            <li><a href="prototypes.html">Prototypes</a></li>
+            <li><a href="regular.html">Regular</a></li>
+            <li><a href="string.html">String</a></li>
+            <li><a href="this.html">this</a></li>
+            <li><a href="timedate.html">TimeDate</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="variables.html">Variables</a></li>
+            <li><a href="web.html">Web</a></li>
+        </ul>
+        <nav class="teal lighten-1">
+            <div class="nav-wrapper teal lighten-1 nav__container">
+                <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                <ul class="right">
+                    <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <main class="types-main__container">
         <h3>Типы данных</h1>
@@ -1254,7 +1280,47 @@ console.log(typeof new Number(0)) // "object"!
 
     </main>
 
-    <footer></footer>
+    <footer class="page-footer teal lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <div>
+                        <h5 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
+                        </h5>
+                        <div>
+                            <div class="setup"></div>
+                            <div class="punchline"></div>
+                            <div class="error"></div>
+                        </div>
+                    </div>
+                    <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Полезные ссылки</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc">Notion
+                            Frontend 34</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/">Современный учебник
+                            JavaScript</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference">Справочник по
+                            JavaScript. MDN</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT">Сложный
+                            JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/">JavaScript Дока</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2023
+                <a class="grey-text text-lighten-4 right" href="about.html">О прекрасных разработчицах этого гайда</a>
+            </div>
+        </div>
+    </footer>
 
 
     <script src="./assets/libraries/highlights/highlight.min.js"></script>
