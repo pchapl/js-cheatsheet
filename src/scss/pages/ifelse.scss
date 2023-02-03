@@ -1,0 +1,148 @@
+[class*="__container"] {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.block {
+    display: flex;
+}
+
+.heart {
+    // position: absolute;
+    margin: auto;
+    top: 970%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+}
+
+.heart::after {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+}
+
+.heart::before {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+}
+
+/*  green*/
+.green {
+    background-color: green;
+}
+
+.green::after {
+    background-color: green;
+}
+
+.green::before {
+    background-color: green;
+}
+
+/* blue */
+.blue {
+    background-color: blue;
+}
+
+.blue::after {
+    background-color: blue;
+}
+
+.blue::before {
+    background-color: blue;
+}
+
+/* purple */
+
+.purple {
+    background-color: purple;
+}
+
+.purple::after {
+    background-color: purple;
+}
+
+.purple::before {
+    background-color: purple;
+}
+
+/*  red*/
+
+.red {
+    background-color: red;
+}
+
+.red::after {
+    background-color: red;
+}
+
+.red::before {
+    background-color: red;
+}
+
+/* pink */
+
+.pink {
+    background-color: pink;
+}
+
+.pink::after {
+    background-color: pink;
+}
+
+.pink::before {
+    background-color: pink;
+}
+
+/* black */
+
+.black {
+    background-color: black;
+}
+
+.black::after {
+    background-color: black;
+}
+
+.black::before {
+    background-color: black;
+}
+
+/*  other options*/
+
+.else {
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    ;
+}
+
+.else::after {
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+}
+
+.else::before {
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+}

@@ -5,6 +5,7 @@ import './js/regular.js';
 import './js/index.js';
 import './js/types.js';
 import './js/string.js';
+import './js/ifelse.js';
 import './js/web.js';
 
 const Materialize = require('materialize-css/dist/js/materialize.min');
