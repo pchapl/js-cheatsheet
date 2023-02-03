@@ -1,7 +1,9 @@
-var elem = document.querySelector('.collapsible.expandable');
-var instance = M.Collapsible.init(elem, {
-    accordion: false
-});
+document.addEventListener('DOMContentLoaded', function () {
+    var elem = document.querySelector('.collapsible.expandable');
+    var instance = M.Collapsible.init(elem, {
+        accordion: false
+    });
+})
 
 const btn_first = document.querySelector('.btn_first');
 const btn_second = document.querySelector('.btn_second');
