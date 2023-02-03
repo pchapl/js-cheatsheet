@@ -50,265 +50,340 @@
 
     <main class="types-main__container">
         <h3>Объекты, прототивы, классы, конструкторы</h1>
-
-            <section>
-                <h4>Прототипы</h4>
-                <p>
-                    Каждый объект имеет объект-прототип, который выступает как шаблон, от которого объект наследует методы и свойства. Объект-прототип так же может иметь свой прототип и наследует его свойства и методы и так далее. Это называется цепочкой прототипов, «прототипным наследованием» и объясняет почему одним объектам доступны свойства и методы, которые определены в других объектах.<br>
-                    Это если в общем, а если точнее, то свойства и методы определяются в свойстве prototype функции-конструктора объектов, а не в самих объектах (подробнее <a href="#proto">тут</a>).<br>                    
-                </p>
-
-                <p>
-                    В JavaScript объекты имеют специальное скрытое свойство [[Prototype]], которое либо равно null, либо ссылается на другой объект. Этот объект называется «прототип». 
-                <p>
-                    В примере ниже видно, что прототипом созданного объекта является Объект, и ребенку объекту доступны методы родителя объекта.   
-                </p>
-
-                <pre>
-                    <code class="js">
-let person = {
-    name: 'Nicolas',
-    age: 33,
-}
-
-// в консоли 
-{name: 'Nicolas', age: 33}
-    age: 33
-    name: "Nicolas"
-    [[Prototype]]: Object
-    constructor: ƒ Object()
-    hasOwnProperty: ƒ hasOwnProperty()
-    isPrototypeOf: ƒ isPrototypeOf()
-    ...
-                    </code>
-                </pre>
-
-                <div>
-                    <h5>Еще раз "работа" прототипа</h5>
-                    <p>
-                        Прототип идет сверху вниз. Если он на вернем уровне находит какое-то поле или функцию, он сразу же его показывает/вызывает. Если не находит, то обращается к прототипу и пытается найти что-то в нем и так далее по цепочке прототипов, пока не найдет метод, который нужно вызвать. 
-                    </p>
-
-                    <p>
-                        Если мы пытаемся прочитать свойство объекта, либо вызвать метод, а его нет, то объект полезет искать его через ссылку __proto__ в  prototype класса, с помощью которого был создан. Свойство __proto__ объекта Object.prototype является свойством доступа (комбинацией геттера и сеттера), которое расширяет внутренний прототип [[Prototype]] объекта, через который осуществлялся доступ. (подробнее <a href="#proto">тут</a>).<br>
-                        В примере ниже создаем новый объект на основе другого, задаем ему поле на верхнем уровне, а поле на уровне ниже он наследует от своего прототипа.               
-                    </p>
-
-                    <pre>
-                        <code>
-let person = {
-    name: 'Nicolas',
-    age: 33,
-}
-
-let lena = Object.create(person) 
-// обращаемся к глобальному классу Object, у которого есть метод create, который создает новые объекты.
-// в метод передаем объект, который будет являться прототипом для объекта lena.
-
-lena.name = 'Elena' // задаем поле на верхнем уровне
-
-console.log(lena.name) // Elena (нашел на этом уровне)
-console.log(lena.age) // 33 (нашел на 2м уровне)                            
-                        </code>
-                    </pre>
-                </div>
-
-                <div>
-                    <h5>Добавление метода</h5>
-                    <p>
-                        Если мы создали объект, у которого, например нет функции sayHi, тогда мы не сможем обратиться к ней как к методу через точку. Чтобы добавить метод, нужно обратиться к прототипу класса, от которого создан наш объект и задать ему новую функцию sayHi, после чего возможно вызвать метод sayHi.<br>
-                        Пример ниже представлен в учебных в целях. В реальности расширение базовых прототипов (расширение Object.prototype) яляется плохой практикой.
-                    </p>
-                    <pre>
-                        <code>
-const person = {
-    name: 'Nicolas',
-    age: 33,
-}
-
-Object.prototype.sayHi = function () {
-    console.log('Hi');
-} // за счет этой конструкции расширили базовый прототип 
-// класса Object и добавили в него новый метод
-
-console.log(person.sayHi()) // Hi
-
-                        </code>
-                    </pre>
-                </div>                
-
-                <div>
-                    <h4>Конструкторы</h4>
-                    <p>
-                        Любой объект в JS создается с помощью функции-конструктора или класса (но стрелочная функция не может быть конструтором).
-                        <br>
-                        Если объект создается через new, то это явно, если помощью литерала {}, то это неявно, но за кадром браузерный движок все равно создает new Object, то есть используется класс Object. <br>
-                        В JS есть и другие встроенные функции-конструкторы, они же классы: Object, Promise, Boolean, Number, String, Array, Function и др.                        
-                    </p>
-                    <p>
-                        Когда вызывается new Object() (или создаётся объект с помощью литерала {}), свойство [[Prototype]] этого объекта устанавливается на Object.prototype (подробнее <a href="#proto">тут</a>). В коде ниже наглядно видно, что переменная person является экземпляром (инстансом) класса Object. 
-                    </p>
-
-                    <pre>
-                        <code class="js">
-const person = new Object({
-    name: 'Nicolas',
-    age: 33,
-})
-                        </code>
-                    </pre>
-
-                    <div>
-                        <h5>Функции и классы</h5>
+            <div class="row">
+                <div class="section scrollspy col m10 l10">
+                    <section id="theory">
+                        <h4>Прототипы</h4>
                         <p>
-                            При создании функции так же работает new Function()
-                            <pre>
-                                <code class="js">
-function greet() {} // под капотом new Function()       
-                                </code>
-                            </pre>
+                            Каждый объект имеет объект-прототип, который выступает как шаблон, от которого объект наследует методы и свойства. Объект-прототип так же может иметь свой прототип и наследует его свойства и методы и так далее. Это называется цепочкой прототипов, «прототипным наследованием» и объясняет почему одним объектам доступны свойства и методы, которые определены в других объектах.<br>
+                            Это если в общем, а если точнее, то свойства и методы определяются в свойстве prototype функции-конструктора объектов, а не в самих объектах (подробнее <a href="#proto">тут</a>).<br>                    
                         </p>
-                        
+        
+                        <p>
+                            В JavaScript объекты имеют специальное скрытое свойство [[Prototype]], которое либо равно null, либо ссылается на другой объект. Этот объект называется «прототип». 
+                        <p>
+                            В примере ниже видно, что прототипом созданного объекта является Объект, и ребенку объекту доступны методы родителя объекта.   
+                        </p>
+        
+                        <pre>
+                            <code class="js">
+        let person = {
+            name: 'Nicolas',
+            age: 33,
+        }
+        
+        // в консоли 
+        {name: 'Nicolas', age: 33}
+            age: 33
+            name: "Nicolas"
+            [[Prototype]]: Object
+            constructor: ƒ Object()
+            hasOwnProperty: ƒ hasOwnProperty()
+            isPrototypeOf: ƒ isPrototypeOf()
+            ...
+                            </code>
+                        </pre>
+        
                         <div>
+                            <h5>Еще раз "работа" прототипа</h5>
                             <p>
-                                В JavaScript класс – это разновидность функции, "синтаксический сахар" над ключевым словом function.
+                                Прототип идет сверху вниз. Если он на вернем уровне находит какое-то поле или функцию, он сразу же его показывает/вызывает. Если не находит, то обращается к прототипу и пытается найти что-то в нем и так далее по цепочке прототипов, пока не найдет метод, который нужно вызвать. 
                             </p>
-                            <h6>Синтаксис</h6>
+        
+                            <p>
+                                Если мы пытаемся прочитать свойство объекта, либо вызвать метод, а его нет, то объект полезет искать его через ссылку __proto__ в  prototype класса, с помощью которого был создан. Свойство __proto__ объекта Object.prototype является свойством доступа (комбинацией геттера и сеттера), которое расширяет внутренний прототип [[Prototype]] объекта, через который осуществлялся доступ. (подробнее <a href="#proto">тут</a>).<br>
+                                В примере ниже создаем новый объект на основе другого, задаем ему поле на верхнем уровне, а поле на уровне ниже он наследует от своего прототипа.               
+                            </p>
+        
                             <pre>
                                 <code>
-class MyClass { // cоздаётcя функция с именем MyClass   
-    constructor() { ... } // метод constructor(), в нём инициализируем объект
-    method1() { ... } // метод сохраняется в MyClass.prototype
-}
-// классы можно также создавать через Class Expression 
-                                </code>
-                            </pre>
-
-                            <p>Пример:</p>
-                            <pre>
-                                <code class="js">
-class Cat {
-    constructor(name) {
-        this.name = name,
-    }
-
-    sayMeow() {
-        console.log('Meow');
-    } // этот метод сохраняется в Cat.prototype.
-} // под капотом new Function()
-
-let cat1 = new Cat('Lili') // инстанс явно создается через new Cat()
-console.log(typeof Cat) // function
-console.log(cat1) // Cat {name: 'Lili'}
-console.log(Cat.prototype) // {constructor: ƒ, sayMeow: ƒ}, в prototype конструктор и функция (подробнее далее)
+        let person = {
+            name: 'Nicolas',
+            age: 33,
+        }
+        
+        let lena = Object.create(person) 
+        // обращаемся к глобальному классу Object, у которого есть метод create, который создает новые объекты.
+        // в метод передаем объект, который будет являться прототипом для объекта lena.
+        
+        lena.name = 'Elena' // задаем поле на верхнем уровне
+        
+        console.log(lena.name) // Elena (нашел на этом уровне)
+        console.log(lena.age) // 33 (нашел на 2м уровне)                            
                                 </code>
                             </pre>
                         </div>
-                    </div>
-
-                    <div>
-                        <h5>Примитивы</h5>
-                        <p>
-                            Использование свойств и методов у примитивов также возможно как раз за счет прототипного наследования. Если к примитиву обратиться как к объекту (т.е. через точку), то в памяти ВРЕМЕННО для этого примитива создастся объектная версия (обертка) с помощью конструктора new, а свойства и методы станут доступными.  
-                        </p>                        
-                        <pre>
-                            <code>
-let num = 18 // под капотом new Number()
-                            </code>
-
-                        </pre>
-                    </div>
-                </div>
-
-                <div id="proto">
-                    <h4>__proto__ и Prototype</h4>
-                    <p>
-                        Эти ключевые понятие нужно различать. Оба являются свойствами объекта (доступ через точку). И __proto__ и Prototype являются объектами, но __proto__ ссылается на Prototype.<br>
-                        
-                        Любой объект имеет __proto__ и создается с помощью класса или function. __proto__  равно какому-то прототипу.<br>
-
-                        Чтобы понимать что это за __proto__, нужно точно знать с помощью какой функции-конструктора (класса) создан данный объект (new XXX()).
-                        <pre>
-                            <code>
-const obj = {} // obj.__proto__
-const num = 2 // num.__proto__
-function func() {} // func.__proto__
-const f = () => {} // f.__proto__
-class Cls {} // Cls.__proto__
-                            </code>
-                        </pre>
-
-                        <p>
-                            Разные __proto__ разных по "типу" объектов - совершенно независимые разные объекты. У одинаковых по "типу" объектов - они равны, то есть это один и тот же объект.
+        
+                        <div>
+                            <h5>Добавление метода</h5>
+                            <p>
+                                Если мы создали объект, у которого, например нет функции sayHi, тогда мы не сможем обратиться к ней как к методу через точку. Чтобы добавить метод, нужно обратиться к прототипу класса, от которого создан наш объект и задать ему новую функцию sayHi, после чего возможно вызвать метод sayHi.<br>
+                                Пример ниже представлен в учебных в целях. В реальности расширение базовых прототипов (расширение Object.prototype) яляется плохой практикой.
+                            </p>
                             <pre>
                                 <code>
-let man1 = {}
-let man2 = {}
-console.log(man1.__proto__ === man2.__proto__) 
-// их __proto__ равны, эти объекты созданы с помощью 
-// одного и того же класса или функции-конструктора new Object()
-
-let a = 1
-let b = 100
-console.log(a.__proto__ === b.__proto__) 
-// их __proto__ равны, так как оба созданы с помощью new Number() 
-
-console.log(a__proto__ != man1.__proto__) // их __proto__ не равны, 
-// a создано с помощью  new Number(), а man1 создано с помощью new Object()
+        const person = {
+            name: 'Nicolas',
+            age: 33,
+        }
+        
+        Object.prototype.sayHi = function () {
+            console.log('Hi');
+        } // за счет этой конструкции расширили базовый прототип 
+        // класса Object и добавили в него новый метод
+        
+        console.log(person.sayHi()) // Hi
+        
                                 </code>
                             </pre>
-
+                        </div>                
+        
+                        <div>
+                            <h4>Конструкторы</h4>
                             <p>
-                                У всех функций, в том числе class, __proto__ равны.  
+                                Любой объект в JS создается с помощью функции-конструктора или класса (но стрелочная функция не может быть конструтором).
+                                <br>
+                                Если объект создается через new, то это явно, если помощью литерала {}, то это неявно, но за кадром браузерный движок все равно создает new Object, то есть используется класс Object. <br>
+                                В JS есть и другие встроенные функции-конструкторы, они же классы: Object, Promise, Boolean, Number, String, Array, Function и др.                        
+                            </p>
+                            <p>
+                                Когда вызывается new Object() (или создаётся объект с помощью литерала {}), свойство [[Prototype]] этого объекта устанавливается на Object.prototype (подробнее <a href="#proto">тут</a>). В коде ниже наглядно видно, что переменная person является экземпляром (инстансом) класса Object. 
+                            </p>
+        
+                            <pre>
+                                <code class="js">
+        const person = new Object({
+            name: 'Nicolas',
+            age: 33,
+        })
+                                </code>
+                            </pre>
+        
+                            <div>
+                                <h5>Функции и классы</h5>
+                                <p>
+                                    При создании функции так же работает new Function()
+                                    <pre>
+                                        <code class="js">
+        function greet() {} // под капотом new Function()       
+                                        </code>
+                                    </pre>
+                                </p>
+                                
+                                <div>
+                                    <p>
+                                        В JavaScript класс – это разновидность функции, "синтаксический сахар" над ключевым словом function.
+                                    </p>
+                                    <h6>Синтаксис</h6>
+                                    <pre>
+                                        <code>
+        class MyClass { // cоздаётcя функция с именем MyClass   
+            constructor() { ... } // метод constructor(), в нём инициализируем объект
+            method1() { ... } // метод сохраняется в MyClass.prototype
+        }
+        // классы можно также создавать через Class Expression 
+                                        </code>
+                                    </pre>
+        
+                                    <p>Пример:</p>
+                                    <pre>
+                                        <code class="js">
+        class Cat {
+            constructor(name) {
+                this.name = name,
+            }
+        
+            sayMeow() {
+                console.log('Meow');
+            } // этот метод сохраняется в Cat.prototype.
+        } // под капотом new Function()
+        
+        let cat1 = new Cat('Lili') // инстанс явно создается через new Cat()
+        console.log(typeof Cat) // function
+        console.log(cat1) // Cat {name: 'Lili'}
+        console.log(Cat.prototype) // {constructor: ƒ, sayMeow: ƒ}, в prototype конструктор и функция (подробнее далее)
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+        
+                            <div>
+                                <h5>Примитивы</h5>
+                                <p>
+                                    Использование свойств и методов у примитивов также возможно как раз за счет прототипного наследования. Если к примитиву обратиться как к объекту (т.е. через точку), то в памяти ВРЕМЕННО для этого примитива создастся объектная версия (обертка) с помощью конструктора new, а свойства и методы станут доступными.  
+                                </p>                        
                                 <pre>
                                     <code>
-function greet() {} 
-class YoutubeChanell {} 
-console.log(greet.__proto__ === YoutubeChanell.__proto__)
+        let num = 18 // под капотом new Number()
+                                    </code>
+        
+                                </pre>
+                            </div>
+                        </div>
+        
+                        <div id="proto">
+                            <h4>__proto__ и Prototype</h4>
+                            <p>
+                                Эти ключевые понятие нужно различать. Оба являются свойствами объекта (доступ через точку). И __proto__ и Prototype являются объектами, но __proto__ ссылается на Prototype.<br>
+                                
+                                Любой объект имеет __proto__ и создается с помощью класса или function. __proto__  равно какому-то прототипу.<br>
+        
+                                Чтобы понимать что это за __proto__, нужно точно знать с помощью какой функции-конструктора (класса) создан данный объект (new XXX()).
+                                <pre>
+                                    <code>
+        const obj = {} // obj.__proto__
+        const num = 2 // num.__proto__
+        function func() {} // func.__proto__
+        const f = () => {} // f.__proto__
+        class Cls {} // Cls.__proto__
+                                    </code>
+                                </pre>
+        
+                                <p>
+                                    Разные __proto__ разных по "типу" объектов - совершенно независимые разные объекты. У одинаковых по "типу" объектов - они равны, то есть это один и тот же объект.
+                                    <pre>
+                                        <code>
+        let man1 = {}
+        let man2 = {}
+        console.log(man1.__proto__ === man2.__proto__) 
+        // их __proto__ равны, эти объекты созданы с помощью 
+        // одного и того же класса или функции-конструктора new Object()
+        
+        let a = 1
+        let b = 100
+        console.log(a.__proto__ === b.__proto__) 
+        // их __proto__ равны, так как оба созданы с помощью new Number() 
+        
+        console.log(a__proto__ != man1.__proto__) // их __proto__ не равны, 
+        // a создано с помощью  new Number(), а man1 создано с помощью new Object()
+                                        </code>
+                                    </pre>
+        
+                                    <p>
+                                        У всех функций, в том числе class, __proto__ равны.  
+                                        <pre>
+                                            <code>
+        function greet() {} 
+        class YoutubeChanell {} 
+        console.log(greet.__proto__ === YoutubeChanell.__proto__)
+                                            </code>
+                                        </pre>
+                                    </p>
+                                </p>
+                            </p>
+        
+                            <p>
+                                Любой class или function имеет prorotype. Нам нужно знать с помощью какого класса был создан тот или иной объект - для того чтобы  наш __proto__ мог связаться с прототипом того класса, с помощью которого он был создан.<br>
+                                Каждый prorotype - это независимый объект с определенным набором свойств и методов.
+                                <pre>
+                                    <code>
+        function greet() {} 
+        console.log(function.prototype)
+        
+        class YoutubeChanell {}
+        console.log(YoutubeChanell.prototype)
+        
+        // у встроенных классов тоже есть прототип
+        console.log(Object.prototype)
+        console.log(Array.prototype)
+        console.log(String.prototype)
+        
+        console.log(String.prototype !=Function.prototype )
                                     </code>
                                 </pre>
                             </p>
-                        </p>
-                    </p>
+        
+                            <p>
+                                __proto__ объекта ссылается на prorotype класса (функции-конструктора), с помощью которой этот объект был создан (сконструирован), и __proto__ объекта равно прототипу того класса, с помощью которого этот объект создан. 
+                                <pre>
+                                    <code>
+        let man1 = {}
+        console.log(man1.__proto__ === Object.prorotype) 
+        
+        let a = 1            
+        console.log(a.__proto__ === Number.prorotype)      
+        
+        console.log(chanel1.__proto__ === YoutubeChanell.prototype)
+        
+                                    </code>
+                                </pre>
+                            </p>
+                        </div>
+                    </section> 
 
-                    <p>
-                        Любой class или function имеет prorotype. Нам нужно знать с помощью какого класса был создан тот или иной объект - для того чтобы  наш __proto__ мог связаться с прототипом того класса, с помощью которого он был создан.<br>
-                        Каждый prorotype - это независимый объект с определенным набором свойств и методов.
-                        <pre>
-                            <code>
-function greet() {} 
-console.log(function.prototype)
+                    <section id="tasks">
+                        <h5>Задачи</h5>
+                        <ul class="collapsible popout expandable">
+                            <li>
+                                <div class="collapsible-header">Задача №1<i class="material-icons">chevron_right</i></div>
+                                <div class="collapsible-body"><span>Даны два массива, равны ли их __proto__?</span>
+                                    <pre>
+                                        <code class="js">
+let arr1 = [0, 1, 2]
+let arr2 = ['Anna', 'Alla', 'Nina']
 
-class YoutubeChanell {}
-console.log(YoutubeChanell.prototype)
 
-// у встроенных классов тоже есть прототип
-console.log(Object.prototype)
-console.log(Array.prototype)
-console.log(String.prototype)
+                                        </code>
+                                    </pre>
 
-console.log(String.prototype !=Function.prototype )
-                            </code>
-                        </pre>
-                    </p>
+                                    <form action="#">
+                                        <p>Выбери ответ:</p>
+                                        <p>
+                                            <label>
+                                                <input name="answer" type="radio" />
+                                                <span>Да</span>
+                                            </label>
+                                            </p>
+                                            <p>
+                                            <label>
+                                                <input name="answer" type="radio" />
+                                                <span>Нет</span>
+                                            </label>
+                                            </p>
+                                    </form>
+                                
+                                    <button id="chooseAnswer">Нажми</button>
+                                    <div id="result"></div>
+                                </div>
+                            </li>
+                        </ul>
 
-                    <p>
-                        __proto__ объекта ссылается на prorotype класса (функции-конструктора), с помощью которой этот объект был создан (сконструирован), и __proto__ объекта равно прототипу того класса, с помощью которого этот объект создан. 
-                        <pre>
-                            <code>
-let man1 = {}
-console.log(man1.__proto__ === Object.prorotype) 
+                        <ul class="collapsible popout expandable">
+                            <li>
+                                <div class="collapsible-header">Задача №2<i class="material-icons">chevron_right</i></div>
+                                <div class="collapsible-body"><span>Какому prototype равно __proto__ массива?</span>
+                                    <pre>
+                                        <code class="js">
+let arr2 = ['Anna', 'Alla', 'Nina']
+                                        </code>
+                                    </pre>
 
-let a = 1            
-console.log(a.__proto__ === Number.prorotype)      
-
-console.log(chanel1.__proto__ === YoutubeChanell.prototype)
-
-                            </code>
-                        </pre>
-                    </p>
+                                    <div class="tasks__task2">
+                                        <p>arr2.__proto__===</p>
+                                        <input class="tasks__input2" type="text">
+                                    </div>
+                                    
+                                
+                                    <button id="checkAnswer">Проверь</button>
+                                    <div id="resultTask2"></div>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        
+        
+                    </section>
                 </div>
-            </section>   
+
+                <div class="col hide-on-small-only m2 l2">
+                    <ul class="section table-of-contents" style="position: fixed" >
+                        <li><a href="#theory">Теория</a></li>
+                        <li><a href="#tasks">Задачи</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
     </main>
 
     <footer class="page-footer teal lighten-1">
