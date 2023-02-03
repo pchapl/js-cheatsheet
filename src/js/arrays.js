@@ -1,16 +1,3 @@
-/*document.addEventListener('DOMContentLoaded', () => {
-    hljs.highlightAll();
-    document.querySelector('code.codep span.hljs-string').innerHTML = `<input id="arrays" type="text">`;
-});*/
-
-/*document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelectorAll('pre code code.code').forEach((el) => {
-        hljs.highlightElement(el);
-        document.querySelectorAll('pre code code.code span.hljs-string').innerHTML = `<input id="arrays-simple__data" type="text">`;
-    });
-});*/
-
-
 //materialize
 
 document.addEventListener('DOMContentLoaded', function () {
