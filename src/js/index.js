@@ -8,9 +8,7 @@ document?.addEventListener('DOMContentLoaded', function () {
     let elems = document.querySelectorAll('.dropdown-trigger');
     let instances = M.Dropdown.init(elems, options);
 });
-<<<<<<< HEAD
 import './js/this.js';
-=======
 
 document?.addEventListener("DOMContentLoaded", function (event) {
     fetch("https://official-joke-api.appspot.com/random_joke")
@@ -33,4 +31,3 @@ function renderError() {
     const error = document.querySelector(".error");
     error.innerHTML = "Всё сломалось, сами шутите шутки.";
 }
->>>>>>> 22638e544a65114516cc7fb22f592bf80a0ab1de
