@@ -2,26 +2,32 @@ let inputFirst = document.getElementById('inputFirst');
 let inputSecond = document.getElementById('inputSecond');
 let inputThird = document.getElementById('inputThird');
 
-inputFirst.oninput = checkFirst () {
-    if (this.value === 'alert(this.name);') {
-        let resultFirst = document.getElementById('innerHTML1') = 'John';
-    } else {
-        resultFirst = document.getElementById('innerHTML1') = 'Введите alert(this.name);';
-    }
+inputFirst?.addEventListener('input', checkInputFirst(e));
+
+function checkInputFirst (e) {
+    if (inputFirst.value === 'alert(this.name);') {
+            let resultFirst = document.getElementById('innerHTML1').innerHTML = 'John';
+        } else {
+            resultFirst = document.getElementById('innerHTML1').innerHTML = 'Введите alert(this.name);';
+        }
 };
 
-inputSecond.oninput = checkSecond () {
-    if (this.value === 'user.sayHi();') {
-        let resultSecond = document.getElementById('innerHTML2') = 'John';
-    } else {
-        resultSecond = document.getElementById('innerHTML2') = 'Введите user.sayHi();';
-    }
+inputSecond?.addEventListener('input', checkInputSecond(e));
+
+function checkInputSecond (e) {
+    if (inputSecond.value === 'user.sayHi();') {
+            let resultFirst = document.getElementById('innerHTML2').innerHTML = 'John';
+        } else {
+            resultFirst = document.getElementById('innerHTML2').innerHTML = 'Введите user.sayHi();';
+        }
 };
 
-inputThird.oninput = checkThird () {
-    if (this.value === 'alert(user.name);') {
-        let resultThird = document.getElementById('innerHTML3') = 'John';
-    } else {
-        resultThird = document.getElementById('innerHTML3') = 'Введите alert(user.name);';
-    }
+inputThird?.addEventListener('input', checkInputThird(e));
+
+function checkInputThird (e) {
+    if (inputThird.value === 'alert(user.name);') {
+            let resultFirst = document.getElementById('innerHTML2').innerHTML = 'John';
+        } else {
+            resultFirst = document.getElementById('innerHTML2').innerHTML = 'Введите alert(user.name);';
+        }
 };
