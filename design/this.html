@@ -94,12 +94,12 @@
         <pre>
           <code>
             sayHi {
-            <input type="text" placeholder="Впишите код">
+            <input type="text" placeholder="Впишите код" id="inputFirst">
             }
           </code>
         </pre>
 
-        <div class="innerHTML"></div>
+        <div id="innerHTML1"></div>
         <p>Итак, вот что у нас получилось:</p>
         <pre>
           <code class="js">
@@ -112,11 +112,11 @@
               }
             
             };
-            <input type="text" placeholder="Допишите последнюю строчку кода">
+            <input type="text" placeholder="Допишите последнюю строчку кода" id="inputSecond">
           </code>
         </pre>
         <p>А теперь вызовите метод <code>sayHi</code> из объекта <code>user</code>. Для этого допишите последнюю строчку кода — <code>user.sayHi();</code> — и посмотрите на результат.</p>
-        <div class="innerHTML2"></div>
+        <div id="innerHTML2"></div>
         <p>Метод <code>sayHi</code> вызывается объектом <code>user</code>, поэтому в данном примере значением <code>this</code> является <code>user</code>.</p>
         <p>Конечно, мы можем получить имя пользователя и без помощи <code>this</code> — просто обратившись к объекту через внешнюю переменную, в которой хранится ссылка на этот объект. Между фигурными скобками метода <code>sayHi</code> впишите <code>alert(user.name);</code>, т.е. замените в коде <code>this</code> на <code>user</code>. Что вернет код?</p>
         <pre>
@@ -127,13 +127,13 @@
             
               sayHi() {
                  // "user" вместо "this"
-                <input type="text" placeholder="Впишите код">
+                <input type="text" placeholder="Впишите код" id="inputThird">
               }
             
             };
           </code>
         </pre>
-        <div class="innerHTML3"></div>
+        <div id="innerHTML3"></div>
         <p>Метод <code>sayHi</code> в данном случае тоже вернет John. Зачем же тогда писать лишние строчки кода и использовать <code>this</code>?</p>
         <p>Дело в том, что обращаясь к данным объекта напрямую через переменную, мы ставим работу нашего кода в зависимость от этой переменной. Если мы сохраним ссылку на объект в другую переменную, например, <code>admin = user</code>, и перезапишем саму переменную <code>user</code>, код будет работать неправильно. Метод <code>sayHi</code> выдаст ошибку при работе с объектом <code>admin</code>.</p>
         <pre class="hoverable">
