@@ -26,6 +26,36 @@
 
 <body>
     <div class="wrapper">
+        <header class="header">
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="api.html">API</a></li>
+                <li><a href="arrays.html">Arrays</a></li>
+                <li><a href="dom.html">DOM</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="ifelse.html">If Else</a></li>
+                <li><a href="prototypes.html">Prototypes</a></li>
+                <li><a href="regular.html">Regular</a></li>
+                <li><a href="string.html">String</a></li>
+                <li><a href="this.html">this</a></li>
+                <li><a href="timedate.html">TimeDate</a></li>
+                <li><a href="types.html">Types</a></li>
+                <li><a href="variables.html">Variables</a></li>
+                <li><a href="web.html">Web</a></li>
+            </ul>
+            <nav class="teal lighten-1">
+                <div class="nav-wrapper teal lighten-1 nav__container">
+                    <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png"
+                            alt="cherry"></a>
+                    <ul class="right">
+                        <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                                    class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
         <main class="main__container">
             <h1>Методы строк</h1>
             <p>Любые текстовые данные в JavaScript считаются строками. Это примитивный тип, но язык позволяет работать с
@@ -34,10 +64,57 @@
             <p><strong>Важно</strong>: при использовании методов создаётся новая строка, которая записывается в ту же
                 переменную вместо
                 старой строки.</p>
-            <h5>Изменить регистр</h5>
+            <h5 class="string__title-min">Длина строки</h5>
             <ul class="collapsible popout expandable">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>toLowerCase</div>
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>length
+                    </div>
+                    <div class="collapsible-body"><span>Свойство length содержит длину строки:</span>
+                        <pre>
+                            <code class="js">
+let browserType = 'mozilla';
+browserType.length; // 7
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+            </ul>
+            <h5 class="string__title-min">Получить символ</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header teal lighten-5 string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>[pos], str.at(pos)
+                    </div>
+                    <div class="collapsible-body"><span>Получить символ, который занимает позицию pos, можно с помощью
+                            квадратных скобок: <strong>[pos]</strong>.</span>
+                        <p>Также можно использовать метод <strong>str.at(pos)</strong>. Его преимущество
+                            заключается в том, что он допускает отрицательную позицию. Если pos – отрицательное число,
+                            то отсчет ведется от конца строки.
+
+                            Таким образом, .at(-1) означает последний символ, а .at(-2) – тот, что перед ним, и т.д.</p>
+                        <pre>
+                            <code class="js">
+let str = `Hello`;
+
+// получаем первый символ
+alert( str[0] ); // H
+alert( str.at(0) ); // H
+                                
+// получаем последний символ
+alert( str[str.length - 1] ); // o
+alert( str.at(-1) );
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+            </ul>
+
+            <h5 class="string__title-min">Изменить регистр</h5>
+            <ul class="collapsible popout expandable">
+                <li>
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>toLowerCase</div>
                     <div class="collapsible-body"><span>Преобразует символы в строке в нижний регистр.</span>
                         <pre>
                             <code class="js">
@@ -47,7 +124,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>toUpperCase</div>
+                    <div class="collapsible-header string-collapsible-header_title teal lighten-5"><i
+                            class="material-icons">chevron_right</i>toUpperCase</div>
                     <div class="collapsible-body"><span>Преобразует символы в строке в верхний регистр.</span>
                         <pre>
                             <code>
@@ -57,10 +135,11 @@
                     </div>
                 </li>
             </ul>
-            <h5>Объединить строки</h5>
+            <h5 class="string__title-min">Объединить строки</h5>
             <ul class="collapsible popout expandable">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>concat</div>
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>concat</div>
                     <div class="collapsible-body"><span>Объединяет две или более строки и возвращает одну строку.</span>
                         <pre>
                             <code>
@@ -71,10 +150,11 @@
                     </div>
                 </li>
             </ul>
-            <h5>Разделить строку на подстроки</h5>
+            <h5 class="string__title-min">Разделить строку на подстроки</h5>
             <ul class="collapsible popout expandable">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>split</div>
+                    <div class="collapsible-header string-collapsible-header_title teal lighten-5"><i
+                            class="material-icons">chevron_right</i>split</div>
                     <div class="collapsible-body"><span>Разбивает строку в массив по указанному разделителю, которым
                             может быть подстрока или регулярное выражение. Вторым параметром можно указать
                             ограничитель.</span>
@@ -94,10 +174,11 @@
                 </li>
             </ul>
 
-            <h5>Повторить строку</h5>
+            <h5 class="string__title-min">Повторить строку</h5>
             <ul class="collapsible popout expandable">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>repeat</div>
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>repeat</div>
                     <div class="collapsible-body"><span>Принимает в качестве параметра число и повторяет
                             строку указанное количество раз.</span>
                         <pre>
@@ -108,10 +189,11 @@
                     </div>
                 </li>
             </ul>
-            <h5>Найти подстроку</h5>
+            <h5 class="string__title-min">Найти подстроку</h5>
             <ul class="collapsible popout expandable">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>charAt</div>
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>charAt</div>
                     <div class="collapsible-body"><span>Возвращает символ по указанному индексу.</span>
                         <pre>
                             <code>
@@ -121,7 +203,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>includes</div>
+                    <div class="collapsible-header string-collapsible-header_title teal lighten-5"><i
+                            class="material-icons">chevron_right</i>includes</div>
                     <div class="collapsible-body"><span>Проверяет, содержит ли строка указанную
                             подстроку. Возвращает значение true или false. Вторым параметром можно
                             указать позицию в строке, с которой следует начать поиск.</span>
@@ -134,7 +217,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>indexOf
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>indexOf
                     </div>
                     <div class="collapsible-body"><span>Объединяет две или более строки и
                             возвращает одну строку.</span>
@@ -147,7 +231,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>lastIndexOf
+                    <div class="collapsible-header string-collapsible-header_title teal lighten-5"><i
+                            class="material-icons">chevron_right</i>lastIndexOf
                     </div>
                     <div class="collapsible-body"><span>Возвращает индекс последнего найденного вхождения
                             указанного значения. Поиск ведётся от конца к началу строки. Если совпадений
@@ -162,7 +247,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>endsWith
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>endsWith
                     </div>
                     <div class="collapsible-body"><span>Проверяет, заканчивается ли строка символами,
                             заданными первым параметром. Возвращает true или false. Есть второй
@@ -179,7 +265,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>startsWith
+                    <div class="collapsible-header string-collapsible-header_title teal lighten-5"><i
+                            class="material-icons">chevron_right</i>startsWith
                     </div>
                     <div class="collapsible-body"><span>Проверяет, начинается ли строка с указанных
                             символов. Возвращает true или false. Вторым параметром можно указать индекс, с
@@ -195,7 +282,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>search
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>search
                     </div>
                     <div class="collapsible-body"><span>Проверяет, есть ли в строке указанное значение или
                             регулярное выражение и возвращает индекс начала совпадения.</span>
@@ -209,10 +297,11 @@
                 </li>
             </ul>
 
-            <h5>Извлечь подстроку</h5>
+            <h5 class="string__title-min">Извлечь подстроку</h5>
             <ul class="collapsible popout expandable">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>slice</div>
+                    <div class="collapsible-header string-collapsible-header_title teal lighten-5"><i
+                            class="material-icons">chevron_right</i>slice</div>
                     <div class="collapsible-body"><span>Извлекает часть строки и возвращает новую
                             строку. Обязательный параметр — начало извлечения. Вторым параметром можно
                             установить границу (по умолчанию — до конца строки).</span>
@@ -229,7 +318,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>substring
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>substring
                     </div>
                     <div class="collapsible-body"><span>Извлекает символы из строки между двумя
                             указанными индексами. Второй индекс указывать не обязательно. В таком случае
@@ -246,7 +336,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>substr
+                    <div class="collapsible-header string-collapsible-header_title  teal lighten-5"><i
+                            class="material-icons">chevron_right</i>substr
                     </div>
                     <div class="collapsible-body"><span>Извлекает часть строки указанной длины. Первым
                             параметром принимает стартовую позицию, вторым — длину. Значение первого
@@ -263,10 +354,11 @@
                     </div>
                 </li>
             </ul>
-            <h5>Заменить подстроку</h5>
+            <h5 class="string__title-min">Заменить подстроку</h5>
             <ul class="collapsible popout expandable">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>replace
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>replace
                     </div>
                     <div class="collapsible-body"><span>Ищет в строке указанное значение или
                             регулярное выражение и возвращает новую строку, в которой выполнена
@@ -281,7 +373,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>replaceAll
+                    <div class="collapsible-header string-collapsible-header_title teal lighten-5"><i
+                            class="material-icons">chevron_right</i>replaceAll
                     </div>
                     <div class="collapsible-body"><span>Даёт такой же результат, как метод
                             replace() с глобальным флагом g. Заменяет все найденные совпадения
@@ -295,10 +388,11 @@
                     </div>
                 </li>
             </ul>
-            <h5>Добавить символы в строку</h5>
+            <h5 class="string__title-min">Добавить символы в строку</h5>
             <ul class="collapsible popout expandable">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>padEnd</div>
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>padEnd</div>
                     <div class="collapsible-body"><span>Добавляет в конце отступы, пока строка не достигнет длины,
                             заданной первым параметром. Вторым параметром можно указать другой символ вместо
                             пробела.</span>
@@ -310,7 +404,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>padEnd</div>
+                    <div class="collapsible-header string-collapsible-header_title teal lighten-5"><i
+                            class="material-icons">chevron_right</i>padStart</div>
                     <div class="collapsible-body"><span>Добавляет в начале отступы, пока строка не достигнет длины,
                             заданной первым параметром. Вторым параметром можно указать другой символ вместо
                             пробела.</span>
@@ -321,10 +416,11 @@
                     </div>
                 </li>
             </ul>
-            <h5>Удалить пробелы в строке</h5>
+            <h5 class="string__title-min">Удалить пробелы в строке</h5>
             <ul class="collapsible popout expandable">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>trim</div>
+                    <div class="collapsible-header string-collapsible-header_title teal lighten-5"><i
+                            class="material-icons">chevron_right</i>trim</div>
                     <div class="collapsible-body"><span>Обрезает пробелы с обоих концов строки.
 
                         </span>
@@ -336,7 +432,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>trimEnd</div>
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>trimEnd</div>
                     <div class="collapsible-body"><span>Обрезает пробелы в конце строки</span>
                         <pre>
                                     <code>
@@ -345,7 +442,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>trimStart</div>
+                    <div class="collapsible-header string-collapsible-header_title teal lighten-5"><i
+                            class="material-icons">chevron_right</i>trimStart</div>
                     <div class="collapsible-body"><span>Обрезает пробелы в начале строки</span>
                         <pre>
                                     <code>
@@ -355,10 +453,11 @@
                     </div>
                 </li>
             </ul>
-            <h5>Работа с Юникодом</h5>
+            <h5 class="string__title-min">Работа с Юникодом</h5>
             <ul class="collapsible popout expandable">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>charCodeAt</div>
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">chevron_right</i>charCodeAt</div>
                     <div class="collapsible-body"><span>Возвращает числовое значение Юникода по указанному индексу.
                             Обратите внимание: у букв в верхнем и нижнем регистрах разные коды.
                         </span>
@@ -371,7 +470,8 @@
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">code</i>fromCharCode</div>
+                    <div class="collapsible-header string-collapsible-header_title teal lighten-5"><i
+                            class="material-icons">chevron_right</i>fromCharCode</div>
                     <div class="collapsible-body"><span>Преобразует числовые значения Юникода в читаемые символы.</span>
                         <pre>
                                     <code>
@@ -395,61 +495,147 @@ String.fromCharCode(72, 101, 108, 108, 111); // "Hello"
                 </li>
             </ul>
 
-            <h4>Проверь себя!</h4>
+            <h5 class="string__title-medium">Проверь себя!</h5>
             <ul class="collapsible popout expandable">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">edit</i>Задача 1</div>
-                    <div class="collapsible-body"><span>
-                            <p>Напишите функцию <code>newStr(str)</code>, возвращающую строку <code>str</code> с
-                                заглавным первым
-                                символом.</p>
-                            <br>
-                            <br>
-                            <a class="waves-effect waves-light btn btn_first">Решение</a>
-                            <br>
-                            <br>
-                            <div class="answer_first"></div>
+                    <div class="collapsible-header string-collapsible-header_title orange lighten-3"><i
+                            class="material-icons">edit</i>Задача 1</div>
+                    <div class="collapsible-body">
+                        <p>Напишите функцию <code>newStr(str)</code>, возвращающую строку <code>str</code> с
+                            заглавным первым
+                            символом.</p>
 
-                        </span>
+                        <br>
+                        <a class="waves-effect waves-light btn btn_first">Решение</a>
+                        <br><br>
+                        <div class="btn_hidden_first"></div>
+                        <br>
+                        <br>
+
+                        <div class="answer_first blue lighten-4"></div>
+
+
+
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">edit</i>Задача 2</div>
-                    <div class="collapsible-body"><span>
-                            <p>Напишите функцию <code>checkSpam(str)</code>, возвращающую <code>true</code>, если
-                                <code>str</code>
-                                содержит 'viagra' или 'XXX', а
-                                иначе <code>false</code>.
-                            </p>
+                    <div class="collapsible-header string-collapsible-header_title"><i
+                            class="material-icons">edit</i>Задача 2</div>
+                    <div class="collapsible-body">
+                        <p>Напишите функцию <code>checkSpam(str)</code>, возвращающую <code>true</code>, если
+                            <code>str</code>
+                            содержит 'viagra' или 'XXX', а
+                            иначе <code>false</code>.
+                        </p>
 
-                            <p>Функция должна быть нечувствительна к регистру:</p>
-                            <pre>
-                        <code>
+                        <p>Функция должна быть нечувствительна к регистру:</p>
+                        <pre>
+                        <code class="js">
 checkSpam('buy ViAgRA now') == true
 checkSpam('free xxxxx') == true
 checkSpam("innocent rabbit") == false
                         </code>
                     </pre>
-                            <br>
-                            <br>
-                            <a class="waves-effect waves-light btn btn_second">Решение</a>
-                            <br>
-                            <br>
-                            <div class="answer_second"></div>
-                        </span>
+
+
+                        <a class="waves-effect waves-light btn btn_second">Решение</a>
+                        <br><br>
+                        <div class="btn_hidden_second"></div>
+                        <br>
+                        <br>
+                        <div class="answer_second blue lighten-4"></div>
+
                     </div>
                 </li>
+                <li>
+                    <div class="collapsible-header string-collapsible-header_title orange lighten-3"><i
+                            class="material-icons">edit</i>Задача 3</div>
+                    <div class="collapsible-body">
+                        <p>Создайте функцию <code class="teal lighten-3">truncate(str, maxlength)</code>, которая
+                            проверяет длину строки <code>str</code> и, если она
+                            превосходит <code>maxlength</code>, заменяет конец <code>str</code> на "…", так, чтобы
+                            её длина стала равна
+                            <code>maxlength</code>.
 
-                <br>
-                <br>
+                            Результатом функции должна быть та же строка, если усечение не требуется, либо, если
+                            необходимо, усечённая строка.
+
+                            Например:
+                        </p>
+                        <pre>
+                        <code class="js">
+truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) = "Вот, что мне хотело…"
+
+truncate("Всем привет!", 20) = "Всем привет!"
+                        </code>
+                    </pre>
+                        <a class="waves-effect waves-light btn btn_third">Решение</a>
+                        <br><br>
+                        <div class="btn_hidden_third"></div>
+                        <br>
+                        <br>
+                        <div class="answer_third blue lighten-4"></div>
+
+                    </div>
+                </li>
+            </ul>
+
 
         </main>
+
+        <footer class="page-footer teal lighten-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <div>
+                            <h5 class="white-text">Random joke <span
+                                    class="material-icons">sentiment_satisfied_alt</span>
+                            </h5>
+                            <div>
+                                <div class="setup"></div>
+                                <div class="punchline"></div>
+                                <div class="error"></div>
+                            </div>
+                        </div>
+                        <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png"
+                                alt="cherry"></a>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Полезные ссылки</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3"
+                                    href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc">Notion
+                                    Frontend 34</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/">Современный
+                                    учебник
+                                    JavaScript</a></li>
+                            <li><a class="grey-text text-lighten-3"
+                                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference">Справочник по
+                                    JavaScript. MDN</a></li>
+                            <li><a class="grey-text text-lighten-3"
+                                    href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT">Сложный
+                                    JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/">JavaScript Дока</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2023
+                    <a class="grey-text text-lighten-4 right" href="about.html">О прекрасных разработчицах этого
+                        гайда</a>
+                </div>
+            </div>
+        </footer>
+
     </div>
 
 
     <script src="./assets/dist/js/main.js"></script>
     <script src="./assets/libraries/highlights/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script> hljs.highlightAll();</script>
 </body>
 
 </html>

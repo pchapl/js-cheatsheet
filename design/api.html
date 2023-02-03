@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" type="image/png">
+
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+    <!-- materialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+    <!--    project styles -->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+
+    <title>API</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <header class="header">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="api.html">API</a></li>
+            <li><a href="arrays.html">Arrays</a></li>
+            <li><a href="dom.html">DOM</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="ifelse.html">If Else</a></li>
+            <li><a href="prototypes.html">Prototypes</a></li>
+            <li><a href="regular.html">Regular</a></li>
+            <li><a href="string.html">String</a></li>
+            <li><a href="this.html">this</a></li>
+            <li><a href="timedate.html">TimeDate</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="variables.html">Variables</a></li>
+            <li><a href="web.html">Web</a></li>
+        </ul>
+        <nav class="teal lighten-1">
+            <div class="nav-wrapper teal lighten-1 nav__container">
+                <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                <ul class="right">
+                    <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main__container">
+            <h1 class="teal-text text-darken-4"><abbr>API</abbr></h1>
+            <div class="api-info">
+                <p><abbr>API</abbr> (Application Programming Interface, программный интерфейс приложения) - это набор
+                    инструментов,
+                    которые позволяют одному приложению взаимодействовать с другим.</p>
+                <p> Большинство приложений работают по клиент-серверной архитектуре. Это означает, что приложение или
+                    сервис состоит из двух программных частей - клиентской и серверной. Для взаимодействия эти части
+                    каким-то образом находят общий язык. Этот «общий язык» и называется <abbr>API</abbr>. Он позволяет
+                    двум
+                    приложениям функционировать, общаться между собой, не обращая внимания на разные языки
+                    программирования, на которых сделана клиентская и серверная часть.</p>
+                <p><abbr>API</abbr>-интерфейсы предоставляют нам конечную точку или конкретный URL-адрес, где
+                    отображаются нужные
+                    данные. Некоторые <abbr>API</abbr> требуют, чтобы вы зарегистрировали учетную запись или получили
+                    уникальный ключ
+                    для доступа к их информации. При аутентификации вы передаете <abbr>API</abbr> ключ, который
+                    идентифицирует
+                    конкретного пользователя или запрос приложения. Затем сервер может определить, можете ли вы получить
+                    доступ к данным или нет.</p>
+            </div>
+            <div class="api-details">
+                <h2>Работа с API</h2>
+                <p>В JavaScript имеется собственный встроенный способ отправки запросов API. Это Fetch API, современный,
+                    гибкий и универсальный стандарт создания серверных запросов с промисами.</p>
+                <ul class="collapsible popout">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Синтаксис</div>
+                        <div class="collapsible-body"><span>Функция fetch() принимает два параметра: адрес ресурса, на который требуется отправить запрос, и объект с настройками. Второй параметр опционален и может не использоваться:</span>
+                            <pre>
+                                <code class="js">
+                                  fetch(адрес[, настройки]);
+                                </code>
+                            </pre>
+                            <p> По умолчанию fetch() выполнит GET-запрос.</p>
+                            <p>Результатом выполнения fetch() станет промис. Это даёт нам возможность использовать
+                                методы
+                                then, catch и finally.</p>
+                            <p>После метода fetch() нужно включить метод промиса then():</p>
+                            <pre>
+                                <code class="js">
+                                    .then(function() {
+
+                                    })
+                                </code>
+                            </pre>
+                            <p>Под методом then() следует включить метод catch(), который выполняется в случае
+                                возникновения ошибки:</p>
+                            <pre>
+                                <code class="js">
+                                    .catch(function() {
+
+                                    });
+                                </code>
+                            </pre>
+                            <p>В случае успешного выполнения fetch() мы получим от сервера ответ - response (специальный
+                                объект ответа) в JSON. Чтобы прочитать JSON используем метод json() у объекта с
+                                ответом:</p>
+                            <pre>
+                                <code class="js">
+                                    .then((response) => response.json())
+                                </code>
+                            </pre>
+                            <p>Встроенный метод json() автоматически извлечёт JSON-данные из ответа, преобразует их в
+                                объект или массив, и вернёт новый промис. Можно продолжать цепочку then и, например,
+                                вывести
+                                данные в консоль:</p>
+                            <pre>
+                                <code class="js">
+                                    .then((posts) => console.log(posts));
+                                </code>
+                            </pre>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">place</i>Отправка информации на сервер
+                        </div>
+                        <div class="collapsible-body"><span>Работа с fetch() не ограничивается лишь получением данных от сервера. Можно также их
+                            передавать на сервер. Для этого необходимо задать объект и передать его как второй аргумент
+                            функции fetch().</span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">whatshot</i>Примеры API</div>
+                        <div class="collapsible-body"><span></span>
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">whatshot</i>Полезные ссылки</div>
+                        <div class="collapsible-body"><span></span>
+                            <p>
+                                <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Client-side_web_APIs/Introduction">MDN</a>
+                            </p>
+                            <p><a href="https://doka.guide/js/api/">Что такое API (Дока)</a></p>
+                            <p><a href="https://htmlweb.ru/api/">API сервисы</a></p>
+                            <p><a href="https://github.com/toddmotto/public-apis">A collective list of free APIs</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer teal lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <div>
+                        <h5 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
+                        </h5>
+                        <div>
+                            <div class="setup"></div>
+                            <div class="punchline"></div>
+                            <div class="error"></div>
+                        </div>
+                    </div>
+                    <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Полезные ссылки</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc">Notion
+                            Frontend 34</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/">Современный учебник
+                            JavaScript</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference">Справочник по
+                            JavaScript. MDN</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT">Сложный
+                            JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/">JavaScript Дока</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2023
+                <a class="grey-text text-lighten-4 right" href="about.html">О прекрасных разработчицах этого гайда</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="./assets/dist/js/main.js"></script>
+<script src="./assets/libraries/highlights/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
