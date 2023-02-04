@@ -5,13 +5,11 @@ import './js/regular.js';
 import './js/index.js';
 import './js/types.js';
 import './js/string.js';
-import './js/this.js';
-import './js/ifelse.js';
-import './js/web.js';
 import './js/api.js';
 import './js/glossary.js'
+import './js/ifelse.js';
+import './js/web.js';
 import './js/prototypes.js';
-
 
 const Materialize = require('materialize-css/dist/js/materialize.min');
 

@@ -8,7 +8,6 @@ document?.addEventListener('DOMContentLoaded', function () {
     let elems = document.querySelectorAll('.dropdown-trigger');
     let instances = M.Dropdown.init(elems, options);
 });
-import './js/this.js';
 
 document?.addEventListener("DOMContentLoaded", function (event) {
     fetch("https://official-joke-api.appspot.com/random_joke")
