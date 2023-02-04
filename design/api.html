@@ -151,7 +151,7 @@
                                     <div class="nasa-api">
                                         <div class="nasa-image"><img src="" alt="" class="image"></div>
                                         <div class="nasa-info">
-                                            <h6 class="title"></h6>
+                                            <h5 class="title"></h5>
                                             <div class="info"></div>
                                         </div>
                                     </div>
@@ -162,8 +162,12 @@
                                     <p>А <a href="https://yesno.wtf">эта</a> позволяет получить ответ "да" или "нет" и
                                         сопровождает его соответствующей гифкой.</p>
                                     <div class="get-answer">
-                                        <div class="answer teal-text text-accent-3"></div>
-                                        <div class="yesno-image"><img src="" alt="" class="img"></div>
+                                        <button id="yesno-button" class="waves-effect waves-light btn" type='button'>
+                                            Получить ответ
+                                        </button>
+                                        <div id="answer" class="answer teal-text text-accent-3"></div>
+                                        <div class="yesno-image"><img id="gif" src="" alt=""></div>
+                                        <p id="yesno-error" class="answer red-text text-darken-3"></p>
                                     </div>
                                 </div>
 
@@ -171,19 +175,27 @@
                                     <h3>Bored <abbr>API</abbr></h3>
                                     <p>А если скучно, <a href="https://www.boredapi.com/">эта</a> апи поможет найти
                                         занятие.</p>
-                                    <div class="activity teal-text text-accent-3"></div>
+                                    <div class="activity">
+                                        <button id="activity-button" class="waves-effect waves-light btn" type='button'>
+                                            Выбрать занятие
+                                        </button>
+                                        <div id="activity" class="teal-text text-accent-3"></div>
+                                        <p id="activity-error" class="activity red-text text-darken-3"></p>
+                                    </div>
                                 </div>
 
                                 <div class="pokemons">
                                     <h3><abbr>API</abbr> покемонов</h3>
-                                    <p>Это бесплатный <abbr>API</abbr>, для доступа к которому не требуется
+                                    <p><a href="https://pokeapi.co/">Это</a> бесплатный <abbr>API</abbr>, для доступа к
+                                        которому не требуется
                                         аутентификация. Можно запрашивать конкретных покемонов,
                                         движения, игры, локации и многое другое.</p>
                                     <div class="catchpokemon">
-                                        <div id="pokemon" class="pokemon"></div>
-                                        <button id="button" class="waves-effect waves-light btn" type='button'>Catch
+                                        <button id="pokemon-button" class="waves-effect waves-light btn" type='button'>
+                                            Catch
                                             Pokemon
                                         </button>
+                                        <div id="pokemon" class="pokemon"></div>
                                     </div>
                                 </div>
 
