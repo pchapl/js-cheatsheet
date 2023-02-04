@@ -33,14 +33,11 @@
 <body>
   <div class="wrapper">
     <header class="header">
-      <div class="header__container">
-        <ul id="dropdown1" class="dropdown-content">
+      <ul id="dropdown1" class="dropdown-content">
           <li><a href="api.html">API</a></li>
           <li><a href="arrays.html">Arrays</a></li>
-          <li><a href="async.html">Async</a></li>
           <li><a href="dom.html">DOM</a></li>
           <li><a href="events.html">Events</a></li>
-          <li><a href="functions.html">Functions</a></li>
           <li><a href="glossary.html">Glossary</a></li>
           <li><a href="ifelse.html">If Else</a></li>
           <li><a href="prototypes.html">Prototypes</a></li>
@@ -51,19 +48,17 @@
           <li><a href="types.html">Types</a></li>
           <li><a href="variables.html">Variables</a></li>
           <li><a href="web.html">Web</a></li>
-        </ul>
-        <nav>
-          <div class="nav-wrapper teal lighten-1">
-            <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
-            <ul class="right">
-              <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
-                    class="material-icons right">arrow_drop_down</i></a></li>
-            </ul>
+      </ul>
+      <nav class="teal lighten-1">
+          <div class="nav-wrapper teal lighten-1 nav__container">
+              <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+              <ul class="right">
+                  <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                          class="material-icons right">arrow_drop_down</i></a></li>
+              </ul>
           </div>
-        </nav>
-
-      </div>
-    </header>
+      </nav>
+  </header>
     <main>
       <div class="main__container">
 
@@ -221,12 +216,9 @@ alert(fruits); // Вишня, Абрикос
 
                                   <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                                  <div class="arrays-div__input">[<div class="arrays__input arrays__input-pop"></div>];
-                                  </div>
-                                </div>
-                                array.pop();
-                                alert(array);
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-pop"></div>];</div></div>
+  array.pop();
+  alert(array);
                                 </pre>
 
                               </div>
@@ -302,12 +294,9 @@ alert(fruits); // выведет Вишня, Абрикос, Черника
 
                               <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                              <div class="arrays-div__input">[<div class="arrays__input arrays__input-push"></div>];
-                              </div>
-                            </div>
-                            array.push("Новый элемент");
-                            alert(array);
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-push"></div>];</div></div>
+  array.push("Новый элемент");
+  alert(array);
                             </pre>
 
                           </div>
@@ -384,12 +373,9 @@ alert(fruits); // Абрикос, Черника
 
                             <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                            <div class="arrays-div__input">[<div class="arrays__input arrays__input-shift"></div>];
-                            </div>
-                          </div>
-                          array.pop();
-                          alert(array);
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-shift"></div>];</div></div>
+  array.pop();
+  alert(array);
                           </pre>
 
                         </div>
@@ -466,12 +452,9 @@ alert(fruits); // выведет Вишня, Абрикос, Черника
 
                           <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                          <div class="arrays-div__input">[<div class="arrays__input arrays__input-unshift"></div>];
-                          </div>
-                        </div>
-                        array.unshift("Новый элемент");
-                        alert(array);
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-unshift"></div>];</div></div>
+  array.unshift("Новый элемент");
+  alert(array);
                         </pre>
 
                       </div>
@@ -616,11 +599,9 @@ alert(fruits);
 
                         <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                        <div class="arrays-div__input">[<div class="arrays__input arrays__input-splice"></div>];</div>
-                      </div>
-                      array.splice(1, 2, "Новый элемент");
-                      alert(array);
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-splice"></div>];</div></div>
+  array.splice(1, 2, "Новый элемент");
+  alert(array);
                       </pre>
 
                     </div>
@@ -719,10 +700,8 @@ alert(fruits.slice(-1));
 
                       <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                      <div class="arrays-div__input">[<div class="arrays__input arrays__input-slice"></div>];</div>
-                    </div>
-                    array.slice(0, 2);
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-slice"></div>];</div></div>
+  array.slice(0, 2);
                     </pre>
                   </div>
                   <button class="waves-effect waves-light btn arrays__button_add slice-add">
@@ -799,14 +778,12 @@ alert(fruits.concat(orange, berries));
 
                     <pre class="arrays-code">
                               <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                    <div class="arrays-div__input">[<div class="arrays__input arrays__input-concat"></div>];</div>
-                  </div>
-                  let string = "Манго";
-                  let number = 100;
-                  let berries = ["Вишня", "Черника"];
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-concat"></div>];</div></div>
+  let string = "Манго";
+  let number = 100;
+  let berries = ["Вишня", "Черника"];
 
-                  array.concat(string, number, berries);
+  array.concat(string, number, berries);
                   </pre>
                 </div>
                 <button class="waves-effect waves-light btn arrays__button_add concat-add">
@@ -915,10 +892,8 @@ alert(string);
 
                         <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                        <div class="arrays-div__input">[<div class="arrays__input arrays__input-join"></div>];</div>
-                      </div>
-                      let string = array.join(', ');
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-join"></div>];</div></div>
+  let string = array.join(', ');
                       </pre>
                     </div>
                     <button class="waves-effect waves-light btn arrays__button_add join-add">
@@ -981,8 +956,7 @@ let fruits = ["Банан", "Яблоко", "Мандарин"];
 fruits.sort();
 alert(fruits); 
 // выведет Банан, Мандарин, Яблоко
-    
-    
+
 let numbers = [15, 50, 3];
 numbers.sort();
 alert(numbers); 
@@ -1062,14 +1036,11 @@ alert(numbers[0]);
 
                     <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                    <div class="arrays-div__input">[<div class="arrays__input arrays__input-sort"></div>];</div>
-                  </div>
-
-                  array.sort(function(a, b) {
-                  return a - b;
-                  });
-                  let min = array[0];
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-sort"></div>];</div></div>
+  array.sort(function(a, b) {
+  return a - b;
+  });
+  let min = array[0];
                   </pre>
 
                 </div>
@@ -1179,10 +1150,8 @@ alert(fruits);
 
                   <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                  <div class="arrays-div__input">[<div class="arrays__input arrays__input-reverse"></div>];</div>
-                </div>
-                array.reverse();
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-reverse"></div>];</div></div>
+  array.reverse();
                 </pre>
               </div>
               <button class="waves-effect waves-light btn arrays__button_add reverse-add">
@@ -1277,14 +1246,8 @@ alert(orange);
 
                         <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-  const array = </pre>
-                        <div class="arrays-div__input">[<div class="arrays__input arrays__input-includes"></div>];</div>
-                      </div>
-                      <div class="arrays__practice">
-                        <div>
-                          const element = array.includes</div>
-                        <div class="arrays__practice-search">(<input class="arrays__search" id="arrays__search-includes"
-                            type="text">);</div>
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-includes"></div>];</div></div><div class="arrays__practice"><div>
+  const element = array.includes</div><div class="arrays__practice-search">(<input class="arrays__search" id="arrays__search-includes" type="text">);</div>
                       </div>
                       </pre>
                     </div>
@@ -1366,14 +1329,8 @@ alert(fruits.indexOf("Манго"));
 
                     <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-  const array = </pre>
-                    <div class="arrays-div__input">[<div class="arrays__input arrays__input-indexof"></div>];</div>
-                  </div>
-                  <div class="arrays__practice">
-                    <div>
-                      const element = array.indexOf</div>
-                    <div class="arrays__practice-search">(<input class="arrays__search" id="arrays__search-indexof"
-                        type="text">);</div>
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-indexof"></div>];</div></div><div class="arrays__practice"><div>
+  const element = array.indexOf</div><div class="arrays__practice-search">(<input class="arrays__search" id="arrays__search-indexof" type="text">);</div>
                   </div>
                   </pre>
                 </div>
@@ -1457,14 +1414,8 @@ alert(fruits.lastIndexOf("Манго"));
 
                   <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-  const array = </pre>
-                  <div class="arrays-div__input">[<div class="arrays__input arrays__input-lastindexof"></div>];</div>
-                </div>
-                <div class="arrays__practice">
-                  <div>
-                    const element = array.lastIndexOf</div>
-                  <div class="arrays__practice-search">(<input class="arrays__search" id="arrays__search-lastindexof"
-                      type="text">);</div>
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-lastindexof"></div>];</div></div><div class="arrays__practice"><div>
+  const element = array.lastIndexOf</div><div class="arrays__practice-search">(<input class="arrays__search" id="arrays__search-lastindexof" type="text">);</div>
                 </div>
                 </pre>
               </div>
@@ -1593,14 +1544,12 @@ for (let element of entries) {
 
                         <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                        <div class="arrays-div__input">[<div class="arrays__input arrays__input-entries"></div>];</div>
-                      </div>
-                      let entries = array.entries();
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-entries"></div>];</div> </div>
+  let entries = array.entries();
 
-                      for (let element of entries) {
-                      console.log(element);
-                      }
+  for (let element of entries) {
+    console.log(element);
+  }
                       </pre>
                     </div>
                     <button class="waves-effect waves-light btn arrays__button_add entries-add">
@@ -1718,14 +1667,12 @@ for (let key of keys) {
 
                     <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                    <div class="arrays-div__input">[<div class="arrays__input arrays__input-keys"></div>];</div>
-                  </div>
-                  let keys = array.keys();
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-keys"></div>];</div></div>
+  let keys = array.keys();
 
-                  for (let key of keys) {
-                  console.log(key);
-                  }
+  for (let key of keys) {
+    console.log(key);
+  }
                   </pre>
                 </div>
                 <button class="waves-effect waves-light btn arrays__button_add keys-add">
@@ -1835,14 +1782,12 @@ array.values();
 
                   <pre class="arrays-code">
                                   <div class="arrays__practice"><pre class="arrays-code__let">
-  let array = </pre>
-                  <div class="arrays-div__input">[<div class="arrays__input arrays__input-values"></div>];</div>
-                </div>
-                let values = array.values();
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-values"></div>];</div></div>
+  let values = array.values();
 
-                for (let value of values) {
-                console.log(values);
-                }
+  for (let value of values) {
+    console.log(values);
+  }
                 </pre>
               </div>
               <button class="waves-effect waves-light btn arrays__button_add values-add">
@@ -2294,15 +2239,13 @@ alert('Массив: ' + arr);
 
                           <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-let array = </pre>
-                          <div class="arrays-div__input">[<div class="arrays__input arrays__input-foreach"></div>];
-                          </div>
-                        </div>
-                        let arraySquare = [];
-                        array.forEach(function (num) {
-                        let square = num * num;
-                        arraySquare.push(square);
-                        })
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-foreach"></div>];</div></div>
+  let arraySquare = [];
+  
+  array.forEach(function (num) {
+    let square = num * num;
+    arraySquare.push(square);
+  })
                         </pre>
 
                       </div>
@@ -2406,12 +2349,10 @@ alert(squares);
 
                       <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-let array = </pre>
-                      <div class="arrays-div__input">[<div class="arrays__input arrays__input-map"></div>];</div>
-                    </div>
-                    let arrayPlusOne = array.map(function (num) {
-                    return num + 1;
-                    })
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-map"></div>];</div></div>
+  let arrayPlusOne = array.map(function (num) {
+    return num + 1;
+  })
                     </pre>
 
                   </div>
@@ -2571,12 +2512,10 @@ alert(average);
 
                     <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-const numbers = </pre>
-                    <div class="arrays-div__input">[<div class="arrays__input arrays__input-reduce"></div>];</div>
-                  </div>
-                  const sum = numbers.reduce(function (accumulator, element) {
-                  return accumulator + element;
-                  }, 0)
+  const numbers = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-reduce"></div>];</div></div>
+  const sum = numbers.reduce(function (accumulator, element) {
+    return accumulator + element;
+  }, 0)
                   </pre>
 
                 </div>
@@ -2740,16 +2679,14 @@ alert(average);
 
                   <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-const numbers = </pre>
-                  <div class="arrays-div__input">[<div class="arrays__input arrays__input-reduceright"></div>];</div>
-                </div>
-                numbers.sort(function(a, b) {
-                return a - b;
-                });
-
-                const subtraction = numbers.reduceRight(function (accumulator, element) {
-                return accumulator - element;
-                });
+  const numbers = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-reduceright"></div>];</div></div>
+  numbers.sort(function(a, b) {
+    return a - b;
+  });
+  
+  const subtraction = numbers.reduceRight(function (accumulator, element) {
+    return accumulator - element;
+  });
                 </pre>
 
               </div>
@@ -2856,12 +2793,10 @@ alert(arrayOdds);
 
                 <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-const array = </pre>
-                <div class="arrays-div__input">[<div class="arrays__input arrays__input-filter"></div>];</div>
-              </div>
-              let arrayEven = array.filter(function (num) {
-              return num % 2 == 0;
-              })
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-filter"></div>];</div></div>
+  let arrayEven = array.filter(function (num) {
+    return num % 2 == 0;
+  })
               </pre>
 
             </div>
@@ -2963,12 +2898,10 @@ alert(arrayNums(array));
 
                 <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-const array = </pre>
-                <div class="arrays-div__input">[<div class="arrays__input arrays__input-every"></div>];</div>
-              </div>
-              const arrayElements = array.every(function (element) {
-              return element === array[0];
-              })
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-every"></div>];</div></div>
+  const arrayElements = array.every(function (element) {
+    return element === array[0];
+  })
               </pre>
 
             </div>
@@ -3070,12 +3003,10 @@ alert(arrayNums(array));
 
                 <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-const array = </pre>
-                <div class="arrays-div__input">[<div class="arrays__input arrays__input-some"></div>];</div>
-              </div>
-              const arrayNums = array.some(function (num) {
-              return num % 2 === 0;
-              })
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-some"></div>];</div></div>
+  const arrayNums = array.some(function (num) {
+    return num % 2 === 0;
+  })
               </pre>
 
             </div>
@@ -3221,12 +3152,10 @@ console.log(array.flatMap(duplicate));
 
                 <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-const array = </pre>
-                <div class="arrays-div__input">[<div class="arrays__input arrays__input-flatmap"></div>];</div>
-              </div>
-              const duplicateSquare = array.flatMap(function (element) {
-              return [element, element**2];
-              });
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-flatmap"></div>];</div></div>
+  const duplicateSquare = array.flatMap(function (element) {
+    return [element, element**2];
+  });
               </pre>
 
             </div>
@@ -3345,12 +3274,10 @@ alert(arrayFind(array));
 
                         <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-const array = </pre>
-                        <div class="arrays-div__input">[<div class="arrays__input arrays__input-find"></div>];</div>
-                      </div>
-                      const arrayFind = array.find(function (element) {
-                      return element === 5;
-                      });
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-find"></div>];</div></div>
+  const arrayFind = array.find(function (element) {
+    return element === 5;
+  });
                       </pre>
 
                     </div>
@@ -3483,12 +3410,10 @@ alert(findIndex(arrayEven, isOdd));
 
                     <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-const array = </pre>
-                    <div class="arrays-div__input">[<div class="arrays__input arrays__input-findindex"></div>];</div>
-                  </div>
-                  const arrayFindEven = array.findIndex(function (element) {
-                  return element % 2 === 0;
-                  });
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-findindex"></div>];</div></div>
+  const arrayFindEven = array.findIndex(function (element) {
+    return element % 2 === 0;
+  });
                   </pre>
 
                 </div>
@@ -3607,12 +3532,10 @@ alert(arrayEven(array));
 
                   <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-const array = </pre>
-                  <div class="arrays-div__input">[<div class="arrays__input arrays__input-findlast"></div>];</div>
-                </div>
-                const arrayOdd = array.findLast(function (element) {
-                return element % 2 !== 0;
-                });
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-findlast"></div>];</div></div>
+  const arrayOdd = array.findLast(function (element) {
+    return element % 2 !== 0;
+  });
                 </pre>
 
               </div>
@@ -3751,12 +3674,10 @@ alert(findIndex(arrayEven, isOdd));
 
                 <pre class="arrays-code">
                                 <div class="arrays__practice"><pre class="arrays-code__let">
-const array = </pre>
-                <div class="arrays-div__input">[<div class="arrays__input arrays__input-findlastindex"></div>];</div>
-              </div>
-              const arrayFindEven = array.findLastIndex(function (element) {
-              return element % 2 === 0;
-              });
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-findlastindex"></div>];</div></div>
+  const arrayFindEven = array.findLastIndex(function (element) {
+    return element % 2 === 0;
+  });
               </pre>
 
             </div>
@@ -3795,7 +3716,47 @@ const array = </pre>
   </div>
   </div>
   </main>
-  <footer></footer>
+  <footer class="page-footer teal lighten-1">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <div>
+                    <h5 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
+                    </h5>
+                    <div>
+                        <div class="setup"></div>
+                        <div class="punchline"></div>
+                        <div class="error"></div>
+                    </div>
+                </div>
+                <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Полезные ссылки</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc">Notion
+                        Frontend 34</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/">Современный учебник
+                        JavaScript</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference">Справочник по
+                        JavaScript. MDN</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT">Сложный
+                        JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/">JavaScript Дока</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2023
+            <a class="grey-text text-lighten-4 right" href="about.html">О прекрасных разработчицах этого гайда</a>
+        </div>
+    </div>
+</footer>
   </div>
 
 

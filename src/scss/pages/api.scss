@@ -1,0 +1,49 @@
+.nasa-api {
+  display: flex;
+}
+
+.nasa-image {
+  min-width: 50%;
+}
+
+.nasa-info {
+  padding-left: 1rem;
+}
+
+.get-answer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.yesno-image {
+  max-width: 200px;
+}
+
+.activity, .answer {
+  font-weight: bold;
+}
+
+.activity {
+  text-align: center;
+}
+
+.catchpokemon {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 2rem;
+  place-content: center;
+  text-align: center;
+  font-size: 1.25rem;
+}
+.pokemon {
+  height: 180px;
+  width: 200px;
+}
+
+.pokemonName {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+

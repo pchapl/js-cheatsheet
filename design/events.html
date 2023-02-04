@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" type="image/png">
+
     <!--    normalize css -->
     <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+    <!-- materialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- materialize css -->
     <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
@@ -23,10 +28,36 @@
 
 <body>
 <div class="wrapper">
-    <header></header>
+    <header class="header">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="api.html">API</a></li>
+            <li><a href="arrays.html">Arrays</a></li>
+            <li><a href="dom.html">DOM</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="ifelse.html">If Else</a></li>
+            <li><a href="prototypes.html">Prototypes</a></li>
+            <li><a href="regular.html">Regular</a></li>
+            <li><a href="string.html">String</a></li>
+            <li><a href="this.html">this</a></li>
+            <li><a href="timedate.html">TimeDate</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="variables.html">Variables</a></li>
+            <li><a href="web.html">Web</a></li>
+        </ul>
+        <nav class="teal lighten-1">
+            <div class="nav-wrapper teal lighten-1 nav__container">
+                <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                <ul class="right">
+                    <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <main class="events-main__container">
-        <h2>Events (Браузерные события)</h2>
+        <h2 class="teal-text">Events (Браузерные события)</h2>
         <p>Событие – это сигнал от браузера о том, что что-то произошло. Все DOM-узлы подают такие сигналы (хотя события
             бывают и не только в DOM).</p>
         <div class="events-main__why">
@@ -42,7 +73,7 @@
                     <div class="col s12">
                         <ul class="collapsible popout">
                             <li>
-                                <div class="collapsible-header">События мыши</div>
+                                <div class="collapsible-header teal lighten-5">События мыши</div>
                                 <div class="collapsible-body">
                                     <span class="list-title">click</span> – происходит, когда кликнули на элемент левой
                                     кнопкой мыши (на устройствах с сенсорными экранами оно происходит при касании).<br>
@@ -56,7 +87,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header">События на элементах управления</div>
+                                <div class="collapsible-header teal lighten-4">События на элементах управления</div>
                                 <div class="collapsible-body">
                                     <span class="list-title">submit</span> – пользователь отправил форму
                                     &lt;form&gt;.<br>
@@ -65,7 +96,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header">Клавиатурные события</div>
+                                <div class="collapsible-header teal lighten-3">Клавиатурные события</div>
                                 <div class="collapsible-body">
                                     <span class="list-title">keydown/keyup</span> – когда пользователь
                                     нажимает/отпускает клавишу.<br>
@@ -74,7 +105,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header">События документа</div>
+                                <div class="collapsible-header  teal lighten-2">События документа</div>
                                 <div class="collapsible-body">
                                     <span class="list-title">DOMContentLoaded</span> – когда HTML загружен и обработан,
                                     DOM документа полностью построен и доступен.
@@ -96,7 +127,7 @@
 
                         <ul class="collapsible popout">
                             <li>
-                                <div class="collapsible-header">Атрибут HTML: onclick="..."</div>
+                                <div class="collapsible-header teal lighten-5">Атрибут HTML: onclick="..."</div>
                                 <div class="collapsible-body">
                                     HTML-атрибуты используются редко потому, что JavaScript в HTML-теге выглядит немного
                                     странно. К тому же много кода там не напишешь.<br>
@@ -130,7 +161,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header">DOM-свойство: elem.onclick = function</div>
+                                <div class="collapsible-header teal lighten-4">DOM-свойство: elem.onclick = function</div>
                                 <div class="collapsible-body">
                                     DOM-свойства вполне можно использовать, но мы не можем назначить больше одного
                                     обработчика на один тип события. Во многих случаях с этим ограничением можно
@@ -158,7 +189,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header">Специальные методы: elem.addEventListener(event,
+                                <div class="collapsible-header teal lighten-3">Специальные методы: elem.addEventListener(event,
                                     handler[, phase]) для добавления, removeEventListener для удаления
                                 </div>
                                 <div class="collapsible-body">
