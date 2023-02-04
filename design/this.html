@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+      type="image/png"
+    />
+
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css" />
+
+    <!-- materialize icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- materialize css -->
+    <link
+      rel="stylesheet"
+      href="../node_modules/materialize-css/dist/css/materialize.css"
+    />
+
+    <!--    project styles -->
+    <link rel="stylesheet" href="./assets/dist/css/main.css" />
+    <link rel="stylesheet" href="../src/scss/pages/this.scss">
+
+    <title>JS Cheatsheet</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="api.html">API</a></li>
+            <li><a href="arrays.html">Arrays</a></li>
+            <li><a href="dom.html">DOM</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="ifelse.html">If Else</a></li>
+            <li><a href="prototypes.html">Prototypes</a></li>
+            <li><a href="regular.html">Regular</a></li>
+            <li><a href="string.html">String</a></li>
+            <li><a href="this.html">this</a></li>
+            <li><a href="timedate.html">TimeDate</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="variables.html">Variables</a></li>
+            <li><a href="web.html">Web</a></li>
+        </ul>
+        <nav class="teal lighten-1">
+            <div class="nav-wrapper teal lighten-1 nav__container">
+                <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                <ul class="right">
+                    <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+      </header>
+      <main class="main__container">
+        <h1>Ключевое слово <strong>this</strong></h1>
+        <p>Специальное слово в языке JavaScript, которое позволяет методам объектов и функциям получить доступ к информации внутри объекта.</p>
+        <p>Что же значит <code>this</code>? В коде это слово заменяет имя объекта, информацию из которого мы пытаемся получить. В зависимости от того, какой объект вызывает метод, будет меняться и значение <code>this</code>.</p>
+        <p>Давайте рассмотрим пример. Создадим объект <code>user</code> с данными пользователя:</p>
+        <pre class="hoverable">
+          <code class="js">
+            let user = {
+              name: "John",
+              age: 30,
+            }
+          </code>
+        </pre>
+        <p>Теперь добавим нашему объекту метод <code>sayHi</code>, который будет выводить имя пользователя. Для этого методу потребуется доступ к информации, содержащейся в объекте, и вот тут нам и пригодится слово <code>this</code>.</p>        
+        <pre class="hoverable">
+          <code class="js">
+            let user = {
+              name: "John",
+              age: 30,
+              
+              sayHi() {
+              }
+            
+            };
+          </code>
+        </pre>
+        <p>Впишите внутри фигурных скобок метода <code>sayHi</code> следующее:
+          <code>alert(this.name);</code></p>
+        <p>Посмотрите, что вернет код:</p> 
+        <p>sayHi {</p> 
+          <input type="text" placeholder="Впишите код" id="inputFirst">
+        <p>}</p> 
+        <div id="innerHTML1"></div>
+        <p>Итак, вот что у нас получилось:</p>
+        <pre>
+          <code class="js">
+            let user = {
+              name: "John",
+              age: 30,
+              
+              sayHi() {
+                alert(this.name);
+              }
+            
+            };
+            <input type="text" placeholder="Допишите последнюю строчку кода" id="inputSecond">
+          </code>
+        </pre>
+        <p>А теперь вызовите метод <code>sayHi</code> из объекта <code>user</code>. Для этого допишите последнюю строчку кода — <code>user.sayHi();</code> — и посмотрите на результат.</p>
+        <div id="innerHTML2"></div>
+        <p>Метод <code>sayHi</code> вызывается объектом <code>user</code>, поэтому в данном примере значением <code>this</code> является <code>user</code>.</p>
+        <p>Конечно, мы можем получить имя пользователя и без помощи <code>this</code> — просто обратившись к объекту через внешнюю переменную, в которой хранится ссылка на этот объект. Между фигурными скобками метода <code>sayHi</code> впишите <code>alert(user.name);</code>, т.е. замените в коде <code>this</code> на <code>user</code>. Что вернет код?</p>
+        <pre>
+          <code class="js">
+            let user = {
+              name: "John",
+              age: 30,
+            
+              sayHi() {
+                 // "user" вместо "this"
+                <input type="text" placeholder="Впишите код" id="inputThird">
+              }
+            
+            };
+          </code>
+        </pre>
+        <div id="innerHTML3"></div>
+        <p>Метод <code>sayHi</code> в данном случае тоже вернет John. Зачем же тогда писать лишние строчки кода и использовать <code>this</code>?</p>
+        <p>Дело в том, что обращаясь к данным объекта напрямую через переменную, мы ставим работу нашего кода в зависимость от этой переменной. Если мы сохраним ссылку на объект в другую переменную, например, <code>admin = user</code>, и перезапишем саму переменную <code>user</code>, код будет работать неправильно. Метод <code>sayHi</code> выдаст ошибку при работе с объектом <code>admin</code>.</p>
+        <pre class="hoverable">
+          <code class="js">
+            let user = {
+              name: "John",
+              age: 30,
+            
+              sayHi() {
+                alert( user.name ); // приведёт к ошибке
+              }
+            
+            };
+            
+            
+            let admin = user;
+            user = null; // перезапишем переменную для наглядности, теперь она не хранит ссылку на объект.
+            
+            admin.sayHi(); // TypeError: Cannot read property 'name' of null
+          </code>
+        </pre>
+        <p>Чтобы методы всегда работали с данным объектом, тем самым, который их вызывает, мы и используем ключевое слово <code>this</code>.</p>
+        <h2><strong>this</strong> не является фиксированным</h2>
+        <p>В JavaScript ключевое слово <code>this</code> ведёт себя иначе, чем в большинстве других языков программирования. Его можно использовать в любой функции, даже если это не метод объекта.</p>
+        <p>В следующем примере нет синтаксической ошибки:</p>
+        <pre class="hoverable">
+          <code class="js">
+            function sayHi() {
+              alert( this.name );
+            }
+          </code>
+        </pre>
+        <p>Значение <code>this</code> вычисляется во время выполнения кода, в зависимости от контекста.</p>
+        <p>Например, здесь одна и та же функция назначена двум разным объектам и имеет различное значение <code>this</code> в вызовах:</p>
+        <pre class="hoverable">
+          <code class="js">
+            let user = { name: "John" };
+            let admin = { name: "Admin" };
+            
+            function sayHi() {
+              alert( this.name );
+            }
+            
+            // используем одну и ту же функцию в двух объектах
+            user.f = sayHi;
+            admin.f = sayHi;
+            
+            // эти вызовы имеют  разное значение this
+            // "this" внутри функции - это объект "перед точкой"
+            user.f(); // John  (this == user)
+            admin.f(); // Admin  (this == admin)
+            
+            admin['f'](); // Admin (нет разницы между использованием точки или квадратных скобок для доступа к объекту)
+          </code>
+        </pre>
+        <p>Правило простое: если вызывается <code>obj.f()</code>, то во время вызова <code>f</code>, <code>this</code> – это <code>obj</code>. Так что, в приведённом выше примере это либо <code>user</code>, либо <code>admin</code>.</p>
+        <h2>У стрелочных функций нет <strong>this</strong></h2>
+        <p>Стрелочные функции особенные: у них нет своего «собственного» <code>this</code>. Если мы ссылаемся на <code>this</code> внутри такой функции, то оно берется из внешней «нормальной» функции.</p>
+        <p>Например, здесь <code>arrow()</code> использует значение <code>this</code> из внешнего метода <code>user.sayHi()</code>:</p>
+        <pre class="hoverable">
+          <code class="js">
+            let user = {
+              firstName: "Ilya",
+              sayHi() {
+                let arrow = () => alert(this.firstName);
+                arrow();
+              }
+            };
+            
+            user.sayHi(); // Ilya
+          </code>
+        </pre>
+        <p>Это особенность стрелочных функций. Она полезна, когда мы на самом деле не хотим иметь отдельное <code>this</code>, а скорее хотим взять его из внешнего контекста.</p>
+        <h3>Подведем итог</h3>
+        <ul class="browser-default">
+          <li>Методы могут ссылаться на объект через <code>this</code>.</li>
+          <li>Значение <code>this</code> определяется во время исполнения кода.</li>
+          <li>При объявлении любой функции в ней можно использовать <code>this</code>, но этот <code>this</code> не имеет значения до тех пор, пока функция не будет вызвана.</li>
+          <li>Функция может быть скопирована между объектами (из одного объекта в другой).</li>
+          <li>Когда функция вызывается синтаксисом «метода» – <code>object.method()</code>, значением <code>this</code> во время вызова является <code>object</code>.</li>
+          <li>Cтрелочные функции являются особенными – у них нет <code>this</code>. Когда внутри стрелочной функции обращаются к <code>this</code>, то его значение берется извне.</li>
+        </ul>
+      </main>
+    </div>
+    <footer class="page-footer teal lighten-1">
+      <div class="container">
+          <div class="row">
+              <div class="col l6 s12">
+                  <div>
+                      <h5 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
+                      </h5>
+                      <div>
+                          <div class="setup"></div>
+                          <div class="punchline"></div>
+                          <div class="error"></div>
+                      </div>
+                  </div>
+                  <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Полезные ссылки</h5>
+                  <ul>
+                      <li><a class="grey-text text-lighten-3"
+                             href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc">Notion
+                          Frontend 34</a></li>
+                      <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/">Современный учебник
+                          JavaScript</a></li>
+                      <li><a class="grey-text text-lighten-3"
+                             href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference">Справочник по
+                          JavaScript. MDN</a></li>
+                      <li><a class="grey-text text-lighten-3"
+                             href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT">Сложный
+                          JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                      <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/">JavaScript Дока</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="footer-copyright">
+          <div class="container">
+              © 2023
+              <a class="grey-text text-lighten-4 right" href="about.html">О прекрасных разработчицах этого гайда</a>
+          </div>
+      
+  </footer>
+  </div>
+    <script src="./assets/dist/js/main.js"></script>
+  </body>
+</html>
