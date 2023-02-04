@@ -45,7 +45,7 @@ function catchError() {
     error.innerHTML = "Советы закончились :(";
 }
 
-document.addEventListener("click", function (event) {
+document?.addEventListener("click", function (event) {
     if (!event.target.matches("#activity-button")) return;
 
     fetch("https://www.boredapi.com/api/activity/")
