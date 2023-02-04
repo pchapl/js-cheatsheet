@@ -151,7 +151,7 @@
                                     <div class="nasa-api">
                                         <div class="nasa-image"><img src="" alt="" class="image"></div>
                                         <div class="nasa-info">
-                                            <h6 class="title"></h6>
+                                            <h5 class="title"></h5>
                                             <div class="info"></div>
                                         </div>
                                     </div>
@@ -162,8 +162,12 @@
                                     <p>А <a href="https://yesno.wtf">эта</a> позволяет получить ответ "да" или "нет" и
                                         сопровождает его соответствующей гифкой.</p>
                                     <div class="get-answer">
-                                        <div class="answer teal-text text-accent-3"></div>
-                                        <div class="yesno-image"><img src="" alt="" class="img"></div>
+                                        <button id="yesno-button" class="waves-effect waves-light btn" type='button'>
+                                            Получить ответ
+                                        </button>
+                                        <div id="answer" class="answer teal-text text-accent-3"></div>
+                                        <div class="yesno-image"><img id="gif" src="" alt=""></div>
+                                        <p id="yesno-error" class="answer red-text text-darken-3"></p>
                                     </div>
                                 </div>
 
@@ -171,39 +175,59 @@
                                     <h3>Bored <abbr>API</abbr></h3>
                                     <p>А если скучно, <a href="https://www.boredapi.com/">эта</a> апи поможет найти
                                         занятие.</p>
-                                    <div class="activity teal-text text-accent-3"></div>
+                                    <div class="activity">
+                                        <button id="activity-button" class="waves-effect waves-light btn" type='button'>
+                                            Выбрать занятие
+                                        </button>
+                                        <div id="activity" class="teal-text text-accent-3"></div>
+                                        <p id="activity-error" class="activity red-text text-darken-3"></p>
+                                    </div>
                                 </div>
 
                                 <div class="pokemons">
                                     <h3><abbr>API</abbr> покемонов</h3>
-                                    <p>Это бесплатный <abbr>API</abbr>, для доступа к которому не требуется
+                                    <p><a href="https://pokeapi.co/">Это</a> бесплатный <abbr>API</abbr>, для доступа к
+                                        которому не требуется
                                         аутентификация. Можно запрашивать конкретных покемонов,
                                         движения, игры, локации и многое другое.</p>
                                     <div class="catchpokemon">
-                                        <div id="pokemon" class="pokemon"></div>
-                                        <button id="button" class="waves-effect waves-light btn" type='button'>Catch
+                                        <button id="pokemon-button" class="waves-effect waves-light btn" type='button'>
+                                            Catch
                                             Pokemon
                                         </button>
+                                        <div id="pokemon" class="pokemon"></div>
                                     </div>
                                 </div>
 
-                                <div class="cats"></div>
+                                <div class="cats">
+                                    <h3>Котики</h3>
+                                    <p>Разумеется, этот проект не мог обойтись без котиков :) В этом нам поможет <a
+                                            href="http://aws.random.cat/meow">вот этот сайт</a>, который выдаёт
+                                        рандомные картинки котов.</p>
+                                    <div class="cat">
+                                        <button id="cat-button" class="waves-effect waves-light btn" type='button'>
+                                            Погладить кота
+                                            <i class="material-icons">pets</i>
+                                        </button>
+                                        <div class="cat-image"><img id="cat" src="" alt=""></div>
+                                        <p id="cat-error" class="answer red-text text-darken-3"></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">code</i>Полезные ссылки</div>
-                        <div class="collapsible-body"><span></span>
-                            <p>
-                                <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Client-side_web_APIs/Introduction">MDN</a>
-                            </p>
-                            <p><a href="https://doka.guide/js/api/">Что такое <abbr>API</abbr> (Дока)</a></p>
-                            <p><a href="https://htmlweb.ru/api/"><abbr>API</abbr> сервисы</a></p>
-                            <p><a href="https://github.com/toddmotto/public-apis">A collective list of free
-                                <abbr>API</abbr>s</a></p>
-                        </div>
-                    </li>
                 </ul>
+            </div>
+            <div class="api-links">
+                <h2>Полезные ссылки</h2>
+                <div><p>
+                    <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Client-side_web_APIs/Introduction">MDN</a>
+                </p>
+                    <p><a href="https://doka.guide/js/api/">Что такое <abbr>API</abbr> (Дока)</a></p>
+                    <p><a href="https://htmlweb.ru/api/"><abbr>API</abbr> сервисы</a></p>
+                    <p><a href="https://github.com/toddmotto/public-apis">A collective list of free
+                        <abbr>API</abbr>s</a></p>
+                </div>
             </div>
         </div>
     </main>

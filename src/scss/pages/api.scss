@@ -22,10 +22,16 @@
 
 .activity, .answer {
   font-weight: bold;
+  margin: 1rem;
+  font-size: larger;
 }
 
 .activity {
   text-align: center;
+}
+
+#activity {
+  margin: 1rem;
 }
 
 .catchpokemon {
@@ -47,3 +53,12 @@
   text-transform: uppercase;
 }
 
+.cat {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.cat-image {
+  margin: 1rem;
+}

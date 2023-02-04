@@ -21,32 +21,55 @@ document?.addEventListener("DOMContentLoaded", function (event) {
         .catch((error) => console.log(error));
 });
 
-document?.addEventListener("DOMContentLoaded", function (event) {
+document?.addEventListener("click", function (event) {
+    if (!event.target.matches("#yesno-button")) return;
+
     fetch("https://yesno.wtf/api")
         .then((response) => response.json())
-        .then((data) => {
-            const answer = document.querySelector(".answer");
-            answer.innerHTML = data.answer;
-            const img = document.querySelector(".img");
-            img.src = data.image;
-        })
-        .catch((error) => console.log(error));
+        .then((data) => getAnswer(data))
+        .catch(() => catchError());
 });
 
-document?.addEventListener("DOMContentLoaded", function (event) {
+function getAnswer(data) {
+    const answer = document.getElementById("answer");
+    const gif = document.getElementById("gif");
+    const error = document.getElementById("yesno-error");
+
+    error.innerHTML = "";
+    answer.innerHTML = data.answer;
+    gif.src = data.image;
+}
+
+function catchError() {
+    const error = document.getElementById("yesno-error");
+    error.innerHTML = "Советы закончились :(";
+}
+
+document?.addEventListener("click", function (event) {
+    if (!event.target.matches("#activity-button")) return;
+
     fetch("https://www.boredapi.com/api/activity/")
         .then((response) => response.json())
-        .then((data) => {
-            const activity = document.querySelector(".activity");
-            activity.innerHTML = data.activity;
-        })
-        .catch((error) => console.log(error));
+        .then((data) => getActivity(data))
+        .catch(() => catchError());
 });
+
+function getActivity(data) {
+    const activity = document.getElementById("activity");
+    const error = document.getElementById("activity-error");
+
+    error.innerHTML = "";
+    activity.innerHTML = data.activity;
+}
+
+function catchError() {
+    error.innerHTML = "Ой, придумайте сами себе занятие!";
+}
 
 const container = document.getElementById("pokemon");
 
 document?.addEventListener("click", function (event) {
-    if (!event.target.matches("#button")) return;
+    if (!event.target.matches("#pokemon-button")) return;
 
     const pokemonNumber = getRandomInt(1, 893);
 
@@ -71,11 +94,32 @@ function renderPokemon(data) {
 }
 
 function renderError() {
-    container.innerHTML = "Whoops, something went wrong. Please try again!";
+    container.innerHTML = "Что-то пошло не так, покемон сбежал.";
 }
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+document?.addEventListener("click", function (event) {
+    if (!event.target.matches("#cat-button")) return;
+
+    fetch("https://aws.random.cat/meow")
+        .then((response) => response.json())
+        .then((data) => getCat(data))
+        .catch(() => catError());
+});
+
+function getCat(data) {
+    const cat = document.getElementById("cat");
+    const error = document.getElementById("cat-error");
+
+    error.innerHTML = "";
+    cat.src= data.file;
+}
+
+function catError() {
+    error.innerHTML = "Отстаньте от кота";
 }
