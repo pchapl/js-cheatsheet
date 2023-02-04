@@ -102,3 +102,24 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+document?.addEventListener("click", function (event) {
+    if (!event.target.matches("#cat-button")) return;
+
+    fetch("https://aws.random.cat/meow")
+        .then((response) => response.json())
+        .then((data) => getCat(data))
+        .catch(() => catError());
+});
+
+function getCat(data) {
+    const cat = document.getElementById("cat");
+    const error = document.getElementById("cat-error");
+
+    error.innerHTML = "";
+    cat.src= data.file;
+}
+
+function catError() {
+    error.innerHTML = "Отстаньте от кота";
+}

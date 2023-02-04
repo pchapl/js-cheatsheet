@@ -30,6 +30,10 @@
   text-align: center;
 }
 
+#activity {
+  margin: 1rem;
+}
+
 .catchpokemon {
   display: flex;
   flex-flow: column nowrap;
@@ -49,3 +53,12 @@
   text-transform: uppercase;
 }
 
+.cat {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.cat-image {
+  margin: 1rem;
+}
