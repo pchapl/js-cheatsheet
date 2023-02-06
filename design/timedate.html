@@ -60,7 +60,7 @@
 <main class="container">
     <h1 class="center-align teal-text text-darken-3">Даты и время в JS</h1>
     <section class="td">
-        <h3>что такое объект Date</h3>
+        <h3 class="teal-text text-darken-2">что такое объект Date</h3>
         <section>Date — это специальный объект для работы со временем. Он является встроенным в движок браузера, поэтому
             посмотреть что у него внутри не так-то просто.
             <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date">Источники</a>
@@ -80,7 +80,7 @@
     </section>
 
     <section class="td-magic">
-        <h3 class="td_title">Про магию и почему важно использовать объект Date в программировании</h3>
+        <h3 class="td_title teal-text text-darken-2">Про магию и почему важно использовать объект Date в программировании</h3>
         <section>
             т.к. работа со временем крутится вокруг таймстампа, то часто можно увидеть что-то вроде этого:
             <pre><code>let Jan02_1970 = new Date(24 * 60 * 60 * 1000); //получим 02.01.1970 UTC+0</code></pre>
@@ -98,7 +98,7 @@ let days = milliseconds / (1000 * 60 * 60 * 24)//получим 364 дня</code
     </section>
 
     <section class="td-create-new-date">
-        <h3>как создать объект Date</h3>
+        <h3 class="teal-text text-darken-2">как создать объект Date</h3>
         <h6>создаём Date с текущей датой и временем:</h6>
         <pre><code class="td-now-date">const now = new Date();
 console.log(nowDate);
@@ -124,7 +124,7 @@ console.log(fromParameters);
 
 
     <section class="td-metods">
-        <h3>методы работы с датой</h3>
+        <h3 class="teal-text text-darken-2">Методы работы с датой</h3>
         <section>Далее можно попробовать ввести дату разными способами и посмотреть, что возвращают get-методы</section>
         <pre>
         <code class="td-user-date">
@@ -156,7 +156,7 @@ console.log(currentDate.toISOString())
     </section>
 
     <section>
-        <h4>а ещё</h4>
+        <h4 class="teal-text text-darken-1">а ещё</h4>
         <div class="td_text">
             С датами можно производить математические операции. главное помнить, что мы просто складываем или вычитаем количество миллисекунд! Поэтому если вы заранее не привели ваши даты к utc формату, то результат может быть некорректным.
         </div>
@@ -171,9 +171,9 @@ const newDate = new Date(2022, 11, 32);
     </section>
 
     <section>
-        <h3>библиотеки</h3>
+        <h3 class="teal-text text-darken-2">Библиотеки</h3>
         <div class="td_text">
-             здесь должна быть инфа про библиотек
+             здесь должна быть инфа про библиотеки
         </div>
     </section>
 </main>
