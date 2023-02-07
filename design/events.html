@@ -58,8 +58,8 @@
 
     <main class="events-main__container">
         <h1 class="teal-text text-darken-3">Events (Браузерные события)</h1>
-        <p>Событие – это сигнал от браузера о том, что что-то произошло. Все DOM-узлы подают такие сигналы (хотя события
-            бывают и не только в DOM).</p>
+        <p>Событие — это сигнал от браузера о том, что что-то произошло. Все <abbr>DOM</abbr>-узлы подают такие сигналы (хотя события
+            бывают и не только в <abbr>DOM</abbr>).</p>
         <div class="events-main__why">
             <h5>Зачем нужны:</h5>
             На такие события можно назначит функцию-обработчик, которая сработает, как только событие произошло.<br>
@@ -75,40 +75,40 @@
                             <li>
                                 <div class="collapsible-header teal lighten-5">События мыши</div>
                                 <div class="collapsible-body">
-                                    <span class="list-title">click</span> – происходит, когда кликнули на элемент левой
+                                    <span class="list-title">click</span> — происходит, когда кликнули на элемент левой
                                     кнопкой мыши (на устройствах с сенсорными экранами оно происходит при касании).<br>
-                                    <span class="list-title">contextmenu</span> – происходит, когда кликнули на элемент
+                                    <span class="list-title">contextmenu</span> — происходит, когда кликнули на элемент
                                     правой кнопкой мыши.<br>
-                                    <span class="list-title">mouseover/mouseout</span> – когда мышь наводится
+                                    <span class="list-title">mouseover/mouseout</span> — когда мышь наводится
                                     на/покидает элемент.<br>
-                                    <span class="list-title">mousedown/mouseup</span> – когда нажали/отжали кнопку мыши
+                                    <span class="list-title">mousedown/mouseup</span> — когда нажали/отжали кнопку мыши
                                     на элементе.<br>
-                                    <span class="list-title">mousemove</span> – при движении мыши.
+                                    <span class="list-title">mousemove</span> — при движении мыши.
                                 </div>
                             </li>
                             <li>
                                 <div class="collapsible-header teal lighten-4">События на элементах управления</div>
                                 <div class="collapsible-body">
-                                    <span class="list-title">submit</span> – пользователь отправил форму
+                                    <span class="list-title">submit</span> — пользователь отправил форму
                                     &lt;form&gt;.<br>
-                                    <span class="list-title">focus</span> – пользователь фокусируется на элементе,
+                                    <span class="list-title">focus</span> — пользователь фокусируется на элементе,
                                     например нажимает на &lt;input&gt;.
                                 </div>
                             </li>
                             <li>
                                 <div class="collapsible-header teal lighten-3">Клавиатурные события</div>
                                 <div class="collapsible-body">
-                                    <span class="list-title">keydown/keyup</span> – когда пользователь
+                                    <span class="list-title">keydown/keyup</span> — когда пользователь
                                     нажимает/отпускает клавишу.<br>
-                                    <span class="list-title">keypress</span> – событие происходит, когда пользователь
+                                    <span class="list-title">keypress</span> — событие происходит, когда пользователь
                                     нажал клавишу на клавиатуре над элементом.
                                 </div>
                             </li>
                             <li>
                                 <div class="collapsible-header  teal lighten-2">События документа</div>
                                 <div class="collapsible-body">
-                                    <span class="list-title">DOMContentLoaded</span> – когда HTML загружен и обработан,
-                                    DOM документа полностью построен и доступен.
+                                    <span class="list-title">DOMContentLoaded</span> — когда <abbr>HTML</abbr> загружен и обработан,
+                                    <abbr>DOM</abbr> документа полностью построен и доступен.
                                 </div>
                             </li>
                         </ul>
@@ -127,9 +127,9 @@
 
                         <ul class="collapsible popout">
                             <li>
-                                <div class="collapsible-header teal lighten-5">Атрибут HTML: onclick="..."</div>
+                                <div class="collapsible-header teal lighten-5">Атрибут <abbr>HTML</abbr>: onclick="..."</div>
                                 <div class="collapsible-body">
-                                    HTML-атрибуты используются редко потому, что JavaScript в HTML-теге выглядит немного
+                                    <abbr>HTML</abbr>-атрибуты используются редко потому, что JavaScript в <abbr>HTML</abbr>-теге выглядит немного
                                     странно. К тому же много кода там не напишешь.<br>
                                     Обработчик может быть назначен прямо в разметке, в атрибуте, который называется on&lt;событие&gt;
                                     (onclick, onkeydown, onmouseout и <a
@@ -145,7 +145,7 @@
     }
 &lt;/script&gt;
 
-&lt;input type="button" onclick="count()" value="Считать до трех!"&gt;
+&lt;input type="button" onclick="count()" value="Считать до трёх!"&gt;
                                                 </code>
                                             </pre>
                                     </div>
@@ -157,17 +157,17 @@
                                         }
                                     </script>
 
-                                    <input type="button" onclick="count()" value="Считать до трех!">
+                                    <input type="button" onclick="count()" value="Считать до трёх!">
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header teal lighten-4">DOM-свойство: elem.onclick = function</div>
+                                <div class="collapsible-header teal lighten-4"><abbr>DOM</abbr>-свойство: elem.onclick = function</div>
                                 <div class="collapsible-body">
-                                    DOM-свойства вполне можно использовать, но мы не можем назначить больше одного
+                                    <abbr>DOM</abbr>-свойства вполне можно использовать, но мы не можем назначить больше одного
                                     обработчика на один тип события. Во многих случаях с этим ограничением можно
                                     мириться.
                                     <br>
-                                    Можно назначать обработчик, используя свойство DOM-элемента on&lt;событие&gt;.
+                                    Можно назначать обработчик, используя свойство <abbr>DOM</abbr>-элемента on&lt;событие&gt;.
                                     <div class="events-code">
                                             <pre>
                                                 <code class="language-html">
@@ -276,7 +276,7 @@
                                             </pre>
                                     </div>
                                     <a href="http://slither.io/" target="_blank">Ссылка на червячков</a><br>
-                                    <a href="http://slither.io/" target="_blank" id="custom">Ссылка с измененным
+                                    <a href="http://slither.io/" target="_blank" id="custom">Ссылка с изменённым
                                         поведением</a>
                                     <div id="slitherresult"></div>
                                 </div>
@@ -307,7 +307,7 @@
             <br><br>
             <div id="events_confetti">
                 <h6>Конфетти</h6>
-                А здесь использованы всего 2 события: mousedown - конфетти появляются и живут своей жизнью, mouseup -
+                А здесь использованы всего 2 события: mousedown — конфетти появляются и живут своей жизнью, mouseup —
                 они исчезают (ощути отличие от click). Как далеко разлетятся эти наглые цветные шарики? Решать только
                 тебе! <br><br>
                 <button id="events_confetti_btn">Конфетти</button>
@@ -497,7 +497,7 @@
                 Поставьте курсор в поле ввода и нажмите любую клавишу: <input id="keyInput" type="text"><br>
                 А вы заметили, что keypress не такой как все? На какие клавиши это событие не реагирует? Как отличаются
                 коды заглавных букв и строчных? А цифр верхнего блока клавиатуры и бокового? А совпадают ли keyCode
-                одной и той же клавиши, но с разной языковой раскладкой? А code? Войдет ли это в ТОП-7 загадок
+                одной и той же клавиши, но с разной языковой раскладкой? А code? Войдет ли это в топ-7 загадок
                 Вселенной?
                 <table class="RealTable" width="100%">
                     <tbody>
@@ -536,15 +536,15 @@
                     </tr>
                     </tbody>
                 </table>
-                <br>KeyPress возвращает ASCII код нажатого символа. Это значит, что событие вернет разные коды, если
+                <br>KeyPress возвращает <abbr>ASCII</abbr> код нажатого символа. Это значит, что событие вернёт разные коды, если
                 пользователь нажал по букве "а", или "А", или "f", несмотря на то, что на клавиатуре это одна и та же
                 кнопка. Т.е. это событие учитывает регистр символа, языковую раскладку, состояние клавиш Shift, Caps
                 Lock, Alt, Ctrl. Можно сказать, что это более «интеллектуальное» событие по сравнению с keyDown/keyUp.
                 <br>
-                Хоть onKeyPress и учитывает состояние Shift, Caps Lock, Alt, Ctrl, т.к. они влияют на то как и какой
+                Хоть onKeyPress и учитывает состояние Shift, Caps Lock, Alt, Ctrl, т.к. они влияют на то, как и какой
                 именно отобразится символ, но с помощью этого события нельзя определить состояние этих клавиш. Для этого
                 нужно использовать keyUp/keyDown.<br>
-                Два простых и похожих свойства: keyCode возвращает код нажатой клавиши, keyChar — ASCII код нажатого
+                Два простых и похожих свойства: keyCode возвращает код нажатой клавиши, keyChar — <abbr>ASCII</abbr> код нажатого
                 символа. Как понимаешь, при нажатии одной клавиши, значения этих свойств должны отличаться.<br><br>
             </div>
         </div>

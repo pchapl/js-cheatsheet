@@ -68,7 +68,7 @@
           <h1 class="arrays__title teal-text text-darken-3">Что такое массивы?</h1>
 
           <div class="array-code__item">
-            <p class="arrays__text">Массивы - это структура, в которой можно хранить коллекции элементов разных типов
+            <p class="arrays__text">Массивы — это структура, в которой можно хранить коллекции элементов разных типов
               данных — чисел, строк, других массивов и так
               далее. Элементы нумеруются и хранятся в том порядке, в котором их добавили в массив. Элементов может быть
               сколько угодно.</p>
@@ -83,7 +83,7 @@ let arr = [];
             <p class="arrays__text">Массивы хранят элементы в пронумерованных «ячейках». Нумерация начинается с нуля.
               Первый элемент массива
               будет иметь номер 0, второй — 1 и так далее. Номера называют индексами.</p>
-            <p class="arrays__text">Количество доступных ячеек - это длина массива. В JavaScript длина массива обычно
+            <p class="arrays__text">Количество доступных ячеек — это длина массива. В JavaScript длина массива обычно
               совпадает
               с количеством элементов в нем. Массивы хранят свой размер в свойстве <code
                 class="arrays-code_small">.length</code>:</p>
@@ -156,7 +156,7 @@ alert(arr[7]);
             элементов, методы, которые изменяют исходный массив или возвращают новый, а также многие другие.</p>
           <p class="arrays__text">В нашем справочнике методы массивов разделены на две большие группы, которые
             различаются возможностью принимать функцию обратного вызова (callback function). Методы, которые не могут
-            принимать колбэк, объединены в первую группу, а методы, принимающие колбэк - во вторую.</p>
+            принимать колбэк, объединены в первую группу, а методы, принимающие колбэк — во вторую.</p>
 
           <div class="arrays-simple">
             <h2 class="arrays__title-medium teal-text text-darken-1">Методы, не принимающие callback function</h2>
@@ -507,19 +507,19 @@ arr.splice(start, deleteCount, element1, ..., elementN)
                 <p class="arrays__text">Параметры:</p>
                 <ul class="arrays__ul" style="padding-left: 20px">
                   <li class="arrays__li" style="list-style-type: disc">
-                    <code class="arrays-code_small">start</code> - индекс элемента массива, с которого будут удалены из
+                    <code class="arrays-code_small">start</code> — индекс элемента массива, с которого будут удалены из
                     массива и/или добавлены в массив элементы; можно использовать отрицательные значения, в этом случае
                     <code class="arrays-code_small">start</code> расчитывается по формуле <code
                       class="arrays-code_small">arr.length + start</code>;
                   </li>
                   <li class="arrays__li" style="list-style-type: disc">
-                    <code class="arrays-code_small">deleteCount</code> (необязательное значение) - число, определяющее
+                    <code class="arrays-code_small">deleteCount</code> (необязательное значение) — число, определяющее
                     количество удаляемых из массива элементов; если <code class="arrays-code_small">deleteCount</code>
                     равен 0, то элементы не удаляются; если значение <code class="arrays-code_small">deleteCount</code>
                     больше количества оставшихся элементов в массиве, то будут удалены все элементы до конца массива;
                   </li>
                   <li class="arrays__li" style="list-style-type: disc">
-                    <code class="arrays-code_small">elementN</code> (необязательное значение) - добавляемые к массиву
+                    <code class="arrays-code_small">elementN</code> (необязательное значение) — добавляемые к массиву
                     элементы. Если не указывать никакого элемента, <code class="arrays-code_small">splice()</code>
                     просто удалит элементы из массива.
                   </li>
@@ -654,13 +654,13 @@ array.slice(start, end);
               <p class="arrays__text">Параметры:</p>
               <ul class="arrays__ul" style="padding-left: 20px">
                 <li class="arrays__li" style="list-style-type: disc">
-                  <code class="arrays-code_small">start</code> - индекс элемента массива, с которого будут выбраны
+                  <code class="arrays-code_small">start</code> — индекс элемента массива, с которого будут выбраны
                   элементы; если start опущен, то значение по умолчанию будет 0; можно использовать отрицательные
                   значения, в этом случае <code class="arrays-code_small">start</code> расчитывается по формуле <code
                     class="arrays-code_small">arr.length + start</code>;
                 </li>
                 <li class="arrays__li" style="list-style-type: disc">
-                  <code class="arrays-code_small">end</code> - индекс элемента массива, на котором будет заканчиваться
+                  <code class="arrays-code_small">end</code> — индекс элемента массива, на котором будет заканчиваться
                   извлечение элементов массива (не включая его); если этот параметр не указан, то будут выбраны все
                   элементы от <code class="arrays-code_small">start</code> и до конца массива; можно использовать
                   отрицательные значения, в этом случае <code class="arrays-code_small">end</code> расчитывается по
@@ -740,7 +740,7 @@ alert(fruits.slice(-1));
           <p class="arrays-collapsible-header_text">Соединяет массивы и значения в новый массив.
           </p>
         </div>
-        <div class="collapsible-body"><span>Вы­пол­ня­ет­ кон­ка­те­на­цию­ мас­си­вов: создает и возвращает новый
+        <div class="collapsible-body"><span>Выполняет конкатенацию массивов: создает и возвращает новый
             массив, который является результатом присоединения каждого из его аргументов к массиву.</span>
           <pre>
                     <code class="js">
@@ -842,9 +842,9 @@ array.join(separator);
                       </pre>
 
               <div class="array-code__item">
-                <p><code class="arrays-code_small">separator</code> - необязательный параметр. Это символ или строка для
+                <p><code class="arrays-code_small">separator</code> — необязательный параметр. Это символ или строка для
                   отделения одного элемента массива от следующего в итоговой строке. По умолчанию элементы массива
-                  разделяются запятыми. Если разделитель – пустая строка, элементы массива ничем не разделяются. Если
+                  разделяются запятыми. Если разделитель — пустая строка, элементы массива ничем не разделяются. Если
                   <code class="arrays-code_small">array.length === 0</code>, то будет возвращена пустая строка.</p>
                 <p class="arrays__text"><code class="arrays-code_small">join()</code> делает в точности противоположное
                   строковому методу <code class="arrays-code_small">split()</code>. Метод <code
@@ -944,12 +944,12 @@ array.sort(compareFunction);
               обратного вызова, но это не итерационный метод. <code class="arrays-code_small">sort()</code> изменяет
               массив на месте, не принимает <code class="arrays-code_small">thisArg</code> и может вызывать обратный
               вызов несколько раз для одного индекса.</p>
-            <p class="arrays__text"> Функция <code class="arrays-code_small">compareFunction</code> - необязательный
+            <p class="arrays__text"> Функция <code class="arrays-code_small">compareFunction</code> — необязательный
               параметр. Она может применяться для определения порядка элементов.</p>
             <p class="arrays__text">Если <code class="arrays-code_small">sort()</code> вызывается без аргументов,
               элементы массива располагаются в алфавитном порядке, то есть по умолчанию элементы сортируются как строки.
-              Метод <code class="arrays-code_small">sort()</code> вы­зывает функцию <code
-                class="arrays-code_small">String()</code> для каждого элемента, а затем срав­нивает строки, даже если
+              Метод <code class="arrays-code_small">sort()</code> вызывает функцию <code
+                class="arrays-code_small">String()</code> для каждого элемента, а затем сравнивает строки, даже если
               массив содержит только числа:</p>
             <div class="arrays-code">
               <pre>
@@ -977,7 +977,7 @@ alert(numbers);
             <p class="arrays__text">Неопределенные элементы при сортировке всегда оказываются в конце массива. Это
               происходит, даже если указана специальная функция сортировки: такие значения никогда не передаются в
               заданную функцию.</p>
-            <p class="arrays__text">Функция сравнения должна принимать два аргумента - a и b, и возвращать одно из
+            <p class="arrays__text">Функция сравнения должна принимать два аргумента — a и b, и возвращать одно из
               следующих значений:</p>
             <ul class="arrays__ul" style="padding-left: 20px">
               <li class="arrays__li" style="list-style-type: disc">
@@ -1106,7 +1106,7 @@ alert(fruits);
 // тоже Мандарин, Яблоко, Банан
     
 alert(result === fruits);
-// true, так как result - это ссылка на исходный массив fruits
+// true, так как result — это ссылка на исходный массив fruits
                               </code>
   <button class="waves-effect waves-light btn arrays__check reverse">Проверить</button>
                             </pre>
@@ -1210,10 +1210,10 @@ array.includes(searchElement, fromIndex);
                       </pre>
 
               <div class="array-code__item">
-                <p><code class="arrays-code_small">fromIndex</code> - необязательный параметр. Это индекс в массиве, с
+                <p><code class="arrays-code_small">fromIndex</code> — необязательный параметр. Это индекс в массиве, с
                   которого нужно начинать поиск элемента <code class="arrays-code_small">searchElement</code>. Если
                   атрибут не указан, то поиск осуществляется с 0 индекса.</p>
-                <p class="arrays__text">Проверим, есть ли искомый элемент в массиве. Поиск идет с учетом регистра:</p>
+                <p class="arrays__text">Проверим, есть ли искомый элемент в массиве. Поиск идёт с учётом регистра:</p>
                 <div class="arrays-code">
                   <pre>
                               <code class="js">
@@ -1295,7 +1295,7 @@ array.indexOf(searchElement, fromIndex);
                       </pre>
 
           <div class="array-code__item">
-            <p><code class="arrays-code_small">fromIndex</code> - необязательный параметр. Это индекс в массиве, с
+            <p><code class="arrays-code_small">fromIndex</code> — необязательный параметр. Это индекс в массиве, с
               которого нужно начинать поиск элемента <code class="arrays-code_small">searchElement</code>. Если атрибут
               не указан, то поиск осуществляется с 0 индекса. Значение параметра может быть отрицательным, в этом случае
               поиск производится, начиная с индекса <code class="arrays-code_small">array.length + fromIndex</code> по
@@ -1309,7 +1309,7 @@ array.indexOf(searchElement, fromIndex);
 const fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Мандарин"];
     
 alert(fruits.indexOf("Мандарин"));
-// выведет 2 - индекс первого элемента со значением "Мандарин" с начала массива
+// выведет 2 — индекс первого элемента со значением "Мандарин" с начала массива
 alert(fruits.indexOf("Манго"));
 // выведет -1: такого элемента нет
                               </code>
@@ -1378,7 +1378,7 @@ array.lastIndexOf(searchElement, fromIndex);
                       </pre>
 
         <div class="array-code__item">
-          <p><code class="arrays-code_small">fromIndex</code> - необязательный параметр. Это индекс в массиве, с
+          <p><code class="arrays-code_small">fromIndex</code> — необязательный параметр. Это индекс в массиве, с
             которого нужно начинать поиск элемента <code class="arrays-code_small">searchElement</code>. Поиск
             осуществляется в порядке убывания индекса. Если атрибут не указан, то поиск осуществляется с последнего
             индекса в массиве. Значение параметра может быть отрицательным, в этом случае поиск производится, начиная с
@@ -1476,7 +1476,7 @@ array.entries();
 
               <div class="array-code__item">
                 <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
-                <p class="arrays__text">Итератор – это объект, который отслеживает свою текущую позицию, одновременно
+                <p class="arrays__text">Итератор — это объект, который отслеживает свою текущую позицию, одновременно
                   получая элементы в коллекции по одному.</p>
                 <ul class="arrays__ul" style="padding-left: 20px">
                   <li class="arrays__li" style="list-style-type: disc">
@@ -1598,7 +1598,7 @@ array.keys();
 
           <div class="array-code__item">
             <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
-            <p class="arrays__text">Итератор – это объект, который отслеживает свою текущую позицию, одновременно
+            <p class="arrays__text">Итератор — это объект, который отслеживает свою текущую позицию, одновременно
               получая элементы в коллекции по одному.</p>
             <ul class="arrays__ul" style="padding-left: 20px">
               <li class="arrays__li" style="list-style-type: disc">
@@ -1721,7 +1721,7 @@ array.values();
 
         <div class="array-code__item">
           <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
-          <p class="arrays__text">Итератор – это объект, который отслеживает свою текущую позицию, одновременно получая
+          <p class="arrays__text">Итератор — это объект, который отслеживает свою текущую позицию, одновременно получая
             элементы в коллекции по одному.</p>
           <ul class="arrays__ul" style="padding-left: 20px">
             <li class="arrays__li" style="list-style-type: disc">
@@ -1913,11 +1913,11 @@ array.copyWithin(target, start, end);
                   </pre>
 
               <div class="array-code__item">
-                <p class="arrays__text"><code class="arrays-code_small">target</code> - начальный индекс позиции цели,
+                <p class="arrays__text"><code class="arrays-code_small">target</code> — начальный индекс позиции цели,
                   куда копировать элементы.</p>
-                <p class="arrays__text"><code class="arrays-code_small">start</code> - начальный индекс массива, откуда
+                <p class="arrays__text"><code class="arrays-code_small">start</code> — начальный индекс массива, откуда
                   начинать копировать элементы.</p>
-                <p class="arrays__text"><code class="arrays-code_small">end</code> (необязательный параметр) - конечный
+                <p class="arrays__text"><code class="arrays-code_small">end</code> (необязательный параметр) — конечный
                   индекс массива, которым заканчивается копирование элементов массива. Если параметр не указан, то будут
                   скопированы все элементы от <code class="arrays-code_small">start</code> и до конца массива.</p>
                 <p class="arrays__text">При отрицательных значениях индекс, с которого (или до которого) будет
@@ -1945,9 +1945,9 @@ alert(fruits.copyWithin(3, 0));
 
               <div class="array-code__item">
                 <p class="arrays__text">Как сработал метод?</p>
-                <p class="arrays__text">Под индексом 3 находится элемент "Груша" - это <code
+                <p class="arrays__text">Под индексом 3 находится элемент "Груша" — это <code
                     class="arrays-code_small">target</code>.</p>
-                <p class="arrays__text">Индекс 0 - элемент "Банан" - это <code class="arrays-code_small">start</code>.
+                <p class="arrays__text">Индекс 0 - элемент "Банан" — это <code class="arrays-code_small">start</code>.
                 </p>
                 <p class="arrays__text">Параметр <code class="arrays-code_small">end</code> не задан, значит, будут
                   скопированы элементы, начиная со <code class="arrays-code_small">start</code> до конца массива.</p>
@@ -1974,18 +1974,18 @@ alert(fruits.copyWithin(-3, 0, -1));
 
               <div class="array-code__item">
                 <p class="arrays__text">Как сработал метод в этом примере?</p>
-                <p class="arrays__text"><code class="arrays-code_small">target</code>: -3. Значит, цель - индекс 2 со
+                <p class="arrays__text"><code class="arrays-code_small">target</code>: -3. Значит, цель — индекс 2 со
                   значением "Мандарин".</p>
                 <p class="arrays__text"><code class="arrays-code_small">start</code>: индекс 0 со значением "Банан".</p>
-                <p class="arrays__text"><code class="arrays-code_small">end</code>: -1. Значит, конечная точка - индекс
+                <p class="arrays__text"><code class="arrays-code_small">end</code>: -1. Значит, конечная точка — индекс
                   4 со значением "Манго".</p>
                 <p class="arrays__text">Метод помещает последовательность "Банан", "Яблоко", "Мандарин", "Груша",
                   "Манго" в исходный массив, начиная с индекса 2 (значение "Мандарин") и заканчивая индексом 4.
                   Поскольку метод <code class="arrays-code_small">copyWithin()</code> не изменяет длину массива, в итоге
                   мы получим массив <code
                     class="arrays-code_small">["Банан", "Яблоко", "Банан", "Яблоко", "Мандарин"]</code>. </p>
-                <p>Для наглядности заменим значения на цифры - вместо <code
-                    class="arrays-code_small">["Банан", "Яблоко", "Мандарин", "Груша", "Манго"]</code> возьмем массив
+                <p>Для наглядности заменим значения на цифры — вместо <code
+                    class="arrays-code_small">["Банан", "Яблоко", "Мандарин", "Груша", "Манго"]</code> возьмём массив
                   <code class="arrays-code_small">[1, 2, 3, 4, 5]</code>. В итоге с помощью метода <code
                     class="arrays-code_small">copyWithin()</code> получится массив <code
                     class="arrays-code_small">[1, 2, 1, 2, 3]</code>.</p>
@@ -2030,17 +2030,17 @@ array.fill(value, start, end);
                 <p class="arrays__text">Параметры:</p>
                 <ul class="arrays__ul" style="padding-left: 20px">
                   <li class="arrays__li" style="list-style-type: disc">
-                    <code class="arrays-code_small">value</code> - значение, которым будет заполнен массив;
+                    <code class="arrays-code_small">value</code> — значение, которым будет заполнен массив;
                   </li>
                   <li class="arrays__li" style="list-style-type: disc">
-                    <code class="arrays-code_small">start</code> (необязательный параметр) - индекс элемента, с которого
-                    начинается заполнение массива (по умолчанию - 0); допускается использование отрицательных значений,
+                    <code class="arrays-code_small">start</code> (необязательный параметр) — индекс элемента, с которого
+                    начинается заполнение массива (по умолчанию — 0); допускается использование отрицательных значений,
                     в этом случае индекс рассчитывается по формуле <code
                       class="arrays-code_small">array.length + start</code>;
                   </li>
                   <li class="arrays__li" style="list-style-type: disc">
-                    <code class="arrays-code_small">end</code> (необязательный параметр) - индекс элемента, на котором
-                    заканчивается заполнение массива (по умолчанию - <code
+                    <code class="arrays-code_small">end</code> (необязательный параметр) — индекс элемента, на котором
+                    заканчивается заполнение массива (по умолчанию — <code
                       class="arrays-code_small">array.length</code>); допускается использование отрицательных значений,
                     в этом случае индекс рассчитывается по формуле <code
                       class="arrays-code_small">array.length + end</code>;
@@ -2142,7 +2142,7 @@ alert(arr.toLocaleString());
     <h2 class="arrays__title-medium teal-text text-darken-1">Методы, принимающие callback function</h2>
     <div class="array-code__item">
 
-      <p class="arrays__text">Все методы этой категории принимают в качестве аргумента функцию обратного вызова - <code
+      <p class="arrays__text">Все методы этой категории принимают в качестве аргумента функцию обратного вызова — <code
           class="arrays-code_small">callback function</code>. Эта функция выполняется последовательно и не более одного
         раза для каждого элемента в массиве. </p>
 
@@ -2156,7 +2156,7 @@ array.method(callback, thisArg);
       </p>
       <ul class="arrays__ul" style="padding-left: 20px">
         <li class="arrays__li" style="list-style-type: disc">
-          <code class="arrays-code_small">element</code> - элемент массива в текущей итерации;
+          <code class="arrays-code_small">element</code> — элемент массива в текущей итерации;
         </li>
         <li class="arrays__li" style="list-style-type: disc">
           <code class="arrays-code_small">index</code> — индекс текущего элемента;
@@ -2408,7 +2408,7 @@ array.reduce(callback(accumulator, element, index, array), initialValue);
               принимать четыре параметра:</p>
             <ul class="arrays__ul" style="padding-left: 20px">
               <li class="arrays__li" style="list-style-type: disc">
-                <code class="arrays-code_small">accumulator</code> - текущее значение аккумулятора;
+                <code class="arrays-code_small">accumulator</code> — текущее значение аккумулятора;
               </li>
               <li class="arrays__li" style="list-style-type: disc">
                 <code class="arrays-code_small">element</code> — элемент массива в текущей итерации;
@@ -2420,7 +2420,7 @@ array.reduce(callback(accumulator, element, index, array), initialValue);
                 <code class="arrays-code_small">array</code> — сам массив, который мы перебираем.
               </li>
             </ul>
-            <p class="arrays__text"><code class="arrays-code_small">initialValue</code> - необязательный параметр. Если
+            <p class="arrays__text"><code class="arrays-code_small">initialValue</code> — необязательный параметр. Если
               значение <code class="arrays-code_small">initialValue</code> предоставляется, то <code
                 class="arrays-code_small">accumulator</code> является значением <code
                 class="arrays-code_small">initialValue</code> при первом вызове функции, а значение <code
@@ -2570,7 +2570,7 @@ array.reduceRight(callback(accumulator, element, index, array), initialValue);
             может принимать четыре параметра:</p>
           <ul class="arrays__ul" style="padding-left: 20px">
             <li class="arrays__li" style="list-style-type: disc">
-              <code class="arrays-code_small">accumulator</code> - текущее значение аккумулятора;
+              <code class="arrays-code_small">accumulator</code> — текущее значение аккумулятора;
             </li>
             <li class="arrays__li" style="list-style-type: disc">
               <code class="arrays-code_small">element</code> — элемент массива в текущей итерации;
@@ -2582,7 +2582,7 @@ array.reduceRight(callback(accumulator, element, index, array), initialValue);
               <code class="arrays-code_small">array</code> — сам массив, который мы перебираем.
             </li>
           </ul>
-          <p class="arrays__text"><code class="arrays-code_small">initialValue</code> - необязательный параметр. Если
+          <p class="arrays__text"><code class="arrays-code_small">initialValue</code> — необязательный параметр. Если
             значение <code class="arrays-code_small">initialValue</code> предоставляется, то <code
               class="arrays-code_small">accumulator</code> является значением <code
               class="arrays-code_small">initialValue</code> при первом вызове функции, а значение <code
@@ -2608,7 +2608,7 @@ function findAverage(accumulator, element, index, array) {
 
   // Если мы прошли весь цикл и находимся на первом элементе
   // (так как применяется метод reduceRight, перебор элементов
-  // будет идти справа налево - от последнего к первому),
+  // будет идти справа налево — от последнего к первому),
   // вычисляем среднее арифметическое делением 
   // на количество элементов:
   if (index === 0) {
@@ -3112,7 +3112,7 @@ const duplicate = function (element) {
 
 alert(array.map(duplicate).flat()); 
 console.log(array.map(duplicate).flat());
-// выведет готовый результат - [1, 1, 2, 2, 3, 3]
+// выведет готовый результат — [1, 1, 2, 2, 3, 3]
                             </code>
   <button class="waves-effect waves-light btn arrays__check flatmap-flatmap">Проверить</button>
                           </pre>
@@ -3135,7 +3135,7 @@ const duplicate = function (element) {
 
 alert(array.flatMap(duplicate)); 
 console.log(array.flatMap(duplicate));
-// выведет готовый результат - [1, 1, 2, 2, 3, 3]
+// выведет готовый результат — [1, 1, 2, 2, 3, 3]
                             </code>
   <button class="waves-effect waves-light btn arrays__check flatmap">Проверить</button>
                           </pre>
@@ -3327,7 +3327,7 @@ array.findIndex(callback(element, index, array), thisArg);
                     </pre>
 
           <div class="array-code__item">
-            <p class="arrays__text">Для примера возьмём два массива: в одном будут разные числа, во втором - только
+            <p class="arrays__text">Для примера возьмём два массива: в одном будут разные числа, во втором — только
               чётные. И попробуем найти в каждом массиве нечетное число и вернуть его индекс:</p>
             <div class="arrays-code">
               <pre>
@@ -3344,7 +3344,7 @@ function isOdd(element) {
 // применим метод find(), куда поместим функцию isOdd:
 
 alert(array.findIndex(isOdd));
-// выведет 0 - это индекс первого нечетного числа в массиве
+// выведет 0 — это индекс первого нечетного числа в массиве
 
 alert(arrayEven.findIndex(isOdd));
 // выведет -1, потому что в этом массиве нет нечетных чисел
@@ -3390,7 +3390,7 @@ function findIndex(array, predicate) {
 // массивы array и arrayEven, а также функцию isOdd
 
 alert(findIndex(array, isOdd));
-// выведет 0 - это индекс первого нечетного числа в массиве
+// выведет 0 — это индекс первого нечетного числа в массиве
 
 alert(findIndex(arrayEven, isOdd));
 // выведет -1, потому что в этом массиве нет нечетных чисел
@@ -3586,7 +3586,7 @@ array.findLastIndex(callback(element, index, array), thisArg);
                     </pre>
 
       <div class="array-code__item">
-        <p class="arrays__text">Для примера возьмём два массива: в одном будут разные числа, во втором - только чётные.
+        <p class="arrays__text">Для примера возьмём два массива: в одном будут разные числа, во втором — только чётные.
           И попробуем найти в каждом массиве нечетные числа и вернуть индекс последнего:</p>
         <div class="arrays-code">
           <pre>
@@ -3595,7 +3595,7 @@ const array = [1, 2, 3, 4, 5];
 const arrayEven = [2, 4, 6];
 // исходные массивы
 
-// напишем функцию, которая будет искать нечетные числа:
+// напишем функцию, которая будет искать нечётные числа:
 function isOdd(element) {
   return element % 2 !== 0;
 }
@@ -3603,10 +3603,10 @@ function isOdd(element) {
 // применим метод findLastIndex(), куда поместим функцию isOdd:
 
 alert(array.findLastIndex(isOdd));
-// выведет 4 - это индекс последнего нечетного числа в массиве
+// выведет 4 — это индекс последнего нечётного числа в массиве
 
 alert(arrayEven.findLastIndex(isOdd));
-// выведет -1, потому что в этом массиве нет нечетных чисел
+// выведет -1, потому что в этом массиве нет нечётных чисел
                             </code>
   <button class="waves-effect waves-light btn arrays__check findlastindex">Проверить</button>
                           </pre>
@@ -3654,10 +3654,10 @@ return -1
 // массивы array и arrayEven, а также функцию isOdd
 
 alert(findIndex(array, isOdd));
-// выведет 4 - это индекс последнего нечетного числа в массиве
+// выведет 4 — это индекс последнего нечетного числа в массиве
 
 alert(findIndex(arrayEven, isOdd));
-// выведет -1, потому что в этом массиве нет нечетных чисел
+// выведет -1, потому что в этом массиве нет нечётных чисел
                             </code>
   <button class="waves-effect waves-light btn arrays__check findlastindex-for">Проверить</button>
                           </pre>
@@ -3670,7 +3670,7 @@ alert(findIndex(arrayEven, isOdd));
           <div class="arrays__results">
             <div class="arrays__task">
               <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
-                  class="arrays-code_small">findLastIndex()</code>, чтобы узнать, есть ли в массиве четные числа, и в
+                  class="arrays-code_small">findLastIndex()</code>, чтобы узнать, есть ли в массиве чётные числа, и в
                 случае успеха, вернуть индекс последнего:</p>
               <div class="arrays__field">
 

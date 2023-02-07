@@ -83,12 +83,12 @@
                                             <h4 class="web__content-title">Браузер</h4>
                                             <p class="web__content-text" style="margin-top: 1rem">Получает адрес. Возьмем для примера <code class="web-code">https://www.google.com</code>. Вот, что в нем есть:</p>
                                             <ul class="web-ul" style="padding-left: 20px">
-                                                <li class="web-li" style="list-style-type: disc"><code class="web-code">https</code> - это протокол (может быть незащищенный (<code class="web-code">http</code>) или защищенный (<code class="web-code">https</code>));</li>
+                                                <li class="web-li" style="list-style-type: disc"><code class="web-code">https</code> — это протокол (может быть незащищенный (<code class="web-code">http</code>) или защищённый (<code class="web-code">https</code>));</li>
                                                 <li class="web-li" style="list-style-type: disc"><code class="web-code">google.com</code> - это <code class="web-code">host</code>, по которому нужно сделать обращение: он представлен доменным именем;</li>
                                                 <li class="web-li" style="list-style-type: disc"><code class="web-code">/index.html</code> - это адрес ресурса, который нужно получить на веб-сервере.</li>
                                             </ul>
-                                            <p class="web__content-text" style="margin-top: 1rem">Браузер делает разбор адреса. Он знает, что машины понимают только цифры. Поэтому берет <code class="web-code">host</code> и на его основе получает <code class="web-code">IP</code>-адрес (это адрес веб-сервера). Другими словами, происходит преобразование (resolve) доменного имени в <code class="web-code">IP</code>-адрес. Для этого использутеся <code class="web-code">DNS</code>-сервер (Domain Name Server).</p>
-                                            <p class="web__content-text" style="margin-top: 1rem">Однако, если ранее адрес уже использовался, то запрос к <code class="web-code">DNS</code> не делается, потому что эта информация кэшируется. Браузер сначала ищет айпишник в ближайших местах (история подключений, кэш ОС/роутера), и, если находит адрес там, то берет его из локального кэша. Если не находит - отправляет <code class="web-code">host</code> <code class="web-code">DNS</code>-серверу.</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Браузер делает разбор адреса. Он знает, что машины понимают только цифры. Поэтому берёт <code class="web-code">host</code> и на его основе получает <code class="web-code">IP</code>-адрес (это адрес веб-сервера). Другими словами, происходит преобразование (resolve) доменного имени в <code class="web-code">IP</code>-адрес. Для этого используется <code class="web-code">DNS</code>-сервер (Domain Name Server).</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Однако, если ранее адрес уже использовался, то запрос к <code class="web-code">DNS</code> не делается, потому что эта информация кэшируется. Браузер сначала ищет айпишник в ближайших местах (история подключений, кэш ОС/роутера), и, если находит адрес там, то берет его из локального кэша. Если не находит — отправляет <code class="web-code">host</code> <code class="web-code">DNS</code>-серверу.</p>
                                             <p class="web__content-text"></p>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                                         <i class="medium material-icons web__icon-color_red">dvr</i>
                                         <div class="web__content">
                                             <h4 class="web__content-title">Браузер</h4>
-                                            <p class="web__content-text" style="margin-top: 1rem">Получает <code class="web-code">IP</code>-адрес, и теперь можно установить <code class="web-code">TCP</code>-соединение с веб-сервером. <code class="web-code">TCP</code> - это протокол с набором правил, по которым осуществляется соединение. При <code class="web-code">TCP</code>-соединении обязательно подтверждение получения информации: если подтверждение не получено, то информация отправляется заново.</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">Получает <code class="web-code">IP</code>-адрес, и теперь можно установить <code class="web-code">TCP</code>-соединение с веб-сервером. <code class="web-code">TCP</code> — это протокол с набором правил, по которым осуществляется соединение. При <code class="web-code">TCP</code>-соединении обязательно подтверждение получения информации: если подтверждение не получено, то информация отправляется заново.</p>
                                             <p class="web__content-text" style="margin-top: 1rem">Для <code class="web-code">TCP</code>-соединения есть важная характеристика: порт, по которому оно должно быть установлено:</p>
                                             <ul class="web-ul" style="padding-left: 20px">
                                                 <li class="web-li" style="list-style-type: disc"><code class="web-code">80</code> - для <code class="web-code">http</code>-протокола;</li>
@@ -159,8 +159,8 @@
                                             <p class="web__content-text" style="margin-top: 1rem">Веб-сервер получает заголовок и производит обработку, формирует ответ и отправляет браузеру.</p>
                                             <p class="web__content-text" style="margin-top: 1rem">Ответом может быть:</p>
                                             <ul class="web-ul" style="padding-left: 20px">
-                                                <li class="web-li" style="list-style-type: disc">в случае успеха - заголовок со <code class="web-code">status code: 200</code> и <code class="web-code">html</code>-страница;</li>
-                                                <li class="web-li" style="list-style-type: disc">в случае ошибки - сообщение об ошибке.</li>
+                                                <li class="web-li" style="list-style-type: disc">в случае успеха — заголовок со <code class="web-code">status code: 200</code> и <code class="web-code">html</code>-страница;</li>
+                                                <li class="web-li" style="list-style-type: disc">в случае ошибки — сообщение об ошибке.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -174,11 +174,11 @@
                                             <p class="web__content-text" style="margin-top: 1rem">Если пришел заголовок со <code class="web-code">status code: 200</code>, браузер берет полученную <code class="web-code">html</code>-страницу (которая приходит в пакетах данных) и делает парсинг (сбор данных).</p>
                                             <p class="web__content-text" style="margin-top: 1rem"><code class="web-code">HTML</code> - достаточно сложный язык, он не парсится в один проход. Части парсинга:</p>
                                             <ul class="web-ul" style="padding-left: 20px">
-                                                <li class="web-li" style="list-style-type: disc">лексический анализ - выделение лексем, токенов;</li>
-                                                <li class="web-li" style="list-style-type: disc">синтаксический анализ - проверка правильности самого языка;</li>
-                                                <li class="web-li" style="list-style-type: disc">парсинг - формирование дерева распарсенных элементов.</li>
+                                                <li class="web-li" style="list-style-type: disc">лексический анализ — выделение лексем, токенов;</li>
+                                                <li class="web-li" style="list-style-type: disc">синтаксический анализ — проверка правильности самого языка;</li>
+                                                <li class="web-li" style="list-style-type: disc">парсинг — формирование дерева распарсенных элементов.</li>
                                             </ul>
-                                            <p class="web__content-text" style="margin-top: 1rem">При парсинге <code class="web-code">HTML</code> создаются <code class="web-code">DOM</code>, <code class="web-code">CSSOM</code> и непосредственно <code class="web-code">Render tree</code> с набором элементов, на основе которого происходит отображение страницы. Процесс рендеринга - это и есть постепенное отображение контента на экране.</p>
+                                            <p class="web__content-text" style="margin-top: 1rem">При парсинге <code class="web-code">HTML</code> создаются <code class="web-code">DOM</code>, <code class="web-code">CSSOM</code> и непосредственно <code class="web-code">Render tree</code> с набором элементов, на основе которого происходит отображение страницы. Процесс рендеринга — это и есть постепенное отображение контента на экране.</p>
                                             <p class="web__content-text" style="margin-top: 1rem">Если на странице есть скрипты, они могут изменять положение элементов, их размер. В таком случае запускаются дополнительные процессы парсинга.</p>
                                             <p class="web__content-text" style="margin-top: 1rem">Наконец, происходит отображение страницы на основе распарсенной информации.</p>
                                         </div>
@@ -228,7 +228,7 @@ loadData();
                 <p class="web__content-text" style="margin-top: 1rem">На основе шаблона функции <code class="web-code">loadData()</code> смоделированы две ситуации:</p>
                 <ul class="web-ul" style="padding-left: 20px">
                     <li class="web-li" style="list-style-type: disc">успешный запрос: <code class="web-code">fetch</code>-запрос составлен верно, вместо фразы "вставить_API_Key_с_сайта_GIPHY" был добавлен актуальный ключ;</li>
-                    <li class="web-li" style="list-style-type: disc">запрос с ошибкой: а здесь ключ добавлен не был, в таком виде <code class="web-code">fetch</code> некорректен - запросу не хватает учетных данных.</li>
+                    <li class="web-li" style="list-style-type: disc">запрос с ошибкой: а здесь ключ добавлен не был, в таком виде <code class="web-code">fetch</code> некорректен — запросу не хватает учетных данных.</li>
                 </ul>
                 <p class="web__content-text" style="margin-top: 1rem">Чтобы узнать, сработает ли запрос, какой статус и какие заголовки придут с сервера в параметрах ответа <code class="web-code">response.status</code> и <code class="web-code">response.headers</code>, нажмите на кнопку "Посмотреть гифку":</p>
                 </div>
