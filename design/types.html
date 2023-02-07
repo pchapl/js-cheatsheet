@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" type="image/png">
+
     <!--    normalize css -->
     <link rel="stylesheet" href="./assets/styles/normalize.css">
 
@@ -49,7 +51,7 @@
     </header>
 
     <main class="types-main__container">
-        <h1 class="types__title">Типы данных</h1>
+        <h1 class="types__title teal-text text-darken-3">Типы данных</h1>
         
         <div class="row types-content">
             <div class="section scrollspy col m10 l10">
@@ -71,7 +73,7 @@
                                     </div>
 
                                     <div class="card-reveal">
-                                        <span class="card-title card_title_big grey-text text-darken-4">String<i class="material-icons right">close</i></span>
+                                        <span class="card-title card_title_big teal-text text-darken-2">String<i class="material-icons right">close</i></span>
                                         <section class="strings">
                                             <div>
                                                 <p>Строки полезны для хранения данных, которые можно представить в текстовой форме.</p>
@@ -191,7 +193,7 @@ console.log(typeof person2);  // выведет 'object'
                                         <!-- <p><a href="#">This is a link</a></p> -->
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title card_title_big grey-text text-darken-4">Number<i class="material-icons right">close</i></span>
+                                        <span class="card-title card_title_big teal-text text-darken-2">Number<i class="material-icons right">close</i></span>
                                         <section>
                                             <p>Числа - примитивный тип данных представляет как целочисленные значения, так и числа с плавающей точкой в диапазоне от -(253 − 1) до 253 − 1, а также специальные значения Infinity, -Infinity и NaN.
                                             </p>
@@ -450,7 +452,7 @@ console.log(Number.isFinite(2 / 0)) // false
                                         <!-- <p><a href="#">This is a link</a></p> -->
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title card_title_big grey-text text-darken-4">BigInt<i class="material-icons right">close</i></span>
+                                        <span class="card-title card_title_big teal-text text-darken-2">BigInt<i class="material-icons right">close</i></span>
                                         <section>
                                             <p>Cпециальный числовой примитив, который предоставляет возможность работать с целыми числами произвольной длины.                                                
                                             </p>
@@ -554,7 +556,7 @@ console.log(bigNumber.valueOf()) // 10n
                                         <!-- <p><a href="#">This is a link</a></p> -->
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title card_title_big grey-text text-darken-4">Boolean<i class="material-icons right">close</i></span>
+                                        <span class="card-title card_title_big teal-text text-darken-2">Boolean<i class="material-icons right">close</i></span>
                                         <section>
                                             <p>Логический или булев тип (boolean) может принимать лишь истинное (true) и ложное (false) значения. Назван он так в честь Джорджа Буля, одного из основателей математической логики.                                                
                                             </p>
@@ -654,7 +656,7 @@ console.log(bool.valueOf()) // true
                                         <!-- <p><a href="#">This is a link</a></p> -->
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title card_title_big grey-text text-darken-4">null<i class="material-icons right">close</i></span>
+                                        <span class="card-title card_title_big teal-text text-darken-2">null<i class="material-icons right">close</i></span>
                                         <section>
                                             <p>
                                                 Специальное значение null является примитивом. Оно формирует отдельный тип, который содержит только значение null, т.е. «ничего», «пусто» или «значение неизвестно».
@@ -713,7 +715,7 @@ null  == undefined // true
                                         <!-- <p><a href="#">This is a link</a></p> -->
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title card_title_big grey-text text-darken-4">undefined<i class="material-icons right">close</i></span>
+                                        <span class="card-title card_title_big teal-text text-darken-2">undefined<i class="material-icons right">close</i></span>
                                         <section>
                                             <p>Примитивный тип данных, состоящий из одного значения undefined.  Используется, чтобы обозначить неизвестное или неопределённое значение.<br>
                                             JavaScript автоматически устанавливает значение undefined объявленным переменным, которые не были проинициализированы значением (не присвоено значение).
@@ -760,7 +762,7 @@ console.log(findValue()) // undefined
                                         <!-- <p><a href="#">This is a link</a></p> -->
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title card_title_big grey-text text-darken-4">Symbol<i class="material-icons right">close</i></span>
+                                        <span class="card-title card_title_big teal-text text-darken-2">Symbol<i class="material-icons right">close</i></span>
                                         <section>
                                             <p>
                                                 Символ — примитивный тип, значения которого создаются с помощью вызова функции Symbol. Каждый созданный символ уникален. Символы могут использоваться в качестве имён свойств в объектах. Символьные свойства могут быть прочитаны только при прямом обращении и не видны при обычных операциях.
@@ -890,7 +892,7 @@ console.log(objectSymbols) // [Symbol(a), Symbol(b)]
                                         <!-- <p><a href="#">This is a link</a></p> -->
                                     </div>
                                     <div class="card-reveal">
-                                        <span class="card-title card_title_big grey-text text-darken-4">Object<i class="material-icons right">close</i></span>
+                                        <span class="card-title card_title_big teal-text text-darken-2">Object<i class="material-icons right">close</i></span>
                                         <section>
                                             <p>
                                                 Объекты - непримитивный типа данных, используются для хранения коллекций различных значений и более сложных сущностей. 
@@ -1234,7 +1236,7 @@ console.log(typeof new Number(0)) // "object"!
 
 
                 <div class="row inputType" id="inputType">
-                    <h2 class="section scrollspy">Проверка типа</h2>
+                    <h2 class="section scrollspy teal-text text-darken-2">Проверка типа</h2>
                     <div class="col">
                         <p class="inputType__description">Здесь можно проверить тип данных. Введи примитивный тип данных, либо объект, созданный с помощью литерала, либо символ, созданный с помощью Symbol().</p>
                         <div class="inputType__wrap">
