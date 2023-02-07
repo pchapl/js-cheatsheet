@@ -58,7 +58,7 @@
             
             <div class="main__container">
                 <h1 class="web__title teal-text text-darken-3">Как работает Web</h1>
-                <h2 class="web__title_tiny teal-text text-darken-2">Что делает браузер, чтобы загрузить Веб-страницу?</h2>
+                <h3 class="web__title_tiny teal-text text-darken-2">Что делает браузер, чтобы загрузить Веб-страницу?</h3>
 
                 <div class="container">
                     <div class="row">
@@ -70,7 +70,7 @@
                                     <div class="web__card">
                                         <i class="medium material-icons web__icon-color">account_circle</i>
                                         <div class="web__content">
-                                            <h5 class="web__content-title">Пользователь</h5>
+                                            <h4 class="web__content-title">Пользователь</h4>
                                             <p class="web__content-text" style="margin-top: 1rem">Вводит адрес сайта в поисковую строку браузера.</p>
                                         </div>
                                     </div>
@@ -80,7 +80,7 @@
                                     <div class="web__card">
                                         <i class="medium material-icons web__icon-color_red">dvr</i>
                                         <div class="web__content">
-                                            <h5 class="web__content-title">Браузер</h5>
+                                            <h4 class="web__content-title">Браузер</h4>
                                             <p class="web__content-text" style="margin-top: 1rem">Получает адрес. Возьмем для примера <code class="web-code">https://www.google.com</code>. Вот, что в нем есть:</p>
                                             <ul class="web-ul" style="padding-left: 20px">
                                                 <li class="web-li" style="list-style-type: disc"><code class="web-code">https</code> - это протокол (может быть незащищенный (<code class="web-code">http</code>) или защищенный (<code class="web-code">https</code>));</li>
@@ -98,7 +98,7 @@
                                     <div class="web__card">
                                         <i class="medium material-icons web__icon-color_amber">storage</i>
                                         <div class="web__content">
-                                            <h5 class="web__content-title">DNS-сервер</h5>
+                                            <h4 class="web__content-title">DNS-сервер</h4>
                                             <p class="web__content-text" style=" margin-top: 1rem">Находит <code class="web-code">IP</code>-адрес сайта в адресной книге и отправляет браузеру.</p>
                                         </div>
                                     </div>
@@ -108,7 +108,7 @@
                                     <div class="web__card">
                                         <i class="medium material-icons web__icon-color_red">dvr</i>
                                         <div class="web__content">
-                                            <h5 class="web__content-title">Браузер</h5>
+                                            <h4 class="web__content-title">Браузер</h4>
                                             <p class="web__content-text" style="margin-top: 1rem">Получает <code class="web-code">IP</code>-адрес, и теперь можно установить <code class="web-code">TCP</code>-соединение с веб-сервером. <code class="web-code">TCP</code> - это протокол с набором правил, по которым осуществляется соединение. При <code class="web-code">TCP</code>-соединении обязательно подтверждение получения информации: если подтверждение не получено, то информация отправляется заново.</p>
                                             <p class="web__content-text" style="margin-top: 1rem">Для <code class="web-code">TCP</code>-соединения есть важная характеристика: порт, по которому оно должно быть установлено:</p>
                                             <ul class="web-ul" style="padding-left: 20px">
@@ -140,7 +140,7 @@
                                         <i class="medium material-icons web__icon-color_red">dvr</i>
                                         <div class="web__content">
                                             <div>
-                                                <h5 class="web__content-title">Браузер</h5>
+                                                <h4 class="web__content-title">Браузер</h4>
                                                 <p class="web__content-text style" style="margin-top: 1rem">Когда соединение установлено, мы переходим к <code class="web-code">http</code>http-части.</p>
                                                 <p class="web__content-text style" style="margin-top: 1rem">Браузер объясняет серверу, что ему нужно: формирует <code class="web-code">http</code>-заголовок.</p>
                                                 <p class="web__content-text style" style="margin-top: 1rem">Это простой текстовый заголовок. Он включает в себя: метод получения информации (<code class="web-code">GET/POST</code> или другие), <code class="web-code">URL</code>, версию <code class="web-code">http</code>-протокола, которая используется клиентом, <code class="web-code">host</code>, <code class="web-code">connection</code> (чаще всего <code class="web-code">close</code>), <code class="web-code">cookie</code> и т.п.</p>
@@ -155,7 +155,7 @@
                                     <div class="web__card">
                                         <i class="medium material-icons web__icon-color_cyan">dns</i>
                                         <div class="web__content">
-                                            <h5 class="web__content-title">Сервер</h5>
+                                            <h4 class="web__content-title">Сервер</h4>
                                             <p class="web__content-text" style="margin-top: 1rem">Веб-сервер получает заголовок и производит обработку, формирует ответ и отправляет браузеру.</p>
                                             <p class="web__content-text" style="margin-top: 1rem">Ответом может быть:</p>
                                             <ul class="web-ul" style="padding-left: 20px">
@@ -170,7 +170,7 @@
                                     <div class="web__card">
                                         <i class="medium material-icons web__icon-color_red">dvr</i>
                                         <div class="web__content">
-                                            <h5 class="web__content-title">Браузер</h5>
+                                            <h4 class="web__content-title">Браузер</h4>
                                             <p class="web__content-text" style="margin-top: 1rem">Если пришел заголовок со <code class="web-code">status code: 200</code>, браузер берет полученную <code class="web-code">html</code>-страницу (которая приходит в пакетах данных) и делает парсинг (сбор данных).</p>
                                             <p class="web__content-text" style="margin-top: 1rem"><code class="web-code">HTML</code> - достаточно сложный язык, он не парсится в один проход. Части парсинга:</p>
                                             <ul class="web-ul" style="padding-left: 20px">
@@ -189,7 +189,7 @@
                                     <div class="web__card">
                                         <i class="medium material-icons web__icon-color">account_circle</i>
                                         <div class="web__content">
-                                            <h5 class="web__content-title">Пользователь</h5>
+                                            <h4 class="web__content-title">Пользователь</h4>
                                             <p class="web__content-text" style="margin-top: 1rem">Видит страницу и взаимодействует с ней.</p>
                                         </div>
                                     </div>
@@ -201,7 +201,7 @@
                 </div>
 
                 <div class="web-block">
-                <h4 class="web__title_medium">Запросы в действии</h4>
+                <h3 class="web__title_medium">Запросы в действии</h3>
                 <div class="web-block__item">
                     <p class="web__content-text" style="margin-top: 1rem">JavaScript дает нам возможность самостоятельно составлять и отправлять запросы на сервер. Чтобы протестировать взаимодействие с сервером и посмотреть на его ответ, сделаем <code class="web-code">fetch</code>-запрос к открытому <code class="web-code">API</code> гифок <a href="https://developers.giphy.com/explorer/" target="_blank">GIPHY</a> и попробуем получить картинку. Подробнее о работе <code class="web-code">API</code> и <code class="web-code">fetch</code>-запросах можно <a href="./api.html">прочитать здесь.</a></p>
                 <p>Пусть это будет простой <code class="web-code">GET</code>-запрос без указания дополнительных параметров:</p>
@@ -278,8 +278,8 @@ loadData();
                 <div class="row">
                     <div class="col l6 s12">
                         <div>
-                            <h5 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
-                            </h5>
+                            <h3 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
+                            </h3>
                             <div>
                                 <div class="setup"></div>
                                 <div class="punchline"></div>
@@ -289,7 +289,7 @@ loadData();
                         <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
                     </div>
                     <div class="col l4 offset-l2 s12">
-                        <h5 class="white-text">Полезные ссылки</h5>
+                        <h3 class="white-text">Полезные ссылки</h3>
                         <ul>
                             <li><a class="grey-text text-lighten-3"
                                    href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc">Notion
