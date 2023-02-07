@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="./assets/dist/css/main.css" />
     <link rel="stylesheet" href="../src/scss/pages/this.scss">
 
-    <title>JS Cheatsheet</title>
+    <title>this</title>
   </head>
 
   <body>
@@ -113,7 +113,7 @@
         <p>А теперь вызовите метод <code>sayHi</code> из объекта <code>user</code>. Для этого допишите последнюю строчку кода — <code>user.sayHi();</code> — и посмотрите на результат.</p>
         <div id="innerHTML2"></div>
         <p>Метод <code>sayHi</code> вызывается объектом <code>user</code>, поэтому в данном примере значением <code>this</code> является <code>user</code>.</p>
-        <p>Конечно, мы можем получить имя пользователя и без помощи <code>this</code> — просто обратившись к объекту через внешнюю переменную, в которой хранится ссылка на этот объект. Между фигурными скобками метода <code>sayHi</code> впишите <code>alert(user.name);</code>, т.е. замените в коде <code>this</code> на <code>user</code>. Что вернет код?</p>
+        <p>Конечно, мы можем получить имя пользователя и без помощи <code>this</code> — просто обратившись к объекту через внешнюю переменную, в которой хранится ссылка на этот объект. Между фигурными скобками метода <code>sayHi</code> впишите <code>alert(user.name);</code>, т.е. замените в коде <code>this</code> на <code>user</code>. Что вернёт код?</p>
         <pre>
           <code class="js">
             let user = {
@@ -186,7 +186,7 @@
         </pre>
         <p>Правило простое: если вызывается <code>obj.f()</code>, то во время вызова <code>f</code>, <code>this</code> – это <code>obj</code>. Так что, в приведённом выше примере это либо <code>user</code>, либо <code>admin</code>.</p>
         <h2 class="teal-text text-darken-2">У стрелочных функций нет <strong>this</strong></h2>
-        <p>Стрелочные функции особенные: у них нет своего «собственного» <code>this</code>. Если мы ссылаемся на <code>this</code> внутри такой функции, то оно берется из внешней «нормальной» функции.</p>
+        <p>Стрелочные функции особенные: у них нет своего «собственного» <code>this</code>. Если мы ссылаемся на <code>this</code> внутри такой функции, то оно берётся из внешней «нормальной» функции.</p>
         <p>Например, здесь <code>arrow()</code> использует значение <code>this</code> из внешнего метода <code>user.sayHi()</code>:</p>
         <pre class="hoverable">
           <code class="js">
@@ -202,14 +202,14 @@
           </code>
         </pre>
         <p>Это особенность стрелочных функций. Она полезна, когда мы на самом деле не хотим иметь отдельное <code>this</code>, а скорее хотим взять его из внешнего контекста.</p>
-        <h3 class="teal-text text-darken-1">Подведем итог</h3>
+        <h2 class="teal-text text-darken-1">Подведем итог</h2>
         <ul class="browser-default">
           <li>Методы могут ссылаться на объект через <code>this</code>.</li>
           <li>Значение <code>this</code> определяется во время исполнения кода.</li>
           <li>При объявлении любой функции в ней можно использовать <code>this</code>, но этот <code>this</code> не имеет значения до тех пор, пока функция не будет вызвана.</li>
           <li>Функция может быть скопирована между объектами (из одного объекта в другой).</li>
           <li>Когда функция вызывается синтаксисом «метода» – <code>object.method()</code>, значением <code>this</code> во время вызова является <code>object</code>.</li>
-          <li>Cтрелочные функции являются особенными – у них нет <code>this</code>. Когда внутри стрелочной функции обращаются к <code>this</code>, то его значение берется извне.</li>
+          <li>Cтрелочные функции являются особенными — у них нет <code>this</code>. Когда внутри стрелочной функции обращаются к <code>this</code>, то его значение берется извне.</li>
         </ul>
       </main>
     </div>
@@ -218,8 +218,8 @@
           <div class="row">
               <div class="col l6 s12">
                   <div>
-                      <h5 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
-                      </h5>
+                      <h3 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
+                      </h3>
                       <div>
                           <div class="setup"></div>
                           <div class="punchline"></div>
@@ -229,7 +229,7 @@
                   <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
               </div>
               <div class="col l4 offset-l2 s12">
-                  <h5 class="white-text">Полезные ссылки</h5>
+                  <h3 class="white-text">Полезные ссылки</h3>
                   <ul>
                       <li><a class="grey-text text-lighten-3"
                              href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc">Notion
