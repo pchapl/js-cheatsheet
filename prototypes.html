@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" type="image/png">
+
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+    <!--    project styles-->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+    <title>Объекты, прототивы, классы, конструкторы</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <header class="header">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="api.html">API</a></li>
+            <li><a href="arrays.html">Arrays</a></li>
+            <li><a href="dom.html">DOM</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="ifelse.html">If Else</a></li>
+            <li><a href="prototypes.html">Prototypes</a></li>
+            <li><a href="regular.html">Regular</a></li>
+            <li><a href="string.html">String</a></li>
+            <li><a href="this.html">this</a></li>
+            <li><a href="timedate.html">TimeDate</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="variables.html">Variables</a></li>
+            <li><a href="web.html">Web</a></li>
+        </ul>
+        <nav class="teal lighten-1">
+            <div class="nav-wrapper teal lighten-1 nav__container">
+                <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                <ul class="right">
+                    <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="prorotypes-main">
+        <div class="main__container">
+        <h1 class="prorotypesAll__title teal-text text-darken-3">Прототипы, конструкторы, классы</h1>
+            <div class="row">
+                <div class="section scrollspy col s12 m10 l10">
+                    <section id="theory">
+                        <h2 class="prototypes__title teal-text text-darken-2">Прототипы</h2>
+                        <p>Каждый объект имеет объект-прототип, который выступает как шаблон, от которого объект наследует методы и свойства. Объект-прототип так же может иметь свой прототип и наследует его свойства и методы и так далее. Это называется цепочкой прототипов, «прототипным наследованием» и объясняет почему одним объектам доступны свойства и методы, которые определены в других объектах.</p>
+                        <p>Это если в общем, а если точнее, то свойства и методы определяются в свойстве prototype функции-конструктора объектов, а не в самих объектах (подробнее <a href="#proto" class="teal-text text-accent-4">тут</a>).</p>
+        
+                        <p>В JavaScript объекты имеют специальное скрытое свойство [[Prototype]], которое либо равно null, либо ссылается на другой объект. Этот объект называется «прототип».</p>
+                        <p>В примере ниже видно, что прототипом созданного объекта является Объект, и ребёнку объекту доступны методы родителя объекта.</p>
+        
+                        <pre>
+                            <code class="js">
+let person = {
+    name: 'Nicolas',
+    age: 33,
+}
+
+// в консоли 
+{name: 'Nicolas', age: 33}
+    age: 33
+    name: "Nicolas"
+    [[Prototype]]: Object
+    constructor: ƒ Object()
+    hasOwnProperty: ƒ hasOwnProperty()
+    isPrototypeOf: ƒ isPrototypeOf()
+    ...
+                            </code>
+                        </pre>
+        
+                        <div>
+                            <h5>Ещё раз «работа» прототипа</h5>
+                            <p>Прототип идет сверху вниз. Если он на верхнем уровне находит какое-то поле или функцию, он сразу же его показывает/вызывает. Если не находит, то обращается к прототипу и пытается найти что-то в нём и так далее по цепочке прототипов, пока не найдет метод, который нужно вызвать.</p>
+        
+                            <p>Если мы пытаемся прочитать свойство объекта, либо вызвать метод, а его нет, то объект полезет искать его через ссылку __proto__ в  prototype класса, с помощью которого был создан. Свойство __proto__ объекта Object.prototype является свойством доступа (комбинацией геттера и сеттера), которое расширяет внутренний прототип [[Prototype]] объекта, через который осуществлялся доступ. (подробнее <a href="#proto" class="teal-text text-accent-4">тут</a>).</p>
+                            <p>В примере ниже создаём новый объект на основе другого, задаём ему поле на верхнем уровне, а поле на уровне ниже он наследует от своего прототипа.</p>
+        
+                            <pre>
+                                <code>
+let person = {
+    name: 'Nicolas',
+    age: 33,
+}
+
+let lena = Object.create(person) 
+// обращаемся к глобальному классу Object, у которого есть метод create, который создаёт новые объекты.
+// в метод передаем объект, который будет являться прототипом для объекта lena.
+
+lena.name = 'Elena' // задаём поле на верхнем уровне
+
+console.log(lena.name) // Elena (нашёл на этом уровне)
+console.log(lena.age) // 33 (нашёл на 2м уровне)
+                                </code>
+                            </pre>
+                        </div>               
+        
+                        <div>
+                            <h2 class="teal-text text-darken-2">Конструкторы</h2>
+                            <p>Любой объект в JS создаётся с помощью функции-конструктора или класса (но стрелочная функция не может быть конструтором).</p>
+                            <p>Если объект создаётся через new, то это явно, если помощью литерала {}, то это неявно, но за кадром браузерный движок все равно создаёт new Object, то есть используется класс Object. </p>
+                            <p>В JS есть и другие встроенные функции-конструкторы, они же классы: Object, Promise, Boolean, Number, String, Array, Function и др.</p>
+                            <p>Когда вызывается new Object() (или создаётся объект с помощью литерала {}), свойство [[Prototype]] этого объекта устанавливается на Object.prototype (подробнее <a href="#proto" class="teal-text text-accent-4">тут</a>). В коде ниже наглядно видно, что переменная person является экземпляром (инстансом) класса Object.</p>
+        
+                            <pre>
+                                <code class="js">
+const person = new Object({
+    name: 'Nicolas',
+    age: 33,
+})
+                                </code>
+                            </pre>
+        
+                            <div>
+                                <h3 class="teal-text text-darken-1">Функции и классы</h3>
+                                <p>При создании функции так же работает new Function()</p>
+                                    <pre>
+                                        <code class="js">
+function greet() {} // под капотом new Function()       
+                                        </code>
+                                    </pre>
+                                
+                                <div>
+                                    <p>В JavaScript класс – это разновидность функции, «синтаксический сахар» над ключевым словом function.</p>
+                                    
+                                    <pre>
+                                        <code>
+Синтаксис
+
+class MyClass { // cоздаётcя функция с именем MyClass   
+constructor() { ... } // автоматически вызывается метод constructor(), в нём мы можем инициализировать объект
+method1() { ... } // метод сохраняется в MyClass.prototype
+}
+// классы можно также создавать через Class Expression 
+                                        </code>
+                                    </pre>
+        
+                                    <p>Пример:</p>
+                                    <pre>
+                                        <code class="js">
+class Cat {
+    constructor(name) {
+        this.name = name
+    }
+
+    sayMeow() {
+        console.log('Meow');
+    } // этот метод сохраняется в Cat.prototype.
+} // под капотом класса new Function()
+
+let cat1 = new Cat('Lili') // инстанс явно создаётся через new Cat()
+console.log(typeof Cat) // function
+console.log(cat1) // Cat {name: 'Lili'}
+console.log(Cat.prototype) // {constructor: ƒ, sayMeow: ƒ}, в prototype конструктор и функция (подробнее далее)
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+        
+                            <div>
+                                <h3 class="teal-text text-darken-1">Примитивы</h3>
+                                <p>Использование свойств и методов у примитивов также возможно как раз за счёт прототипного наследования. Если к примитиву обратиться как к объекту (т.е. через точку), то в памяти ВРЕМЕННО для этого примитива создастся объектная версия (обертка) с помощью конструктора new, а свойства и методы станут доступными.</p>
+                                <pre>
+                                    <code>
+let num = 18 // под капотом new Number()
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+        
+                        <div id="proto">
+                            <h2 class="teal-text text-darken-2">__proto__ и prototype</h2>
+                            <p>Эти ключевые понятия нужно различать. Оба являются свойствами объекта (доступ через точку.</p>
+                            <p>При этом и __proto__ и Prototype являются объектами, но __proto__ ссылается на Prototype. То есть, prototype — это какой-то объект и __proto__ ссылается на тот же самый объект.</p>
+                            <p>Любой объект имеет __proto__ и создаётся с помощью класса или function. __proto__  равно какому-то prototype.</p>
+                            <p>Чтобы понимать что это за __proto__, нужно точно знать с помощью какой функции-конструктора (класса) создан данный объект (new XXX()).</p>
+                                <pre>
+                                    <code>
+const obj = {} // obj.__proto__
+const num = 2 // num.__proto__
+function func() {} // func.__proto__
+const f = () => {} // f.__proto__
+class Cls {} // Cls.__proto__
+                                    </code>
+                                </pre>
+                            <p>Разные __proto__ разных по «типу» объектов — совершенно независимые разные объекты. У одинаковых по «типу» объектов — они равны, то есть это один и тот же объект.</p>
+                                    <pre>
+                                        <code>
+let man1 = {}
+let man2 = {}
+console.log(man1.__proto__ === man2.__proto__) 
+// их __proto__ равны, эти объекты созданы с помощью 
+// одного и того же класса или функции-конструктора new Object()
+
+let a = 1
+let b = 100
+console.log(a.__proto__ === b.__proto__) 
+// их __proto__ равны, так как оба созданы с помощью new Number() 
+
+console.log(a__proto__ != man1.__proto__) // их __proto__ не равны, 
+// a создано с помощью  new Number(), а man1 создано с помощью new Object()
+                                        </code>
+                                    </pre>
+                            <p>У всех функций, в том числе class, __proto__ равны.</p>
+                                        <pre>
+                                            <code>
+function greet() {} 
+class YoutubeChanell {} 
+console.log(greet.__proto__ === YoutubeChanell.__proto__)
+                                            </code>
+                                        </pre>
+                            <p>Любой class или function имеет prorotype. Нам нужно знать с помощью какого класса был создан тот или иной объект — для того чтобы наш __proto__ мог связаться с прототипом того класса, с помощью которого он был создан.</p>
+                                <pre>
+                                    <code>
+function greet() {} 
+console.log(function.prototype)
+
+class YoutubeChanell {}
+console.log(YoutubeChanell.prototype)
+
+// у встроенных классов тоже есть прототип
+console.log(Object.prototype)
+console.log(Array.prototype)
+console.log(String.prototype)
+
+//каждый prorotype - это независимый объект с определённым набором свойств и методов.
+console.log(String.prototype !=Function.prototype )
+                                    </code>
+                                </pre>
+                            <p>__proto__ объекта ссылается на prorotype класса (функции-конструктора), с помощью которой этот объект был создан (сконструирован), и __proto__ объекта равно prototype того класса, с помощью которого этот объект создан.</p>
+                                <pre>
+                                    <code>
+let man1 = {}
+console.log(man1.__proto__ === Object.prorotype) 
+
+let a = 1            
+console.log(a.__proto__ === Number.prorotype)      
+
+console.log(chanel1.__proto__ === YoutubeChanell.prototype)        
+                                    </code>
+                                </pre>
+                        </div>
+
+                        <div>
+                            <h2 class="teal-text text-darken-2">Добавление метода</h2>
+                            <p>Если мы создали объект, у которого, например, нет функции sayHi, тогда мы не сможем обратиться к ней как к методу через точку. Чтобы добавить метод, нужно обратиться к prototype класса, от которого создан наш объект и задать ему новую функцию sayHi, после чего возможно вызвать метод sayHi.</p>
+                            <p>Пример ниже представлен в учебных в целях. В реальности расширение базовых прототипов (расширение Object.prototype) является плохой практикой.</p>
+                            <pre>
+                                <code>
+const person = {
+    name: 'Nicolas',
+    age: 33,
+}
+
+Object.prototype.sayHi = function () {
+    console.log('Hi');
+} // за счет этой конструкции расширили базовый прототип 
+// класса Object и добавили в него новый метод
+
+console.log(person.sayHi()) // Hi        
+                                </code>
+                            </pre>
+                        </div>
+                    </section>
+
+                    <section id="tasks">
+                        <h2 class="tasks__title teal-text text-darken-2">Мини-задачи</h2>
+
+                        <ul class="collapsible popout expandable">
+                            <li>
+                                <div class="collapsible-header teal lighten-5">Задача №1<i class="material-icons">chevron_right</i></div>
+                                <div class="collapsible-body"><span>Даны два массива, равны ли их __proto__?</span>
+                                    <pre>
+                                        <code class="js">
+let arr1 = [0, 1, 2]
+let arr2 = ['Anna', 'Alla', 'Nina']
+
+
+                                        </code>
+                                    </pre>
+
+                                    <form action="#">
+                                        <p>Выбери ответ:</p>
+                                        <p>
+                                            <label>
+                                                <input name="answer1" type="radio" />
+                                                <span>Да</span>
+                                            </label>
+                                            </p>
+                                            <p>
+                                            <label>
+                                                <input name="answer1" type="radio" />
+                                                <span>Нет</span>
+                                            </label>
+                                            </p>
+                                    </form>
+                                
+                                    <button id="chooseAnswer1">Нажми</button>
+                                    <div id="resultTask1"></div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <ul class="collapsible popout expandable">
+                            <li>
+                                <div class="collapsible-header teal lighten-4">Задача №2<i class="material-icons">chevron_right</i></div>
+                                <div class="collapsible-body"><span>Какому prototype равно __proto__ массива?</span>
+                                    <pre>
+                                        <code class="js">
+let arr2 = ['Anna', 'Alla', 'Nina']
+                                        </code>
+                                    </pre>
+
+                                    <div class="tasks__task2">
+                                        <p>arr2.__proto__===</p>
+                                        <input class="tasks__input2" type="text">
+                                    </div>
+                                    
+                                
+                                    <button id="checkAnswer2">Проверь</button>
+                                    <div id="resultTask2"></div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <ul class="collapsible popout expandable">
+                            <li>
+                                <div class="collapsible-header teal lighten-3">Задача №3<i class="material-icons">chevron_right</i></div>
+                                <div class="collapsible-body"><span>Есть ли у age prototype?</span>
+                                    <pre>
+                                        <code class="js">
+let age = 18
+
+Существует ли age.prototype ?
+                                        </code>
+                                    </pre>
+
+                                    <form action="#">
+                                        <p>Выбери ответ:</p>
+                                        <p>
+                                            <label>
+                                                <input name="answer3" type="radio" />
+                                                <span>Да</span>
+                                            </label>
+                                            </p>
+                                            <p>
+                                            <label>
+                                                <input name="answer3" type="radio" />
+                                                <span>Нет</span>
+                                            </label>
+                                            </p>
+                                    </form>
+                                
+                                    <button id="chooseAnswer3">Нажми</button>
+                                    <div id="resultTask3"></div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <ul class="collapsible popout expandable">
+                            <li>
+                                <div class="collapsible-header teal lighten-2">Задача №4<i class="material-icons">chevron_right</i></div>
+                                <div class="collapsible-body"><span>Какому prototype равно __proto__ ?</span>
+                                    <pre>
+                                        <code class="js">
+class Developer {
+    constructor(name) {
+        this.name = name
+    }   
+}
+
+let dev1 = new Developer('Nicolas')
+dev1.__proto__.__proto__ === Object.prototype
+                                        </code>
+                                    </pre>
+
+                                    <div class="tasks__task4">
+                                        <p>dev1.__proto__.__proto__ === </p>
+                                        <input class="tasks__input4" type="text">
+                                    </div>
+                                                                    
+                                    <button id="checkAnswer4">Проверь</button>
+                                    <div id="resultTask4"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="col hide-on-small-only m2 l2">
+                    <ul class="section table-of-contents" style="position: fixed" >
+                        <li><a href="#theory" class="teal-text text-lighten-2">Теория</a></li>
+                        <li><a href="#tasks" class="teal-text text-lighten-2">Мини-задачи</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer teal lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <div>
+                        <h3 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
+                        </h3>
+                        <div>
+                            <div class="setup"></div>
+                            <div class="punchline"></div>
+                            <div class="error"></div>
+                        </div>
+                    </div>
+                    <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h3 class="white-text">Полезные ссылки</h3>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc" target="_blank">Notion
+                            Frontend 34</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/" target="_blank">Современный учебник
+                            JavaScript</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference" target="_blank">Справочник по
+                            JavaScript. MDN</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT" target="_blank">Сложный
+                            JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/" target="_blank">JavaScript Дока</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2023
+                <a class="grey-text text-lighten-4 right" href="about.html">О прекрасных разработчицах этого гайда</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+    <script src="./assets/dist/js/main.js"></script>
+    <script src="./assets/libraries/highlights/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

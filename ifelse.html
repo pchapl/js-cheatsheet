@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" type="image/png">
+
+    <!--    normalize css -->
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+    <!-- materialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- materialize css -->
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+    <!--    project styles -->
+    <link rel="stylesheet" href="./assets/dist/css/main.css">
+    <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+
+    <title>Условные операторы</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <header class="header">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="api.html">API</a></li>
+            <li><a href="arrays.html">Arrays</a></li>
+            <li><a href="dom.html">DOM</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="ifelse.html">If Else</a></li>
+            <li><a href="prototypes.html">Prototypes</a></li>
+            <li><a href="regular.html">Regular</a></li>
+            <li><a href="string.html">String</a></li>
+            <li><a href="this.html">this</a></li>
+            <li><a href="timedate.html">TimeDate</a></li>
+            <li><a href="types.html">Types</a></li>
+            <li><a href="variables.html">Variables</a></li>
+            <li><a href="web.html">Web</a></li>
+        </ul>
+        <nav class="teal lighten-1">
+            <div class="nav-wrapper teal lighten-1 nav__container">
+                <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                <ul class="right">
+                    <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main__container">
+        <h1 class="teal-text text-darken-3">Условные операторы</h1>
+        <h2 class="teal-text text-darken-2">Синтаксис:</h2>
+
+                <div class="ifelse-code">
+                    <pre>
+                        <code class="js">
+if (условие) {
+    console.log(‘код выполняется, если условие истинное (true)')
+} else {
+    console.log(‘код выполняется, если условие ложное (false)')
+}
+                        </code>
+                    </pre>
+                </div>
+                <p>Обратите внимание, что if — это строчные буквы. Заглавные буквы (If или IF) приведут к ошибке
+                    JavaScript.</p>
+                <p>В самом простом случае, условие должно вычисляться в логический тип данных: true, либо false (истина
+                    или ложь).</p>
+                <p>Такие выражения получаются при использовании операторов сравнения:</p>
+                <ul type="disc">
+                    <li>==</li>
+                    <li>===</li>
+                    <li>></li>
+                    <li>
+                        << /li>
+                    <li>>=</li>
+                    <li>
+                        <=< /li>
+                    <li>!==</li>
+                    <li>!=</li>
+                </ul>
+                <h3 class="teal-text text-darken-2">Пример с использованием операторов сравнения:</h3>
+                <div class="ifelse-code">
+                    <pre>
+                        <code class="js">
+const num = 200
+let result
+
+if (num > 200) {
+    result = "Число больше 200"
+} else {
+    result = "Число меньше или равно 200"
+}
+
+console.log(result)
+                        </code>
+                    </pre>
+                </div>
+                <p>Чтобы понять, какой блок кода выполнится, нужно запомнить правила приведения разных типов к
+                    логическому. Важное правило:</p>
+                <p>Все, что не приводится к false, будет true</p>
+                <ul type="disc">
+                    <li>0</li>
+                    <li>-0</li>
+                    <li>''</li>
+                    <li>false</li>
+                    <li>null</li>
+                    <li>undefined</li>
+                    <li>NaN</li>
+                    <li>0n (тип BigInt)</li>
+                </ul>
+                <h2 class="teal-text text-darken-2">else...if</h2>
+                <p><strong>Если мы хотим связать в цепочку несколько условий, то мы используем else…if:</strong></p>
+                <div class="ifelse-code">
+                    <pre>
+                        <code class="js">
+if (условие 1) {
+    // код выполняется, если условие 1 истинно (true)
+} else if (условие 2) {
+    // код выполняется, если условие 1 ложно (false) и условие 2 истинно (true)
+} else {
+    // код выполняется, если и условие 1 и условие 2 ложные (false)
+}
+                        </code>
+                    </pre>
+                </div>
+                <p>В этом случае, если условие 1 является истинным, выполняется код внутри первого блока. Если условие 1
+                    имеет значение false, а условие 2 имеет значение true, то выполняется код внутри второго блока. Если
+                    и условие 1, и условие 2 являются ложными, то выполняется код внутри третьего блока.</p>
+                <p>НАПРИМЕР: в зависимости от веса посылки, вычисляем стоимость отправки</p>
+                <div class="ifelse-code">
+                    <pre>
+                        <code class="js">
+let price = 0
+if (weight < = 1)
+{
+price = 200 //если вес посылки 1кг, то стоимость отправки будет 200 рублей
+}
+else if (weight >1 && weight < = 2)
+{
+price = 300 //если вес посылки больше 1кг и меньше или равно 2, то стоимость отправки будет 300 рублей
+}
+else if (weight >2 && weight < = 3)
+{
+price = 400 //если вес посылки больше 2кг и меньше или равно 3, то стоимость отправки будет 400 рублей
+}
+                        </code>
+                    </pre>
+                </div>
+                <p>Важно отметить, что код внутри каждого блока будет выполняться только один раз, а первый блок,
+                    состояние которого оценивается как true, будет единственным, который будет выполнен.
+                    Остальные блоки будут проигнорированы.</p>
+                <h2 class="teal-text text-darken-2">If можно также использовать без else</h2>
+                <p>этот вариант подходит, когда мы хотим, чтобы условие было выполнено только если оно истинно (true), а
+                    в противном случае не делать ничего:</p>
+                <div class="ifelse-code">
+                    <pre>
+        <code class="js">
+if (horoscopeSign === "Leo") {
+    console.log(‘Гороскоп на месяц для Львов’)
+}
+        </code>
+    </pre>
+                </div>
+
+                <p>НО</p>
+                <p>Условный оператор if…else можно написать в более компактном виде: с помощью тернарного оператора.</p>
+                <p>Тернарный оператор состоит из 3 операндов:
+                    условие ? выражение1 : выражение2</p>
+                <p>Если условие будет истинным (true), то оператор вернет выражение1. Если условие будет ложным (false),
+                    то оператор вернет выражение2</p>
+                <p>По механике работы тернарный оператор похож на инструкцию if...else, но позволяет писать меньше кода
+                    и записывать результат работы сразу в переменную.</p>
+                <p>Вспомним наш код и сократим его с помощью тернарного оператора:</p>
+                <p>БЫЛО</p>
+                <div class="ifelse-code">
+                    <pre>
+<code class="js">
+const num = 200
+let result
+
+if (num > 200) {
+    result = "Число больше 200"
+} else {
+    result = "Число меньше или равно 200"
+}
+
+console.log(result)
+    
+</code>
+</pre>
+                </div>
+                <p>СТАЛО</p>
+                <div class="ifelse-code">
+                    <pre>
+<code class="js">
+const num = 200
+const result = num > 200 ? "Число больше 200" : "Число меньше или равно 200"
+console.log(result)
+</code>
+</pre>
+                </div>
+                <p>Код сократился и стал устанавливать значение переменной num сразу при объявлении. Это позволило
+                    использовать const вместо let. (в чем разница между let, const а также var читай здесь)</p>
+                <p>Тернарный оператор вернул результат, который можно записать в переменную.
+                    Но результат также можно вернуть с помощью return из функции:</p>
+                <div class="ifelse-code">
+                    <pre>
+    <code class="js">
+const greeting = function(name) {
+    return name ? `Привет, ${name}!` : "Добро пожаловать, дорогой пользователь!
+}
+    console.log(greeting(‘Маша’)
+  // "Привет, Маша!""
+    console.log(greeting())
+  // "Добро пожаловать, дорогой пользователь!""
+    </code>
+    </pre>
+                </div>
+                <p>Внутри одного тернарного оператора можно написать еще один:</p>
+                <div class="ifelse-code">
+                    <pre>
+    <code class="js">
+const num = 200
+const result = num > 200 ? "Число больше 200" :
+               num === 200 ? "Число равно 200" : "Число меньше 200"
+console.log(result)
+// "Число равно 200"
+    </code>
+    </pre>
+                </div>
+                <p>В этом случае запись идентична использованию конструкций if...else if...else. Сначала проверяется
+                    первое условие, если оно ложно, то проверяется второе и так далее.</p>
+
+                <div class='container'>
+                    <div class="heart" id="heart"></div>
+                    <input id="input" placeholder="Нажми сюда, чтобы увидеть сердце" type="text">
+                    <button id="btn">СБРОСИТЬ СЕРДЦЕ</button>
+                    <h4>Вводите цифры, чтобы увидеть сердце, убедитесь, что вы начинаете с начала списка, так как
+                        операторы if...else запускаются по порядку:</h4>
+                    <p>'1' — green</p>
+                    <p>'2' — blue</p>
+                    <p>'3' — purple</p>
+                    <p>'4' — red</p>
+                    <p>'5' — pink</p>
+                    <p>'6' — black</p>
+                    <p>'7' — for a rainbow
+                </div>
+        </div>
+    </main>
+
+    <footer class="page-footer teal lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <div>
+                        <h3 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
+                        </h3>
+                        <div>
+                            <div class="setup"></div>
+                            <div class="punchline"></div>
+                            <div class="error"></div>
+                        </div>
+                    </div>
+                    <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h3 class="white-text">Полезные ссылки</h3>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc" target="_blank">Notion
+                            Frontend 34</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/" target="_blank">Современный учебник
+                            JavaScript</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference" target="_blank">Справочник по
+                            JavaScript. MDN</a></li>
+                        <li><a class="grey-text text-lighten-3"
+                               href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT" target="_blank">Сложный
+                            JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/" target="_blank">JavaScript Дока</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2023
+                <a class="grey-text text-lighten-4 right" href="about.html">О прекрасных разработчицах этого гайда</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="./assets/dist/js/main.js"></script>
+<script src="./assets/libraries/highlights/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

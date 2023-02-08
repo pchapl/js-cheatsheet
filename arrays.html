@@ -1,0 +1,3772 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" type="image/png">
+
+  <!--    normalize css -->
+  <link rel="stylesheet" href="./assets/styles/normalize.css">
+
+  <!-- materialize css -->
+  <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.css">
+
+  <!--    project styles-->
+  <link rel="stylesheet" href="./assets/dist/css/main.css">
+  <link rel="stylesheet" href="./assets/libraries/highlights/styles/atom-one-light.min.css">
+
+  <!-- material icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+
+
+  <title>Массивы</title>
+
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <ul id="dropdown1" class="dropdown-content">
+          <li><a href="api.html">API</a></li>
+          <li><a href="arrays.html">Arrays</a></li>
+          <li><a href="dom.html">DOM</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="glossary.html">Glossary</a></li>
+          <li><a href="ifelse.html">If Else</a></li>
+          <li><a href="prototypes.html">Prototypes</a></li>
+          <li><a href="regular.html">Regular</a></li>
+          <li><a href="string.html">String</a></li>
+          <li><a href="this.html">this</a></li>
+          <li><a href="timedate.html">TimeDate</a></li>
+          <li><a href="types.html">Types</a></li>
+          <li><a href="variables.html">Variables</a></li>
+          <li><a href="web.html">Web</a></li>
+      </ul>
+      <nav class="teal lighten-1">
+          <div class="nav-wrapper teal lighten-1 nav__container">
+              <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+              <ul class="right">
+                  <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Разделы:<i
+                          class="material-icons right">arrow_drop_down</i></a></li>
+              </ul>
+          </div>
+      </nav>
+  </header>
+
+    <main>
+      <div class="main__container">
+
+        <div class="arrays-array">
+          <h1 class="arrays__title teal-text text-darken-3">Что такое массивы?</h1>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Массивы — это структура, в которой можно хранить коллекции элементов разных типов
+              данных — чисел, строк, других массивов и так
+              далее. Элементы нумеруются и хранятся в том порядке, в котором их добавили в массив. Элементов может быть
+              сколько угодно.</p>
+            <pre>
+              <code class="js">
+let arr = [];
+              </code>
+            </pre>
+          </div>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Массивы хранят элементы в пронумерованных «ячейках». Нумерация начинается с нуля.
+              Первый элемент массива
+              будет иметь номер 0, второй — 1 и так далее. Номера называют индексами.</p>
+            <p class="arrays__text">Количество доступных ячеек — это длина массива. В JavaScript длина массива обычно
+              совпадает
+              с количеством элементов в нем. Массивы хранят свой размер в свойстве <code
+                class="arrays-code_small">.length</code>:</p>
+            <div class="arrays-code">
+              <pre>
+                  <code class="js">
+let arr = [1, 2, 3, 4, 5];
+
+alert(arr.length);
+// выведет 5
+                  </code>
+  <button class="waves-effect waves-light btn arrays__check array-length">Проверить</button>
+                </pre>
+            </div>
+          </div>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Чтобы получить содержимое ячейки, нужно обратиться к конкретному индексу с помощью
+              квадратных скобок:</p>
+            <div class="arrays-code">
+              <pre>
+                  <code class="js">
+let arr = [1, 2, 3, 4, 5];
+
+const arrFirst = arr[0];
+alert(arrFirst);
+// выведет 1
+                  </code>
+  <button class="waves-effect waves-light btn arrays__check array-index">Проверить</button>
+                </pre>
+            </div>
+          </div>
+
+          <div class="array-code__item">
+            <p class="arrays__text">С помощью квадратных скобок можно также добавлять элементы в массив. Если в массиве
+              есть пропущенные индексы, то при его выводе появляются «лишние» запятые, а при обращении к несуществующим
+              элементам возвращается значение <code class="arrays-code_small">undefined</code>:</p>
+            <div class="arrays-code">
+              <pre>
+                <code class="js">
+let arr = [1, 2, 3, 4, 5];
+arr[5] = 6;
+// добавляем элемент под индексом 5
+
+alert(arr);
+// выведет 1, 2, 3, 4, 5, 6
+
+arr[8] = 9;
+// добавляем элемент под индексом 8, игнорируя пропущенные индексы 6 и 7
+
+alert(arr);
+// выведет 1, 2, 3, 4, 5, 6, , , 9
+// получился массив с "дыркой"
+
+alert(arr[7]);
+// undefined, так как элемент под индексом 7 отсутствует
+                </code>
+  <button class="waves-effect waves-light btn arrays__check array-push">Проверить</button>
+              </pre>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="arrays-array_methods">
+          <h2 class="arrays__title teal-text text-darken-2">Методы массивов</h2>
+
+          <p class="arrays__text">Методы массивов предоставляют разработчику удобные инструменты, позволяющие красиво
+            решать разнообразные задачи по преобразованию данных. Бывают методы копирования, удаления и добавления
+            элементов, методы, которые изменяют исходный массив или возвращают новый, а также многие другие.</p>
+          <p class="arrays__text">В нашем справочнике методы массивов разделены на две большие группы, которые
+            различаются возможностью принимать функцию обратного вызова (callback function). Методы, которые не могут
+            принимать колбэк, объединены в первую группу, а методы, принимающие колбэк — во вторую.</p>
+
+          <div class="arrays-simple">
+            <h2 class="arrays__title-medium teal-text text-darken-1">Методы, не принимающие callback function</h2>
+            <p class="arrays__text">В эту группу включены методы добавления и удаления, поиска, преобразования, а также
+              другие.</p>
+
+            <h5 class="arrays__title-min">Добавление и удаление элементов</h5>
+
+            <div class="container">
+              <div class="row">
+                <div class="col s12">
+                  <ul class="collapsible popout">
+
+                    <li>
+                      <div class="collapsible-header arrays-collapsible-header">
+                        <div class="arrays-collapsible-header__items">
+                          <p class="arrays-collapsible-header_title">pop</p><i class="material-icons">chevron_right</i>
+                        </div>
+                        <p class="arrays-collapsible-header_text">Удаляет последний элемент из массива и возвращает его
+                          значение.
+                        </p>
+                      </div>
+                      <div class="collapsible-body"><span>Если метод применяется к пустому массиву, то возвращаемое
+                          значение метода будет <code class="arrays-code_small">undefined</code>.</span>
+                        <pre>
+                        <code class="js">
+array.pop();
+// не принимает аргументов
+                        </code>
+                      </pre>
+
+                        <div class="array-code__item">
+                          <p class="arrays__text">Пример:</p>
+                          <div class="arrays-code">
+                            <pre>
+                              <code class="js">
+let fruits = ["Вишня", "Абрикос", "Черника"];
+
+alert(fruits.pop()); // удаляем "Черника" и выводим это значение
+                                                          
+alert(fruits); // Вишня, Абрикос
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check pop">Проверить</button>
+                            </pre>
+
+                          </div>
+                        </div>
+
+                        <div class="arrays__test">
+                          <h3 class="arrays__title-small">Практика</h3>
+                          <div class="arrays__block">
+                            <div class="arrays__results">
+                              <div class="arrays__task">
+                                <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить
+                                  метод
+                                  <code class="arrays-code_small">pop()</code>:
+                                </p>
+                                <div class="arrays__field">
+
+                                  <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-pop"></div>];</div></div>
+  array.pop();
+  alert(array);
+                                </pre>
+
+                              </div>
+                              <button class="waves-effect waves-light btn arrays__button_add pop-add">
+                                Добавить элементы
+                              </button>
+
+                              <button class="waves-effect waves-light btn arrays__button_done pop-done">
+                                Применить метод pop()
+                              </button>
+                            </div>
+                            <div class="arrays__out">
+                              <p class="arrays__text-bold">Исходный массив:</p>
+                              <pre class="arrays__old-pop" class="arrays-code"></pre>
+                              <p class="arrays__text-bold">Значение, которое возвращается:</p>
+                              <div class="arrays__delete-pop"></div>
+                              <p class="arrays__text-bold">Преобразованный массив:</p>
+                              <pre class="arrays__result-pop" class="arrays-code"></pre>
+                            </div>
+                          </div>
+
+                          <button class="waves-effect waves-light btn arrays__button_reset pop-reset">
+                            Сбросить значения
+                          </button>
+                        </div>
+                      </div>
+                </div>
+                </li>
+
+
+                <li>
+                  <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+                    <div class="arrays-collapsible-header__items">
+                      <p class="arrays-collapsible-header_title">push</p><i class="material-icons">chevron_right</i>
+                    </div>
+                    <p class="arrays-collapsible-header_text">Добавляет один или более элементов в конец массива.
+                    </p>
+                  </div>
+                  <div class="collapsible-body"><span>Синтаксис:</span>
+
+                    <pre>
+                    <code class="js">
+array.push(element0, element1, ..., elementN);
+                    </code>
+                  </pre>
+
+                    <div class="array-code__item">
+                      <p class="arrays__text">Пример:</p>
+                      <div class="arrays-code">
+                        <pre>
+                          <code class="js">
+let fruits = ["Вишня", "Абрикос"];
+  
+fruits.push("Черника"); // добавляем "Черника"
+                                                        
+alert(fruits); // выведет Вишня, Абрикос, Черника
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check push">Проверить</button>
+                        </pre>
+
+                      </div>
+                    </div>
+
+                    <div class="arrays__test">
+                      <h3 class="arrays__title-small">Практика</h3>
+                      <div class="arrays__block">
+                        <div class="arrays__results">
+                          <div class="arrays__task">
+                            <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                              <code class="arrays-code_small">push()</code>:
+                            </p>
+                            <div class="arrays__field">
+
+                              <pre class="arrays-code">
+                              <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-push"></div>];</div></div>
+  array.push("Новый элемент");
+  alert(array);
+                            </pre>
+
+                          </div>
+                          <button class="waves-effect waves-light btn arrays__button_add push-add">
+                            Добавить элементы
+                          </button>
+
+                          <button class="waves-effect waves-light btn arrays__button_done push-done">
+                            Применить метод push()
+                          </button>
+                        </div>
+                        <div class="arrays__out">
+                          <p class="arrays__text-bold">Исходный массив:</p>
+                          <pre class="arrays__old-push" class="arrays-code"></pre>
+                          <p class="arrays__text-bold">Преобразованный массив:</p>
+                          <pre class="arrays__result-push" class="arrays-code"></pre>
+                        </div>
+                      </div>
+
+                      <button class="waves-effect waves-light btn arrays__button_reset push-reset">
+                        Сбросить значения
+                      </button>
+                    </div>
+                  </div>
+
+              </div>
+              </li>
+
+
+              <li>
+                <div class="collapsible-header arrays-collapsible-header">
+                  <div class="arrays-collapsible-header__items">
+                    <p class="arrays-collapsible-header_title">shift</p><i class="material-icons">chevron_right</i>
+                  </div>
+                  <p class="arrays-collapsible-header_text">Удаляет из массива первый элемент и возвращает его значение.
+                  </p>
+                </div>
+                <div class="collapsible-body"><span>Если метод применяется к пустому массиву, то возвращаемое значение
+                    метода будет <code class="arrays-code_small">undefined</code>.</span>
+
+                  <pre>
+                    <code class="js">
+array.shift();
+// не принимает аргументов
+                    </code>
+                  </pre>
+
+                  <div class="array-code__item">
+                    <p class="arrays__text">Пример:</p>
+                    <div class="arrays-code">
+                      <pre>
+                          <code class="js">
+let fruits = ["Вишня", "Абрикос", "Черника"];
+  
+alert(fruits.shift()); // удаляем "Вишня" и выводим это значение
+                                                        
+alert(fruits); // Абрикос, Черника
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check shift">Проверить</button>
+                        </pre>
+
+                    </div>
+                  </div>
+
+                  <div class="arrays__test">
+                    <h3 class="arrays__title-small">Практика</h3>
+                    <div class="arrays__block">
+                      <div class="arrays__results">
+                        <div class="arrays__task">
+                          <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                            <code class="arrays-code_small">shift()</code>:
+                          </p>
+                          <div class="arrays__field">
+
+                            <pre class="arrays-code">
+                              <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-shift"></div>];</div></div>
+  array.pop();
+  alert(array);
+                          </pre>
+
+                        </div>
+                        <button class="waves-effect waves-light btn arrays__button_add shift-add">
+                          Добавить элементы
+                        </button>
+
+                        <button class="waves-effect waves-light btn arrays__button_done shift-done">
+                          Применить метод shift()
+                        </button>
+                      </div>
+                      <div class="arrays__out">
+                        <p class="arrays__text-bold">Исходный массив:</p>
+                        <pre class="arrays__old-shift" class="arrays-code"></pre>
+                        <p class="arrays__text-bold">Значение, которое возвращается:</p>
+                        <div class="arrays__delete-shift"></div>
+                        <p class="arrays__text-bold">Преобразованный массив:</p>
+                        <pre class="arrays__result-shift" class="arrays-code"></pre>
+                      </div>
+                    </div>
+
+                    <button class="waves-effect waves-light btn arrays__button_reset shift-reset">
+                      Сбросить значения
+                    </button>
+                  </div>
+                </div>
+
+            </div>
+            </li>
+
+
+            <li>
+              <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+                <div class="arrays-collapsible-header__items">
+                  <p class="arrays-collapsible-header_title">unsift</p><i class="material-icons">chevron_right</i>
+                </div>
+                <p class="arrays-collapsible-header_text">Добавляет элементы в начало массива.
+                </p>
+              </div>
+              <div class="collapsible-body"><span>Синтаксис:</span>
+
+                <pre>
+                    <code class="js">
+array.unshift(element0, element1, ..., elementN);
+                    </code>
+                  </pre>
+
+                <div class="array-code__item">
+                  <p class="arrays__text">Пример:</p>
+                  <div class="arrays-code">
+                    <pre>
+                          <code class="js">
+let fruits = ["Абрикос", "Черника"];
+  
+fruits.unshift("Вишня"); // добавляем "Вишня"
+                                                        
+alert(fruits); // выведет Вишня, Абрикос, Черника
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check unshift">Проверить</button>
+                        </pre>
+
+                  </div>
+                </div>
+
+                <div class="arrays__test">
+                  <h3 class="arrays__title-small">Практика</h3>
+                  <div class="arrays__block">
+                    <div class="arrays__results">
+                      <div class="arrays__task">
+                        <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                          <code class="arrays-code_small">unshift()</code>:
+                        </p>
+                        <div class="arrays__field">
+
+                          <pre class="arrays-code">
+                              <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-unshift"></div>];</div></div>
+  array.unshift("Новый элемент");
+  alert(array);
+                        </pre>
+
+                      </div>
+                      <button class="waves-effect waves-light btn arrays__button_add unshift-add">
+                        Добавить элементы
+                      </button>
+
+                      <button class="waves-effect waves-light btn arrays__button_done unshift-done">
+                        Применить метод unshift()
+                      </button>
+                    </div>
+                    <div class="arrays__out">
+                      <p class="arrays__text-bold">Исходный массив:</p>
+                      <pre class="arrays__old-unshift" class="arrays-code"></pre>
+                      <p class="arrays__text-bold">Преобразованный массив:</p>
+                      <pre class="arrays__result-unshift" class="arrays-code"></pre>
+                    </div>
+                  </div>
+
+                  <button class="waves-effect waves-light btn arrays__button_reset unshift-reset">
+                    Сбросить значения
+                  </button>
+                </div>
+              </div>
+
+          </div>
+          </li>
+
+
+          <li>
+            <div class="collapsible-header arrays-collapsible-header">
+              <div class="arrays-collapsible-header__items">
+                <p class="arrays-collapsible-header_title">splice</p><i class="material-icons">chevron_right</i>
+              </div>
+              <p class="arrays-collapsible-header_text">Изменяет текущий массив, добавляя, удаляя или замещая элементы.
+              </p>
+            </div>
+            <div class="collapsible-body"><span>Возвращает новый массив из удаленных элементов.</span>
+              <pre>
+                    <code class="js">
+arr.splice(start, deleteCount, element1, ..., elementN)
+// начиная с позиции start, метод удаляет deleteCount элементов 
+// и вставляет element1, ..., elementN на их место
+                    </code>
+                  </pre>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Параметры:</p>
+                <ul class="arrays__ul" style="padding-left: 20px">
+                  <li class="arrays__li" style="list-style-type: disc">
+                    <code class="arrays-code_small">start</code> — индекс элемента массива, с которого будут удалены из
+                    массива и/или добавлены в массив элементы; можно использовать отрицательные значения, в этом случае
+                    <code class="arrays-code_small">start</code> расчитывается по формуле <code
+                      class="arrays-code_small">arr.length + start</code>;
+                  </li>
+                  <li class="arrays__li" style="list-style-type: disc">
+                    <code class="arrays-code_small">deleteCount</code> (необязательное значение) — число, определяющее
+                    количество удаляемых из массива элементов; если <code class="arrays-code_small">deleteCount</code>
+                    равен 0, то элементы не удаляются; если значение <code class="arrays-code_small">deleteCount</code>
+                    больше количества оставшихся элементов в массиве, то будут удалены все элементы до конца массива;
+                  </li>
+                  <li class="arrays__li" style="list-style-type: disc">
+                    <code class="arrays-code_small">elementN</code> (необязательное значение) — добавляемые к массиву
+                    элементы. Если не указывать никакого элемента, <code class="arrays-code_small">splice()</code>
+                    просто удалит элементы из массива.
+                  </li>
+                </ul>
+                <p class="arrays__text">Рассмотрим примеры применения метода <code
+                    class="arrays-code_small">splice()</code>.</p>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Удаление:</p>
+                <div class="arrays-code">
+                  <pre>
+                          <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+
+alert(fruits.splice(0, 1)); 
+// начиная с индекса 0, удалить 1 элемент 
+// и вывести удаленный элемент (Банан)
+                        
+alert(fruits); 
+// массив изменился - Яблоко, Мандарин
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check splice-delete">Проверить</button>
+                        </pre>
+
+                </div>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Замена:</p>
+                <div class="arrays-code">
+                  <pre>
+                          <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+
+alert(fruits.splice(0, 2, "Манго")); 
+// начиная с индекса 0, удалить 2 элемента,
+// заменить их на "Манго" 
+// и вывести удаленные элементы (Банан, Яблоко)
+                        
+alert(fruits); 
+// измененный массив - Манго, Мандарин
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check splice-change">Проверить</button>
+                        </pre>
+
+                </div>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Добавление:</p>
+                <div class="arrays-code">
+                  <pre>
+                          <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+
+alert(fruits.splice(1, 0, "Манго", "Груша")); 
+// начиная с индекса 1, удалить 0 элементов
+// и добавить "Манго", "Груша" 
+// вернется пустой массив, потому что ничего не было удалено
+                        
+alert(fruits); 
+// массив после преобразования: Банан, Манго, Груша, Яблоко, Мандарин
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check splice-push">Проверить</button>
+                        </pre>
+                </div>
+              </div>
+
+              <div class="arrays__test">
+                <h3 class="arrays__title-small">Практика</h3>
+                <div class="arrays__block">
+                  <div class="arrays__results">
+                    <div class="arrays__task">
+                      <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                        <code class="arrays-code_small">splice()</code> для замены элементов:
+                      </p>
+                      <div class="arrays__field">
+
+                        <pre class="arrays-code">
+                              <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-splice"></div>];</div></div>
+  array.splice(1, 2, "Новый элемент");
+  alert(array);
+                      </pre>
+
+                    </div>
+                    <button class="waves-effect waves-light btn arrays__button_add splice-add">
+                      Добавить элементы
+                    </button>
+
+                    <button class="waves-effect waves-light btn arrays__button_done splice-done">
+                      Применить метод splice()
+                    </button>
+                  </div>
+                  <div class="arrays__out">
+                    <p class="arrays__text-bold">Исходный массив:</p>
+                    <pre class="arrays__old-splice" class="arrays-code"></pre>
+                    <p class="arrays__text-bold">Значение, которое возвращается:</p>
+                    <div class="arrays__delete-splice"></div>
+                    <p class="arrays__text-bold">Преобразованный массив:</p>
+                    <pre class="arrays__result-splice" class="arrays-code"></pre>
+                  </div>
+                </div>
+
+                <button class="waves-effect waves-light btn arrays__button_reset splice-reset">
+                  Сбросить значения
+                </button>
+              </div>
+            </div>
+
+        </div>
+        </li>
+
+
+        <li>
+          <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+            <div class="arrays-collapsible-header__items">
+              <p class="arrays-collapsible-header_title">slice</p><i class="material-icons">chevron_right</i>
+            </div>
+            <p class="arrays-collapsible-header_text">Извлекает часть массива и возвращает новый массив.
+            </p>
+          </div>
+          <div class="collapsible-body"><span>Синтаксис:</span>
+            <pre>
+                    <code class="js">
+array.slice(start, end);
+                    </code>
+                  </pre>
+
+            <div class="array-code__item">
+              <p class="arrays__text">Параметры:</p>
+              <ul class="arrays__ul" style="padding-left: 20px">
+                <li class="arrays__li" style="list-style-type: disc">
+                  <code class="arrays-code_small">start</code> — индекс элемента массива, с которого будут выбраны
+                  элементы; если start опущен, то значение по умолчанию будет 0; можно использовать отрицательные
+                  значения, в этом случае <code class="arrays-code_small">start</code> расчитывается по формуле <code
+                    class="arrays-code_small">arr.length + start</code>;
+                </li>
+                <li class="arrays__li" style="list-style-type: disc">
+                  <code class="arrays-code_small">end</code> — индекс элемента массива, на котором будет заканчиваться
+                  извлечение элементов массива (не включая его); если этот параметр не указан, то будут выбраны все
+                  элементы от <code class="arrays-code_small">start</code> и до конца массива; можно использовать
+                  отрицательные значения, в этом случае <code class="arrays-code_small">end</code> расчитывается по
+                  формуле <code class="arrays-code_small">arr.length + end</code>.
+                </li>
+              </ul>
+            </div>
+
+            <div class="array-code__item">
+              <p class="arrays__text">Пример применения метода:</p>
+              <div class="arrays-code">
+                <pre>
+                          <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+
+alert(fruits.slice(0, 2)); 
+// копирует с индекса 0 до индекса 2, не включая его
+// вернется Банан, Яблоко
+                        
+alert(fruits.slice(-1)); 
+// копирует с индекса -1 до конца массива
+// вернется Мандарин
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check slice">Проверить</button>
+                        </pre>
+
+              </div>
+            </div>
+
+            <div class="arrays__test">
+              <h3 class="arrays__title-small">Практика</h3>
+              <div class="arrays__block">
+                <div class="arrays__results">
+                  <div class="arrays__task">
+                    <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                      <code class="arrays-code_small">slice()</code>:
+                    </p>
+                    <div class="arrays__field">
+
+                      <pre class="arrays-code">
+                              <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-slice"></div>];</div></div>
+  array.slice(0, 2);
+                    </pre>
+                  </div>
+                  <button class="waves-effect waves-light btn arrays__button_add slice-add">
+                    Добавить элементы
+                  </button>
+
+                  <button class="waves-effect waves-light btn arrays__button_done slice-done">
+                    Применить метод slice()
+                  </button>
+                </div>
+                <div class="arrays__out">
+                  <p class="arrays__text-bold">Исходный массив:</p>
+                  <pre class="arrays__old-slice" class="arrays-code"></pre>
+                  <p class="arrays__text-bold">Новый массив:</p>
+                  <pre class="arrays__result-slice" class="arrays-code"></pre>
+                </div>
+              </div>
+
+              <button class="waves-effect waves-light btn arrays__button_reset slice-reset">
+                Сбросить значения
+              </button>
+            </div>
+          </div>
+
+      </div>
+      </li>
+
+
+      <li>
+        <div class="collapsible-header arrays-collapsible-header">
+          <div class="arrays-collapsible-header__items">
+            <p class="arrays-collapsible-header_title">concat</p><i class="material-icons">chevron_right</i>
+          </div>
+          <p class="arrays-collapsible-header_text">Соединяет массивы и значения в новый массив.
+          </p>
+        </div>
+        <div class="collapsible-body"><span>Выполняет конкатенацию массивов: создает и возвращает новый
+            массив, который является результатом присоединения каждого из его аргументов к массиву.</span>
+          <pre>
+                    <code class="js">
+array.concat(value1, value2, ..., valueN);
+                    </code>
+                  </pre>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Если какие-либо из аргументов <code class="arrays-code_small">concat()</code> сами
+              являются массивами, то присоединяются элементы этих массивов, а не сами массивы.</p>
+            <div class="arrays-code">
+              <pre>
+                          <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+let orange = "Апельсин";
+let berries = ["Вишня", "Черника", 2];
+
+alert(fruits.concat(orange, berries)); 
+// создаёт новый массив, не изменяя исходный
+// выведет Банан, Яблоко, Мандарин, Апельсин, Вишня, Черника, 2
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check concat">Проверить</button>
+                        </pre>
+
+            </div>
+          </div>
+
+          <div class="arrays__test">
+            <h3 class="arrays__title-small">Практика</h3>
+            <div class="arrays__block">
+              <div class="arrays__results">
+                <div class="arrays__task">
+                  <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                    <code class="arrays-code_small">concat()</code>:
+                  </p>
+                  <div class="arrays__field">
+
+                    <pre class="arrays-code">
+                              <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-concat"></div>];</div></div>
+  let string = "Манго";
+  let number = 100;
+  let berries = ["Вишня", "Черника"];
+
+  array.concat(string, number, berries);
+                  </pre>
+                </div>
+                <button class="waves-effect waves-light btn arrays__button_add concat-add">
+                  Добавить элементы
+                </button>
+
+                <button class="waves-effect waves-light btn arrays__button_done concat-done">
+                  Применить метод concat()
+                </button>
+              </div>
+              <div class="arrays__out">
+                <p class="arrays__text-bold">Исходный массив:</p>
+                <pre class="arrays__old-concat" class="arrays-code"></pre>
+                <p class="arrays__text-bold">Новый массив:</p>
+                <pre class="arrays__result-concat" class="arrays-code"></pre>
+              </div>
+            </div>
+
+            <button class="waves-effect waves-light btn arrays__button_reset concat-reset">
+              Сбросить значения
+            </button>
+          </div>
+        </div>
+
+  </div>
+  </li>
+
+  </ul>
+  </div>
+  </div>
+  </div>
+
+  <h5 class="arrays__title-min">Преобразование элементов</h5>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <ul class="collapsible popout">
+
+          <li>
+            <div class="collapsible-header arrays-collapsible-header">
+              <div class="arrays-collapsible-header__items">
+                <p class="arrays-collapsible-header_title">join</p><i class="material-icons">chevron_right</i>
+              </div>
+              <p class="arrays-collapsible-header_text">Объединяет все элементы массива в строку.
+              </p>
+            </div>
+            <div class="collapsible-body"><span>Преобразует каждый из элементов массива в строку и затем выполняет
+                конкатенацию этих строк, вставляя указанный разделитель между элементами.</span>
+              <pre>
+                        <code class="js">
+array.join(separator);
+                        </code>
+                      </pre>
+
+              <div class="array-code__item">
+                <p><code class="arrays-code_small">separator</code> — необязательный параметр. Это символ или строка для
+                  отделения одного элемента массива от следующего в итоговой строке. По умолчанию элементы массива
+                  разделяются запятыми. Если разделитель — пустая строка, элементы массива ничем не разделяются. Если
+                  <code class="arrays-code_small">array.length === 0</code>, то будет возвращена пустая строка.</p>
+                <p class="arrays__text"><code class="arrays-code_small">join()</code> делает в точности противоположное
+                  строковому методу <code class="arrays-code_small">split()</code>. Метод <code
+                    class="arrays-code_small">split()</code> разбивает строку на массив по заданному разделителю:</p>
+                <div class="arrays-code">
+                  <pre>
+                              <code class="js">
+let string = "Банан, Яблоко, Мандарин";
+let fruits = string.split(', ');
+    
+for (let fruit of fruits) {
+  alert( `Фрукты: ${fruit}.` ); 
+} 
+// выведет по порядку элементы массива: Фрукты: Банан (и т.д.)
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check join-split">Проверить</button>
+                            </pre>
+                </div>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">А сейчас с помощью <code class="arrays-code_small">join()</code> можно
+                  преобразовать элементы обратно в строку:</p>
+                <div class="arrays-code">
+                  <pre>
+                              <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+let string = fruits.join(', ');
+    
+alert(string); 
+// выведет строку с элементами через запятую и пробел
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check join">Проверить</button>
+                            </pre>
+                </div>
+              </div>
+
+              <div class="arrays__test">
+                <h3 class="arrays__title-small">Практика</h3>
+                <div class="arrays__block">
+                  <div class="arrays__results">
+                    <div class="arrays__task">
+                      <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                        <code class="arrays-code_small">join()</code>:
+                      </p>
+                      <div class="arrays__field">
+
+                        <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-join"></div>];</div></div>
+  let string = array.join(', ');
+                      </pre>
+                    </div>
+                    <button class="waves-effect waves-light btn arrays__button_add join-add">
+                      Добавить элементы
+                    </button>
+
+                    <button class="waves-effect waves-light btn arrays__button_done join-done">
+                      Применить метод join()
+                    </button>
+                  </div>
+                  <div class="arrays__out">
+                    <p class="arrays__text-bold">Исходный массив:</p>
+                    <pre class="arrays__old-join" class="arrays-code"></pre>
+                    <p class="arrays__text-bold">Новая строка:</p>
+                    <pre class="arrays__result-join" class="arrays-code"></pre>
+                  </div>
+                </div>
+
+                <button class="waves-effect waves-light btn arrays__button_reset join-reset">
+                  Сбросить значения
+                </button>
+              </div>
+            </div>
+
+      </div>
+      </li>
+
+
+      <li>
+        <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+          <div class="arrays-collapsible-header__items">
+            <p class="arrays-collapsible-header_title">sort</p><i class="material-icons">chevron_right</i>
+          </div>
+          <p class="arrays-collapsible-header_text">Сортирует элементы массива.
+          </p>
+        </div>
+        <div class="collapsible-body"><span>Элементы сортируются на месте без создания копии массива.</span>
+          <pre>
+                        <code class="js">
+array.sort(compareFunction);
+                        </code>
+                      </pre>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Метод <code class="arrays-code_small">sort()</code> может принимать функцию
+              обратного вызова, но это не итерационный метод. <code class="arrays-code_small">sort()</code> изменяет
+              массив на месте, не принимает <code class="arrays-code_small">thisArg</code> и может вызывать обратный
+              вызов несколько раз для одного индекса.</p>
+            <p class="arrays__text"> Функция <code class="arrays-code_small">compareFunction</code> — необязательный
+              параметр. Она может применяться для определения порядка элементов.</p>
+            <p class="arrays__text">Если <code class="arrays-code_small">sort()</code> вызывается без аргументов,
+              элементы массива располагаются в алфавитном порядке, то есть по умолчанию элементы сортируются как строки.
+              Метод <code class="arrays-code_small">sort()</code> вызывает функцию <code
+                class="arrays-code_small">String()</code> для каждого элемента, а затем сравнивает строки, даже если
+              массив содержит только числа:</p>
+            <div class="arrays-code">
+              <pre>
+                              <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+fruits.sort();
+alert(fruits); 
+// выведет Банан, Мандарин, Яблоко
+
+let numbers = [15, 50, 3];
+numbers.sort();
+alert(numbers); 
+// выведет 15, 3, 50 (метод сравнил числа как строки 
+// и вывел по возрастанию: "15", "3", "50")
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check sort">Проверить</button>
+                            </pre>
+            </div>
+          </div>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Во многих случаях требуется совсем не это, поэтому в метод <code
+                class="arrays-code_small">sort()</code> можно передать функцию сравнения, которая упорядочивает два
+              значения.</p>
+            <p class="arrays__text">Неопределенные элементы при сортировке всегда оказываются в конце массива. Это
+              происходит, даже если указана специальная функция сортировки: такие значения никогда не передаются в
+              заданную функцию.</p>
+            <p class="arrays__text">Функция сравнения должна принимать два аргумента — a и b, и возвращать одно из
+              следующих значений:</p>
+            <ul class="arrays__ul" style="padding-left: 20px">
+              <li class="arrays__li" style="list-style-type: disc">
+                Отрицательное число, если значение a «меньше» значения b и должно находиться в отсортированном массиве
+                перед b.
+              </li>
+              <li class="arrays__li" style="list-style-type: disc">
+                Ноль, если a и b эквивалентны.
+              </li>
+              <li class="arrays__li" style="list-style-type: disc">
+                Положительное число, если значение a «больше» значения b.
+              </li>
+            </ul>
+            <p class="arrays__text">Сортировка чисел в порядке возрастания:</p>
+            <div class="arrays-code">
+              <pre>
+                              <code class="js">
+let numbers = [15, 50, 3, 30, 1, 150];
+numbers.sort(function(a, b) {
+  return a - b;
+});
+alert(numbers); 
+// выведет 1, 3, 15, 30, 50, 150
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check sort-callback-up">Проверить</button>
+                            </pre>
+            </div>
+          </div>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Сортировка чисел в порядке убывания и получение максимального значения:</p>
+            <div class="arrays-code">
+              <pre>
+                              <code class="js">
+let numbers = [15, 50, 3, 30, 1, 150];
+numbers.sort(function(a, b) {
+  return b - a;
+});
+alert(numbers[0]); 
+// выведет 150, потому что первый элемент массива
+// теперь число с максимальным значением
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check sort-callback-max">Проверить</button>
+                            </pre>
+            </div>
+          </div>
+
+          <div class="arrays__test">
+            <h3 class="arrays__title-small">Практика</h3>
+            <div class="arrays__block">
+              <div class="arrays__results">
+                <div class="arrays__task">
+                  <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод
+                    <code class="arrays-code_small">sort()</code>, чтобы отсортировать числа по возрастанию, вывести
+                    отсортированный массив и наименьшее число:
+                  </p>
+                  <div class="arrays__field">
+
+                    <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-sort"></div>];</div></div>
+  array.sort(function(a, b) {
+  return a - b;
+  });
+  let min = array[0];
+                  </pre>
+
+                </div>
+                <button class="waves-effect waves-light btn arrays__button_add sort-add">
+                  Добавить элементы
+                </button>
+
+                <button class="waves-effect waves-light btn arrays__button_done sort-done">
+                  Применить метод sort()
+                </button>
+              </div>
+              <div class="arrays__out">
+                <p class="arrays__text-bold">Исходный массив:</p>
+                <pre class="arrays__old-sort" class="arrays-code"></pre>
+                <p class="arrays__text-bold">Отсортированный массив:</p>
+                <pre class="arrays__result-sort" class="arrays-code"></pre>
+                <p class="arrays__text-bold">Наименьшее число:</p>
+                <div class="arrays__delete-sort"></div>
+              </div>
+            </div>
+
+            <button class="waves-effect waves-light btn arrays__button_reset sort-reset">
+              Сбросить значения
+            </button>
+          </div>
+        </div>
+
+
+    </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header arrays-collapsible-header">
+        <div class="arrays-collapsible-header__items">
+          <p class="arrays-collapsible-header_title">reverse</p><i class="material-icons">chevron_right</i>
+        </div>
+        <p class="arrays-collapsible-header_text">Изменяет порядок следования элементов в массиве на обратный.
+        </p>
+      </div>
+      <div class="collapsible-body"><span>Синтаксис:</span>
+        <pre>
+                        <code class="js">
+array.reverse();
+// не принимает аргументов
+                        </code>
+                      </pre>
+
+        <div class="array-code__item">
+          <p class="arrays__text">Метод <code class="arrays-code_small">reverse()</code> не создаёт новый массив, а
+            изменяет текущий. Это означает, что возвращаемое значение — это только ссылка на исходный массив:</p>
+          <div class="arrays-code">
+            <pre>
+                              <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин"];
+const result = fruits.reverse();
+    
+alert(result);
+// Мандарин, Яблоко, Банан
+    
+alert(fruits);
+// тоже Мандарин, Яблоко, Банан
+    
+alert(result === fruits);
+// true, так как result — это ссылка на исходный массив fruits
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check reverse">Проверить</button>
+                            </pre>
+          </div>
+        </div>
+
+        <div class="array-code__item">
+          <p class="arrays__text">Если у массива есть «дырки» между элементами, то <code
+              class="arrays-code_small">reverse()</code> развернёт массив с учётом этих «дырок». Метод создает элементы
+            в массиве, которые заполняют пробелы в нем. Каждый из этих созданных элементов имеет значение <code
+              class="arrays-code_small">undefined</code>:</p>
+          <div class="arrays-code">
+            <pre>
+                              <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин"];
+fruits[5] = "Манго";
+// добавим значение "Манго" под индексом 5
+    
+alert(fruits);
+// получился массив с "дыркой" - Банан, Яблоко, Мандарин, , , Манго
+alert(fruits[3]);
+// undefined, так как элемента нет
+    
+fruits.reverse();
+    
+alert(fruits);
+// метод развернул массив с учетом "дырок" - Манго, , , Мандарин, Яблоко, Банан
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check reverse-empty">Проверить</button>
+                            </pre>
+          </div>
+        </div>
+
+        <div class="arrays__test">
+          <h3 class="arrays__title-small">Практика</h3>
+          <div class="arrays__block">
+            <div class="arrays__results">
+              <div class="arrays__task">
+                <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                  <code class="arrays-code_small">reverse()</code>:
+                </p>
+                <div class="arrays__field">
+
+                  <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-reverse"></div>];</div></div>
+  array.reverse();
+                </pre>
+              </div>
+              <button class="waves-effect waves-light btn arrays__button_add reverse-add">
+                Добавить элементы
+              </button>
+
+              <button class="waves-effect waves-light btn arrays__button_done reverse-done">
+                Применить метод reverse()
+              </button>
+            </div>
+            <div class="arrays__out">
+              <p class="arrays__text-bold">Исходный массив:</p>
+              <pre class="arrays__old-reverse" class="arrays-code"></pre>
+              <p class="arrays__text-bold">Преобразованный массив:</p>
+              <pre class="arrays__result-reverse" class="arrays-code"></pre>
+            </div>
+          </div>
+
+          <button class="waves-effect waves-light btn arrays__button_reset reverse-reset">
+            Сбросить значения
+          </button>
+        </div>
+      </div>
+
+  </div>
+  </li>
+
+  </ul>
+  </div>
+  </div>
+  </div>
+
+  <h5 class="arrays__title-min">Поиск элементов</h5>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <ul class="collapsible popout">
+
+          <li>
+            <div class="collapsible-header arrays-collapsible-header">
+              <div class="arrays-collapsible-header__items">
+                <p class="arrays-collapsible-header_title">includes</p><i class="material-icons">chevron_right</i>
+              </div>
+              <p class="arrays-collapsible-header_text">Определяет, содержит ли массив определённый элемент.
+              </p>
+            </div>
+            <div class="collapsible-body"><span>Возвращает значение <code class="arrays-code_small">true</code> или
+                <code class="arrays-code_small">false</code>. Такой же метод есть и у строк.</span>
+              <pre>
+                        <code class="js">
+array.includes(searchElement, fromIndex);
+                        </code>
+                      </pre>
+
+              <div class="array-code__item">
+                <p><code class="arrays-code_small">fromIndex</code> — необязательный параметр. Это индекс в массиве, с
+                  которого нужно начинать поиск элемента <code class="arrays-code_small">searchElement</code>. Если
+                  атрибут не указан, то поиск осуществляется с 0 индекса.</p>
+                <p class="arrays__text">Проверим, есть ли искомый элемент в массиве. Поиск идёт с учётом регистра:</p>
+                <div class="arrays-code">
+                  <pre>
+                              <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин"];
+const banana = fruits.includes("Банан");
+alert(banana); 
+// true
+    
+const bananaSmall = fruits.includes("банан");
+alert(bananaSmall); 
+// false, потому что учитывается регистр
+    
+const orange = fruits.includes("Апельсин");
+alert(orange); 
+// false
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check includes">Проверить</button>
+                            </pre>
+                </div>
+              </div>
+
+              <div class="arrays__test">
+                <h3 class="arrays__title-small">Практика</h3>
+                <div class="arrays__block">
+                  <div class="arrays__results">
+                    <div class="arrays__task">
+                      <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы, после чего указать
+                        искомый элемент и применить метод
+                        <code class="arrays-code_small">includes()</code>:
+                      </p>
+                      <div class="arrays__field">
+
+                        <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-includes"></div>];</div></div><div class="arrays__practice"><div>
+  const element = array.includes</div><div class="arrays__practice-search">(<input class="arrays__search" id="arrays__search-includes" type="text">);</div>
+                      </div>
+                      </pre>
+                    </div>
+                    <button class="waves-effect waves-light btn arrays__button_add includes-add">
+                      Добавить элементы
+                    </button>
+
+                    <button class="waves-effect waves-light btn arrays__button_done includes-done">
+                      Применить метод includes()
+                    </button>
+                  </div>
+                  <div class="arrays__out">
+                    <p class="arrays__text-bold">Исходный массив:</p>
+                    <pre class="arrays__old-includes" class="arrays-code"></pre>
+                    <p class="arrays__text-bold">Результат:</p>
+                    <pre class="arrays__result-includes" class="arrays-code"></pre>
+                  </div>
+                </div>
+
+                <button class="waves-effect waves-light btn arrays__button_reset includes-reset">
+                  Сбросить значения
+                </button>
+              </div>
+            </div>
+
+      </div>
+      </li>
+
+
+      <li>
+        <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+          <div class="arrays-collapsible-header__items">
+            <p class="arrays-collapsible-header_title">indexOf</p><i class="material-icons">chevron_right</i>
+          </div>
+          <p class="arrays-collapsible-header_text">Поиск элемента с начала массива.
+          </p>
+        </div>
+        <div class="collapsible-body"><span>Возвращает первый индекс искомого элемента.</span>
+          <pre>
+                        <code class="js">
+array.indexOf(searchElement, fromIndex);
+                        </code>
+                      </pre>
+
+          <div class="array-code__item">
+            <p><code class="arrays-code_small">fromIndex</code> — необязательный параметр. Это индекс в массиве, с
+              которого нужно начинать поиск элемента <code class="arrays-code_small">searchElement</code>. Если атрибут
+              не указан, то поиск осуществляется с 0 индекса. Значение параметра может быть отрицательным, в этом случае
+              поиск производится, начиная с индекса <code class="arrays-code_small">array.length + fromIndex</code> по
+              возрастанию.</p>
+            <p class="arrays__text">Если элемент один, то метод возвращает индекс этого элемента. Если элементов много —
+              возвращает индекс первого подходящего элемента. Если элемента в массиве нет — вернёт <code
+                class="arrays-code_small">-1</code>:</p>
+            <div class="arrays-code">
+              <pre>
+                              <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Мандарин"];
+    
+alert(fruits.indexOf("Мандарин"));
+// выведет 2 — индекс первого элемента со значением "Мандарин" с начала массива
+alert(fruits.indexOf("Манго"));
+// выведет -1: такого элемента нет
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check index-of">Проверить</button>
+                            </pre>
+            </div>
+          </div>
+
+          <div class="arrays__test">
+            <h3 class="arrays__title-small">Практика</h3>
+            <div class="arrays__block">
+              <div class="arrays__results">
+                <div class="arrays__task">
+                  <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы, после чего указать искомый
+                    элемент и применить метод
+                    <code class="arrays-code_small">indexOf()</code>:
+                  </p>
+                  <div class="arrays__field">
+
+                    <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-indexof"></div>];</div></div><div class="arrays__practice"><div>
+  const element = array.indexOf</div><div class="arrays__practice-search">(<input class="arrays__search" id="arrays__search-indexof" type="text">);</div>
+                  </div>
+                  </pre>
+                </div>
+                <button class="waves-effect waves-light btn arrays__button_add indexof-add">
+                  Добавить элементы
+                </button>
+
+                <button class="waves-effect waves-light btn arrays__button_done indexof-done">
+                  Применить метод indexOf()
+                </button>
+              </div>
+              <div class="arrays__out">
+                <p class="arrays__text-bold">Исходный массив:</p>
+                <pre class="arrays__old-indexof" class="arrays-code"></pre>
+                <p class="arrays__text-bold">Результат:</p>
+                <pre class="arrays__result-indexof" class="arrays-code"></pre>
+              </div>
+            </div>
+
+            <button class="waves-effect waves-light btn arrays__button_reset indexof-reset">
+              Сбросить значения
+            </button>
+          </div>
+        </div>
+
+    </div>
+    </li>
+
+
+    <li>
+      <div class="collapsible-header arrays-collapsible-header">
+        <div class="arrays-collapsible-header__items">
+          <p class="arrays-collapsible-header_title">lastIndexOf</p><i class="material-icons">chevron_right</i>
+        </div>
+        <p class="arrays-collapsible-header_text">Поиск элемента с конца массива.
+        </p>
+      </div>
+      <div class="collapsible-body"><span>Возвращает последний индекс искомого элемента.</span>
+        <pre>
+                        <code class="js">
+array.lastIndexOf(searchElement, fromIndex);
+                        </code>
+                      </pre>
+
+        <div class="array-code__item">
+          <p><code class="arrays-code_small">fromIndex</code> — необязательный параметр. Это индекс в массиве, с
+            которого нужно начинать поиск элемента <code class="arrays-code_small">searchElement</code>. Поиск
+            осуществляется в порядке убывания индекса. Если атрибут не указан, то поиск осуществляется с последнего
+            индекса в массиве. Значение параметра может быть отрицательным, в этом случае поиск производится, начиная с
+            индекса <code class="arrays-code_small">array.length + fromIndex</code>.</p>
+          <p class="arrays__text">Если элемент один, то метод возвращает индекс этого элемента. Если элементов много —
+            возвращает последний индекс искомого элемента в массиве при первом совпадении. Если элемента в массиве нет —
+            вернёт <code class="arrays-code_small">-1</code>:</p>
+          <div class="arrays-code">
+            <pre>
+                              <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Мандарин"];
+    
+alert(fruits.lastIndexOf("Мандарин"));
+// выведет 4 - индекс первого элемента со значением "Мандарин" 
+// с конца массива (последний индекс элемента)
+    
+alert(fruits.lastIndexOf("Манго"));
+// выведет -1
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check last-index-of">Проверить</button>
+                            </pre>
+          </div>
+        </div>
+
+        <div class="arrays__test">
+          <h3 class="arrays__title-small">Практика</h3>
+          <div class="arrays__block">
+            <div class="arrays__results">
+              <div class="arrays__task">
+                <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы, после чего указать искомый
+                  элемент и применить метод
+                  <code class="arrays-code_small">lastIndexOf()</code>:
+                </p>
+                <div class="arrays__field">
+
+                  <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-lastindexof"></div>];</div></div><div class="arrays__practice"><div>
+  const element = array.lastIndexOf</div><div class="arrays__practice-search">(<input class="arrays__search" id="arrays__search-lastindexof" type="text">);</div>
+                </div>
+                </pre>
+              </div>
+              <button class="waves-effect waves-light btn arrays__button_add lastindexof-add">
+                Добавить элементы
+              </button>
+
+              <button class="waves-effect waves-light btn arrays__button_done lastindexof-done">
+                Применить метод lastIndexOf()
+              </button>
+            </div>
+            <div class="arrays__out">
+              <p class="arrays__text-bold">Исходный массив:</p>
+              <pre class="arrays__old-lastindexof" class="arrays-code"></pre>
+              <p class="arrays__text-bold">Результат:</p>
+              <pre class="arrays__result-lastindexof" class="arrays-code"></pre>
+            </div>
+          </div>
+
+          <button class="waves-effect waves-light btn arrays__button_reset lastindexof-reset">
+            Сбросить значения
+          </button>
+        </div>
+      </div>
+
+  </div>
+  </li>
+
+  </ul>
+  </div>
+  </div>
+  </div>
+
+  <h5 class="arrays__title-min">Методы, возвращающие Array Iterator</h5>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <ul class="collapsible popout">
+
+          <li>
+            <div class="collapsible-header arrays-collapsible-header">
+              <div class="arrays-collapsible-header__items">
+                <p class="arrays-collapsible-header_title">entries</p><i class="material-icons">chevron_right</i>
+              </div>
+              <p class="arrays-collapsible-header_text">Возвращает итератор, который содержит пары ключ/значение по
+                каждому индексу в массиве.
+              </p>
+            </div>
+            <div class="collapsible-body"><span>Синтаксис:</span>
+              <pre>
+                        <code class="js">
+array.entries();
+                        </code>
+                      </pre>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
+                <p class="arrays__text">Итератор — это объект, который отслеживает свою текущую позицию, одновременно
+                  получая элементы в коллекции по одному.</p>
+                <ul class="arrays__ul" style="padding-left: 20px">
+                  <li class="arrays__li" style="list-style-type: disc">
+                    Итератор возвращает объект с двумя свойствами: <code class="arrays-code_small">done</code> и <code
+                      class="arrays-code_small">value</code>.
+                  </li>
+                  <li class="arrays__li" style="list-style-type: disc">
+                    Итератор предоставляет метод <code class="arrays-code_small">next()</code>, который возвращает
+                    следующий элемент в последовательности.
+                  </li>
+                  <li class="arrays__li" style="list-style-type: disc">
+                    Когда последовательность завершится, значение <code class="arrays-code_small">value</code> будет
+                    равно <code class="arrays-code_small">undefined</code>, а <code
+                      class="arrays-code_small">done</code> будет равным <code class="arrays-code_small">true</code>.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text"><code class="arrays-code_small">entries()</code> возвращает новый объект <code
+                    class="arrays-code_small">Array Iterator</code>, который содержит пары ключей и значений для каждого
+                  индекса массива:</p>
+                <div class="arrays-code">
+                  <pre>
+                              <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин"];
+const entries = fruits.entries();
+    
+alert(entries.next().value); // 0, "Банан"
+alert(entries.next().value); // 1, "Яблоко"
+alert(entries.next().value); // 2, "Мандарин"
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check entries">Проверить</button>
+                            </pre>
+                </div>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Чтобы получить пары ключ-значение, оптимально использование цикла <code
+                    class="arrays-code_small">for of</code>:</p>
+                <div class="arrays-code">
+                  <pre>
+                              <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин"];
+const entries = fruits.entries();
+    
+for (let element of entries) {
+  alert(element);
+}
+// проходим циклом по объекту 
+// и выводим пары ключ-значение
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check entries-for">Проверить</button>
+                            </pre>
+                </div>
+              </div>
+
+              <div class="arrays__test">
+                <h3 class="arrays__title-small">Практика</h3>
+                <div class="arrays__block">
+                  <div class="arrays__results">
+                    <div class="arrays__task">
+                      <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                        <code class="arrays-code_small">entries()</code>:
+                      </p>
+                      <div class="arrays__field">
+
+                        <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-entries"></div>];</div> </div>
+  let entries = array.entries();
+
+  for (let element of entries) {
+    console.log(element);
+  }
+                      </pre>
+                    </div>
+                    <button class="waves-effect waves-light btn arrays__button_add entries-add">
+                      Добавить элементы
+                    </button>
+
+                    <button class="waves-effect waves-light btn arrays__button_done entries-done">
+                      Применить метод entries()
+                    </button>
+                  </div>
+                  <div class="arrays__out">
+                    <p class="arrays__text-bold">Исходный массив:</p>
+                    <pre class="arrays__old-entries" class="arrays-code"></pre>
+                    <p class="arrays__text-bold">Результат:</p>
+                    <pre class="arrays__result-entries" class="arrays-code"></pre>
+                  </div>
+                </div>
+
+                <button class="waves-effect waves-light btn arrays__button_reset entries-reset">
+                  Сбросить значения
+                </button>
+              </div>
+            </div>
+
+      </div>
+      </li>
+
+
+      <li>
+        <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+          <div class="arrays-collapsible-header__items">
+            <p class="arrays-collapsible-header_title">keys</p><i class="material-icons">chevron_right</i>
+          </div>
+          <p class="arrays-collapsible-header_text">Возвращает итератор, который содержит ключи каждого индекса в
+            массиве.
+          </p>
+        </div>
+        <div class="collapsible-body"><span>Синтаксис:</span>
+          <pre>
+                        <code class="js">
+array.keys();
+                        </code>
+                      </pre>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
+            <p class="arrays__text">Итератор — это объект, который отслеживает свою текущую позицию, одновременно
+              получая элементы в коллекции по одному.</p>
+            <ul class="arrays__ul" style="padding-left: 20px">
+              <li class="arrays__li" style="list-style-type: disc">
+                Итератор возвращает объект с двумя свойствами: <code class="arrays-code_small">done</code> и <code
+                  class="arrays-code_small">value</code>.
+              </li>
+              <li class="arrays__li" style="list-style-type: disc">
+                Итератор предоставляет метод <code class="arrays-code_small">next()</code>, который возвращает следующий
+                элемент в последовательности.
+              </li>
+              <li class="arrays__li" style="list-style-type: disc">
+                Когда последовательность завершится, значение <code class="arrays-code_small">value</code> будет равно
+                <code class="arrays-code_small">undefined</code>, а <code class="arrays-code_small">done</code> будет
+                равным <code class="arrays-code_small">true</code>.
+              </li>
+            </ul>
+          </div>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Метод <code class="arrays-code_small">keys()</code> возвращает новый объект <code
+                class="arrays-code_small">Array Iterator</code>, который содержит ключи для каждого элемента в массиве и
+              может быть расширен с помощью метода <code class="arrays-code_small">next()</code>:</p>
+            <div class="arrays-code">
+              <pre>
+                              <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин"];
+const keys = fruits.keys();
+    
+alert(keys.next().value); // 0
+alert(keys.next().value); // 1
+alert(keys.next().value); // 2
+alert(keys.next().value); // undefined
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check keys">Проверить</button>
+                            </pre>
+            </div>
+          </div>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Чтобы получить ключи, оптимально использовать цикл <code
+                class="arrays-code_small">for of</code>:</p>
+            <div class="arrays-code">
+              <pre>
+                              <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин"];
+const keys = fruits.keys();
+    
+for (let key of keys) {
+  alert(key);
+}
+// проходим циклом по объекту 
+// и выводим ключи по порядку
+                              </code>
+  <button class="waves-effect waves-light btn arrays__check keys-for">Проверить</button>
+                            </pre>
+            </div>
+          </div>
+
+          <div class="arrays__test">
+            <h3 class="arrays__title-small">Практика</h3>
+            <div class="arrays__block">
+              <div class="arrays__results">
+                <div class="arrays__task">
+                  <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                    <code class="arrays-code_small">keys()</code>:
+                  </p>
+                  <div class="arrays__field">
+
+                    <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-keys"></div>];</div></div>
+  let keys = array.keys();
+
+  for (let key of keys) {
+    console.log(key);
+  }
+                  </pre>
+                </div>
+                <button class="waves-effect waves-light btn arrays__button_add keys-add">
+                  Добавить элементы
+                </button>
+
+                <button class="waves-effect waves-light btn arrays__button_done keys-done">
+                  Применить метод keys()
+                </button>
+              </div>
+              <div class="arrays__out">
+                <p class="arrays__text-bold">Исходный массив:</p>
+                <pre class="arrays__old-keys" class="arrays-code"></pre>
+                <p class="arrays__text-bold">Результат:</p>
+                <pre class="arrays__result-keys" class="arrays-code"></pre>
+              </div>
+            </div>
+
+            <button class="waves-effect waves-light btn arrays__button_reset keys-reset">
+              Сбросить значения
+            </button>
+          </div>
+        </div>
+
+
+    </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header arrays-collapsible-header">
+        <div class="arrays-collapsible-header__items">
+          <p class="arrays-collapsible-header_title">values</p><i class="material-icons">chevron_right</i>
+        </div>
+        <p class="arrays-collapsible-header_text">Возвращает итератор, который содержит значение для каждого индекса в
+          массиве.
+        </p>
+      </div>
+      <div class="collapsible-body"><span>Синтаксис:</span>
+        <pre>
+                        <code class="js">
+array.values();
+                        </code>
+                      </pre>
+
+        <div class="array-code__item">
+          <p class="arrays__text">Чтобы понять суть этого метода, нужно знать, что такое итератор.</p>
+          <p class="arrays__text">Итератор — это объект, который отслеживает свою текущую позицию, одновременно получая
+            элементы в коллекции по одному.</p>
+          <ul class="arrays__ul" style="padding-left: 20px">
+            <li class="arrays__li" style="list-style-type: disc">
+              Итератор возвращает объект с двумя свойствами: done и value.
+            </li>
+            <li class="arrays__li" style="list-style-type: disc">
+              Итератор предоставляет метод next(), который возвращает следующий элемент в последовательности.
+            </li>
+            <li class="arrays__li" style="list-style-type: disc">
+              Когда последовательность завершится, значение value будет равно undefined, а done будет равным true.
+            </li>
+          </ul>
+        </div>
+
+        <div class="array-code__item">
+          <p class="arrays__text">Пример использования values() с помощью метода next():</p>
+          <div class="arrays-code">
+            <pre>
+                              <code class="js">
+    const fruits = ["Банан", "Яблоко", "Мандарин"];
+    const values = fruits.values();
+    
+    alert(values.next().value); // Банан
+    alert(values.next().value); // Яблоко
+    alert(values.next().value); // Мандарин
+    alert(values.next().value); // undefined
+                              </code>
+      <button class="waves-effect waves-light btn arrays__check values">Проверить</button>
+                            </pre>
+          </div>
+        </div>
+
+        <div class="array-code__item">
+          <p class="arrays__text">Чтобы получить значение каждого индекса, оптимально использовать цикл for of:</p>
+          <div class="arrays-code">
+            <pre>
+                              <code class="js">
+    const fruits = ["Банан", "Яблоко", "Мандарин"];
+    const values = fruits.values();
+    
+    for (let value of values) {
+      alert(value);
+    }
+    // проходим циклом по объекту 
+    // и выводим значения индексов по порядку
+                              </code>
+      <button class="waves-effect waves-light btn arrays__check values-for">Проверить</button>
+                            </pre>
+          </div>
+        </div>
+
+        <div class="arrays__test">
+          <h3 class="arrays__title-small">Практика</h3>
+          <div class="arrays__block">
+            <div class="arrays__results">
+              <div class="arrays__task">
+                <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод
+                  values():</p>
+                <div class="arrays__field">
+
+                  <pre class="arrays-code">
+                                  <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-values"></div>];</div></div>
+  let values = array.values();
+
+  for (let value of values) {
+    console.log(values);
+  }
+                </pre>
+              </div>
+              <button class="waves-effect waves-light btn arrays__button_add values-add">
+                Добавить элементы
+              </button>
+
+              <button class="waves-effect waves-light btn arrays__button_done values-done">
+                Применить метод values()
+              </button>
+            </div>
+            <div class="arrays__out">
+              <p class="arrays__text-bold">Исходный массив:</p>
+              <pre class="arrays__old-values" class="arrays-code"></pre>
+              <p class="arrays__text-bold">Результат:</p>
+              <pre class="arrays__result-values" class="arrays-code"></pre>
+            </div>
+          </div>
+
+          <button class="waves-effect waves-light btn arrays__button_reset values-reset">
+            Сбросить значения
+          </button>
+        </div>
+      </div>
+  </div>
+  </li>
+
+  </ul>
+  </div>
+  </div>
+  </div>
+
+  <h5 class="arrays__title-min">Прочие методы</h5>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+
+        <ul class="collapsible popout">
+
+          <li>
+            <div class="collapsible-header arrays-collapsible-header">
+              <div class="arrays-collapsible-header__items">
+                <p class="arrays-collapsible-header_title">flat</p><i class="material-icons">chevron_right</i>
+              </div>
+              <p class="arrays-collapsible-header_text">Уменьшает вложенность массива на заданное количество уровней.
+              </p>
+            </div>
+            <div class="collapsible-body"><span>Метод <code class="arrays-code_small">flat()</code> возвращает новый
+                массив.</span>
+              <pre>
+                    <code class="js">
+array.flat(depth);
+                    </code>
+                  </pre>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Метод принимает необязательный аргумент <code
+                    class="arrays-code_small">depth</code> — количество уровней, на которые нужно уменьшить вложенность.
+                  Значение по умолчанию — <code class="arrays-code_small">1</code>; если вложенность неизвестна, но
+                  нужно получить плоский массив, то можно передать аргумент <code
+                    class="arrays-code_small">Infinity</code>.</p>
+                <p class="arrays__text">Если массив содержит другие массивы в качестве своих элементов, то метод <code
+                    class="arrays-code_small">flat()</code> позволяет уменьшить вложенность, вплоть до полного
+                  превращения массива в плоский:</p>
+                <div class="arrays-code">
+                  <pre>
+                          <code class="js">
+const fruits = [
+  'Банан',
+  'Яблоко',
+  [
+    'Мандарин',
+    'Апельсин',
+    [
+      'Груша',
+      'Манго'
+    ]
+  ]
+]
+// у массива fruits внутри 2 уровня вложенности
+
+alert(fruits.flat());
+// выведет Банан, Яблоко, Мандарин, Апельсин, Груша, Манго
+
+console.log(fruits.flat());
+// но в консоли будет отображаться массив 
+// ['Банан', 'Яблоко', 'Мандарин', 'Апельсин', ['Груша', 'Манго']]
+// остался один уровень вложенности ['Груша', 'Манго']
+
+console.log(fruits.flat(2));
+// а сейчас в консоли будет отображаться массив 
+// ['Банан', 'Яблоко', 'Мандарин', 'Апельсин', 'Груша', 'Манго']
+// массив стал плоским
+
+console.log(fruits.flat(Infinity));
+// массив также стал плоским
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check flat">Проверить</button>
+                        </pre>
+                </div>
+              </div>
+
+            </div>
+          </li>
+
+
+          <li>
+            <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+              <div class="arrays-collapsible-header__items">
+                <p class="arrays-collapsible-header_title">copyWithin</p><i class="material-icons">chevron_right</i>
+              </div>
+              <p class="arrays-collapsible-header_text">Копирует часть массива в тот же массив.
+              </p>
+            </div>
+            <div class="collapsible-body"><span>Метод возвращает массив без изменения размера, т.е. копирует элементы
+                массива в пределах одного массива.</span>
+              <pre>
+                    <code class="js">
+array.copyWithin(target, start, end);
+                    </code>
+                  </pre>
+
+              <div class="array-code__item">
+                <p class="arrays__text"><code class="arrays-code_small">target</code> — начальный индекс позиции цели,
+                  куда копировать элементы.</p>
+                <p class="arrays__text"><code class="arrays-code_small">start</code> — начальный индекс массива, откуда
+                  начинать копировать элементы.</p>
+                <p class="arrays__text"><code class="arrays-code_small">end</code> (необязательный параметр) — конечный
+                  индекс массива, которым заканчивается копирование элементов массива. Если параметр не указан, то будут
+                  скопированы все элементы от <code class="arrays-code_small">start</code> и до конца массива.</p>
+                <p class="arrays__text">При отрицательных значениях индекс, с которого (или до которого) будет
+                  произведено копирование, рассчитывается по формуле: <code
+                    class="arrays-code_small">length + target</code> (или <code class="arrays-code_small">start</code>,
+                  или <code class="arrays-code_small">end</code>).</p>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Метод копирует элементы массива внутри него в позицию, начинающуюся по индексу
+                  <code class="arrays-code_small">target</code>. Копия берется по индексам, задаваемым <code
+                    class="arrays-code_small">start</code> и <code class="arrays-code_small">end</code>:</p>
+                <div class="arrays-code">
+                  <pre>
+                          <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Манго"];
+
+alert(fruits.copyWithin(3, 0));
+// Банан, Яблоко, Мандарин, Банан, Яблоко
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check copywithin">Проверить</button>
+                        </pre>
+                </div>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Как сработал метод?</p>
+                <p class="arrays__text">Под индексом 3 находится элемент "Груша" — это <code
+                    class="arrays-code_small">target</code>.</p>
+                <p class="arrays__text">Индекс 0 - элемент "Банан" — это <code class="arrays-code_small">start</code>.
+                </p>
+                <p class="arrays__text">Параметр <code class="arrays-code_small">end</code> не задан, значит, будут
+                  скопированы элементы, начиная со <code class="arrays-code_small">start</code> до конца массива.</p>
+                <p class="arrays__text">Метод нашёл индекс 3 и скопировал в него элемент из индекса 0, далее нашёл
+                  индекс 4 и скопировал в него элемент из индекса 1. После этого метод завершил работу, так как дошел до
+                  конца массива.</p>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Рассмотрим пример с необязательным параметром <code
+                    class="arrays-code_small">end</code>:</p>
+                <div class="arrays-code">
+                  <pre>
+                          <code class="js">
+let fruits = ["Банан", "Яблоко", "Мандарин", "Груша", "Манго"];
+
+alert(fruits.copyWithin(-3, 0, -1));
+// Банан, Яблоко, Банан, Яблоко, Мандарин
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check copywithin-end">Проверить</button>
+                        </pre>
+                </div>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Как сработал метод в этом примере?</p>
+                <p class="arrays__text"><code class="arrays-code_small">target</code>: -3. Значит, цель — индекс 2 со
+                  значением "Мандарин".</p>
+                <p class="arrays__text"><code class="arrays-code_small">start</code>: индекс 0 со значением "Банан".</p>
+                <p class="arrays__text"><code class="arrays-code_small">end</code>: -1. Значит, конечная точка — индекс
+                  4 со значением "Манго".</p>
+                <p class="arrays__text">Метод помещает последовательность "Банан", "Яблоко", "Мандарин", "Груша",
+                  "Манго" в исходный массив, начиная с индекса 2 (значение "Мандарин") и заканчивая индексом 4.
+                  Поскольку метод <code class="arrays-code_small">copyWithin()</code> не изменяет длину массива, в итоге
+                  мы получим массив <code
+                    class="arrays-code_small">["Банан", "Яблоко", "Банан", "Яблоко", "Мандарин"]</code>. </p>
+                <p>Для наглядности заменим значения на цифры — вместо <code
+                    class="arrays-code_small">["Банан", "Яблоко", "Мандарин", "Груша", "Манго"]</code> возьмём массив
+                  <code class="arrays-code_small">[1, 2, 3, 4, 5]</code>. В итоге с помощью метода <code
+                    class="arrays-code_small">copyWithin()</code> получится массив <code
+                    class="arrays-code_small">[1, 2, 1, 2, 3]</code>.</p>
+                <pre>
+                        <code class="js">
+[1, 2, 3, 4, 5]        исходный массив
+ 0  1  2  3  4         индексы с начала масcива
+-5 -4 -3 -2 -1         индексы с конца масcива
+ ^     ^     ^         параметры метода
+ |     |     *-------- end
+ |     *-------------- target      
+ *-------------------- start
+[1, 2, 3, 4, 5]        исходный массив
+[      1, 2, 3, 4, 5]  копируемые значения
+[1, 2, 1, 2, 3]        результат (массив сохраняет длину)
+                        </code>
+                      </pre>
+              </div>
+
+
+
+            </div>
+          </li>
+
+
+          <li>
+            <div class="collapsible-header arrays-collapsible-header">
+              <div class="arrays-collapsible-header__items">
+                <p class="arrays-collapsible-header_title">fill</p><i class="material-icons">chevron_right</i>
+              </div>
+              <p class="arrays-collapsible-header_text">Заполняет массив указанным значением.
+              </p>
+            </div>
+            <div class="collapsible-body"><span>Синтаксис:</span>
+              <pre>
+                    <code class="js">
+array.fill(value, start, end);
+                    </code>
+                  </pre>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Параметры:</p>
+                <ul class="arrays__ul" style="padding-left: 20px">
+                  <li class="arrays__li" style="list-style-type: disc">
+                    <code class="arrays-code_small">value</code> — значение, которым будет заполнен массив;
+                  </li>
+                  <li class="arrays__li" style="list-style-type: disc">
+                    <code class="arrays-code_small">start</code> (необязательный параметр) — индекс элемента, с которого
+                    начинается заполнение массива (по умолчанию — 0); допускается использование отрицательных значений,
+                    в этом случае индекс рассчитывается по формуле <code
+                      class="arrays-code_small">array.length + start</code>;
+                  </li>
+                  <li class="arrays__li" style="list-style-type: disc">
+                    <code class="arrays-code_small">end</code> (необязательный параметр) — индекс элемента, на котором
+                    заканчивается заполнение массива (по умолчанию — <code
+                      class="arrays-code_small">array.length</code>); допускается использование отрицательных значений,
+                    в этом случае индекс рассчитывается по формуле <code
+                      class="arrays-code_small">array.length + end</code>;
+                  </li>
+                </ul>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Метод заполняет все элементы массива от начального до конечного индексов одним
+                  значением и изменяет существующий массив, а не возвращает новый:</p>
+                <div class="arrays-code">
+                  <pre>
+                          <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин", "Груша"];
+
+alert(fruits.fill("Манго", 2, 4)); 
+// заполнить массив значением "Манго" со 2 по 4 индекс
+// выведет Банан, Яблоко, Манго, Манго
+
+alert(fruits.fill("Манго", 1)); 
+// заполнить массив значением "Манго" с 1 индекса
+// выведет Банан, Манго, Манго, Манго
+
+alert(fruits.fill("Манго")); 
+// заполнить весь массив значением "Манго"
+// выведет Манго, Манго, Манго, Манго
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check fill">Проверить</button>
+                        </pre>
+                </div>
+              </div>
+
+            </div>
+          </li>
+
+
+          <li>
+            <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+              <div class="arrays-collapsible-header__items">
+                <p class="arrays-collapsible-header_title">toLocaleString</p><i class="material-icons">chevron_right</i>
+              </div>
+              <p class="arrays-collapsible-header_text">Объединяет все элементы массива в одно строковое значение.
+              </p>
+            </div>
+            <div class="collapsible-body"><span>Синтаксис:</span>
+              <pre>
+                    <code class="js">
+array.toLocaleString();
+                    </code>
+                  </pre>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Элементы массива в зависимости от их типа преобразуются в строки с
+                  использованием своих собственных методов <code class="arrays-code_small">toLocaleString()</code>:</p>
+                <ul class="arrays__ul" style="padding-left: 20px">
+                  <li class="arrays__li" style="list-style-type: disc">
+                    Object: <code class="arrays-code_small">Object.prototype.toLocaleString()</code>;
+                  </li>
+                  <li class="arrays__li" style="list-style-type: disc">
+                    Number: <code class="arrays-code_small">Number.prototype.toLocaleString()</code>;
+                  </li>
+                  <li class="arrays__li" style="list-style-type: disc">
+                    Date: <code class="arrays-code_small">Date.prototype.toLocaleString()</code>;
+                  </li>
+                </ul>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Пример использования метода:</p>
+                <div class="arrays-code">
+                  <pre>
+                          <code class="js">
+// создадим массив с разными типами элементов:
+
+const arr = [5, "Яблоко", new Date()];
+
+alert(arr.toLocaleString()); 
+// выведет значение переменной arr, преобразованной
+// с помощью метода в строку:
+// 5, Яблоко, XX.XX.XXXX, XX:XX:XX (актуальная дата и время)
+                          </code>
+  <button class="waves-effect waves-light btn arrays__check tolocalstring">Проверить</button>
+                        </pre>
+                </div>
+              </div>
+
+            </div>
+          </li>
+        </ul>
+
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <div class="arrays-callback">
+    <h2 class="arrays__title-medium teal-text text-darken-1">Методы, принимающие callback function</h2>
+    <div class="array-code__item">
+
+      <p class="arrays__text">Все методы этой категории принимают в качестве аргумента функцию обратного вызова — <code
+          class="arrays-code_small">callback function</code>. Эта функция выполняется последовательно и не более одного
+        раза для каждого элемента в массиве. </p>
+
+      <pre>
+            <code class="js">
+array.method(callback, thisArg);
+            </code>
+          </pre>
+
+      <p class="arrays__text"><code class="arrays-code_small">callback</code> принимает следующие основные параметры:
+      </p>
+      <ul class="arrays__ul" style="padding-left: 20px">
+        <li class="arrays__li" style="list-style-type: disc">
+          <code class="arrays-code_small">element</code> — элемент массива в текущей итерации;
+        </li>
+        <li class="arrays__li" style="list-style-type: disc">
+          <code class="arrays-code_small">index</code> — индекс текущего элемента;
+        </li>
+        <li class="arrays__li" style="list-style-type: disc">
+          <code class="arrays-code_small">arr</code> — сам массив, который мы перебираем.
+        </li>
+      </ul>
+      <p class="arrays__text">У некоторых методов есть и дополнительные параметры колбэка. </p>
+      <p class="arrays__text">То, что должен вернуть колбэк, зависит от метода массива, который был вызван.</p>
+      <p>Функция <code class="arrays-code_small">callback</code> вызывается только для индексов массива, имеющих
+        присвоенные значения (включая <code class="arrays-code_small">undefined</code>); она не вызывается для индексов,
+        которые были удалены или которым значения никогда не присваивались. Элементы массива, не прошедшие проверку
+        функцией <code class="arrays-code_small">callback</code>, просто пропускаются и не включаются в новый массив.
+      </p>
+      <p class="arrays__text">Кроме того, такие методы могут принимать необязательный параметр <code
+          class="arrays-code_small">thisArg</code>. Это объект, на который может ссылаться ключевое слово <code
+          class="arrays-code_small">this</code> в функции <code class="arrays-code_small">callback</code>. Если аргумент
+        <code class="arrays-code_small">thisArg</code> не указан, в качестве значения <code
+          class="arrays-code_small">this</code> используется <code class="arrays-code_small">undefined</code>. Аргумент
+        <code class="arrays-code_small">thisArg</code> не имеет значения для любого колбэка, определенного с помощью
+        стрелочной функции, поскольку стрелочные функции не имеют собственной привязки <code
+          class="arrays-code_small">this</code>.</p>
+    </div>
+
+    <h5 class="arrays__title-min">Перебор и преобразование массивов</h5>
+
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <ul class="collapsible popout">
+
+            <li>
+              <div class="collapsible-header arrays-collapsible-header">
+                <div class="arrays-collapsible-header__items">
+                  <p class="arrays-collapsible-header_title">forEach</p><i class="material-icons">chevron_right</i>
+                </div>
+                <p class="arrays-collapsible-header_text">Применяет колбэк-функцию ко всем элементам массива. Можно
+                  использовать вместо классического цикла <code class="arrays-code_small">for</code>.
+                </p>
+              </div>
+              <div class="collapsible-body"><span>Синтаксис:</span>
+                <pre>
+                      <code class="js">
+array.forEach(callback(element, index, arr), thisArg);
+                      </code>
+                    </pre>
+
+                <div class="array-code__item">
+                  <p class="arrays__text">Метод позволяет удобно получать элемент в текущей итерации, без необходимости
+                    всякий раз обращаться к массиву по индексу. В <code class="arrays-code_small">forEach()</code> не
+                    будут работать return, <code class="arrays-code_small">break</code> и <code
+                      class="arrays-code_small">continue</code>:</p>
+                  <div class="arrays-code">
+                    <pre>
+                            <code class="js">
+const fruits = ["Банан", "Яблоко", "Мандарин"];
+fruits.forEach((element, index, arr) => {
+
+alert('Элемент: ' + element);
+alert('Его индекс: ' + index);
+alert('Массив: ' + arr);
+// выведет последовательно: 
+// Элемент: Банан => Его индекс: 0 => Массив: Банан, Яблоко, Мандарин
+// Элемент: Яблоко => Его индекс: 1 => Массив: Банан, Яблоко, Мандарин
+// Элемент: Мандарин => Его индекс: 2 => Массив: Банан, Яблоко, Мандарин
+})
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check foreach">Проверить</button>
+                          </pre>
+                  </div>
+                </div>
+
+                <div class="arrays__test">
+                  <h3 class="arrays__title-small">Практика</h3>
+                  <div class="arrays__block">
+                    <div class="arrays__results">
+                      <div class="arrays__task">
+                        <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
+                            class="arrays-code_small">forEach()</code> для вычисления квадрата:</p>
+                        <div class="arrays__field">
+
+                          <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-foreach"></div>];</div></div>
+  let arraySquare = [];
+  
+  array.forEach(function (num) {
+    let square = num * num;
+    arraySquare.push(square);
+  })
+                        </pre>
+
+                      </div>
+                      <button class="waves-effect waves-light btn arrays__button_add foreach-add">
+                        Добавить элементы
+                      </button>
+
+                      <button class="waves-effect waves-light btn arrays__button_done foreach-done">
+                        Применить метод forEach()
+                      </button>
+                    </div>
+                    <div class="arrays__out">
+                      <p class="arrays__text-bold">Исходный массив:</p>
+                      <pre class="arrays__old-foreach" class="arrays-code"></pre>
+                      <p class="arrays__text-bold">Новый массив:</p>
+                      <pre class="arrays__result-foreach" class="arrays-code"></pre>
+                    </div>
+                  </div>
+
+                  <button class="waves-effect waves-light btn arrays__button_reset foreach-reset">
+                    Сбросить значения
+                  </button>
+                </div>
+              </div>
+
+        </div>
+        </li>
+
+
+        <li>
+          <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+            <div class="arrays-collapsible-header__items">
+              <p class="arrays-collapsible-header_title">map</p><i class="material-icons">chevron_right</i>
+            </div>
+            <p class="arrays-collapsible-header_text">Создает новый массив с результатом вызова функции-колбэка для
+              каждого элемента массива.
+            </p>
+          </div>
+          <div class="collapsible-body"><span>Переданная функция будет вызвана для каждого элемента по порядку.</span>
+            <pre>
+                      <code class="js">
+array.map(callback(element, index, arr), thisArg);
+                      </code>
+                    </pre>
+
+            <div class="array-code__item">
+              <p class="arrays__text">Возвращает новый массив, при этом исходный массив никак не изменится:</p>
+              <div class="arrays-code">
+                <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const squares = array.map(function (num) {
+    return num * num;
+})
+
+alert(squares);
+// выведет новый массив: 1, 4, 9, 16, 25
+
+alert(array);
+// исходный массив не изменился: 1, 2, 3, 4, 5
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check map">Проверить</button>
+                          </pre>
+              </div>
+            </div>
+
+            <div class="array-code__item">
+              <p class="arrays__text">Разберем тот же пример через классический цикл <code
+                  class="arrays-code_small">for</code>:</p>
+              <div class="arrays-code">
+                <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const squares = [];
+for (let i = 0; i < array.length; i++) {
+  const num = array[i];
+  const numSquare = num * num;
+  squares.push(numSquare);
+}
+
+alert(squares);
+// выведет новый массив: 1, 4, 9, 16, 25
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check map-for">Проверить</button>
+                          </pre>
+              </div>
+            </div>
+
+            <div class="arrays__test">
+              <h3 class="arrays__title-small">Практика</h3>
+              <div class="arrays__block">
+                <div class="arrays__results">
+                  <div class="arrays__task">
+                    <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
+                        class="arrays-code_small">map()</code>, чтобы прибавить к каждому числу единицу:</p>
+                    <div class="arrays__field">
+
+                      <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  let array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-map"></div>];</div></div>
+  let arrayPlusOne = array.map(function (num) {
+    return num + 1;
+  })
+                    </pre>
+
+                  </div>
+                  <button class="waves-effect waves-light btn arrays__button_add map-add">
+                    Добавить элементы
+                  </button>
+
+                  <button class="waves-effect waves-light btn arrays__button_done map-done">
+                    Применить метод map()
+                  </button>
+                </div>
+                <div class="arrays__out">
+                  <p class="arrays__text-bold">Исходный массив:</p>
+                  <pre class="arrays__old-map" class="arrays-code"></pre>
+                  <p class="arrays__text-bold">Новый массив:</p>
+                  <pre class="arrays__result-map" class="arrays-code"></pre>
+                </div>
+              </div>
+
+              <button class="waves-effect waves-light btn arrays__button_reset map-reset">
+                Сбросить значения
+              </button>
+            </div>
+          </div>
+
+
+      </div>
+      </li>
+
+
+      <li>
+        <div class="collapsible-header arrays-collapsible-header">
+          <div class="arrays-collapsible-header__items">
+            <p class="arrays-collapsible-header_title">reduce</p><i class="material-icons">chevron_right</i>
+          </div>
+          <p class="arrays-collapsible-header_text">Используется для вычисления на основе массива какого-либо единого
+            значения. Применяет функцию к аккумулятору и каждому значению массива слева-направо.
+          </p>
+        </div>
+        <div class="collapsible-body"><span>Функция-колбэк будет вызвана для каждого элемента массива, и всегда должна
+            возвращать результат. <code class="arrays-code_small">reduce()</code> не выполняет функцию для элементов
+            массива без значений.</span>
+          <pre>
+                      <code class="js">
+array.reduce(callback(accumulator, element, index, array), initialValue);
+                      </code>
+                    </pre>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Сама функция-колбэк в методе <code class="arrays-code_small">reduce()</code> может
+              принимать четыре параметра:</p>
+            <ul class="arrays__ul" style="padding-left: 20px">
+              <li class="arrays__li" style="list-style-type: disc">
+                <code class="arrays-code_small">accumulator</code> — текущее значение аккумулятора;
+              </li>
+              <li class="arrays__li" style="list-style-type: disc">
+                <code class="arrays-code_small">element</code> — элемент массива в текущей итерации;
+              </li>
+              <li class="arrays__li" style="list-style-type: disc">
+                <code class="arrays-code_small">index</code> — индекс текущего элемента;
+              </li>
+              <li class="arrays__li" style="list-style-type: disc">
+                <code class="arrays-code_small">array</code> — сам массив, который мы перебираем.
+              </li>
+            </ul>
+            <p class="arrays__text"><code class="arrays-code_small">initialValue</code> — необязательный параметр. Если
+              значение <code class="arrays-code_small">initialValue</code> предоставляется, то <code
+                class="arrays-code_small">accumulator</code> является значением <code
+                class="arrays-code_small">initialValue</code> при первом вызове функции, а значение <code
+                class="arrays-code_small">element</code> будет равным первому значению в массиве. Если аргумент <code
+                class="arrays-code_small">initialValue</code> не задан, то значение <code
+                class="arrays-code_small">accumulator</code> будет равным первому значению в массиве, а значение <code
+                class="arrays-code_small">element</code> будет равным второму значению в массиве.</p>
+          </div>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Чтобы разобрать работу метода со всеми аргументами, вычислим сумму всех элементов
+              массива, а после определим среднее арифметическое:</p>
+            <div class="arrays-code">
+              <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+// создадим функцию-колбэк, которая суммирует числа 
+// и вычисляет среднее арифметическое:
+function findAverage(accumulator, element, index, array) {
+  const sum = accumulator + element;
+
+  // Если мы находимся на последнем элементе,
+  // вычисляем среднее арифметическое делением 
+  // на количество элементов:
+  if (index === array.length - 1) {
+    return sum / array.length;
+  }
+
+  return sum;
+}
+
+// помещаем функцию-колбэк в метод reduce и задаем 
+// начальное значение для аккумулятора (равное 0):
+const average = array.reduce(findAverage, 0);
+
+alert(average);
+// выведет среднее арифметическое элементов массива: 3
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check reduce">Проверить</button>
+                          </pre>
+            </div>
+          </div>
+
+          <p class="arrays__text">Запишем пример кода более лаконично:</p>
+          <pre>
+                      <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const average = array.reduce(function (accumulator, element, index, array) {
+    const sum = accumulator + element;
+    if (index === array.length - 1) {
+        return sum / array.length;
+    }
+  return sum;
+}, 0);
+                      </code>
+                    </pre>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Тот же пример, написанный через классический цикл <code
+                class="arrays-code_small">for</code>:</p>
+            <div class="arrays-code">
+              <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+let sum = 0;
+for(let i = 0; i < array.length; i++){
+  sum = sum + array[i]; 
+}
+let average = sum / array.length;
+
+alert(average);
+// также выведет среднее арифметическое элементов массива: 3
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check reduce-for">Проверить</button>
+                          </pre>
+            </div>
+          </div>
+
+          <div class="arrays__test">
+            <h3 class="arrays__title-small">Практика</h3>
+            <div class="arrays__block">
+              <div class="arrays__results">
+                <div class="arrays__task">
+                  <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
+                      class="arrays-code_small">reduce()</code>, чтобы вычислить сумму всех элементов массива:</p>
+                  <div class="arrays__field">
+
+                    <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  const numbers = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-reduce"></div>];</div></div>
+  const sum = numbers.reduce(function (accumulator, element) {
+    return accumulator + element;
+  }, 0)
+                  </pre>
+
+                </div>
+                <button class="waves-effect waves-light btn arrays__button_add reduce-add">
+                  Добавить элементы
+                </button>
+
+                <button class="waves-effect waves-light btn arrays__button_done reduce-done">
+                  Применить метод reduce()
+                </button>
+              </div>
+              <div class="arrays__out">
+                <p class="arrays__text-bold">Исходный массив:</p>
+                <pre class="arrays__old-reduce" class="arrays-code"></pre>
+                <p class="arrays__text-bold">Результат:</p>
+                <pre class="arrays__result-reduce" class="arrays-code"></pre>
+              </div>
+            </div>
+
+            <button class="waves-effect waves-light btn arrays__button_reset reduce-reset">
+              Сбросить значения
+            </button>
+          </div>
+        </div>
+
+
+    </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+        <div class="arrays-collapsible-header__items">
+          <p class="arrays-collapsible-header_title">reduceRight</p><i class="material-icons">chevron_right</i>
+        </div>
+        <p class="arrays-collapsible-header_text">Работает точно так же, как и <code
+            class="arrays-code_small">reduce()</code>, но применяет функцию к аккумулятору и каждому значению массива
+          справа налево, сводя его к одному значению.
+        </p>
+      </div>
+      <div class="collapsible-body"><span><code class="arrays-code_small">reduceRight()</code> не выполняет функцию для
+          элементов массива без значений.</span>
+        <pre>
+                      <code class="js">
+array.reduceRight(callback(accumulator, element, index, array), initialValue);
+                      </code>
+                    </pre>
+
+        <div class="array-code__item">
+          <p class="arrays__text">Сама функция-колбэк в методе <code class="arrays-code_small">reduceRight()</code>
+            может принимать четыре параметра:</p>
+          <ul class="arrays__ul" style="padding-left: 20px">
+            <li class="arrays__li" style="list-style-type: disc">
+              <code class="arrays-code_small">accumulator</code> — текущее значение аккумулятора;
+            </li>
+            <li class="arrays__li" style="list-style-type: disc">
+              <code class="arrays-code_small">element</code> — элемент массива в текущей итерации;
+            </li>
+            <li class="arrays__li" style="list-style-type: disc">
+              <code class="arrays-code_small">index</code> — индекс текущего элемента;
+            </li>
+            <li class="arrays__li" style="list-style-type: disc">
+              <code class="arrays-code_small">array</code> — сам массив, который мы перебираем.
+            </li>
+          </ul>
+          <p class="arrays__text"><code class="arrays-code_small">initialValue</code> — необязательный параметр. Если
+            значение <code class="arrays-code_small">initialValue</code> предоставляется, то <code
+              class="arrays-code_small">accumulator</code> является значением <code
+              class="arrays-code_small">initialValue</code> при первом вызове функции, а значение <code
+              class="arrays-code_small">element</code> будет равным первому значению в массиве. Если аргумент <code
+              class="arrays-code_small">initialValue</code> не задан, то значение <code
+              class="arrays-code_small">accumulator</code> будет равным первому значению в массиве, а значение <code
+              class="arrays-code_small">element</code> будет равным второму значению в массиве.</p>
+        </div>
+
+        <div class="array-code__item">
+          <p class="arrays__text">Чтобы разобрать работу метода со всеми аргументами, вычислим сумму всех элементов
+            массива, а после определим среднее арифметическое:</p>
+          <div class="arrays-code">
+            <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+// создадим функцию-колбэк, которая суммирует числа
+// и вычисляет среднее арифметическое:
+function findAverage(accumulator, element, index, array) {
+  const sum = accumulator + element;
+
+  // Если мы прошли весь цикл и находимся на первом элементе
+  // (так как применяется метод reduceRight, перебор элементов
+  // будет идти справа налево — от последнего к первому),
+  // вычисляем среднее арифметическое делением 
+  // на количество элементов:
+  if (index === 0) {
+    return sum / array.length;
+  }
+
+  return sum;
+}
+
+// помещаем функцию-колбэк в метод reduceRigth и задаем 
+// начальное значение для аккумулятора (равное 0):
+const average = array.reduceRight(findAverage, 0);
+
+alert(average);
+// выведет среднее арифметическое элементов массива: 3
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check reduceright">Проверить</button>
+                          </pre>
+          </div>
+        </div>
+
+        <p class="arrays__text">Запишем пример кода более лаконично:</p>
+        <pre>
+                      <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const average = array.reduceRight(function (accumulator, element, index, array) {
+    const sum = accumulator + element;
+    if (index === 0) {
+        return sum / array.length;
+    }
+  return sum;
+}, 0);
+                      </code>
+                    </pre>
+
+        <div class="array-code__item">
+          <p class="arrays__text">Тот же пример, написанный через классический цикл <code
+              class="arrays-code_small">for</code>:</p>
+          <div class="arrays-code">
+            <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+let sum = 0;
+
+// проходимся циклом по массиву справа налево:
+for(let i = array.length - 1; i >= 0; i--){
+  sum = sum + array[i]; 
+}
+let average = sum / array.length;
+
+alert(average);
+// также выведет среднее арифметическое элементов массива: 3
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check reduceright-for">Проверить</button>
+                          </pre>
+          </div>
+        </div>
+
+        <div class="arrays__test">
+          <h3 class="arrays__title-small">Практика</h3>
+          <div class="arrays__block">
+            <div class="arrays__results">
+              <div class="arrays__task">
+                <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
+                    class="arrays-code_small">reduceRight()</code>, чтобы вычесть числа справа налево, при этом массив
+                  должен быть отсортирован по возрастанию чисел, чтобы вычитание происходило из большего числа:</p>
+                <div class="arrays__field">
+
+                  <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  const numbers = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-reduceright"></div>];</div></div>
+  numbers.sort(function(a, b) {
+    return a - b;
+  });
+  
+  const subtraction = numbers.reduceRight(function (accumulator, element) {
+    return accumulator - element;
+  });
+                </pre>
+
+              </div>
+              <button class="waves-effect waves-light btn arrays__button_add reduceright-add">
+                Добавить элементы
+              </button>
+
+              <button class="waves-effect waves-light btn arrays__button_done reduceright-done">
+                Применить метод reduceRight()
+              </button>
+            </div>
+            <div class="arrays__out">
+              <p class="arrays__text-bold">Исходный массив:</p>
+              <pre class="arrays__old-reduceright" class="arrays-code"></pre>
+              <p class="arrays__text-bold">Отсортированный массив:</p>
+              <pre class="arrays__sort-reduceright" class="arrays-code"></pre>
+              <p class="arrays__text-bold">Результат:</p>
+              <pre class="arrays__result-reduceright" class="arrays-code"></pre>
+            </div>
+          </div>
+
+          <button class="waves-effect waves-light btn arrays__button_reset reduceright-reset">
+            Сбросить значения
+          </button>
+        </div>
+      </div>
+
+  </div>
+  </li>
+
+
+  <li>
+    <div class="collapsible-header arrays-collapsible-header">
+      <div class="arrays-collapsible-header__items">
+        <p class="arrays-collapsible-header_title">filter</p><i class="material-icons">chevron_right</i>
+      </div>
+      <p class="arrays-collapsible-header_text">Фильтрует элементы с помощью переданной колбэк-функции.
+      </p>
+    </div>
+    <div class="collapsible-body"><span>Позволяет получить новый массив, при этом исходный массив никак не изменится.
+        Колбэк-функция будет вызвана для каждого элемента массива и по результату функции примет решение: включать этот
+        элемент в новый массив или нет.</span>
+      <pre>
+                      <code class="js">
+array.filter(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+      <div class="array-code__item">
+        <p class="arrays__text">Функция должна возвращать <code class="arrays-code_small">boolean</code>, т.е.
+          результатом должен быть <code class="arrays-code_small">true</code> или <code
+            class="arrays-code_small">false</code>. Такие функции называют предикатами.</p>
+        <p class="arrays__text">Рассмотрим пример, в котором нужно отфильтровать массив и вернуть новый только с
+          нечетными числами:</p>
+        <div class="arrays-code">
+          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const arrayOdds = array.filter(function (num) {
+  return num % 2 !== 0;
+})
+
+alert(arrayOdds);
+// выведет новый массив с нечетными числами: 1, 3, 5
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check filter">Проверить</button>
+                          </pre>
+        </div>
+      </div>
+
+      <div class="array-code__item">
+        <p class="arrays__text">Тот же пример через классический цикл <code class="arrays-code_small">for</code>:</p>
+        <div class="arrays-code">
+          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const arrayOdds = [];
+for (let i = 0; i < array.length; i++) {
+  if (array[i] % 2 !== 0) {
+    arrayOdds.push(array[i]);
+  };
+}
+
+alert(arrayOdds);
+// также выведет новый массив: 1, 3, 5
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check filter-for">Проверить</button>
+                          </pre>
+        </div>
+      </div>
+
+      <div class="arrays__test">
+        <h3 class="arrays__title-small">Практика</h3>
+        <div class="arrays__block">
+          <div class="arrays__results">
+            <div class="arrays__task">
+              <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
+                  class="arrays-code_small">filter()</code>, чтобы найти все чётные числа:</p>
+              <div class="arrays__field">
+
+                <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-filter"></div>];</div></div>
+  let arrayEven = array.filter(function (num) {
+    return num % 2 == 0;
+  })
+              </pre>
+
+            </div>
+            <button class="waves-effect waves-light btn arrays__button_add filter-add">
+              Добавить элементы
+            </button>
+
+            <button class="waves-effect waves-light btn arrays__button_done filter-done">
+              Применить метод filter()
+            </button>
+          </div>
+          <div class="arrays__out">
+            <p class="arrays__text-bold">Исходный массив:</p>
+            <pre class="arrays__old-filter" class="arrays-code"></pre>
+            <p class="arrays__text-bold">Отфильтрованный массив:</p>
+            <pre class="arrays__result-filter" class="arrays-code"></pre>
+          </div>
+        </div>
+
+        <button class="waves-effect waves-light btn arrays__button_reset filter-reset">
+          Сбросить значения
+        </button>
+      </div>
+    </div>
+
+    </div>
+  </li>
+
+  <li>
+    <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+      <div class="arrays-collapsible-header__items">
+        <p class="arrays-collapsible-header_title">every</p><i class="material-icons">chevron_right</i>
+      </div>
+      <p class="arrays-collapsible-header_text">Применяется, когда необходимо узнать, что все элементы в массиве
+        соответствуют условию в колбэке.
+      </p>
+    </div>
+    <div class="collapsible-body"><span>Возвращает значение <code class="arrays-code_small">true</code>, если функция
+        будет <code class="arrays-code_small">true</code> для всех элементов массива; в противном случае возвращается
+        значение <code class="arrays-code_small">false</code>. Если массив не содержит элементов, метод <code
+          class="arrays-code_small">every()</code> возвращает значение <code
+          class="arrays-code_small">true</code>.</span>
+      <pre>
+                      <code class="js">
+array.every(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+      <div class="array-code__item">
+        <p class="arrays__text">Проверим, все ли числа в массиве больше или равны единице:</p>
+        <div class="arrays-code">
+          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayNums = array.every(function (num) {
+  return num >= 1;
+})
+
+alert(arrayNums);
+// выведет true, потому что все числа в массиве больше 1
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check every">Проверить</button>
+                          </pre>
+        </div>
+      </div>
+
+      <div class="array-code__item">
+        <p class="arrays__text">Пример через классический цил <code class="arrays-code_small">for</code>:</p>
+        <div class="arrays-code">
+          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayNums = function (array) {
+  for(let i = 0; i < array.length; i++){
+    if(array[i] >= 1){
+      return true;
+    }
+  }
+  return false;
+}
+
+
+alert(arrayNums(array));
+// также выведет true
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check every-for">Проверить</button>
+                          </pre>
+        </div>
+      </div>
+
+      <div class="arrays__test">
+        <h3 class="arrays__title-small">Практика</h3>
+        <div class="arrays__block">
+          <div class="arrays__results">
+            <div class="arrays__task">
+              <p class="arrays__text">Дан пустой массив, куда нужно добавить элементы и применить метод <code
+                  class="arrays-code_small">every()</code>, чтобы узнать, все ли элементы одинаковые:</p>
+              <div class="arrays__field">
+
+                <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-every"></div>];</div></div>
+  const arrayElements = array.every(function (element) {
+    return element === array[0];
+  })
+              </pre>
+
+            </div>
+            <button class="waves-effect waves-light btn arrays__button_add every-add">
+              Добавить элементы
+            </button>
+
+            <button class="waves-effect waves-light btn arrays__button_done every-done">
+              Применить метод every()
+            </button>
+          </div>
+          <div class="arrays__out">
+            <p class="arrays__text-bold">Исходный массив:</p>
+            <pre class="arrays__old-every" class="arrays-code"></pre>
+            <p class="arrays__text-bold">Результат:</p>
+            <pre class="arrays__result-every" class="arrays-code"></pre>
+          </div>
+        </div>
+
+        <button class="waves-effect waves-light btn arrays__button_reset every-reset">
+          Сбросить значения
+        </button>
+      </div>
+    </div>
+
+
+    </div>
+  </li>
+
+
+  <li>
+    <div class="collapsible-header arrays-collapsible-header">
+      <div class="arrays-collapsible-header__items">
+        <p class="arrays-collapsible-header_title">some</p><i class="material-icons">chevron_right</i>
+      </div>
+      <p class="arrays-collapsible-header_text">Позволяет узнать, есть ли в массиве хотя бы один элемент,
+        удовлетворяющий условию в функции-колбэке.
+      </p>
+    </div>
+    <div class="collapsible-body"><span>Колбэк-функция будет вызываться для каждого элемента массива до тех пор, пока не
+        вернётся <code class="arrays-code_small">true</code>, либо пока не закончатся элементы массива.</span>
+      <pre>
+                      <code class="js">
+array.some(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+      <div class="array-code__item">
+        <p class="arrays__text">Проверим, есть ли в массиве хотя бы одно нечетное число:</p>
+        <div class="arrays-code">
+          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayNums = array.some(function (num) {
+  return num % 2 !== 0;
+})
+
+alert(arrayNums);
+// выведет true, потому что в массиве есть нечетное число
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check some">Проверить</button>
+                          </pre>
+        </div>
+      </div>
+
+      <div class="array-code__item">
+        <p class="arrays__text">Пример через классический цил <code class="arrays-code_small">for</code>:</p>
+        <div class="arrays-code">
+          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayNums = function (array) {
+  for(let i = 0; i < array.length; i++){
+    if(array[i] % 2 !== 0){
+      return true;
+    }
+  }
+  return false;
+}
+
+
+alert(arrayNums(array));
+// также выведет true
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check some-for">Проверить</button>
+                          </pre>
+        </div>
+      </div>
+
+      <div class="arrays__test">
+        <h3 class="arrays__title-small">Практика</h3>
+        <div class="arrays__block">
+          <div class="arrays__results">
+            <div class="arrays__task">
+              <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
+                  class="arrays-code_small">some()</code>, чтобы узнать, есть ли в массиве хотя бы одно четное число:
+              </p>
+              <div class="arrays__field">
+
+                <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-some"></div>];</div></div>
+  const arrayNums = array.some(function (num) {
+    return num % 2 === 0;
+  })
+              </pre>
+
+            </div>
+            <button class="waves-effect waves-light btn arrays__button_add some-add">
+              Добавить элементы
+            </button>
+
+            <button class="waves-effect waves-light btn arrays__button_done some-done">
+              Применить метод some()
+            </button>
+          </div>
+          <div class="arrays__out">
+            <p class="arrays__text-bold">Исходный массив:</p>
+            <pre class="arrays__old-some" class="arrays-code"></pre>
+            <p class="arrays__text-bold">Результат:</p>
+            <pre class="arrays__result-some" class="arrays-code"></pre>
+          </div>
+        </div>
+
+        <button class="waves-effect waves-light btn arrays__button_reset some-reset">
+          Сбросить значения
+        </button>
+      </div>
+    </div>
+
+
+    </div>
+  </li>
+
+  <li>
+    <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+      <div class="arrays-collapsible-header__items">
+        <p class="arrays-collapsible-header_title">flatMap</p><i class="material-icons">chevron_right</i>
+      </div>
+      <p class="arrays-collapsible-header_text">Применяется для трансформации исходных данных с уменьшением вложенности.
+      </p>
+    </div>
+    <div class="collapsible-body"><span>Метод идентичен последовательному вызову <code
+          class="arrays-code_small">map().flat()</code> с параметром <code class="arrays-code_small">depth = 1</code>.
+        Был добавлен в стандарте ES2019. Если вы поддерживаете браузеры, выпущенные раньше 2018 года, то понадобится
+        полифил.</span>
+      <pre>
+                      <code class="js">
+array.flatMap(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+      <div class="array-code__item">
+        <p class="arrays__text">Для примера рассмотрим функцию, которая принимает значение и возвращает массив из двух
+          элементов, каждый из которых дублирует значение:</p>
+        <pre>
+                        <code class="js">
+const array = [1, 2, 3]; 
+// исходный массив
+
+// напишем функцию, которая возвращает массив из элементов
+// и дублирует их:
+
+const duplicate = function (element) {
+return [element, element];
+}
+                        </code>
+                      </pre>
+      </div>
+
+      <div class="array-code__item">
+        <p class="arrays__text">Если применить функцию к массиву, получим вложенный массив:</p>
+        <div class="arrays-code">
+          <pre>
+                            <code class="js">
+const array = [1, 2, 3]; 
+
+const duplicate = function (element) {
+  return [element, element];
+}
+
+// применим функцию к массиву, трансформируя его с помощью map:
+
+alert(array.map(duplicate));
+console.log(array.map(duplicate));
+// выведет вложенный массив [[1, 1], [2, 2], [3, 3]]
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check flatmap-map">Проверить</button>
+                          </pre>
+        </div>
+      </div>
+
+      <div class="array-code__item">
+        <p class="arrays__text">Извлечь вложенные массивы можно с помощью <code class="arrays-code_small">flat</code>:
+        </p>
+        <div class="arrays-code">
+          <pre>
+                            <code class="js">
+const array = [1, 2, 3]; 
+
+const duplicate = function (element) {
+  return [element, element];
+}
+
+// добавляем метод flat к методу map:
+
+alert(array.map(duplicate).flat()); 
+console.log(array.map(duplicate).flat());
+// выведет готовый результат — [1, 1, 2, 2, 3, 3]
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check flatmap-flatmap">Проверить</button>
+                          </pre>
+        </div>
+      </div>
+
+      <div class="array-code__item">
+        <p class="arrays__text">В функциональном программировании такие действия с массивами встречаются часто. Поэтому
+          появился метод <code class="arrays-code_small">flatMap()</code>, который упрощает код. Данный метод более
+          эффективный, чем вызов <code class="arrays-code_small">map().flat()</code> по отдельности, поскольку обход
+          массива совершается только один раз:</p>
+        <div class="arrays-code">
+          <pre>
+                            <code class="js">
+const array = [1, 2, 3]; 
+
+const duplicate = function (element) {
+  return [element, element];
+}
+
+alert(array.flatMap(duplicate)); 
+console.log(array.flatMap(duplicate));
+// выведет готовый результат — [1, 1, 2, 2, 3, 3]
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check flatmap">Проверить</button>
+                          </pre>
+        </div>
+      </div>
+
+      <div class="arrays__test">
+        <h3 class="arrays__title-small">Практика</h3>
+        <div class="arrays__block">
+          <div class="arrays__results">
+            <div class="arrays__task">
+              <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
+                  class="arrays-code_small">flatMap()</code>, чтобы сформировать на основе исходного массива новый
+                массив из элементов и их квадратов:</p>
+              <div class="arrays__field">
+
+                <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-flatmap"></div>];</div></div>
+  const duplicateSquare = array.flatMap(function (element) {
+    return [element, element**2];
+  });
+              </pre>
+
+            </div>
+            <button class="waves-effect waves-light btn arrays__button_add flatmap-add">
+              Добавить элементы
+            </button>
+
+            <button class="waves-effect waves-light btn arrays__button_done flatmap-done">
+              Применить метод flatMap()
+            </button>
+          </div>
+          <div class="arrays__out">
+            <p class="arrays__text-bold">Исходный массив:</p>
+            <pre class="arrays__old-flatmap" class="arrays-code"></pre>
+            <p class="arrays__text-bold">Новый массив:</p>
+            <pre class="arrays__result-flatmap" class="arrays-code"></pre>
+          </div>
+        </div>
+
+        <button class="waves-effect waves-light btn arrays__button_reset flatmap-reset">
+          Сбросить значения
+        </button>
+      </div>
+    </div>
+
+    </div>
+  </li>
+
+  </ul>
+  </div>
+  </div>
+  </div>
+
+  <h5 class="arrays__title-min">Поиск элементов</h5>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <ul class="collapsible popout">
+
+          <li>
+            <div class="collapsible-header arrays-collapsible-header">
+              <div class="arrays-collapsible-header__items">
+                <p class="arrays-collapsible-header_title">find</p><i class="material-icons">chevron_right</i>
+              </div>
+              <p class="arrays-collapsible-header_text">Возвращает первый найденный в массиве элемент, который подходит
+                под условие в переданной функции.
+              </p>
+            </div>
+            <div class="collapsible-body"><span>Если в массиве не найдётся ни одного подходящего элемента, то вернётся
+                значение <code class="arrays-code_small">undefined</code>.</span>
+              <pre>
+                      <code class="js">
+array.find(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Функция должна возвращать булевое значение <code
+                    class="arrays-code_small">true</code> или <code class="arrays-code_small">false</code>. <code
+                    class="arrays-code_small">find()</code> вернёт первый элемент, на котором переданная функция-колбэк
+                  вернула <code class="arrays-code_small">true</code>. Попробуем найти число в массиве:</p>
+                <div class="arrays-code">
+                  <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const arrayFind = array.find(function (element) {
+  return element === 2;
+});
+// колбэк вернул true, потому что в массиве есть число 2
+
+alert(arrayFind);
+// выведет значение найденного элемента: 2
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check find">Проверить</button>
+                          </pre>
+                </div>
+              </div>
+
+              <div class="array-code__item">
+                <p class="arrays__text">Этот же пример, написанный с помощью классического цикла <code
+                    class="arrays-code_small">for</code>:</p>
+                <div class="arrays-code">
+                  <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const arrayFind = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === 2) {
+      return array[i];
+    }
+  }
+  return undefined;
+};
+
+alert(arrayFind(array));
+// также выведет значение: 2
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check find-for">Проверить</button>
+                          </pre>
+                </div>
+              </div>
+
+              <div class="arrays__test">
+                <h3 class="arrays__title-small">Практика</h3>
+                <div class="arrays__block">
+                  <div class="arrays__results">
+                    <div class="arrays__task">
+                      <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
+                          class="arrays-code_small">find()</code>, чтобы узнать, есть ли там число 5:</p>
+                      <div class="arrays__field">
+
+                        <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-find"></div>];</div></div>
+  const arrayFind = array.find(function (element) {
+    return element === 5;
+  });
+                      </pre>
+
+                    </div>
+                    <button class="waves-effect waves-light btn arrays__button_add find-add">
+                      Добавить элементы
+                    </button>
+
+                    <button class="waves-effect waves-light btn arrays__button_done find-done">
+                      Применить метод find()
+                    </button>
+                  </div>
+                  <div class="arrays__out">
+                    <p class="arrays__text-bold">Исходный массив:</p>
+                    <pre class="arrays__old-find" class="arrays-code"></pre>
+                    <p class="arrays__text-bold">Результат:</p>
+                    <pre class="arrays__result-find" class="arrays-code"></pre>
+                  </div>
+                </div>
+
+                <button class="waves-effect waves-light btn arrays__button_reset find-reset">
+                  Сбросить значения
+                </button>
+              </div>
+            </div>
+
+      </div>
+      </li>
+
+
+      <li>
+        <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+          <div class="arrays-collapsible-header__items">
+            <p class="arrays-collapsible-header_title">findIndex</p><i class="material-icons">chevron_right</i>
+          </div>
+          <p class="arrays-collapsible-header_text">Возвращает индекс первого найденного в массиве элемента, который
+            подходит под условие переданной функции.
+          </p>
+        </div>
+        <div class="collapsible-body"><span>Если ни одного подходящего элемента не найдётся, то метод вернёт <code
+              class="arrays-code_small">-1</code>.</span>
+          <pre>
+                      <code class="js">
+array.findIndex(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Для примера возьмём два массива: в одном будут разные числа, во втором — только
+              чётные. И попробуем найти в каждом массиве нечетное число и вернуть его индекс:</p>
+            <div class="arrays-code">
+              <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayEven = [2, 4, 6];
+// исходные массивы
+
+// напишем функцию, которая будет искать нечетные числа:
+function isOdd(element) {
+  return element % 2 !== 0;
+}
+
+// применим метод find(), куда поместим функцию isOdd:
+
+alert(array.findIndex(isOdd));
+// выведет 0 — это индекс первого нечетного числа в массиве
+
+alert(arrayEven.findIndex(isOdd));
+// выведет -1, потому что в этом массиве нет нечетных чисел
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findindex">Проверить</button>
+                          </pre>
+            </div>
+          </div>
+
+          <div class="array-code__item">
+            <p class="arrays__text">Тот же пример через классический цикл <code class="arrays-code_small">for</code>:
+            </p>
+            <div class="arrays-code">
+              <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayEven = [2, 4, 6];
+// исходные массивы
+
+// напишем функцию-предикат,
+// которая вернет true или false:
+
+function isOdd(element) {
+  return element % 2 !== 0
+}
+
+// напишем функцию, которая будет принимать 2 аргумента:
+// массив и функцию-предикат:
+
+function findIndex(array, predicate) {
+  for (let i = 0; i < array.length; i++) {
+
+    // Если элемент удовлетворяет условию,
+    // то возвращаем его индекс
+    if (predicate(array[i])) {
+      return i;
+    }
+  }
+  return -1
+}
+
+// подставим в функцию findIndex наши аргументы - 
+// массивы array и arrayEven, а также функцию isOdd
+
+alert(findIndex(array, isOdd));
+// выведет 0 — это индекс первого нечетного числа в массиве
+
+alert(findIndex(arrayEven, isOdd));
+// выведет -1, потому что в этом массиве нет нечетных чисел
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findindex-for">Проверить</button>
+                          </pre>
+            </div>
+          </div>
+
+          <div class="arrays__test">
+            <h3 class="arrays__title-small">Практика</h3>
+            <div class="arrays__block">
+              <div class="arrays__results">
+                <div class="arrays__task">
+                  <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
+                      class="arrays-code_small">findIndex()</code>, чтобы узнать, есть ли в массиве четное число, и в
+                    случае успеха, вернуть его индекс:</p>
+                  <div class="arrays__field">
+
+                    <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-findindex"></div>];</div></div>
+  const arrayFindEven = array.findIndex(function (element) {
+    return element % 2 === 0;
+  });
+                  </pre>
+
+                </div>
+                <button class="waves-effect waves-light btn arrays__button_add findindex-add">
+                  Добавить элементы
+                </button>
+
+                <button class="waves-effect waves-light btn arrays__button_done findindex-done">
+                  Применить метод findIndex()
+                </button>
+              </div>
+              <div class="arrays__out">
+                <p class="arrays__text-bold">Исходный массив:</p>
+                <pre class="arrays__old-findindex" class="arrays-code"></pre>
+                <p class="arrays__text-bold">Результат:</p>
+                <pre class="arrays__result-findindex" class="arrays-code"></pre>
+              </div>
+            </div>
+
+            <button class="waves-effect waves-light btn arrays__button_reset findindex-reset">
+              Сбросить значения
+            </button>
+          </div>
+        </div>
+
+
+    </div>
+    </li>
+
+    <li>
+      <div class="collapsible-header arrays-collapsible-header">
+        <div class="arrays-collapsible-header__items">
+          <p class="arrays-collapsible-header_title">findLast</p><i class="material-icons">chevron_right</i>
+        </div>
+        <p class="arrays-collapsible-header_text">Возвращает первый найденный с конца массива элемент, который подходит
+          под условие в переданной функции.
+        </p>
+      </div>
+      <div class="collapsible-body"><span>Выполняет итерацию массива в обратном порядке и возвращает первое значение
+          элемента, которое удовлетворяет условию заданной функции проверки. Если в массиве не найдётся ни одного
+          подходящего элемента, то вернётся значение <code class="arrays-code_small">undefined</code>.</span>
+        <pre>
+                      <code class="js">
+array.findLast(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+        <div class="array-code__item">
+          <p class="arrays__text">Функция должна возвращать булевое значение <code class="arrays-code_small">true</code>
+            или <code class="arrays-code_small">false</code>. <code class="arrays-code_small">findLast()</code> вернёт
+            первый элемент с конца массива, на котором переданная функция-колбэк вернула <code
+              class="arrays-code_small">true</code>. Попробуем найти наибольшее четное число:</p>
+          <div class="arrays-code">
+            <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const arrayEven = array.findLast(function (element) {
+  return element % 2 === 0;
+});
+// колбэк вернул true, потому что в массиве есть четные числа
+
+alert(arrayEven);
+// выведет значение найденного элемента: 4
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findlast">Проверить</button>
+                          </pre>
+          </div>
+        </div>
+
+        <div class="array-code__item">
+          <p class="arrays__text">Этот же пример, написанный с помощью классического цикла <code
+              class="arrays-code_small">for</code>:</p>
+          <div class="arrays-code">
+            <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+// исходный массив
+
+const arrayEven = (array) => {
+  let even = [];
+  for (let i = 0; i < array.length; i++) {
+      if (array[i] % 2 === 0) {
+          even.push(array[i]);
+      } 
+  }
+
+  if(even.length !== 0) {
+      even.sort(function(a, b) {
+          return b - a;
+      });
+      return even[0];
+  }
+  
+  return undefined;
+};
+
+alert(arrayEven(array));
+// также выведет значение: 4
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findlast-for">Проверить</button>
+                          </pre>
+          </div>
+        </div>
+
+        <div class="arrays__test">
+          <h3 class="arrays__title-small">Практика</h3>
+          <div class="arrays__block">
+            <div class="arrays__results">
+              <div class="arrays__task">
+                <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
+                    class="arrays-code_small">findLast()</code>, чтобы узнать, есть ли там нечетные числа, и вернуть
+                  наибольшее:</p>
+                <div class="arrays__field">
+
+                  <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-findlast"></div>];</div></div>
+  const arrayOdd = array.findLast(function (element) {
+    return element % 2 !== 0;
+  });
+                </pre>
+
+              </div>
+              <button class="waves-effect waves-light btn arrays__button_add findlast-add">
+                Добавить элементы
+              </button>
+
+              <button class="waves-effect waves-light btn arrays__button_done findlast-done">
+                Применить метод findlast()
+              </button>
+            </div>
+            <div class="arrays__out">
+              <p class="arrays__text-bold">Исходный массив:</p>
+              <pre class="arrays__old-findlast" class="arrays-code"></pre>
+              <p class="arrays__text-bold">Результат:</p>
+              <pre class="arrays__result-findlast" class="arrays-code"></pre>
+            </div>
+          </div>
+
+          <button class="waves-effect waves-light btn arrays__button_reset findlast-reset">
+            Сбросить значения
+          </button>
+        </div>
+      </div>
+
+  </div>
+  </li>
+
+
+  <li>
+    <div class="collapsible-header arrays-collapsible-header teal lighten-5">
+      <div class="arrays-collapsible-header__items">
+        <p class="arrays-collapsible-header_title">findLastIndex</p><i class="material-icons">chevron_right</i>
+      </div>
+      <p class="arrays-collapsible-header_text">Возвращает индекс первого найденного с конца массива элемента, который
+        подходит под условие переданной функции.
+      </p>
+    </div>
+    <div class="collapsible-body"><span>Выполняет итерацию массива в обратном порядке и возвращает индекс первого
+        элемента, удовлетворяющего заданной функции-колбэку. Если ни один элемент не удовлетворяет условию функции,
+        возвращается <code class="arrays-code_small">-1</code>.</span>
+      <pre>
+                      <code class="js">
+array.findLastIndex(callback(element, index, array), thisArg);
+                      </code>
+                    </pre>
+
+      <div class="array-code__item">
+        <p class="arrays__text">Для примера возьмём два массива: в одном будут разные числа, во втором — только чётные.
+          И попробуем найти в каждом массиве нечетные числа и вернуть индекс последнего:</p>
+        <div class="arrays-code">
+          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayEven = [2, 4, 6];
+// исходные массивы
+
+// напишем функцию, которая будет искать нечётные числа:
+function isOdd(element) {
+  return element % 2 !== 0;
+}
+
+// применим метод findLastIndex(), куда поместим функцию isOdd:
+
+alert(array.findLastIndex(isOdd));
+// выведет 4 — это индекс последнего нечётного числа в массиве
+
+alert(arrayEven.findLastIndex(isOdd));
+// выведет -1, потому что в этом массиве нет нечётных чисел
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findlastindex">Проверить</button>
+                          </pre>
+        </div>
+      </div>
+
+      <div class="array-code__item">
+        <p class="arrays__text">Тот же пример через классический цикл <code class="arrays-code_small">for</code>:</p>
+        <div class="arrays-code">
+          <pre>
+                            <code class="js">
+const array = [1, 2, 3, 4, 5]; 
+const arrayEven = [2, 4, 6];
+// исходные массивы
+
+// напишем функцию-предикат,
+// которая вернет true или false:
+
+function isOdd(element) {
+  return element % 2 !== 0
+}
+
+// напишем функцию, которая будет принимать 2 аргумента:
+// массив и функцию-предикат:
+
+function findLastIndex(array, predicate) {
+  let odd = [];
+  for (let i = 0; i < array.length; i++) {
+      if (predicate(array[i])) {
+          odd.push(i);
+      }
+  }
+
+  if(odd.length !== 0) {
+      odd.sort(function(a, b) {
+          return b - a;
+      });
+      return odd[0];
+  }
+
+return -1
+}
+
+// подставим в функцию findLastIndex наши аргументы - 
+// массивы array и arrayEven, а также функцию isOdd
+
+alert(findIndex(array, isOdd));
+// выведет 4 — это индекс последнего нечетного числа в массиве
+
+alert(findIndex(arrayEven, isOdd));
+// выведет -1, потому что в этом массиве нет нечётных чисел
+                            </code>
+  <button class="waves-effect waves-light btn arrays__check findlastindex-for">Проверить</button>
+                          </pre>
+        </div>
+      </div>
+
+      <div class="arrays__test">
+        <h3 class="arrays__title-small">Практика</h3>
+        <div class="arrays__block">
+          <div class="arrays__results">
+            <div class="arrays__task">
+              <p class="arrays__text">Дан пустой массив, куда нужно добавить числа и применить метод <code
+                  class="arrays-code_small">findLastIndex()</code>, чтобы узнать, есть ли в массиве чётные числа, и в
+                случае успеха, вернуть индекс последнего:</p>
+              <div class="arrays__field">
+
+                <pre class="arrays-code">
+                                <div class="arrays__practice"><pre class="arrays-code__let">
+  const array = </pre><div class="arrays-div__input">[<div class="arrays__input arrays__input-findlastindex"></div>];</div></div>
+  const arrayFindEven = array.findLastIndex(function (element) {
+    return element % 2 === 0;
+  });
+              </pre>
+
+            </div>
+            <button class="waves-effect waves-light btn arrays__button_add findlastindex-add">
+              Добавить элементы
+            </button>
+
+            <button class="waves-effect waves-light btn arrays__button_done findlastindex-done">
+              Применить метод findLastIndex()
+            </button>
+          </div>
+          <div class="arrays__out">
+            <p class="arrays__text-bold">Исходный массив:</p>
+            <pre class="arrays__old-findlastindex" class="arrays-code"></pre>
+            <p class="arrays__text-bold">Результат:</p>
+            <pre class="arrays__result-findlastindex" class="arrays-code"></pre>
+          </div>
+        </div>
+
+        <button class="waves-effect waves-light btn arrays__button_reset findlastindex-reset">
+          Сбросить значения
+        </button>
+      </div>
+    </div>
+
+    </div>
+  </li>
+
+  </ul>
+  </div>
+  </div>
+  </div>
+
+
+  </div>
+  </div>
+  </div>
+  </main>
+
+  <footer class="page-footer teal lighten-1">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <div>
+                    <h3 class="white-text">Random joke <span class="material-icons">sentiment_satisfied_alt</span>
+                    </h3>
+                    <div>
+                        <div class="setup"></div>
+                        <div class="punchline"></div>
+                        <div class="error"></div>
+                    </div>
+                </div>
+                <a href="index.html" class="brand-logo left"><img src="./assets/icons8-cherry-100.png" alt="cherry"></a>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h3 class="white-text">Полезные ссылки</h3>
+                <ul>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://itgirlschool.notion.site/Frontend34-64b1b279b00f4fe7884dc4d9ec6afffc" target="_blank">Notion
+                        Frontend 34</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://learn.javascript.ru/" target="_blank">Современный учебник
+                        JavaScript</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference" target="_blank">Справочник по
+                        JavaScript. MDN</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT" target="_blank">Сложный
+                        JavaScript простым языком <i class="tiny material-icons">smart_display</i></a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://doka.guide/js/" target="_blank">JavaScript Дока</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2023
+            <a class="grey-text text-lighten-4 right" href="about.html">О прекрасных разработчицах этого гайда</a>
+        </div>
+    </div>
+</footer>
+
+  </div>
+
+  <script src="./assets/dist/js/main.js"></script>
+  <script src="./assets/libraries/highlights/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>
