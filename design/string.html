@@ -57,7 +57,8 @@
             </nav>
         </header>
 
-        <main class="main__container">
+        <main class="main">
+            <div class="main__container">
             <h1 class="teal-text text-darken-3">Методы строк</h1>
             <p>Любые текстовые данные в JavaScript считаются строками. Это примитивный тип, но язык позволяет работать с
                 ним так, будто он является объектом. В том числе — использовать встроенные в <abbr>JS</abbr> методы строк.</p>
@@ -256,7 +257,6 @@ alert( str.at(-1) );
                             необязательный параметр — ограничитель по диапазону поиска. По умолчанию он
                             равен длине строки.</span>
 
-
                         <pre>
                             <code>
 "Hello World".endsWith("World"); // true
@@ -272,7 +272,6 @@ alert( str.at(-1) );
                     <div class="collapsible-body"><span>Проверяет, начинается ли строка с указанных
                             символов. Возвращает true или false. Вторым параметром можно указать индекс, с
                             которого следует начать проверку.</span>
-
 
                         <pre>
                             <code>
@@ -328,7 +327,6 @@ alert( str.at(-1) );
                             можно задавать start больше, чем end. Отрицательные значения не
                             поддерживаются, они интерпретируются как 0.</span>
 
-
                         <pre>
                                 <code>
 "Методы строк на JS Cheatsheet".substring(5, 2); // "тод"
@@ -344,7 +342,6 @@ alert( str.at(-1) );
                             параметром принимает стартовую позицию, вторым — длину. Значение первого
                             параметра может быть отрицательным, тогда позиция определяется с конца
                             строки.</span>
-
 
                         <pre>
                                     <code>
@@ -380,7 +377,6 @@ alert( str.at(-1) );
                     <div class="collapsible-body"><span>Даёт такой же результат, как метод
                             replace() с глобальным флагом g. Заменяет все найденные совпадения
                             другой строкой или переданной функцией.</span>
-
 
                         <pre>
                                         <code>
@@ -515,8 +511,6 @@ String.fromCharCode(72, 101, 108, 108, 111); // "Hello"
 
                         <div class="answer_first blue lighten-4"></div>
 
-
-
                     </div>
                 </li>
                 <li>
@@ -537,7 +531,6 @@ checkSpam('free xxxxx') == true
 checkSpam("innocent rabbit") == false
                         </code>
                     </pre>
-
 
                         <a class="waves-effect waves-light btn btn_second">Решение</a>
                         <br><br>
@@ -580,8 +573,7 @@ truncate("Всем привет!", 20) = "Всем привет!"
                     </div>
                 </li>
             </ul>
-
-
+            </div>
         </main>
 
         <footer class="page-footer teal lighten-1">
