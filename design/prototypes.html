@@ -51,10 +51,11 @@
         </nav>
     </header>
 
-    <main class="prorotypes-main__container">
+    <main class="prorotypes-main">
+        <div class="main__container">
         <h1 class="prorotypesAll__title teal-text text-darken-3">Прототипы, конструкторы, классы</h1>
             <div class="row">
-                <div class="section scrollspy col m10 l10">
+                <div class="section scrollspy col s12 m10 l10">
                     <section id="theory">
                         <h2 class="prototypes__title teal-text text-darken-2">Прототипы</h2>
                         <p>Каждый объект имеет объект-прототип, который выступает как шаблон, от которого объект наследует методы и свойства. Объект-прототип так же может иметь свой прототип и наследует его свойства и методы и так далее. Это называется цепочкой прототипов, «прототипным наследованием» и объясняет почему одним объектам доступны свойства и методы, которые определены в других объектах.</p>
@@ -278,8 +279,8 @@ Object.prototype.sayHi = function () {
 console.log(person.sayHi()) // Hi        
                                 </code>
                             </pre>
-                        </div> 
-                    </section> 
+                        </div>
+                    </section>
 
                     <section id="tasks">
                         <h2 class="tasks__title teal-text text-darken-2">Мини-задачи</h2>
@@ -402,9 +403,6 @@ dev1.__proto__.__proto__ === Object.prototype
                                 </div>
                             </li>
                         </ul>
-                        
-                        
-        
                     </section>
                 </div>
 
@@ -415,8 +413,7 @@ dev1.__proto__.__proto__ === Object.prototype
                     </ul>
                 </div>
             </div>
-
-
+        </div>
     </main>
 
     <footer class="page-footer teal lighten-1">

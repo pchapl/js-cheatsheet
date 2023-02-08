@@ -52,11 +52,12 @@
         </nav>
     </header>
 
-    <main class="types-main__container">
+    <main class="types-main">
+        <div class="main__container">
         <h1 class="teal-text text-darken-3">Типы данных</h1>
         
         <div class="row types-content">
-            <div class="section scrollspy col m10 l10">
+            <div class="section scrollspy col s12 m10 l10">
                 
                 <div class="row types-intro">
                     <p>В JS 8 типов данных, из них 7 примитивных, так как их значениями могут быть только простые значения (строка, или число, др.). 8й тип — это объект (хранят коллекции данных или более сложные структуры).</p>
@@ -1120,11 +1121,9 @@ console.log(typeof new Number(0)) // "object"!
                     </div>
                 </div>
 
-
-
                 <div class="row inputType" id="inputType">
                     <h2 class="section scrollspy teal-text text-darken-2">Проверка типа</h2>
-                    <div class="col">
+                    <div class="col s12">
                         <p class="inputType__description">Здесь можно проверить тип данных. Введи примитивный тип данных, либо объект, созданный с помощью литерала, либо символ, созданный с помощью Symbol().</p>
                         <div class="inputType__wrap">
                             <input id="inputType__inputCheck"></input>
@@ -1132,7 +1131,6 @@ console.log(typeof new Number(0)) // "object"!
                         </div>                        
                         <div id="inputType__checkResult"></div>
                     </div>
-                    
                 </div>
 
                 <div id="joke" class="section scrollspy">
@@ -1151,7 +1149,6 @@ console.log(typeof new Number(0)) // "object"!
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="col hide-on-small-only m2 l2">
@@ -1161,9 +1158,8 @@ console.log(typeof new Number(0)) // "object"!
                     <li><a href="#joke">Шуточка</a></li>
                 </ul>
             </div>
-
         </div>
-
+        </div>
     </main>
 
     <footer class="page-footer teal lighten-1">
